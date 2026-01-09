@@ -1,0 +1,29 @@
+# After-School Program Schedule
+# Update this file weekly with the new schedule
+
+week_of: "January 13, 2025"
+
+schedule:
+  - day: "Monday, Jan 13"
+    events:
+      - "After school traditional drumming with Orville Councillor for all grades"
+  
+  - day: "Tuesday, Jan 14"
+    events:
+      - "After school program for grades 1-3"
+      - "Traditional drumming all grades"
+  
+  - day: "Wednesday, Jan 15"
+    events:
+      - "After school program for grades 4-6"
+      - "Traditional drumming all grades"
+  
+  - day: "Thursday, Jan 16"
+    events:
+      - "After school program for grades 7-8"
+      - "Traditional drumming all grades"
+  
+  - day: "Friday, Jan 17"
+    events:
+      - "After school program for grades 1-8"
+      - "Traditional drumming all grades"

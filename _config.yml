@@ -1,0 +1,61 @@
+# Henry Coaster Memorial School - Jekyll Configuration
+# Marten Falls First Nation, Ontario
+
+# Site settings
+title: Henry Coaster Memorial School
+email: info@henrycoastermemorialschool.com
+description: >-
+  Where our students walk in the footsteps of their ancestors to achieve their dreams.
+
+# CRITICAL: This must match your GitHub repository name exactly
+baseurl: "/HCMS"
+url: "https://reckegabe58.github.io"
+
+# Location information
+location:
+  community: Marten Falls First Nation
+  address: Ogoki Post, Ontario P0T 2L0
+  phone: (807) 349-2532
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  classrooms:
+    output: true
+    permalink: /classrooms/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Administration"
+  - scope:
+      path: ""
+      type: "classrooms"
+    values:
+      layout: "classroom"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - DEPLOYMENT-INSTRUCTIONS.md

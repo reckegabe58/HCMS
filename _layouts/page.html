@@ -1,0 +1,103 @@
+---
+layout: default
+---
+
+<div class="page-content">
+  <div class="container container-narrow">
+    
+    {% if page.title %}
+    <header class="page-header">
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}
+      <p class="page-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+    </header>
+    {% endif %}
+    
+    <div class="page-body">
+      {{ content }}
+    </div>
+    
+  </div>
+</div>
+
+<style>
+.page-content {
+  padding: var(--space-xl) 0;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 3px solid var(--primary-blue);
+  position: relative;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 6px;
+  background: var(--accent-red);
+}
+
+.page-title {
+  margin-bottom: var(--space-sm);
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-family: var(--font-accent);
+}
+
+.page-body {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.page-body h2 {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--light-gray);
+}
+
+.page-body h3 {
+  margin-top: var(--space-lg);
+}
+
+.page-body ul,
+.page-body ol {
+  margin-left: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.page-body li {
+  margin-bottom: var(--space-sm);
+}
+
+.page-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: var(--space-lg) 0;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.page-body blockquote {
+  border-left: 4px solid var(--accent-red);
+  padding-left: var(--space-lg);
+  margin: var(--space-lg) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: var(--background-alt);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+}
+</style>

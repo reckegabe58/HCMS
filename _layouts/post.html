@@ -1,0 +1,174 @@
+---
+layout: default
+---
+
+<div class="post-content">
+  <div class="container container-narrow">
+    
+    <article class="post">
+      
+      <!-- Post Header -->
+      <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        
+        <div class="post-meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %d, %Y" }}
+          </time>
+          
+          {% if page.author %}
+          <span class="post-author">by {{ page.author }}</span>
+          {% endif %}
+          
+          {% if page.tags %}
+          <div class="post-tags">
+            {% for tag in page.tags %}
+            <span class="post-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </header>
+      
+      <!-- Post Body -->
+      <div class="post-body">
+        {{ content }}
+      </div>
+      
+      <!-- Post Footer -->
+      <footer class="post-footer">
+        <a href="{{ '/news' | relative_url }}" class="back-link">← Back to News</a>
+      </footer>
+      
+    </article>
+    
+  </div>
+</div>
+
+<style>
+.post-content {
+  padding: var(--space-xl) 0;
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.post-title {
+  margin-bottom: var(--space-md);
+  color: var(--primary-blue);
+}
+
+.post-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.post-author {
+  font-style: italic;
+}
+
+.post-tags {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+.post-tag {
+  background: var(--primary-blue);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.post-body {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+}
+
+.post-body h2 {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--light-gray);
+}
+
+.post-body h3 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.post-body p {
+  margin-bottom: var(--space-md);
+}
+
+.post-body ul,
+.post-body ol {
+  margin-left: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.post-body li {
+  margin-bottom: var(--space-sm);
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: var(--space-lg) 0;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.post-body blockquote {
+  border-left: 4px solid var(--accent-red);
+  padding-left: var(--space-lg);
+  margin: var(--space-lg) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: var(--background-alt);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+}
+
+.post-footer {
+  padding-top: var(--space-lg);
+  border-top: 2px solid var(--light-gray);
+  text-align: center;
+}
+
+.back-link {
+  font-weight: 600;
+  color: var(--secondary-blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.back-link:hover {
+  background: var(--background-alt);
+  color: var(--primary-blue);
+}
+
+@media (max-width: 768px) {
+  .post-body {
+    font-size: 1rem;
+  }
+}
+</style>
