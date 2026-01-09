@@ -11,29 +11,30 @@ document.addEventListener('DOMContentLoaded', function() {
   // ==========================================
   
   const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
   const navList = document.getElementById('navList');
-  
-  if (menuToggle && navList) {
+
+  if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', function() {
-      navList.classList.toggle('active');
+      mainNav.classList.toggle('active');
       
       // Animate hamburger to X
       const spans = menuToggle.querySelectorAll('span');
-      if (navList.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
+      if (mainNav.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
         spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(8px, -8px)';
+        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
       } else {
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
       }
     });
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-      if (!menuToggle.contains(event.target) && !navList.contains(event.target)) {
-        navList.classList.remove('active');
+      if (!menuToggle.contains(event.target) && !mainNav.contains(event.target)) {
+        mainNav.classList.remove('active');
         const spans = menuToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
@@ -172,10 +173,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // ==========================================
   
   // Trap focus in mobile menu when open
-  if (menuToggle && navList) {
-    navList.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && navList.classList.contains('active')) {
-        navList.classList.remove('active');
+  if (menuToggle && mainNav) {
+    mainNav.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+        mainNav.classList.remove('active');
         menuToggle.focus();
       }
     });
