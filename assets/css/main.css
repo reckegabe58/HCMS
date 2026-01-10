@@ -741,8 +741,10 @@ a:hover {
 
 .news-card-image {
   width: 200px;
-  height: 180px;
+  height: 100%;
+  min-height: 180px;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -823,6 +825,21 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+}
+
+.news-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.news-card-link:hover .news-card {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg-hover), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.news-card-link:hover .news-card-title {
+  color: var(--primary-200);
 }
 
 .no-posts-message {
@@ -971,6 +988,79 @@ a:hover {
 .btn-calendar:hover {
   background: var(--primary-100);
   color: var(--white);
+}
+
+/* Week Schedule in Sidebar */
+.widget-activities .week-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: 0 var(--space-lg) var(--space-md);
+}
+
+.widget-activities .schedule-day {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-200);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.widget-activities .schedule-day:hover {
+  background: var(--bg-100);
+}
+
+.widget-activities .schedule-day.is-today {
+  background: var(--primary-100);
+  color: white;
+}
+
+.widget-activities .schedule-day.is-today .schedule-day-name,
+.widget-activities .schedule-day.is-today .schedule-date-num,
+.widget-activities .schedule-day.is-today p {
+  color: white;
+}
+
+.widget-activities .schedule-date {
+  min-width: 70px;
+  text-align: center;
+  padding-right: var(--space-sm);
+  border-right: 2px solid var(--bg-300);
+  flex-shrink: 0;
+}
+
+.widget-activities .schedule-day.is-today .schedule-date {
+  border-right-color: rgba(255, 255, 255, 0.3);
+}
+
+.widget-activities .schedule-day-name {
+  display: block;
+  font-weight: 700;
+  font-size: var(--text-xs);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.widget-activities .schedule-date-num {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.widget-activities .schedule-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.widget-activities .schedule-content p {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* Activities List */
