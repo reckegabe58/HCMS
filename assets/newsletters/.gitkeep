@@ -1,0 +1,28 @@
+# Newsletter Storage Directory
+
+This folder stores classroom newsletter PDFs.
+
+## Naming Convention
+Use this format: `YYYY-MM-classroomslug.pdf`
+
+Examples:
+- `2025-01-kindergarten.pdf`
+- `2025-01-grade-1-2-a.pdf`
+- `2024-12-grade-3-4.pdf`
+
+## Adding a New Newsletter
+
+1. Upload your PDF file to this folder
+2. Open the classroom's markdown file in `_classrooms/`
+3. Add a new entry at the TOP of the `newsletters:` list:
+
+```yaml
+newsletters:
+  - month: "January 2025"
+    title: "Your Newsletter Title"
+    file: /assets/newsletters/2025-01-kindergarten.pdf
+    description: "Optional description of what's in this newsletter"
+  # ... older newsletters below
+```
+
+The first newsletter in the list will be displayed as the "Current Newsletter".

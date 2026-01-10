@@ -10,6 +10,19 @@ order: 1
 room: Room 101
 students: 12
 hero_image: /assets/images/carousel/slide-1.jpg
+# Monthly Newsletters - Add new newsletters at the TOP of this list
+# The first one will be displayed as "Current Newsletter"
+newsletters:
+  - month: "January 2025"
+    title: "Welcome Back & Winter Activities"
+    file: /assets/newsletters/2025-01-kindergarten.pdf
+    description: "Happy New Year! This month we're exploring winter themes, learning about animals in winter, and practicing our counting skills with snowflake math."
+  - month: "December 2024"
+    title: "Holiday Celebrations"
+    file: /assets/newsletters/2024-12-kindergarten.pdf
+  - month: "November 2024"
+    title: "Gratitude & Fall Harvest"
+    file: /assets/newsletters/2024-11-kindergarten.pdf
 subjects:
   - name: Early Literacy
     description: Building foundational reading and writing skills through stories, songs, and play-based learning.
