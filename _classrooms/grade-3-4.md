@@ -1,5 +1,5 @@
 ---
-layout: classroom
+layout: classroom-interactive
 title: Grade 3/4
 grade: "3-4"
 teachers:
@@ -9,6 +9,19 @@ order: 4
 room: Room 201
 students: 16
 hero_image: /assets/images/carousel/slide-4.jpg
+# Monthly Newsletters - Add new newsletters at the TOP of this list
+# The first one will be displayed as "Current Newsletter"
+newsletters:
+  - month: "January 2026"
+    title: "New Year, New Adventures"
+    file: /assets/newsletters/2026-01-grade-3-4.pdf
+    description: "Welcome back from winter break! This month we're diving into fraction fundamentals, starting our animal habitats unit, and preparing for the winter carnival."
+  - month: "December 2025"
+    title: "Winter Celebrations"
+    file: /assets/newsletters/2025-12-grade-3-4.pdf
+  - month: "November 2025"
+    title: "Gratitude & Growth"
+    file: /assets/newsletters/2025-11-grade-3-4.pdf
 subjects:
   - name: Language Arts
     description: Advancing reading comprehension, writing across genres, and oral communication.
