@@ -7,8 +7,9 @@ hero_badge: Marten Falls First Nation
 subtitle: Where our students walk in the footsteps of their ancestors to achieve their dreams
 ---
 
-<!-- About Hero Section -->
-<section class="page-hero" style="background-image: url('{{ '/assets/images/carousel/slide-1.jpg' | relative_url }}');">
+<!-- About Hero Section - Clean design without wave -->
+<section class="page-hero-simple">
+  <div class="page-hero-bg" style="background-image: url('{{ '/assets/images/carousel/slide-1.jpg' | relative_url }}');"></div>
   <div class="page-hero-overlay"></div>
   <div class="container">
     <div class="page-hero-content">
@@ -17,71 +18,69 @@ subtitle: Where our students walk in the footsteps of their ancestors to achieve
       <p class="page-hero-subtitle">{{ site.motto }}</p>
     </div>
   </div>
-  <div class="hero-wave">
-    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F5F7F8"/>
-    </svg>
-  </div>
-</section>
-
-<!-- Mission Statement Section -->
-<section class="mission-section">
-  <div class="container">
-    <div class="mission-card">
-      <div class="mission-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-          <path d="M2 17l10 5 10-5"></path>
-          <path d="M2 12l10 5 10-5"></path>
-        </svg>
-      </div>
-      <h2 class="mission-title">Our Mission</h2>
-      <p class="mission-text">
-        To provide a nurturing educational environment that honors Oji-Cree culture and language
-        while preparing students for success in both traditional and contemporary worlds. We believe
-        every child deserves an education that reflects their heritage and equips them with the
-        knowledge and skills to lead their community into the future.
-      </p>
-    </div>
-  </div>
 </section>
 
 <!-- Who We Are Section -->
-<section class="about-section main-area">
+<section class="about-section-main">
   <div class="container">
     <div class="about-grid">
-      <!-- Left Column: History -->
+      <!-- Left Column: Main Content -->
       <div class="about-content">
         <h2 class="section-title">Who We Are</h2>
 
         <p>
-          Henry Coaster Memorial School serves the children of Marten Falls First Nation,
-          a remote Oji-Cree community located along the Albany River in Northern Ontario.
-          Named in honor of a respected community Elder, our school has been the heart of
-          educational excellence in our community since 1985.
+          Henry Coaster Memorial School (HCMS) is a Kindergarten to Grade 8 elementary school located in Marten Falls First Nation (MFFN), a remote, fly-in community in northwestern Ontario. With a mission to nurture resilient, confident, and community minded Anishnaabe youth, HCMS offers a culturally rich curriculum that celebrates Oji-Cree language, traditions, and values. Our aim is to help students build a strong connection to their heritage while preparing for future success.
         </p>
 
         <p>
-          As the only school serving our community, we take pride in our unique position
-          as both an educational institution and a cultural center. Our K-8 program
-          blends Ontario curriculum standards with traditional Oji-Cree knowledge, creating
-          a learning experience that is both academically rigorous and culturally meaningful.
+          Founded with a commitment to education, rooted in community and cultural identity, HCMS has been a hub of the community since it opened over twenty years ago. The school is focused on empowering its students through greater community engagement, increased literacy and math achievement, special education and tutoring supports, and land based learning and sharing traditional knowledge.
+        </p>
+
+        <h3>Our Curriculum</h3>
+        <p>Throughout their time at HCMS, students are educated in core subjects, including:</p>
+
+        <div class="curriculum-grid">
+          <div class="curriculum-item">
+            <span class="curriculum-icon">📚</span>
+            <span>Language Arts</span>
+          </div>
+          <div class="curriculum-item">
+            <span class="curriculum-icon">🔢</span>
+            <span>Math</span>
+          </div>
+          <div class="curriculum-item">
+            <span class="curriculum-icon">🎨</span>
+            <span>Art and Creative Expression</span>
+          </div>
+          <div class="curriculum-item">
+            <span class="curriculum-icon">💬</span>
+            <span>Oji-Cree Language</span>
+          </div>
+          <div class="curriculum-item">
+            <span class="curriculum-icon">🌲</span>
+            <span>Land-based Learning</span>
+          </div>
+          <div class="curriculum-item">
+            <span class="curriculum-icon">⚽</span>
+            <span>Physical Education</span>
+          </div>
+          <div class="curriculum-item">
+            <span class="curriculum-icon">🔬</span>
+            <span>Science</span>
+          </div>
+          <div class="curriculum-item">
+            <span class="curriculum-icon">🌍</span>
+            <span>Social Studies</span>
+          </div>
+        </div>
+
+        <h3>After-School Programs</h3>
+        <p>
+          HCMS also provides opportunities for students to engage in after-school activities that promote their social, emotional and physical well-being. These programs, including seasonal sports, cultural and land-based activities, help students develop traditional life skills and foster their sense of belonging and connection.
         </p>
 
         <p>
-          Our dedicated team of educators includes both certified teachers and community
-          Elders who work together to deliver instruction in English and Oji-Cree. This
-          collaborative approach ensures that our students develop strong academic skills
-          while maintaining deep connections to their language, culture, and land.
-        </p>
-
-        <h3>Our Community</h3>
-        <p>
-          Marten Falls First Nation (Ogoki Post) is accessible only by air or winter road,
-          making our community unique and close-knit. This remoteness shapes our educational
-          approach, emphasizing land-based learning and traditional skills alongside modern
-          academics. Our students learn from the land that has sustained our people for
-          generations.
+          With a commitment to creating a supportive and engaging learning environment, HCMS strives to empower students to become future leaders who are proud of their culture and prepared for their journey into the world.
         </p>
       </div>
 
@@ -101,7 +100,7 @@ subtitle: Where our students walk in the footsteps of their ancestors to achieve
               </span>
               <div>
                 <strong>Established</strong>
-                <span>{{ site.school.established | default: "1985" }}</span>
+                <span>Over 20 years ago</span>
               </div>
             </li>
             <li>
@@ -162,8 +161,8 @@ subtitle: Where our students walk in the footsteps of their ancestors to achieve
                 </svg>
               </span>
               <div>
-                <strong>Staff</strong>
-                <span>~{{ site.school.staff | default: "25" }} educators & support staff</span>
+                <strong>Community</strong>
+                <span>Fly-in, remote community</span>
               </div>
             </li>
           </ul>
@@ -173,120 +172,8 @@ subtitle: Where our students walk in the footsteps of their ancestors to achieve
   </div>
 </section>
 
-<!-- Our Programs Section -->
-<section class="programs-section">
-  <div class="container">
-    <div class="section-header text-center">
-      <h2 class="section-title-center">Our Programs</h2>
-      <p class="section-subtitle">A balanced approach to education that honors tradition and embraces the future</p>
-    </div>
-
-    <div class="programs-grid">
-      <!-- Program Card 1: Oji-Cree Language -->
-      <div class="program-card">
-        <div class="program-icon sage">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-        </div>
-        <h3 class="program-title">Oji-Cree Language</h3>
-        <p class="program-description">
-          Daily instruction in Oji-Cree language with Elder-led immersion sessions.
-          Students develop fluency in their ancestral language through storytelling,
-          songs, and conversation.
-        </p>
-      </div>
-
-      <!-- Program Card 2: Land-Based Learning -->
-      <div class="program-card">
-        <div class="program-icon green">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
-            <path d="M12 6v12"></path>
-            <path d="M6 12h12"></path>
-          </svg>
-        </div>
-        <h3 class="program-title">Land-Based Learning</h3>
-        <p class="program-description">
-          Outdoor education that connects curriculum to the land. Students learn
-          traditional harvesting, navigation, survival skills, and environmental
-          stewardship from community experts.
-        </p>
-      </div>
-
-      <!-- Program Card 3: Traditional Knowledge -->
-      <div class="program-card">
-        <div class="program-icon earth">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-            <path d="M2 12h20"></path>
-          </svg>
-        </div>
-        <h3 class="program-title">Traditional Knowledge</h3>
-        <p class="program-description">
-          Cultural teachings from Elders including traditional crafts, ceremonies,
-          drumming, and the seven grandfather teachings that guide our community's
-          values and way of life.
-        </p>
-      </div>
-
-      <!-- Program Card 4: Academic Excellence -->
-      <div class="program-card">
-        <div class="program-icon blue">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-          </svg>
-        </div>
-        <h3 class="program-title">Academic Excellence</h3>
-        <p class="program-description">
-          Ontario curriculum delivered through culturally-responsive teaching methods.
-          Strong foundations in literacy, numeracy, science, and social studies
-          prepare students for secondary education.
-        </p>
-      </div>
-
-      <!-- Program Card 5: Sports & Activities -->
-      <div class="program-card">
-        <div class="program-icon red">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 16v-4"></path>
-            <path d="M12 8h.01"></path>
-          </svg>
-        </div>
-        <h3 class="program-title">Sports & Activities</h3>
-        <p class="program-description">
-          Physical education, traditional games, hockey, basketball, and seasonal
-          activities that promote health, teamwork, and community spirit among
-          our students.
-        </p>
-      </div>
-
-      <!-- Program Card 6: Cultural Events -->
-      <div class="program-card">
-        <div class="program-icon secondary">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-        </div>
-        <h3 class="program-title">Cultural Events</h3>
-        <p class="program-description">
-          Community feasts, powwows, seasonal celebrations, and cultural gatherings
-          that bring families together and strengthen the bond between school
-          and community.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Our Values Section -->
-<section class="values-section main-area">
+<section class="values-section-alt">
   <div class="container">
     <div class="section-header text-center">
       <h2 class="section-title-center">Our Values</h2>
@@ -295,43 +182,36 @@ subtitle: Where our students walk in the footsteps of their ancestors to achieve
 
     <div class="values-grid">
       <div class="value-card">
-        <span class="value-icon">&#128156;</span>
         <h4>Zaagi'idiwin</h4>
         <p>Love - We create a nurturing environment where every child feels valued and supported.</p>
       </div>
 
       <div class="value-card">
-        <span class="value-icon">&#128591;</span>
         <h4>Mnaadendimowin</h4>
         <p>Respect - We honor our Elders, our traditions, and each other in all that we do.</p>
       </div>
 
       <div class="value-card">
-        <span class="value-icon">&#129504;</span>
         <h4>Aakwa'ode'ewin</h4>
         <p>Bravery - We encourage students to face challenges with courage and determination.</p>
       </div>
 
       <div class="value-card">
-        <span class="value-icon">&#128077;</span>
         <h4>Gwekwaadziwin</h4>
         <p>Honesty - We teach the importance of truthfulness in words and actions.</p>
       </div>
 
       <div class="value-card">
-        <span class="value-icon">&#128218;</span>
         <h4>Nbwaakaawin</h4>
         <p>Wisdom - We seek knowledge from both traditional teachings and modern education.</p>
       </div>
 
       <div class="value-card">
-        <span class="value-icon">&#128588;</span>
         <h4>Dbaadendiziwin</h4>
         <p>Humility - We learn to walk gently on the earth and recognize our place in creation.</p>
       </div>
 
       <div class="value-card">
-        <span class="value-icon">&#129309;</span>
         <h4>Debwewin</h4>
         <p>Truth - We seek authentic understanding and stay true to our cultural identity.</p>
       </div>
