@@ -290,8 +290,7 @@ a:hover {
 
 .site-header {
   background: linear-gradient(180deg, var(--primary-100) 0%, var(--primary-200) 100%);
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: var(--z-sticky);
   box-shadow: var(--shadow-md);
 }
@@ -1358,9 +1357,66 @@ a:hover {
 .site-footer {
   background: var(--navy-200);
   color: rgba(255, 255, 255, 0.9);
-  padding: var(--space-xl) 0 var(--space-md);
+  padding: var(--space-lg) 0;
 }
 
+.footer-compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.footer-logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer-logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-contact-row a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-fast);
+}
+
+.footer-contact-row a:hover {
+  color: var(--white);
+}
+
+.footer-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-copyright {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: var(--space-xs);
+}
+
+/* Legacy footer grid - keep for backwards compatibility */
 .footer-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1.2fr;
@@ -1368,28 +1424,8 @@ a:hover {
   margin-bottom: var(--space-lg);
 }
 
-/* Footer Logo/About Column */
 .footer-about {
   padding-right: var(--space-xl);
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.footer-logo-image {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.footer-logo-text {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--white);
 }
 
 .footer-description {
@@ -1512,8 +1548,9 @@ a:hover {
 
 /* Footer Bottom */
 .footer-bottom {
-  padding-top: var(--space-xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-lg);
+  margin-top: var(--space-lg);
+  background: rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
