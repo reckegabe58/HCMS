@@ -1615,16 +1615,17 @@ a:hover {
   top: 100%;
   left: 0;
   min-width: 220px;
-  background: var(--bg-400);
+  background: #FFFFFF;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: all var(--transition-fast);
   list-style: none;
   padding: var(--space-sm) 0;
-  z-index: var(--z-dropdown);
+  margin: 0;
+  z-index: 1000;
 }
 
 .nav-dropdown:hover .nav-dropdown-menu {
@@ -1633,18 +1634,25 @@ a:hover {
   transform: translateY(0);
 }
 
+.nav-dropdown-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .nav-dropdown-menu li a {
   display: block;
-  padding: var(--space-sm) var(--space-lg);
-  color: var(--text-primary);
-  font-size: var(--text-sm);
+  padding: 10px 20px;
+  color: #1A1C28 !important;
+  font-size: 14px;
   font-weight: 500;
+  text-decoration: none;
   transition: all var(--transition-fast);
 }
 
 .nav-dropdown-menu li a:hover {
-  background: var(--bg-200);
-  color: var(--primary-100);
+  background: #F5F7F8;
+  color: #0753AF !important;
 }
 
 .dropdown-divider {
