@@ -1358,14 +1358,14 @@ a:hover {
 .site-footer {
   background: var(--navy-200);
   color: rgba(255, 255, 255, 0.9);
-  padding: var(--space-4xl) 0 var(--space-xl);
+  padding: var(--space-xl) 0 var(--space-md);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
   gap: var(--space-2xl);
-  margin-bottom: var(--space-3xl);
+  margin-bottom: var(--space-lg);
 }
 
 /* Footer Logo/About Column */
@@ -1377,14 +1377,12 @@ a:hover {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  margin-bottom: var(--space-lg);
 }
 
 .footer-logo-image {
   width: 48px;
   height: 48px;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  object-fit: contain;
 }
 
 .footer-logo-text {
