@@ -300,22 +300,22 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-sm) 0;
-  gap: var(--space-xl);
+  padding: var(--space-xs) 0;
+  gap: var(--space-lg);
 }
 
 /* Logo Section */
 .site-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   text-decoration: none;
   flex-shrink: 0;
 }
 
 .logo-image {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 0.95;
