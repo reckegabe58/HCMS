@@ -1,29 +1,35 @@
 # After-School Program Schedule
 # Update this file weekly with the new schedule
+# NOTE: The week_of field is used as a fallback. JS will generate current week dynamically.
 
-week_of: "January 13, 2025"
+week_of: "January 13, 2026"
 
 schedule:
-  - day: "Monday, Jan 13"
+  - day: "Monday"
     events:
-      - "After school traditional drumming with Orville Councillor for all grades"
-  
-  - day: "Tuesday, Jan 14"
+      - "Lunch Program"
+      - "Traditional drumming with Orville Councillor (all grades)"
+
+  - day: "Tuesday"
     events:
-      - "After school program for grades 1-3"
-      - "Traditional drumming all grades"
-  
-  - day: "Wednesday, Jan 15"
+      - "Lunch Program"
+      - "After school program: Grades 1-3"
+      - "Traditional drumming (all grades)"
+
+  - day: "Wednesday"
     events:
-      - "After school program for grades 4-6"
-      - "Traditional drumming all grades"
-  
-  - day: "Thursday, Jan 16"
+      - "Lunch Program"
+      - "After school program: Grades 4-6"
+      - "Traditional drumming (all grades)"
+
+  - day: "Thursday"
     events:
-      - "After school program for grades 7-8"
-      - "Traditional drumming all grades"
-  
-  - day: "Friday, Jan 17"
+      - "Lunch Program"
+      - "After school program: Grades 7-8"
+      - "Traditional drumming (all grades)"
+
+  - day: "Friday"
     events:
-      - "After school program for grades 1-8"
-      - "Traditional drumming all grades"
+      - "Lunch Program"
+      - "After school program: Grades 1-8"
+      - "Traditional drumming (all grades)"

@@ -8,7 +8,7 @@ subtitle: Important dates and upcoming events
 <!-- Calendar Header -->
 <section class="page-header-simple">
   <div class="container">
-    <span class="hero-badge page-badge">2024-2025 School Year</span>
+    <span class="hero-badge page-badge" data-date-school-year>2025-2026 School Year</span>
     <h1 class="page-header-title">School Calendar</h1>
     <p class="page-header-subtitle">Stay informed about important dates, events, and activities throughout the school year.</p>
   </div>
@@ -180,7 +180,7 @@ subtitle: Important dates and upcoming events
 <!-- Key Dates Section -->
 <section class="key-dates-section">
   <div class="container">
-    <h2 class="section-title-center">Key Dates 2024-2025</h2>
+    <h2 class="section-title-center">Key Dates <span data-date-school-year>2025-2026</span></h2>
 
     <div class="key-dates-grid">
 
@@ -192,7 +192,7 @@ subtitle: Important dates and upcoming events
           </svg>
         </div>
         <h3>First Day of School</h3>
-        <p class="key-date">September 3, 2024</p>
+        <p class="key-date">September 2, 2025</p>
       </div>
 
       <div class="key-date-card">
@@ -205,7 +205,7 @@ subtitle: Important dates and upcoming events
           </svg>
         </div>
         <h3>Parent-Teacher Interviews</h3>
-        <p class="key-date">November 14-15, 2024</p>
+        <p class="key-date">November 13-14, 2025</p>
       </div>
 
       <div class="key-date-card">
@@ -215,7 +215,7 @@ subtitle: Important dates and upcoming events
           </svg>
         </div>
         <h3>Winter Break</h3>
-        <p class="key-date">December 23 - January 3</p>
+        <p class="key-date">December 22 - January 2</p>
       </div>
 
       <div class="key-date-card">
@@ -229,7 +229,7 @@ subtitle: Important dates and upcoming events
           </svg>
         </div>
         <h3>March Break</h3>
-        <p class="key-date">March 10-14, 2025</p>
+        <p class="key-date">March 16-20, 2026</p>
       </div>
 
       <div class="key-date-card">
@@ -240,7 +240,7 @@ subtitle: Important dates and upcoming events
           </svg>
         </div>
         <h3>Grade 8 Graduation</h3>
-        <p class="key-date">June 20, 2025</p>
+        <p class="key-date">June 19, 2026</p>
       </div>
 
       <div class="key-date-card">
@@ -251,7 +251,7 @@ subtitle: Important dates and upcoming events
           </svg>
         </div>
         <h3>Last Day of School</h3>
-        <p class="key-date">June 27, 2025</p>
+        <p class="key-date">June 26, 2026</p>
       </div>
 
     </div>

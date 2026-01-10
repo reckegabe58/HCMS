@@ -1,15 +1,19 @@
 <!-- Weekly After-School Schedule Widget -->
+<!-- Uses JS for dynamic current week dates -->
 <div class="widget-activities standalone">
   <div class="widget-activities-inner">
     <h3 class="widget-title">
-      <span class="widget-title-icon">&#128197;</span>
-      Week of {{ site.data.after_school.week_of }}
+      <span class="widget-title-icon">📅</span>
+      <span id="schedule-week-title" data-date-week-of>Week of {{ site.data.after_school.week_of }}</span>
     </h3>
 
-    <ul class="event-list">
+    <ul class="event-list" id="dynamic-schedule">
       {% for day in site.data.after_school.schedule %}
-      <li class="schedule-day">
-        <h4 class="schedule-day-title">{{ day.day }}</h4>
+      <li class="schedule-day" data-day="{{ day.day }}">
+        <h4 class="schedule-day-title">
+          <span class="day-name">{{ day.day }}</span>
+          <span class="day-date"></span>
+        </h4>
         <ul class="schedule-events">
           {% for event in day.events %}
           <li class="schedule-event">{{ event }}</li>
@@ -22,3 +26,57 @@
     <a href="{{ '/calendar/' | relative_url }}" class="btn-calendar">Full School Calendar</a>
   </div>
 </div>
+
+<script>
+// Dynamic schedule date updater
+(function() {
+  function updateScheduleDates() {
+    // Get current week's Monday
+    const now = new Date();
+    const day = now.getDay();
+    const diff = now.getDate() - day + (day === 0 ? -6 : 1);
+    const monday = new Date(now);
+    monday.setDate(diff);
+    monday.setHours(0, 0, 0, 0);
+
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const fullMonths = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+
+    // Update week title
+    const weekTitle = document.getElementById('schedule-week-title');
+    if (weekTitle) {
+      weekTitle.textContent = `Week of ${fullMonths[monday.getMonth()]} ${monday.getDate()}, ${monday.getFullYear()}`;
+    }
+
+    // Update each day with the correct date
+    const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const todayStr = now.toDateString();
+
+    document.querySelectorAll('.schedule-day').forEach((dayEl, index) => {
+      const dayDate = new Date(monday);
+      dayDate.setDate(monday.getDate() + index);
+
+      const dateSpan = dayEl.querySelector('.day-date');
+      if (dateSpan) {
+        dateSpan.textContent = `${months[dayDate.getMonth()]} ${dayDate.getDate()}`;
+      }
+
+      // Highlight today
+      if (dayDate.toDateString() === todayStr) {
+        dayEl.classList.add('is-today');
+      } else {
+        dayEl.classList.remove('is-today');
+      }
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateScheduleDates);
+  } else {
+    updateScheduleDates();
+  }
+})();
+</script>
