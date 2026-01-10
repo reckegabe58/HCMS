@@ -11,9 +11,13 @@ layout: null
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="{{ '/assets/images/classroom-interactive/Background.png' | relative_url }}" as="image">
+
   <style>
     /* =============================================
-       PIXEL CLASSROOM - GAME STYLE
+       PIXEL CLASSROOM - WARM GHIBLI STYLE
        ============================================= */
 
     * {
@@ -23,52 +27,45 @@ layout: null
     }
 
     :root {
-      /* Pixel art palette */
-      --pixel-black: #1a1c2c;
-      --pixel-purple: #5d275d;
-      --pixel-red: #b13e53;
-      --pixel-orange: #ef7d57;
-      --pixel-yellow: #ffcd75;
-      --pixel-lime: #a7f070;
-      --pixel-green: #38b764;
-      --pixel-teal: #257179;
-      --pixel-navy: #29366f;
-      --pixel-blue: #3b5dc9;
-      --pixel-sky: #41a6f6;
-      --pixel-cyan: #73eff7;
-      --pixel-white: #f4f4f4;
-      --pixel-light: #94b0c2;
-      --pixel-gray: #566c86;
-      --pixel-dark: #333c57;
+      /* Warm earth tone palette */
+      --warm-cream: #f5e6c8;
+      --warm-tan: #e8d4a8;
+      --warm-wood: #8b6914;
+      --warm-wood-dark: #5c4a1f;
+      --warm-brown: #6b4423;
+      --warm-terracotta: #c4784a;
+      --soft-green: #4a7c59;
+      --soft-green-dark: #3a5f47;
+      --muted-blue: #5b7a8a;
+      --muted-blue-dark: #4a6070;
+      --soft-gold: #d4a84b;
+      --ivory: #faf6eb;
+      --charcoal: #2d2a24;
 
-      /* Classroom colors */
-      --wall-color: #c9a66b;
-      --wall-dark: #a68550;
-      --floor-color: #8b6f4a;
-      --floor-dark: #6b5535;
-      --desk-color: #d4a373;
-      --desk-dark: #b08050;
-      --chalkboard-color: #2d5a3d;
-      --chalkboard-frame: #8b6f4a;
+      /* UI colors */
+      --panel-bg: #3d3529;
+      --panel-border: #c9b896;
+      --text-light: #f5f0e6;
+      --text-muted: #b8a88a;
+      --accent-warm: #e8a84c;
+      --accent-sage: #7fa37a;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--pixel-black);
+      background: var(--charcoal);
       min-height: 100vh;
       overflow-x: hidden;
-      image-rendering: pixelated;
     }
 
     .pixel-font {
       font-family: 'Press Start 2P', cursive;
     }
 
-    /* Prefers reduced motion */
+    /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
     }
@@ -79,17 +76,14 @@ layout: null
 
     .door-scene {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       z-index: 9999;
-      background: linear-gradient(180deg, var(--pixel-navy) 0%, var(--pixel-dark) 100%);
+      background: linear-gradient(180deg, #4a3f2f 0%, #2d2520 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
     }
 
     .door-scene.hidden {
@@ -102,114 +96,129 @@ layout: null
       text-align: center;
     }
 
-    /* Pixel art door */
+    /* Warm wooden door */
     .pixel-door-frame {
-      width: 280px;
-      height: 380px;
+      width: 260px;
+      height: 360px;
       margin: 0 auto 2rem;
       position: relative;
-      background: var(--pixel-dark);
-      border: 8px solid var(--desk-color);
+      background: #1a1612;
+      border: 10px solid #8b6914;
+      border-radius: 8px 8px 0 0;
       box-shadow:
-        inset 0 0 0 4px var(--desk-dark),
-        8px 8px 0 var(--pixel-black);
+        inset 0 0 0 4px #5c4a1f,
+        0 8px 24px rgba(0,0,0,0.5);
       cursor: pointer;
-      transition: transform 0.1s, box-shadow 0.1s;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .pixel-door-frame:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
       box-shadow:
-        inset 0 0 0 4px var(--desk-dark),
-        8px 12px 0 var(--pixel-black);
+        inset 0 0 0 4px #5c4a1f,
+        0 14px 32px rgba(0,0,0,0.6);
     }
 
     .pixel-door-frame:hover .pixel-door-handle {
-      background: var(--pixel-lime);
+      background: var(--soft-gold);
+      box-shadow: 0 0 12px rgba(212, 168, 75, 0.6);
     }
 
     .pixel-door {
       position: absolute;
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      background: linear-gradient(180deg, var(--desk-color) 0%, var(--desk-dark) 100%);
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      background: linear-gradient(180deg, #a67c3d 0%, #7d5a28 100%);
+      border-radius: 4px 4px 0 0;
       transition: transform 0.8s ease;
       transform-origin: left;
-      box-shadow: inset -8px 0 0 rgba(0,0,0,0.2);
+      box-shadow: inset -6px 0 12px rgba(0,0,0,0.3);
     }
 
     .pixel-door.open {
-      transform: perspective(500px) rotateY(-80deg);
+      transform: perspective(600px) rotateY(-85deg);
     }
 
     .pixel-door-window {
       position: absolute;
-      top: 30px;
+      top: 28px;
       left: 50%;
       transform: translateX(-50%);
-      width: 120px;
-      height: 80px;
-      background: var(--pixel-sky);
-      border: 6px solid var(--desk-dark);
-      box-shadow: inset 0 0 0 4px rgba(255,255,255,0.3);
+      width: 100px;
+      height: 70px;
+      background: linear-gradient(180deg, #87ceeb 0%, #b8e0f0 100%);
+      border: 5px solid #5c4a1f;
+      border-radius: 4px;
+      box-shadow: inset 0 0 8px rgba(255,255,255,0.4);
+    }
+
+    .pixel-door-window::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%);
     }
 
     .pixel-door-handle {
       position: absolute;
-      right: 25px;
+      right: 22px;
       top: 50%;
-      width: 20px;
-      height: 40px;
-      background: var(--pixel-yellow);
-      border: 3px solid var(--pixel-orange);
-      box-shadow: 2px 2px 0 var(--pixel-black);
+      transform: translateY(-50%);
+      width: 18px;
+      height: 36px;
+      background: #c9a227;
+      border: 3px solid #8b6914;
+      border-radius: 3px;
+      transition: all 0.2s ease;
     }
 
     .door-sign {
       position: absolute;
-      bottom: 50px;
+      bottom: 45px;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--pixel-white);
-      padding: 12px 20px;
+      background: var(--ivory);
+      padding: 10px 18px;
       font-family: 'Press Start 2P', cursive;
-      font-size: 10px;
-      color: var(--pixel-black);
-      border: 3px solid var(--pixel-dark);
-      box-shadow: 2px 2px 0 var(--pixel-black);
+      font-size: 9px;
+      color: var(--charcoal);
+      border: 3px solid var(--warm-wood);
+      border-radius: 2px;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
     }
 
     .door-welcome {
-      color: var(--pixel-white);
+      color: var(--warm-cream);
       margin-bottom: 1.5rem;
     }
 
     .door-welcome h1 {
       font-family: 'Press Start 2P', cursive;
-      font-size: clamp(1rem, 3vw, 1.5rem);
+      font-size: clamp(0.9rem, 2.5vw, 1.3rem);
       margin-bottom: 1rem;
-      text-shadow: 4px 4px 0 var(--pixel-black);
-      line-height: 1.5;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+      line-height: 1.6;
+      color: var(--soft-gold);
     }
 
     .door-welcome p {
       font-size: 1rem;
-      color: var(--pixel-light);
+      color: var(--text-muted);
     }
 
     .door-hint {
-      color: var(--pixel-gray);
-      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.65rem;
       margin-top: 1.5rem;
       font-family: 'Press Start 2P', cursive;
-      animation: blink 1s infinite;
+      animation: gentlePulse 2s ease-in-out infinite;
     }
 
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0.3; }
+    @keyframes gentlePulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
     }
 
     /* =============================================
@@ -219,22 +228,23 @@ layout: null
     .classroom-wrapper {
       min-height: 100vh;
       display: none;
+      background: var(--charcoal);
     }
 
     .classroom-wrapper.visible {
       display: block;
     }
 
-    /* Top HUD bar */
+    /* Top navigation bar */
     .game-hud {
-      background: var(--pixel-black);
-      border-bottom: 4px solid var(--pixel-dark);
-      padding: 0.75rem 1rem;
+      background: var(--panel-bg);
+      border-bottom: 3px solid var(--warm-wood);
+      padding: 0.6rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .hud-left {
@@ -245,471 +255,180 @@ layout: null
 
     .hud-back {
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.6rem;
-      color: var(--pixel-light);
+      font-size: 0.55rem;
+      color: var(--text-muted);
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: var(--pixel-dark);
-      border: 2px solid var(--pixel-gray);
-      transition: all 0.1s;
+      padding: 0.5rem 0.9rem;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid var(--warm-wood);
+      border-radius: 4px;
+      transition: all 0.15s ease;
     }
 
     .hud-back:hover {
-      background: var(--pixel-gray);
-      color: var(--pixel-white);
+      background: var(--warm-wood);
+      color: var(--ivory);
     }
 
     .hud-title {
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.7rem;
-      color: var(--pixel-yellow);
-      text-shadow: 2px 2px 0 var(--pixel-black);
+      font-size: 0.65rem;
+      color: var(--soft-gold);
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
     }
 
     .hud-right {
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.5rem;
-      color: var(--pixel-light);
+      font-size: 0.45rem;
+      color: var(--text-muted);
     }
 
-    /* The classroom scene */
+    /* =============================================
+       CLASSROOM SCENE CONTAINER
+       ============================================= */
+
     .classroom-scene {
       position: relative;
-      width: 100%;
-      max-width: 1200px;
+      width: min(1200px, 100%);
       margin: 0 auto;
-      aspect-ratio: 16/10;
+      aspect-ratio: 16/9;
       min-height: 500px;
       overflow: hidden;
     }
 
-    /* Background layers */
+    /* Background layer */
     .classroom-bg {
       position: absolute;
       inset: 0;
+      z-index: 0;
     }
 
-    /* Back wall - pixel brick pattern */
-    .wall-back {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 55%;
-      background:
-        repeating-linear-gradient(
-          0deg,
-          transparent 0px,
-          transparent 30px,
-          var(--wall-dark) 30px,
-          var(--wall-dark) 32px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          var(--wall-color) 0px,
-          var(--wall-color) 48px,
-          var(--wall-dark) 48px,
-          var(--wall-dark) 50px
-        );
-      border-bottom: 12px solid var(--floor-dark);
-      box-shadow: inset 0 -20px 40px rgba(0,0,0,0.2);
-    }
-
-    /* Wall decorations strip */
-    .wall-strip {
-      position: absolute;
-      top: 18%;
-      left: 0;
-      right: 0;
-      height: 12px;
-      background:
-        repeating-linear-gradient(
-          90deg,
-          var(--pixel-orange) 0px,
-          var(--pixel-orange) 20px,
-          var(--pixel-red) 20px,
-          var(--pixel-red) 40px
-        );
-      border-top: 4px solid var(--pixel-yellow);
-      border-bottom: 4px solid var(--pixel-purple);
-    }
-
-    /* Floor - pixel tile pattern */
-    .floor {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 45%;
-      background:
-        repeating-linear-gradient(
-          0deg,
-          transparent 0px,
-          transparent 38px,
-          var(--floor-dark) 38px,
-          var(--floor-dark) 40px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          var(--floor-color) 0px,
-          var(--floor-color) 58px,
-          var(--floor-dark) 58px,
-          var(--floor-dark) 60px
-        );
-      transform: perspective(500px) rotateX(30deg);
-      transform-origin: top;
-    }
-
-    /* Floor overlay for depth */
-    .floor::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 100%),
-        repeating-linear-gradient(
-          90deg,
-          transparent 0px,
-          transparent 116px,
-          rgba(255,255,255,0.05) 116px,
-          rgba(255,255,255,0.05) 120px
-        );
+    .classroom-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
     }
 
     /* =============================================
-       CLASSROOM OBJECTS (Interactive)
+       INTERACTIVE HOTSPOTS
        ============================================= */
 
-    .classroom-objects {
+    .classroom-hotspots {
       position: absolute;
       inset: 0;
-      pointer-events: none;
+      z-index: 10;
     }
 
-    .classroom-object {
+    .hotspot {
       position: absolute;
       cursor: pointer;
-      pointer-events: auto;
-      transition: filter 0.2s;
+      background: transparent;
+      border: none;
+      padding: 0;
+      transition: transform 0.18s ease, filter 0.18s ease;
     }
 
-    .classroom-object:hover {
-      filter: brightness(1.2) drop-shadow(0 0 8px rgba(255, 205, 117, 0.6));
-      z-index: 100;
-    }
-
-    .classroom-object:focus {
-      outline: 4px solid var(--pixel-yellow);
-      outline-offset: 4px;
-    }
-
-    /* Chalkboard */
-    .obj-chalkboard {
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 45%;
-      max-width: 400px;
-      aspect-ratio: 16/9;
-    }
-
-    .chalkboard-frame {
+    .hotspot img {
       width: 100%;
-      height: 100%;
-      background: var(--chalkboard-frame);
-      padding: 12px;
-      box-shadow: 8px 8px 0 var(--pixel-black);
-    }
-
-    .chalkboard-inner {
-      width: 100%;
-      height: 100%;
-      background: var(--chalkboard-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 4px solid var(--pixel-dark);
-    }
-
-    .chalkboard-text {
-      font-family: 'Press Start 2P', cursive;
-      font-size: clamp(0.5rem, 1.5vw, 0.8rem);
-      color: var(--pixel-white);
-      text-align: center;
-      line-height: 2;
-      opacity: 0.9;
-    }
-
-    /* Newsletter on wall */
-    .obj-newsletter {
-      top: 8%;
-      left: 5%;
-      width: 80px;
-    }
-
-    .newsletter-paper {
-      background: var(--pixel-white);
-      width: 100%;
-      aspect-ratio: 3/4;
-      border: 4px solid var(--pixel-dark);
-      box-shadow: 4px 4px 0 var(--pixel-black);
-      padding: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .newsletter-header {
-      background: var(--pixel-blue);
-      height: 15%;
-    }
-
-    .newsletter-line {
-      background: var(--pixel-gray);
-      height: 8%;
-      width: 80%;
-    }
-
-    .newsletter-line:nth-child(3) { width: 60%; }
-    .newsletter-line:nth-child(4) { width: 70%; }
-
-    /* Student work wall */
-    .obj-artwork {
-      top: 6%;
-      right: 5%;
-      display: flex;
-      gap: 8px;
-    }
-
-    .artwork-piece {
-      width: 50px;
-      aspect-ratio: 1;
-      border: 4px solid var(--pixel-dark);
-      box-shadow: 3px 3px 0 var(--pixel-black);
-    }
-
-    .artwork-piece:nth-child(1) { background: linear-gradient(135deg, var(--pixel-red) 0%, var(--pixel-orange) 100%); }
-    .artwork-piece:nth-child(2) { background: linear-gradient(135deg, var(--pixel-blue) 0%, var(--pixel-cyan) 100%); }
-    .artwork-piece:nth-child(3) { background: linear-gradient(135deg, var(--pixel-green) 0%, var(--pixel-lime) 100%); }
-
-    /* Learning table (teacher's desk) */
-    .obj-desk {
-      bottom: 25%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 35%;
-      max-width: 300px;
-    }
-
-    .desk-top {
-      background: var(--desk-color);
-      height: 30px;
-      border: 4px solid var(--desk-dark);
-      box-shadow: 0 8px 0 var(--desk-dark), 4px 12px 0 var(--pixel-black);
-      position: relative;
-    }
-
-    .desk-items {
-      position: absolute;
-      top: -30px;
-      left: 10%;
-      right: 10%;
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .desk-book {
-      width: 25px;
-      height: 20px;
-      background: var(--pixel-red);
-      border: 2px solid var(--pixel-purple);
-    }
-
-    .desk-book:nth-child(2) { background: var(--pixel-blue); border-color: var(--pixel-navy); }
-    .desk-book:nth-child(3) { background: var(--pixel-green); border-color: var(--pixel-teal); }
-
-    /* Student desks */
-    .obj-student-desks {
-      bottom: 8%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 20px;
+      height: auto;
+      display: block;
       pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
-    .student-desk {
-      width: 60px;
-      height: 25px;
-      background: var(--desk-color);
-      border: 3px solid var(--desk-dark);
-      box-shadow: 0 6px 0 var(--desk-dark);
+    .hotspot:hover,
+    .hotspot:focus {
+      transform: translateY(-3px);
+      filter: drop-shadow(0 4px 12px rgba(232, 168, 76, 0.5)) brightness(1.08);
+      z-index: 20;
     }
 
-    /* Community corner - pixel art rug */
-    .obj-community {
-      bottom: 30%;
-      left: 3%;
-      width: 110px;
+    .hotspot:focus {
+      outline: 3px solid var(--soft-gold);
+      outline-offset: 4px;
+      border-radius: 4px;
     }
 
-    .community-rug {
-      width: 100%;
-      aspect-ratio: 4/3;
-      position: relative;
-      /* Pixelated oval rug shape using box shadows */
-      background: var(--pixel-purple);
-      clip-path: polygon(
-        10% 0%, 90% 0%,
-        100% 20%, 100% 80%,
-        90% 100%, 10% 100%,
-        0% 80%, 0% 20%
-      );
+    .hotspot:active {
+      transform: translateY(-1px) scale(0.98);
     }
 
-    .community-rug::before {
-      content: '';
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      background: var(--pixel-red);
-      clip-path: polygon(
-        10% 0%, 90% 0%,
-        100% 20%, 100% 80%,
-        90% 100%, 10% 100%,
-        0% 80%, 0% 20%
-      );
+    /* Hotspot positions - matching reference layout */
+    .hotspot-smartboard {
+      left: 28%;
+      top: 8%;
+      width: 44%;
     }
 
-    .community-rug::after {
-      content: '';
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      background: var(--pixel-orange);
-      clip-path: polygon(
-        10% 0%, 90% 0%,
-        100% 20%, 100% 80%,
-        90% 100%, 10% 100%,
-        0% 80%, 0% 20%
-      );
+    .hotspot-artwall {
+      left: 2%;
+      top: 22%;
+      width: 22%;
     }
 
-    .community-center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 30px;
-      height: 30px;
-      background: var(--pixel-yellow);
-      clip-path: polygon(
-        50% 0%, 100% 50%, 50% 100%, 0% 50%
-      );
-      z-index: 1;
+    .hotspot-newsletter {
+      left: 1%;
+      top: 5%;
+      width: 10%;
     }
 
-    /* Calendar/Schedule */
-    .obj-calendar {
-      bottom: 35%;
-      right: 3%;
-      width: 70px;
+    .hotspot-message {
+      right: 18%;
+      top: 18%;
+      width: 12%;
     }
 
-    .calendar-board {
-      background: var(--pixel-white);
-      width: 100%;
-      aspect-ratio: 3/4;
-      border: 4px solid var(--pixel-dark);
-      box-shadow: 4px 4px 0 var(--pixel-black);
-      padding: 6px;
+    .hotspot-schedule {
+      right: 2%;
+      top: 12%;
+      width: 12%;
     }
 
-    .calendar-header {
-      background: var(--pixel-red);
-      height: 20%;
-      margin-bottom: 4px;
-    }
-
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2px;
-    }
-
-    .calendar-day {
-      aspect-ratio: 1;
-      background: var(--pixel-light);
-      border: 1px solid var(--pixel-gray);
-    }
-
-    .calendar-day.today {
-      background: var(--pixel-yellow);
-    }
-
-    /* Communication board */
-    .obj-communication {
-      top: 25%;
-      right: 8%;
-      width: 60px;
-    }
-
-    .comm-board {
-      background: var(--pixel-orange);
-      width: 100%;
-      aspect-ratio: 1;
-      border: 4px solid var(--desk-dark);
-      box-shadow: 3px 3px 0 var(--pixel-black);
-      display: flex;
-      flex-direction: column;
-      padding: 4px;
-      gap: 3px;
-    }
-
-    .comm-note {
-      background: var(--pixel-yellow);
-      flex: 1;
-      border: 1px solid var(--pixel-dark);
+    .hotspot-table {
+      left: 28%;
+      bottom: 3%;
+      width: 44%;
     }
 
     /* =============================================
-       GAME TOOLTIP
+       TOOLTIP
        ============================================= */
 
     .game-tooltip {
       position: fixed;
-      background: var(--pixel-black);
-      border: 4px solid var(--pixel-white);
-      padding: 12px 20px;
+      background: var(--panel-bg);
+      border: 3px solid var(--panel-border);
+      padding: 10px 16px;
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.6rem;
-      color: var(--pixel-white);
+      font-size: 0.55rem;
+      color: var(--text-light);
       pointer-events: none;
       z-index: 1000;
       opacity: 0;
-      transition: opacity 0.2s;
-      box-shadow: 4px 4px 0 var(--pixel-dark);
-      max-width: 200px;
+      transition: opacity 0.15s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      border-radius: 4px;
+      max-width: 180px;
       text-align: center;
-      line-height: 1.8;
+      line-height: 1.6;
     }
 
     .game-tooltip.visible {
       opacity: 1;
     }
 
+    .game-tooltip-text {
+      color: var(--soft-gold);
+    }
+
     .game-tooltip-action {
       display: block;
-      margin-top: 8px;
-      color: var(--pixel-yellow);
-      font-size: 0.5rem;
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.45rem;
     }
 
     /* =============================================
@@ -719,7 +438,7 @@ layout: null
     .rpg-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       z-index: 2000;
       display: flex;
       align-items: center;
@@ -727,7 +446,7 @@ layout: null
       padding: 1rem;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s;
+      transition: all 0.25s ease;
     }
 
     .rpg-overlay.active {
@@ -736,17 +455,16 @@ layout: null
     }
 
     .rpg-panel {
-      background: var(--pixel-dark);
-      border: 8px solid var(--pixel-light);
-      box-shadow:
-        0 0 0 4px var(--pixel-black),
-        8px 8px 0 var(--pixel-black);
+      background: var(--panel-bg);
+      border: 6px solid var(--panel-border);
+      box-shadow: 0 0 0 3px var(--warm-wood-dark), 0 12px 40px rgba(0,0,0,0.5);
       max-width: 700px;
       width: 100%;
       max-height: 85vh;
       overflow: hidden;
-      transform: scale(0.9);
-      transition: transform 0.3s;
+      border-radius: 8px;
+      transform: scale(0.92);
+      transition: transform 0.25s ease;
     }
 
     .rpg-overlay.active .rpg-panel {
@@ -754,61 +472,62 @@ layout: null
     }
 
     .rpg-header {
-      background: var(--pixel-navy);
-      padding: 1rem 1.5rem;
+      background: linear-gradient(180deg, var(--warm-wood) 0%, var(--warm-wood-dark) 100%);
+      padding: 1rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 4px solid var(--pixel-black);
+      border-bottom: 3px solid var(--warm-wood-dark);
     }
 
     .rpg-title {
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.8rem;
-      color: var(--pixel-yellow);
-      text-shadow: 2px 2px 0 var(--pixel-black);
+      font-size: 0.7rem;
+      color: var(--ivory);
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
     }
 
     .rpg-title-icon {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .rpg-close {
-      background: var(--pixel-red);
+      background: var(--warm-terracotta);
       border: none;
-      color: var(--pixel-white);
+      color: var(--ivory);
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.7rem;
-      padding: 0.5rem 1rem;
+      font-size: 0.6rem;
+      padding: 0.5rem 0.9rem;
       cursor: pointer;
-      box-shadow: 0 4px 0 var(--pixel-purple);
-      transition: all 0.1s;
+      border-radius: 4px;
+      box-shadow: 0 3px 0 #8b4a2a;
+      transition: all 0.1s ease;
     }
 
     .rpg-close:hover {
       transform: translateY(2px);
-      box-shadow: 0 2px 0 var(--pixel-purple);
+      box-shadow: 0 1px 0 #8b4a2a;
     }
 
     .rpg-body {
-      padding: 1.5rem;
+      padding: 1.25rem;
       overflow-y: auto;
-      max-height: calc(85vh - 80px);
-      color: var(--pixel-white);
+      max-height: calc(85vh - 70px);
+      color: var(--text-light);
       font-size: 0.9rem;
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
     .rpg-body h3 {
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.7rem;
-      color: var(--pixel-cyan);
-      margin: 1.5rem 0 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px dashed var(--pixel-gray);
+      font-size: 0.65rem;
+      color: var(--soft-gold);
+      margin: 1.25rem 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px dashed var(--warm-wood);
     }
 
     .rpg-body h3:first-child {
@@ -816,8 +535,8 @@ layout: null
     }
 
     .rpg-body p {
-      margin-bottom: 1rem;
-      color: var(--pixel-light);
+      margin-bottom: 0.9rem;
+      color: var(--text-muted);
     }
 
     .rpg-body ul {
@@ -826,17 +545,18 @@ layout: null
     }
 
     .rpg-body li {
-      padding: 0.5rem 0;
-      padding-left: 1.5rem;
+      padding: 0.4rem 0;
+      padding-left: 1.4rem;
       position: relative;
-      color: var(--pixel-light);
+      color: var(--text-muted);
     }
 
     .rpg-body li::before {
-      content: '▸';
+      content: '◆';
       position: absolute;
       left: 0;
-      color: var(--pixel-yellow);
+      color: var(--accent-sage);
+      font-size: 0.7rem;
     }
 
     /* Tab navigation */
@@ -849,23 +569,25 @@ layout: null
 
     .rpg-tab {
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.5rem;
-      padding: 0.5rem 0.75rem;
-      background: var(--pixel-gray);
-      border: none;
-      color: var(--pixel-white);
+      font-size: 0.45rem;
+      padding: 0.5rem 0.7rem;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid var(--warm-wood);
+      border-radius: 4px;
+      color: var(--text-muted);
       cursor: pointer;
-      transition: all 0.1s;
+      transition: all 0.1s ease;
     }
 
     .rpg-tab:hover {
-      background: var(--pixel-light);
-      color: var(--pixel-black);
+      background: var(--warm-wood);
+      color: var(--ivory);
     }
 
     .rpg-tab.active {
-      background: var(--pixel-yellow);
-      color: var(--pixel-black);
+      background: var(--soft-gold);
+      color: var(--charcoal);
+      border-color: var(--soft-gold);
     }
 
     .tab-pane {
@@ -878,114 +600,120 @@ layout: null
 
     /* Newsletter specific */
     .newsletter-featured {
-      background: var(--pixel-navy);
+      background: rgba(139, 105, 20, 0.2);
       padding: 1rem;
       margin-bottom: 1rem;
-      border: 4px solid var(--pixel-blue);
+      border: 3px solid var(--warm-wood);
+      border-radius: 6px;
     }
 
     .newsletter-featured h4 {
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.6rem;
-      color: var(--pixel-cyan);
+      font-size: 0.55rem;
+      color: var(--soft-gold);
       margin-bottom: 0.5rem;
     }
 
     .newsletter-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: var(--pixel-green);
-      color: var(--pixel-white);
+      font-size: 0.45rem;
+      padding: 0.5rem 0.9rem;
+      background: var(--soft-green);
+      color: var(--ivory);
       text-decoration: none;
-      margin-top: 0.75rem;
-      margin-right: 0.5rem;
-      box-shadow: 0 3px 0 var(--pixel-teal);
-      transition: all 0.1s;
+      margin-top: 0.6rem;
+      margin-right: 0.4rem;
+      border-radius: 4px;
+      box-shadow: 0 3px 0 var(--soft-green-dark);
+      transition: all 0.1s ease;
     }
 
     .newsletter-btn:hover {
       transform: translateY(2px);
-      box-shadow: 0 1px 0 var(--pixel-teal);
+      box-shadow: 0 1px 0 var(--soft-green-dark);
     }
 
     .newsletter-archive {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .newsletter-archive-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.75rem;
-      background: var(--pixel-dark);
-      border: 2px solid var(--pixel-gray);
+      padding: 0.65rem;
+      background: rgba(255,255,255,0.03);
+      border: 2px solid var(--warm-wood);
+      border-radius: 4px;
     }
 
     .newsletter-archive-item span {
       font-size: 0.8rem;
-      color: var(--pixel-light);
+      color: var(--text-muted);
     }
 
     .archive-dl-btn {
-      background: var(--pixel-blue);
-      color: var(--pixel-white);
-      padding: 0.4rem 0.8rem;
+      background: var(--muted-blue);
+      color: var(--ivory);
+      padding: 0.35rem 0.7rem;
       font-family: 'Press Start 2P', cursive;
       font-size: 0.4rem;
       text-decoration: none;
-      box-shadow: 0 2px 0 var(--pixel-navy);
+      border-radius: 3px;
+      box-shadow: 0 2px 0 var(--muted-blue-dark);
     }
 
-    /* Gallery placeholder */
+    /* Gallery */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      gap: 0.75rem;
+      gap: 0.6rem;
     }
 
     .gallery-item {
       aspect-ratio: 1;
-      background: var(--pixel-gray);
-      border: 4px solid var(--pixel-dark);
+      background: rgba(255,255,255,0.05);
+      border: 3px solid var(--warm-wood);
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--pixel-light);
-      font-size: 0.6rem;
+      color: var(--text-muted);
+      font-size: 0.55rem;
       text-align: center;
       font-family: 'Press Start 2P', cursive;
     }
 
-    /* Schedule grid */
+    /* Schedule */
     .schedule-grid {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .schedule-day {
-      background: var(--pixel-dark);
-      padding: 0.75rem;
-      border: 2px solid var(--pixel-gray);
-      border-left: 4px solid var(--pixel-gray);
+      background: rgba(255,255,255,0.03);
+      padding: 0.65rem;
+      border: 2px solid var(--warm-wood);
+      border-left: 4px solid var(--warm-wood);
+      border-radius: 4px;
     }
 
     .schedule-day.is-today {
-      border-left-color: var(--pixel-yellow);
-      background: rgba(255, 205, 117, 0.1);
+      border-left-color: var(--soft-gold);
+      background: rgba(212, 168, 75, 0.1);
     }
 
     .schedule-day h4 {
       font-family: 'Press Start 2P', cursive;
       font-size: 0.5rem;
-      color: var(--pixel-yellow);
-      margin-bottom: 0.5rem;
+      color: var(--soft-gold);
+      margin-bottom: 0.4rem;
     }
 
     .schedule-day ul {
@@ -994,7 +722,7 @@ layout: null
 
     .schedule-day li {
       font-size: 0.75rem;
-      padding: 0.25rem 0;
+      padding: 0.2rem 0;
     }
 
     /* =============================================
@@ -1002,72 +730,114 @@ layout: null
        ============================================= */
 
     .game-footer {
-      background: var(--pixel-black);
-      border-top: 4px solid var(--pixel-dark);
-      padding: 1rem;
+      background: var(--panel-bg);
+      border-top: 3px solid var(--warm-wood);
+      padding: 0.8rem;
       text-align: center;
     }
 
     .game-footer p {
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.5rem;
-      color: var(--pixel-gray);
+      font-size: 0.45rem;
+      color: var(--text-muted);
     }
 
     .game-footer a {
-      color: var(--pixel-yellow);
+      color: var(--soft-gold);
+      text-decoration: none;
     }
 
     /* =============================================
        RESPONSIVE
        ============================================= */
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .classroom-scene {
         aspect-ratio: 4/3;
         min-height: 400px;
       }
 
-      .obj-newsletter { width: 60px; }
-      .obj-artwork { gap: 4px; }
-      .artwork-piece { width: 35px; }
-      .obj-desk { width: 50%; }
-      .obj-community { width: 70px; }
-      .obj-calendar { width: 50px; }
-      .obj-communication { width: 45px; }
+      .hotspot-smartboard { left: 22%; width: 56%; }
+      .hotspot-artwall { width: 26%; }
+      .hotspot-newsletter { width: 12%; }
+      .hotspot-message { width: 14%; }
+      .hotspot-schedule { width: 14%; }
+      .hotspot-table { left: 22%; width: 56%; }
+    }
 
-      .hud-title {
-        font-size: 0.5rem;
+    @media (max-width: 600px) {
+      .classroom-scene {
+        aspect-ratio: 3/4;
+        min-height: 500px;
       }
 
-      .rpg-panel {
-        margin: 0.5rem;
-      }
+      .hotspot-smartboard { left: 15%; top: 5%; width: 70%; }
+      .hotspot-artwall { left: 1%; top: 28%; width: 30%; }
+      .hotspot-newsletter { left: 1%; top: 18%; width: 14%; }
+      .hotspot-message { right: 1%; top: 28%; width: 18%; }
+      .hotspot-schedule { right: 1%; top: 18%; width: 16%; }
+      .hotspot-table { left: 15%; bottom: 5%; width: 70%; }
 
-      .rpg-title {
-        font-size: 0.6rem;
-      }
+      .hud-title { font-size: 0.5rem; }
+      .rpg-panel { margin: 0.5rem; }
+      .rpg-title { font-size: 0.55rem; }
+    }
+
+    /* Mobile quick links fallback */
+    .mobile-links {
+      display: none;
+      background: var(--panel-bg);
+      padding: 1rem;
     }
 
     @media (max-width: 480px) {
-      .obj-student-desks {
-        display: none;
+      .mobile-links {
+        display: block;
       }
 
-      .obj-chalkboard {
-        width: 60%;
+      .mobile-links-title {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 0.6rem;
+        color: var(--soft-gold);
+        margin-bottom: 0.75rem;
+        text-align: center;
+      }
+
+      .mobile-links-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
+
+      .mobile-link {
+        background: rgba(255,255,255,0.05);
+        border: 2px solid var(--warm-wood);
+        border-radius: 6px;
+        padding: 0.75rem;
+        text-align: center;
+        cursor: pointer;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 0.4rem;
+        color: var(--text-light);
+        transition: all 0.15s ease;
+      }
+
+      .mobile-link:hover {
+        background: var(--warm-wood);
+        color: var(--ivory);
       }
     }
 
     /* No JS fallback */
     noscript .fallback-content {
       padding: 2rem;
-      color: var(--pixel-white);
+      color: var(--text-light);
+      background: var(--panel-bg);
     }
   </style>
 </head>
 <body>
-  <!-- Game Tooltip -->
+  <!-- Tooltip -->
   <div class="game-tooltip" id="gameTooltip">
     <span class="game-tooltip-text"></span>
     <span class="game-tooltip-action">[ CLICK TO OPEN ]</span>
@@ -1076,7 +846,7 @@ layout: null
   <!-- Door Scene -->
   <div class="door-scene" id="doorScene">
     <div class="door-container">
-      <div class="pixel-door-frame">
+      <div class="pixel-door-frame" role="button" tabindex="0" aria-label="Click to enter classroom">
         <div class="pixel-door" id="pixelDoor">
           <div class="pixel-door-window"></div>
           <div class="pixel-door-handle"></div>
@@ -1106,101 +876,95 @@ layout: null
       </div>
     </nav>
 
-    <!-- The Pixel Classroom -->
+    <!-- The Classroom Scene -->
     <div class="classroom-scene" role="application" aria-label="Interactive classroom - click objects to explore">
-      <!-- Background -->
+      <!-- Background Layer -->
       <div class="classroom-bg">
-        <div class="wall-back">
-          <div class="wall-strip"></div>
-        </div>
-        <div class="floor"></div>
+        <img src="{{ '/assets/images/classroom-interactive/Background.png' | relative_url }}"
+             alt="Classroom background"
+             draggable="false">
       </div>
 
-      <!-- Interactive Objects -->
-      <div class="classroom-objects">
-
-        <!-- Chalkboard (Learning) -->
-        <button class="classroom-object obj-chalkboard" data-panel="learning" data-tooltip="Learning Board" tabindex="0" aria-label="Click to see what we're learning">
-          <div class="chalkboard-frame">
-            <div class="chalkboard-inner">
-              <div class="chalkboard-text">
-                WHAT WE'RE<br>LEARNING
-              </div>
-            </div>
-          </div>
+      <!-- Interactive Hotspots -->
+      <div class="classroom-hotspots">
+        <!-- SmartBoard (What We're Learning) - Central Focus -->
+        <button class="hotspot hotspot-smartboard"
+                data-panel="learning"
+                data-tooltip="What We're Learning"
+                aria-label="What We're Learning - click to explore curriculum">
+          <img src="{{ '/assets/images/classroom-interactive/SmartBoard.png' | relative_url }}"
+               alt="SmartBoard"
+               draggable="false">
         </button>
 
-        <!-- Newsletter on wall -->
-        <button class="classroom-object obj-newsletter" data-panel="newsletter" data-tooltip="Newsletter" tabindex="0" aria-label="Click to read newsletters">
-          <div class="newsletter-paper">
-            <div class="newsletter-header"></div>
-            <div class="newsletter-line"></div>
-            <div class="newsletter-line"></div>
-            <div class="newsletter-line"></div>
-          </div>
+        <!-- Art Wall (Student Work) -->
+        <button class="hotspot hotspot-artwall"
+                data-panel="gallery"
+                data-tooltip="Art Wall"
+                aria-label="Art Wall - click to view student work">
+          <img src="{{ '/assets/images/classroom-interactive/ArtWall.png' | relative_url }}"
+               alt="Art Wall"
+               draggable="false">
         </button>
 
-        <!-- Student artwork -->
-        <button class="classroom-object obj-artwork" data-panel="gallery" data-tooltip="Student Work" tabindex="0" aria-label="Click to view student gallery">
-          <div class="artwork-piece"></div>
-          <div class="artwork-piece"></div>
-          <div class="artwork-piece"></div>
+        <!-- Newsletter -->
+        <button class="hotspot hotspot-newsletter"
+                data-panel="newsletter"
+                data-tooltip="Newsletter"
+                aria-label="Newsletter - click to read newsletters">
+          <img src="{{ '/assets/images/classroom-interactive/Newsletter.png' | relative_url }}"
+               alt="Newsletter"
+               draggable="false">
         </button>
 
-        <!-- Teacher's desk (Learning table) -->
-        <button class="classroom-object obj-desk" data-panel="learning" data-tooltip="Learning Table" tabindex="0" aria-label="Click to explore curriculum">
-          <div class="desk-items">
-            <div class="desk-book"></div>
-            <div class="desk-book"></div>
-            <div class="desk-book"></div>
-          </div>
-          <div class="desk-top"></div>
+        <!-- Message to Parents -->
+        <button class="hotspot hotspot-message"
+                data-panel="communication"
+                data-tooltip="Message to Parents"
+                aria-label="Message to Parents - click to see communication info">
+          <img src="{{ '/assets/images/classroom-interactive/MessageBoard.png' | relative_url }}"
+               alt="Message to Parents"
+               draggable="false">
         </button>
 
-        <!-- Community corner (rug) -->
-        <button class="classroom-object obj-community" data-panel="community" data-tooltip="Community Circle" tabindex="0" aria-label="Click to learn about community programs">
-          <div class="community-rug">
-            <div class="community-center"></div>
-          </div>
+        <!-- Daily Schedule -->
+        <button class="hotspot hotspot-schedule"
+                data-panel="schedule"
+                data-tooltip="Daily Schedule"
+                aria-label="Daily Schedule - click to view schedule">
+          <img src="{{ '/assets/images/classroom-interactive/DailySchedule.png' | relative_url }}"
+               alt="Daily Schedule"
+               draggable="false">
         </button>
 
-        <!-- Calendar -->
-        <button class="classroom-object obj-calendar" data-panel="schedule" data-tooltip="Weekly Schedule" tabindex="0" aria-label="Click to view schedule">
-          <div class="calendar-board">
-            <div class="calendar-header"></div>
-            <div class="calendar-grid">
-              <div class="calendar-day"></div>
-              <div class="calendar-day today"></div>
-              <div class="calendar-day"></div>
-              <div class="calendar-day"></div>
-              <div class="calendar-day"></div>
-            </div>
-          </div>
+        <!-- Table and Chairs (Inside Our Classroom) -->
+        <button class="hotspot hotspot-table"
+                data-panel="community"
+                data-tooltip="Inside Our Classroom"
+                aria-label="Inside Our Classroom - click to learn about our classroom">
+          <img src="{{ '/assets/images/classroom-interactive/TableAndChairs.png' | relative_url }}"
+               alt="Table and Chairs"
+               draggable="false">
         </button>
+      </div>
+    </div>
 
-        <!-- Communication board -->
-        <button class="classroom-object obj-communication" data-panel="communication" data-tooltip="Message Board" tabindex="0" aria-label="Click to see communication info">
-          <div class="comm-board">
-            <div class="comm-note"></div>
-            <div class="comm-note"></div>
-            <div class="comm-note"></div>
-          </div>
-        </button>
-
-        <!-- Student desks (decorative) -->
-        <div class="obj-student-desks" aria-hidden="true">
-          <div class="student-desk"></div>
-          <div class="student-desk"></div>
-          <div class="student-desk"></div>
-          <div class="student-desk"></div>
-        </div>
-
+    <!-- Mobile Quick Links -->
+    <div class="mobile-links">
+      <h3 class="mobile-links-title">QUICK LINKS</h3>
+      <div class="mobile-links-grid">
+        <button class="mobile-link" data-panel="learning">What We're Learning</button>
+        <button class="mobile-link" data-panel="gallery">Art Wall</button>
+        <button class="mobile-link" data-panel="newsletter">Newsletter</button>
+        <button class="mobile-link" data-panel="communication">Message to Parents</button>
+        <button class="mobile-link" data-panel="schedule">Daily Schedule</button>
+        <button class="mobile-link" data-panel="community">Inside Our Classroom</button>
       </div>
     </div>
 
     <!-- Footer -->
     <footer class="game-footer">
-      <p><a href="{{ '/' | relative_url }}">{{ site.title }}</a> • EXPLORE THE CLASSROOM!</p>
+      <p><a href="{{ '/' | relative_url }}">{{ site.title }}</a> • EXPLORE THE CLASSROOM</p>
     </footer>
   </div>
 
@@ -1332,14 +1096,14 @@ layout: null
           <div class="gallery-item">COMING<br>SOON</div>
           <div class="gallery-item">COMING<br>SOON</div>
         </div>
-        <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--pixel-gray);">
+        <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted);">
           Add images to: /assets/classrooms/grade-3-4/gallery/
         </p>
       </div>
     </div>
   </div>
 
-  <!-- Community Panel -->
+  <!-- Community Panel (Inside Our Classroom) -->
   <div class="rpg-overlay" id="panel-community">
     <div class="rpg-panel">
       <div class="rpg-header">
@@ -1390,7 +1154,7 @@ layout: null
         </ul>
 
         <h3>📞 GET IN TOUCH</h3>
-        <p><a href="{{ '/contact/' | relative_url }}" style="color: var(--pixel-cyan);">Contact our school</a> to reach our classroom.</p>
+        <p><a href="{{ '/contact/' | relative_url }}" style="color: var(--soft-gold);">Contact our school</a> to reach our classroom.</p>
       </div>
     </div>
   </div>
@@ -1407,7 +1171,7 @@ layout: null
           <!-- Filled by JS -->
         </div>
         <p style="margin-top: 1rem;">
-          <a href="{{ '/calendar/' | relative_url }}" style="color: var(--pixel-cyan);">📅 View Full School Calendar</a>
+          <a href="{{ '/calendar/' | relative_url }}" style="color: var(--soft-gold);">📅 View Full School Calendar</a>
         </p>
       </div>
     </div>
@@ -1415,10 +1179,10 @@ layout: null
 
   <!-- No JS Fallback -->
   <noscript>
-    <div class="fallback-content" style="padding: 2rem; background: var(--pixel-dark); color: var(--pixel-white);">
-      <h1 style="font-family: 'Press Start 2P', monospace; margin-bottom: 1rem;">{{ page.title }}</h1>
+    <div class="fallback-content">
+      <h1 style="font-family: 'Press Start 2P', monospace; margin-bottom: 1rem; color: var(--soft-gold);">{{ page.title }}</h1>
       <p>JavaScript is required for the interactive classroom experience.</p>
-      <p style="margin-top: 1rem;"><a href="{{ '/classrooms/' | relative_url }}" style="color: var(--pixel-yellow);">← Back to Classrooms</a></p>
+      <p style="margin-top: 1rem;"><a href="{{ '/classrooms/' | relative_url }}" style="color: var(--soft-gold);">← Back to Classrooms</a></p>
       <div style="margin-top: 2rem;">
         {{ content }}
       </div>
@@ -1437,18 +1201,22 @@ layout: null
       const tooltip = document.getElementById('gameTooltip');
       const tooltipText = tooltip.querySelector('.game-tooltip-text');
 
-      // Door animation - opens EVERY time
+      // Door animation
       function openDoor() {
         pixelDoor.classList.add('open');
-
         setTimeout(() => {
           doorScene.classList.add('hidden');
           classroomWrapper.classList.add('visible');
-        }, 600);
+        }, 650);
       }
 
-      // Click door to enter
       doorFrame.addEventListener('click', openDoor);
+      doorFrame.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openDoor();
+        }
+      });
 
       document.addEventListener('keydown', (e) => {
         if (!doorScene.classList.contains('hidden') && (e.key === 'Enter' || e.key === ' ')) {
@@ -1458,25 +1226,27 @@ layout: null
       });
 
       // Tooltip system
-      const objects = document.querySelectorAll('.classroom-object');
+      const hotspots = document.querySelectorAll('.hotspot, .mobile-link');
 
-      objects.forEach(obj => {
-        obj.addEventListener('mouseenter', (e) => {
-          tooltipText.textContent = obj.dataset.tooltip;
-          tooltip.classList.add('visible');
+      hotspots.forEach(obj => {
+        obj.addEventListener('mouseenter', () => {
+          if (obj.dataset.tooltip) {
+            tooltipText.textContent = obj.dataset.tooltip;
+            tooltip.classList.add('visible');
+          }
         });
 
         obj.addEventListener('mousemove', (e) => {
-          tooltip.style.left = e.clientX + 15 + 'px';
-          tooltip.style.top = e.clientY + 15 + 'px';
+          tooltip.style.left = e.clientX + 12 + 'px';
+          tooltip.style.top = e.clientY + 12 + 'px';
         });
 
         obj.addEventListener('mouseleave', () => {
           tooltip.classList.remove('visible');
         });
 
-        // Click to open panel
         obj.addEventListener('click', () => {
+          tooltip.classList.remove('visible');
           openPanel(obj.dataset.panel);
         });
 
@@ -1499,7 +1269,6 @@ layout: null
         panel.classList.add('active');
         document.body.style.overflow = 'hidden';
 
-        // Focus first close button
         const closeBtn = panel.querySelector('.rpg-close');
         if (closeBtn) closeBtn.focus();
       }
@@ -1512,19 +1281,16 @@ layout: null
         }
       }
 
-      // Close buttons
       document.querySelectorAll('[data-close]').forEach(btn => {
         btn.addEventListener('click', closePanel);
       });
 
-      // Close on overlay click
       document.querySelectorAll('.rpg-overlay').forEach(overlay => {
         overlay.addEventListener('click', (e) => {
           if (e.target === overlay) closePanel();
         });
       });
 
-      // Escape to close
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closePanel();
       });
@@ -1533,10 +1299,8 @@ layout: null
       document.querySelectorAll('.rpg-tab').forEach(tab => {
         tab.addEventListener('click', () => {
           const panel = tab.closest('.rpg-body');
-
           panel.querySelectorAll('.rpg-tab').forEach(t => t.classList.remove('active'));
           panel.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-
           tab.classList.add('active');
           const targetPane = document.getElementById('tab-' + tab.dataset.tab);
           if (targetPane) targetPane.classList.add('active');
@@ -1584,7 +1348,7 @@ layout: null
             <div class="schedule-day${isToday ? ' is-today' : ''}">
               <h4>${dayName}${isToday ? ' (TODAY)' : ''} - ${months[date.getMonth()]} ${date.getDate()}</h4>
               <ul>
-                ${events.map(e => `<li>▸ ${e}</li>`).join('')}
+                ${events.map(e => `<li>◆ ${e}</li>`).join('')}
               </ul>
             </div>
           `;
