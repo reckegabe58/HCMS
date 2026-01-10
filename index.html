@@ -3,179 +3,333 @@ layout: default
 title: Home
 ---
 
-<!-- Hero Welcome Section -->
+<!-- Hero Section -->
 <section class="hero-section">
+  <!-- Background Image -->
+  <img src="{{ '/assets/images/carousel/slide-1.jpg' | relative_url }}"
+       alt="Students in nature"
+       class="hero-bg">
+
+  <!-- Dark Gradient Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Hero Content -->
   <div class="container">
     <div class="hero-content">
-      <h1 class="hero-title">Welcome to Henry Coaster Memorial School</h1>
+      <!-- Welcome Badge -->
+      <span class="hero-badge">Welcome to Marten Falls First Nation</span>
+
+      <!-- Main Headline -->
+      <h1 class="hero-title">
+        Nurturing Our Future through <span class="text-sage">Culture</span> and Excellence
+      </h1>
+
+      <!-- Subtext -->
       <p class="hero-text">
-        Where our students walk in the footsteps of their ancestors to achieve their dreams. 
-        We are proud to serve the children of Marten Falls First Nation, providing culturally 
-        rich education from Kindergarten through Grade 8.
+        Rooted in Oji-Cree culture and dedicated to land-based learning,
+        Henry Coaster Memorial School provides a path for our children to lead and thrive.
       </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-buttons">
+        <a href="{{ '/programs' | relative_url }}" class="btn btn-primary">Explore Programs</a>
+        <a href="{{ '/about' | relative_url }}" class="btn btn-ghost">Our Story</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave Divider -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F5F7F8"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Main Content Area -->
+<section class="main-area">
+  <div class="container">
+    <div class="homepage-grid">
+
+      <!-- Main Content Column -->
+      <div class="main-content">
+
+        <!-- Latest School News Section -->
+        <section class="news-section">
+          <div class="section-header">
+            <h2 class="section-title">Latest School News</h2>
+            <a href="{{ '/news' | relative_url }}" class="view-all-link">
+              View All News
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="news-grid">
+
+            <!-- News Card 1: Land-Based Skills -->
+            <article class="news-card">
+              <img src="{{ '/assets/images/carousel/slide-2.jpg' | relative_url }}"
+                   alt="School Garden Project"
+                   class="news-card-image">
+              <div class="news-card-content">
+                <span class="news-category land-based">Land-Based Skills</span>
+                <h3 class="news-card-title">
+                  <a href="#">Harvest Moon: School Garden Project Update</a>
+                </h3>
+                <p class="news-card-excerpt">
+                  Our Grade 6 students successfully harvested over 50lbs of local root vegetables this week. The produce will be shared at the upcoming Community Feast...
+                </p>
+                <div class="news-card-meta">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Oct 12, 2025
+                  </span>
+                  <span>Staff Writer</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- News Card 2: Culture -->
+            <article class="news-card">
+              <img src="{{ '/assets/images/carousel/slide-3.jpg' | relative_url }}"
+                   alt="Language Revitalization"
+                   class="news-card-image">
+              <div class="news-card-content">
+                <span class="news-category culture">Culture</span>
+                <h3 class="news-card-title">
+                  <a href="#">Oji-Cree Language Revitalization Initiative</a>
+                </h3>
+                <p class="news-card-excerpt">
+                  This month, we are launching our new immersion modules for K-3. Early learners will engage with Elder-led storytelling and traditional songs...
+                </p>
+                <div class="news-card-meta">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Oct 08, 2025
+                  </span>
+                  <span>Elder Council</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- News Card 3: Academic -->
+            <article class="news-card">
+              <img src="{{ '/assets/images/carousel/slide-4.jpg' | relative_url }}"
+                   alt="Merit Awards Ceremony"
+                   class="news-card-image">
+              <div class="news-card-content">
+                <span class="news-category academic">Academic</span>
+                <h3 class="news-card-title">
+                  <a href="#">Celebrating Excellence: Merit Awards Ceremony</a>
+                </h3>
+                <p class="news-card-excerpt">
+                  Congratulations to our first-term award recipients! Your dedication to balance and learning inspires our whole community. Photos inside...
+                </p>
+                <div class="news-card-meta">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Sep 29, 2025
+                  </span>
+                  <span>Principal's Office</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Sidebar Column -->
+      <aside class="sidebar">
+
+        <!-- This Week's Activities Widget -->
+        <div class="widget-activities">
+          <div class="widget-activities-inner">
+            <h3 class="widget-title">
+              <span class="widget-title-icon">&#128197;</span>
+              This Week's Activities
+            </h3>
+
+            <ul class="event-list">
+              <li class="event-item">
+                <div class="event-date-box">
+                  <span class="event-date-month">OCT</span>
+                  <span class="event-date-day">15</span>
+                </div>
+                <div class="event-details">
+                  <span class="event-name">Community Feast</span>
+                  <span class="event-info">5:00 PM - School Gym</span>
+                </div>
+              </li>
+
+              <li class="event-item">
+                <div class="event-date-box">
+                  <span class="event-date-month">OCT</span>
+                  <span class="event-date-day">17</span>
+                </div>
+                <div class="event-details">
+                  <span class="event-name">Land-Based Skills Workshop</span>
+                  <span class="event-info">9:00 AM - River Landing</span>
+                </div>
+              </li>
+
+              <li class="event-item">
+                <div class="event-date-box">
+                  <span class="event-date-month">OCT</span>
+                  <span class="event-date-day">18</span>
+                </div>
+                <div class="event-details">
+                  <span class="event-name">Parent-Teacher Tea</span>
+                  <span class="event-info">3:30 PM - Library</span>
+                </div>
+              </li>
+
+              <li class="event-item">
+                <div class="event-date-box">
+                  <span class="event-date-month">OCT</span>
+                  <span class="event-date-day">20</span>
+                </div>
+                <div class="event-details">
+                  <span class="event-name">Professional Development</span>
+                  <span class="event-info no-school">No School for Students</span>
+                </div>
+              </li>
+            </ul>
+
+            <a href="{{ '/calendar' | relative_url }}" class="btn-calendar">Full School Calendar</a>
+          </div>
+        </div>
+
+        <!-- Quick Resources Widget -->
+        <div class="widget-resources">
+          <h3 class="widget-title">Quick Resources</h3>
+          <ul class="resource-list">
+            <li>
+              <a href="#" class="resource-link">
+                Staff Directory
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="resource-link">
+                Bussing Schedule
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="resource-link">
+                Community Outreach
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.martenfalls.ca" target="_blank" rel="noopener" class="resource-link">
+                Marten Falls Website
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Our Sacred Lands Image Card -->
+        <a href="#" class="widget-sacred-lands">
+          <img src="{{ '/assets/images/carousel/slide-5.jpg' | relative_url }}"
+               alt="Aerial view of Marten Falls">
+          <div class="widget-sacred-lands-overlay">
+            <h4 class="widget-sacred-lands-title">Our Sacred Lands</h4>
+            <p class="widget-sacred-lands-subtitle">Explore Marten Falls Heritage</p>
+          </div>
+        </a>
+
+      </aside>
+
     </div>
   </div>
 </section>
 
-<!-- Main Homepage Content -->
-<div class="container">
-  <div class="homepage-grid">
-    
-    <!-- Main Content Column -->
-    <div class="main-content">
-      
-      <!-- Photo Carousel -->
-      <section class="photo-carousel">
-        <div class="carousel-track">
-          <!-- Slide 1 -->
-          <div class="carousel-slide">
-            <img src="{{ '/assets/images/carousel/slide-1.jpg' | relative_url }}" 
-                 alt="Students learning" 
-                 class="carousel-image">
-          </div>
-          
-          <!-- Slide 2 -->
-          <div class="carousel-slide">
-            <img src="{{ '/assets/images/carousel/slide-2.jpg' | relative_url }}" 
-                 alt="Cultural activities" 
-                 class="carousel-image">
-          </div>
-          
-          <!-- Slide 3 -->
-          <div class="carousel-slide">
-            <img src="{{ '/assets/images/carousel/slide-3.jpg' | relative_url }}" 
-                 alt="School community" 
-                 class="carousel-image">
-          </div>
-          
-          <!-- Slide 4 -->
-          <div class="carousel-slide">
-            <img src="{{ '/assets/images/carousel/slide-4.jpg' | relative_url }}" 
-                 alt="Learning together" 
-                 class="carousel-image">
-          </div>
-          
-          <!-- Slide 5 -->
-          <div class="carousel-slide">
-            <img src="{{ '/assets/images/carousel/slide-5.jpg' | relative_url }}" 
-                 alt="Henry Coaster Memorial School" 
-                 class="carousel-image">
-          </div>
-        </div>
-        
-        <!-- Carousel Controls -->
-        <div class="carousel-controls" role="group" aria-label="Slideshow controls">
-          <!-- Dots will be added by JavaScript -->
-        </div>
-      </section>
-      
-      <!-- Recent News Section -->
-      <section class="news-section">
-        <div class="section-header">
-          <h2 class="section-title">Latest School News</h2>
-          <a href="{{ '/news' | relative_url }}" class="view-all-link">
-            View All News →
-          </a>
-        </div>
-        
-        <div class="news-grid">
-          {% assign recent_posts = site.posts | limit: 3 %}
-          
-          {% if recent_posts.size > 0 %}
-            {% for post in recent_posts %}
-            <article class="news-card">
-              <div class="news-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">
-                  {{ post.date | date: "%B %d, %Y" }}
-                </time>
-                {% if post.tags %}
-                  {% for tag in post.tags limit:1 %}
-                    <span class="news-tag">{{ tag }}</span>
-                  {% endfor %}
-                {% endif %}
-              </div>
-              
-              <h3 class="news-title">
-                <a href="{{ post.url | relative_url }}" style="color: inherit;">
-                  {{ post.title }}
-                </a>
-              </h3>
-              
-              {% if post.excerpt %}
-              <p class="news-excerpt">
-                {{ post.excerpt | strip_html | truncatewords: 30 }}
-              </p>
-              {% endif %}
-              
-              <a href="{{ post.url | relative_url }}" class="read-more">
-                Read More →
-              </a>
-            </article>
-            {% endfor %}
-          {% else %}
-            <div class="news-card">
-              <h3 class="news-title">Welcome to Our New Website!</h3>
-              <p class="news-excerpt">
-                We're excited to launch our new school website. Check back soon for news, 
-                updates, and information about all the great things happening at HCMS!
-              </p>
+<!-- Visit Our Community Section -->
+<section class="community-section">
+  <div class="container">
+    <div class="community-grid">
+
+      <!-- Text Content -->
+      <div class="community-content">
+        <h2>Visit Our Community</h2>
+        <p>
+          Located in Marten Falls First Nation, our school is at the heart of the community.
+          We welcome visitors and partners who share our commitment to Indigenous education.
+        </p>
+
+        <div class="address-list">
+          <div class="address-item">
+            <div class="address-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
             </div>
-          {% endif %}
+            <div>
+              <p class="address-label">Physical Address</p>
+              <p class="address-text">123 School Road, Ogoki Post, ON</p>
+            </div>
+          </div>
+
+          <div class="address-item">
+            <div class="address-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div>
+              <p class="address-label">Mailing Address</p>
+              <p class="address-text">PO Box 10, Marten Falls, ON, P0T 2L0</p>
+            </div>
+          </div>
         </div>
-      </section>
-      
+      </div>
+
+      <!-- Map Image -->
+      <div class="community-map">
+        <img src="{{ '/assets/images/carousel/slide-1.jpg' | relative_url }}"
+             alt="Map of Marten Falls area">
+      </div>
+
     </div>
-    
-    <!-- Sidebar Column -->
-    <aside class="sidebar">
-      
-      <!-- After-School Program Widget -->
-      <div class="sidebar-widget">
-        <h3 class="widget-title">This Week's Activities</h3>
-        
-        {% if site.data.after_school %}
-          {% assign schedule = site.data.after_school %}
-          
-          {% if schedule.week_of %}
-          <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: var(--space-md); font-weight: 600;">
-            Week of {{ schedule.week_of }}
-          </p>
-          {% endif %}
-          
-          {% if schedule.schedule %}
-          <ul class="schedule-list">
-            {% for day in schedule.schedule %}
-            <li class="schedule-day">
-              <div class="day-label">{{ day.day }}</div>
-              {% if day.events %}
-                {% for event in day.events %}
-                <div class="event-item">{{ event }}</div>
-                {% endfor %}
-              {% endif %}
-            </li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-        {% else %}
-          <p style="color: var(--text-secondary);">
-            After-school schedule will be posted here each week.
-          </p>
-        {% endif %}
-      </div>
-      
-      <!-- Quick Links Widget -->
-      <div class="sidebar-widget">
-        <h3 class="widget-title">Quick Links</h3>
-        <ul style="list-style: none; line-height: 2;">
-          <li><a href="{{ '/classrooms' | relative_url }}">→ View Classrooms</a></li>
-          <li><a href="{{ '/calendar' | relative_url }}">→ School Calendar</a></li>
-          <li><a href="{{ '/about' | relative_url }}">→ About Our School</a></li>
-          <li><a href="{{ '/contact' | relative_url }}">→ Contact Us</a></li>
-          <li><a href="https://www.matawaeducation.com/" target="_blank" rel="noopener">→ Matawa Education</a></li>
-        </ul>
-      </div>
-      
-    </aside>
-    
   </div>
-</div>
+</section>
