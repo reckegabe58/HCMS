@@ -26,35 +26,9 @@ subtitle: Important dates and upcoming events
         and use the arrows to navigate between months.
       </p>
 
-      <!-- Google Calendar Embed Placeholder -->
+      <!-- Google Calendar Embed -->
       <div class="calendar-wrapper">
-        <div class="calendar-placeholder">
-          <!-- INSTRUCTIONS FOR EMBEDDING GOOGLE CALENDAR:
-               1. Go to your Google Calendar settings
-               2. Click on your school calendar
-               3. Scroll to "Integrate calendar"
-               4. Copy the "Embed code"
-               5. Replace this placeholder div with the iframe code
-
-               Example:
-               <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=America%2FToronto"
-                       style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-          -->
-          <div class="placeholder-content">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            <h3>Google Calendar</h3>
-            <p>The school calendar will be displayed here once configured.</p>
-            <p class="setup-note">
-              <strong>Setup Instructions:</strong> Edit this page and replace this placeholder with your
-              Google Calendar embed code. See the comments in the source file for detailed instructions.
-            </p>
-          </div>
-        </div>
+        <iframe src="https://calendar.google.com/calendar/embed?src=227b700438569c1d622b29457fe9d090f155975f39511456055d92199d369a4f%40group.calendar.google.com&ctz=America%2FToronto" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
       </div>
 
       <div class="calendar-actions">
