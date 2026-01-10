@@ -216,6 +216,10 @@ layout: null
     .classroom-interior {
       min-height: 100vh;
       background: var(--birch-cream);
+    }
+
+    /* Only hide when door scene is active */
+    .door-active .classroom-interior {
       opacity: 0;
       transition: opacity 0.8s ease 0.4s;
     }
@@ -972,7 +976,16 @@ layout: null
     }
   </style>
 </head>
-<body>
+<body class="door-active">
+  <!-- No-JS fallback style -->
+  <noscript>
+    <style>
+      .door-scene { display: none !important; }
+      .door-active .classroom-interior { opacity: 1 !important; }
+      .dust-particles, .light-rays, .seasonal-overlay { display: none !important; }
+    </style>
+  </noscript>
+
   <!-- Door Scene (Intro) -->
   <div class="door-scene" id="doorScene" role="dialog" aria-label="Welcome to classroom">
     <div class="door-scene-content">
