@@ -977,12 +977,18 @@ layout: null
   </style>
 </head>
 <body class="door-active">
+  <!-- Debug: If you can see this text, the page is loading -->
+  <div id="debug-test" style="position:fixed;top:0;left:0;background:red;color:white;padding:10px;z-index:99999;font-size:16px;">
+    Page is loading... Click "Open the Doors" below
+  </div>
+
   <!-- No-JS fallback style -->
   <noscript>
     <style>
       .door-scene { display: none !important; }
       .door-active .classroom-interior { opacity: 1 !important; }
       .dust-particles, .light-rays, .seasonal-overlay { display: none !important; }
+      #debug-test { display: none !important; }
     </style>
   </noscript>
 
