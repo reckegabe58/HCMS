@@ -308,7 +308,7 @@ a:hover {
 .site-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   text-decoration: none;
   flex-shrink: 0;
 }

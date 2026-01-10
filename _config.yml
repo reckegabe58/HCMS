@@ -4,7 +4,7 @@
 # Site settings
 title: Henry Coaster Memorial School
 tagline: Where our students walk in the footsteps of their ancestors to achieve their dreams.
-email: info@henrycoastermemorialschool.com
+email: tom.recke@martenfalls.com
 description: >-
   Henry Coaster Memorial School serves the Marten Falls First Nation community,
   providing K-8 education rooted in Oji-Cree culture and dedicated to land-based learning.
@@ -16,17 +16,9 @@ url: "https://reckegabe58.github.io"
 # Location information
 location:
   community: Marten Falls First Nation
-  physical_address: 123 School Road, Ogoki Post, ON
-  mailing_address: PO Box 10, Marten Falls First Nation, ON P0T 2L0
+  physical_address: Henry Coaster Memorial School, Ogoki Post, Ontario P0T 2L0
+  mailing_address: Henry Coaster Memorial School, Ogoki Post, Ontario P0T 2L0
   phone: (807) 349-2532
-  fax: (807) 349-2533
-  office_hours: Monday - Friday, 8:30 AM - 4:00 PM
-
-# Social media
-social:
-  facebook: "#"
-  youtube: "#"
-  instagram: "#"
 
 # School information
 school:

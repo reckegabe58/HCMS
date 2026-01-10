@@ -75,108 +75,6 @@ title: Home
           </div>
         </section>
 
-        <!-- Latest School News Section -->
-        <section class="news-section">
-          <div class="section-header">
-            <h2 class="section-title">School News</h2>
-            <a href="{{ '/news/' | relative_url }}" class="view-all-link">
-              All News
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-
-          <div class="news-grid">
-
-            <!-- News Card 1 -->
-            <article class="news-card">
-              <img src="{{ '/assets/images/carousel/slide-2.jpg' | relative_url }}"
-                   alt="School Garden Project"
-                   class="news-card-image">
-              <div class="news-card-content">
-                <span class="news-category land-based">Land-Based</span>
-                <h3 class="news-card-title">
-                  <a href="{{ '/news/' | relative_url }}">Fall Harvest Update</a>
-                </h3>
-                <p class="news-card-excerpt">
-                  Our students helped harvest vegetables from the school garden this week.
-                  The produce will be shared at the upcoming community gathering.
-                </p>
-                <div class="news-card-meta">
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="16" y1="2" x2="16" y2="6"></line>
-                      <line x1="8" y1="2" x2="8" y2="6"></line>
-                      <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                    Oct 12, 2025
-                  </span>
-                </div>
-              </div>
-            </article>
-
-            <!-- News Card 2 -->
-            <article class="news-card">
-              <img src="{{ '/assets/images/carousel/slide-3.jpg' | relative_url }}"
-                   alt="Language learning"
-                   class="news-card-image">
-              <div class="news-card-content">
-                <span class="news-category culture">Culture</span>
-                <h3 class="news-card-title">
-                  <a href="{{ '/news/' | relative_url }}">Language Circle Wednesdays</a>
-                </h3>
-                <p class="news-card-excerpt">
-                  Every Wednesday, students gather with Elders for Oji-Cree language circles.
-                  This week we learned words for winter animals.
-                </p>
-                <div class="news-card-meta">
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="16" y1="2" x2="16" y2="6"></line>
-                      <line x1="8" y1="2" x2="8" y2="6"></line>
-                      <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                    Oct 08, 2025
-                  </span>
-                </div>
-              </div>
-            </article>
-
-            <!-- News Card 3 -->
-            <article class="news-card">
-              <img src="{{ '/assets/images/carousel/slide-4.jpg' | relative_url }}"
-                   alt="Student activities"
-                   class="news-card-image">
-              <div class="news-card-content">
-                <span class="news-category academic">Classroom</span>
-                <h3 class="news-card-title">
-                  <a href="{{ '/news/' | relative_url }}">Grade 5/6 Science Projects</a>
-                </h3>
-                <p class="news-card-excerpt">
-                  Students presented their projects on local ecosystems.
-                  Great work connecting classroom learning with our lands.
-                </p>
-                <div class="news-card-meta">
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="16" y1="2" x2="16" y2="6"></line>
-                      <line x1="8" y1="2" x2="8" y2="6"></line>
-                      <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                    Sep 29, 2025
-                  </span>
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </section>
-
       </div>
 
       <!-- Sidebar Column -->
@@ -239,7 +137,6 @@ title: Home
           <h3 class="widget-title">Contact</h3>
           <div class="contact-info">
             <p><strong>Phone:</strong> {{ site.location.phone }}</p>
-            <p><strong>Hours:</strong> Mon-Fri, 8:30am - 4:00pm</p>
             <p><strong>Address:</strong><br>{{ site.location.mailing_address }}</p>
           </div>
           <a href="{{ '/contact/' | relative_url }}" class="btn-calendar">Get in Touch</a>
