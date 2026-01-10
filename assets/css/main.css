@@ -3995,3 +3995,493 @@ a:hover {
     gap: var(--space-sm);
   }
 }
+
+/* ==========================================
+   HERO CAROUSEL
+   ========================================== */
+
+.hero-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.carousel-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.carousel-dot.active {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  transform: scale(1.2);
+}
+
+/* ==========================================
+   THIS WEEK AT SCHOOL SECTION
+   ========================================== */
+
+.week-schedule-section {
+  background: var(--bg-400);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.week-intro {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  font-size: var(--text-base);
+}
+
+.week-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.schedule-day {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--bg-200);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+}
+
+.schedule-day:hover {
+  background: var(--bg-100);
+}
+
+.schedule-day.is-today {
+  background: var(--primary-100);
+  color: white;
+}
+
+.schedule-day.is-today .schedule-day-name,
+.schedule-day.is-today .schedule-date-num,
+.schedule-day.is-today p {
+  color: white;
+}
+
+.schedule-date {
+  min-width: 80px;
+  text-align: center;
+  padding-right: var(--space-md);
+  border-right: 2px solid var(--bg-300);
+}
+
+.schedule-day.is-today .schedule-date {
+  border-right-color: rgba(255, 255, 255, 0.3);
+}
+
+.schedule-day-name {
+  display: block;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.schedule-date-num {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.schedule-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.schedule-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+}
+
+/* ==========================================
+   SIDEBAR CONTACT WIDGET
+   ========================================== */
+
+.widget-contact {
+  background: var(--bg-400);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.widget-contact .widget-title {
+  margin-bottom: var(--space-md);
+}
+
+.contact-info {
+  margin-bottom: var(--space-md);
+}
+
+.contact-info p {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.contact-info strong {
+  color: var(--text-primary);
+}
+
+/* ==========================================
+   COMMUNITY LINK WIDGET
+   ========================================== */
+
+.widget-community-link {
+  display: block;
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.widget-community-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.widget-community-link img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.widget-community-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+}
+
+.widget-community-overlay h4 {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
+.widget-community-overlay p {
+  margin: 4px 0 0 0;
+  font-size: var(--text-sm);
+  opacity: 0.9;
+}
+
+/* ==========================================
+   SCHOOL INFO SECTION
+   ========================================== */
+
+.school-info-section {
+  background: var(--primary-100);
+  padding: var(--space-3xl) 0;
+  color: white;
+}
+
+.school-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.school-info-content h2 {
+  color: white;
+  margin-bottom: var(--space-md);
+}
+
+.school-info-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+
+.school-quick-facts {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.fact {
+  text-align: center;
+}
+
+.fact-number {
+  display: block;
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: white;
+}
+
+.fact-label {
+  display: block;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.school-info-image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.school-info-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ==========================================
+   PROGRAMS PAGE
+   ========================================== */
+
+.programs-intro {
+  max-width: 800px;
+  margin: 0 auto var(--space-2xl) auto;
+  text-align: center;
+}
+
+.programs-intro p {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.program-card {
+  background: var(--bg-400);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.program-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-lg);
+  background: var(--primary-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.program-icon svg {
+  color: white;
+}
+
+.program-icon.sage {
+  background: var(--sage-100);
+}
+
+.program-icon.green {
+  background: var(--sage-200);
+}
+
+.program-icon.orange {
+  background: #D97706;
+}
+
+.program-icon.red {
+  background: var(--accent-100);
+}
+
+.program-card h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.program-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.program-schedule {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--bg-200);
+}
+
+.program-schedule p {
+  margin-bottom: var(--space-xs);
+}
+
+.program-schedule ul {
+  margin: 0;
+  padding-left: var(--space-lg);
+}
+
+.program-schedule li {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  margin-bottom: 4px;
+}
+
+.programs-cta {
+  text-align: center;
+  padding: var(--space-2xl);
+  background: var(--bg-200);
+  border-radius: var(--radius-xl);
+}
+
+.programs-cta h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.programs-cta p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================
+   RESPONSIVE - NEW COMPONENTS
+   ========================================== */
+
+@media (max-width: 968px) {
+  .school-info-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .school-info-image {
+    order: -1;
+  }
+
+  .carousel-dots {
+    bottom: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .week-schedule-section {
+    padding: var(--space-lg);
+  }
+
+  .schedule-day {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .schedule-date {
+    border-right: none;
+    border-bottom: 2px solid var(--bg-300);
+    padding-right: 0;
+    padding-bottom: var(--space-sm);
+    text-align: left;
+    display: flex;
+    gap: var(--space-sm);
+    align-items: baseline;
+  }
+
+  .schedule-day.is-today .schedule-date {
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .school-quick-facts {
+    justify-content: center;
+  }
+
+  .carousel-dots {
+    bottom: 100px;
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .school-quick-facts {
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+  }
+
+  .fact {
+    min-width: 80px;
+  }
+
+  .carousel-dots {
+    bottom: 80px;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
