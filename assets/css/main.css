@@ -1970,6 +1970,63 @@ a:hover {
   line-height: var(--leading-relaxed);
 }
 
+/* Simple Page Hero - Clean design without wave */
+.page-hero-simple {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.page-hero-simple .page-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero-simple .page-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 28, 40, 0.85) 0%,
+    rgba(26, 28, 40, 0.7) 50%,
+    rgba(26, 28, 40, 0.6) 100%
+  );
+}
+
+.page-hero-simple .page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: var(--space-3xl) 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.page-hero-simple .page-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  color: var(--white);
+  margin-bottom: var(--space-md);
+  font-weight: 700;
+}
+
+.page-hero-simple .page-hero-subtitle {
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: var(--leading-relaxed);
+  font-style: italic;
+}
+
 .page-header-simple {
   background: linear-gradient(180deg, var(--primary-100) 0%, var(--primary-200) 100%);
   padding: var(--space-3xl) 0;
@@ -2049,6 +2106,12 @@ a:hover {
   padding: var(--space-3xl) 0;
 }
 
+/* About Section Main - with subtle gradient background */
+.about-section-main {
+  padding: var(--space-3xl) 0;
+  background: linear-gradient(180deg, var(--bg-300) 0%, var(--bg-200) 100%);
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 380px;
@@ -2069,6 +2132,47 @@ a:hover {
 .about-content p {
   margin-bottom: var(--space-lg);
   line-height: var(--leading-relaxed);
+}
+
+/* About Sidebar */
+.about-sidebar {
+  position: sticky;
+  top: var(--space-xl);
+}
+
+/* Curriculum Grid */
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin: var(--space-lg) 0 var(--space-xl);
+}
+
+.curriculum-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--bg-400);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.curriculum-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.curriculum-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.curriculum-item span:last-child {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
 }
 
 /* Facts Card */
@@ -2213,6 +2317,24 @@ a:hover {
 /* Values Section */
 .values-section {
   padding: var(--space-4xl) 0;
+}
+
+/* Values Section Alt - with background */
+.values-section-alt {
+  padding: var(--space-4xl) 0;
+  background: linear-gradient(180deg, var(--primary-100) 0%, var(--primary-200) 100%);
+}
+
+.values-section-alt .section-title-center {
+  color: var(--white);
+}
+
+.values-section-alt .section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.values-section-alt .value-card {
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .values-grid {
@@ -4222,6 +4344,36 @@ a:hover {
   .post-share {
     flex-direction: column;
     text-align: center;
+  }
+
+  /* About Page Responsive */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-sidebar {
+    position: static;
+  }
+
+  .curriculum-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero-simple {
+    min-height: 300px;
+  }
+
+  .page-hero-simple .page-hero-content {
+    padding: var(--space-2xl) 0;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
