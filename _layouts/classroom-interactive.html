@@ -113,6 +113,19 @@ layout: null
       box-shadow:
         inset 0 0 0 4px var(--desk-dark),
         8px 8px 0 var(--pixel-black);
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .pixel-door-frame:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        inset 0 0 0 4px var(--desk-dark),
+        8px 12px 0 var(--pixel-black);
+    }
+
+    .pixel-door-frame:hover .pixel-door-handle {
+      background: var(--pixel-lime);
     }
 
     .pixel-door {
@@ -181,35 +194,6 @@ layout: null
     .door-welcome p {
       font-size: 1rem;
       color: var(--pixel-light);
-    }
-
-    .door-enter-btn {
-      font-family: 'Press Start 2P', cursive;
-      background: var(--pixel-green);
-      color: var(--pixel-white);
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      position: relative;
-      transition: all 0.1s;
-      box-shadow:
-        0 6px 0 var(--pixel-teal),
-        0 8px 0 var(--pixel-black);
-    }
-
-    .door-enter-btn:hover {
-      transform: translateY(2px);
-      box-shadow:
-        0 4px 0 var(--pixel-teal),
-        0 6px 0 var(--pixel-black);
-    }
-
-    .door-enter-btn:active {
-      transform: translateY(6px);
-      box-shadow:
-        0 0 0 var(--pixel-teal),
-        0 2px 0 var(--pixel-black);
     }
 
     .door-hint {
@@ -1028,11 +1012,7 @@ layout: null
         <p>{{ page.teachers | join: ' & ' }}</p>
       </div>
 
-      <button class="door-enter-btn" id="enterBtn">
-        ENTER CLASSROOM
-      </button>
-
-      <p class="door-hint">PRESS ENTER OR CLICK</p>
+      <p class="door-hint">CLICK THE DOOR TO ENTER</p>
     </div>
   </div>
 
@@ -1374,8 +1354,8 @@ layout: null
 
       // Elements
       const doorScene = document.getElementById('doorScene');
+      const doorFrame = document.querySelector('.pixel-door-frame');
       const pixelDoor = document.getElementById('pixelDoor');
-      const enterBtn = document.getElementById('enterBtn');
       const classroomWrapper = document.getElementById('classroomWrapper');
       const tooltip = document.getElementById('gameTooltip');
       const tooltipText = tooltip.querySelector('.game-tooltip-text');
@@ -1390,7 +1370,8 @@ layout: null
         }, 600);
       }
 
-      enterBtn.addEventListener('click', openDoor);
+      // Click door to enter
+      doorFrame.addEventListener('click', openDoor);
 
       document.addEventListener('keydown', (e) => {
         if (!doorScene.classList.contains('hidden') && (e.key === 'Enter' || e.key === ' ')) {
