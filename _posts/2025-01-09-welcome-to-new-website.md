@@ -3,6 +3,8 @@ layout: post
 title: "Welcome to Our New Website"
 date: 2025-01-09
 author: "Administration"
+category: Announcements
+image: /assets/images/carousel/slide-1.png
 tags: [Announcements, Technology]
 ---
 
