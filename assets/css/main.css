@@ -818,6 +818,20 @@ a:hover {
   opacity: 0.7;
 }
 
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.no-posts-message {
+  text-align: center;
+  color: var(--text-muted);
+  padding: var(--space-xl);
+  background: var(--bg-300);
+  border-radius: var(--radius-lg);
+}
+
 /* ==========================================
    SIDEBAR
    ========================================== */
