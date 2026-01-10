@@ -10,31 +10,58 @@ layout: null
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* =============================================
-       INTERACTIVE CLASSROOM - STORYBOOK STYLE
+       PIXEL CLASSROOM - GAME STYLE
        ============================================= */
 
-    :root {
-      /* Earth & Forest Palette - Indigenous-inspired */
-      --forest-deep: #1a2f23;
-      --forest-mid: #2d4a3e;
-      --forest-light: #4a7c6a;
-      --earth-warm: #8b6f4a;
-      --earth-light: #c4a574;
-      --river-blue: #4a6fa5;
-      --river-light: #7ba3d0;
-      --sunset-orange: #d4896a;
-      --sunset-gold: #e8c07d;
-      --birch-cream: #f5f0e6;
-      --snow-white: #fefefe;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      /* Panel colors */
-      --panel-bg: rgba(254, 254, 254, 0.97);
-      --panel-border: var(--earth-light);
-      --panel-shadow: rgba(26, 47, 35, 0.25);
+    :root {
+      /* Pixel art palette */
+      --pixel-black: #1a1c2c;
+      --pixel-purple: #5d275d;
+      --pixel-red: #b13e53;
+      --pixel-orange: #ef7d57;
+      --pixel-yellow: #ffcd75;
+      --pixel-lime: #a7f070;
+      --pixel-green: #38b764;
+      --pixel-teal: #257179;
+      --pixel-navy: #29366f;
+      --pixel-blue: #3b5dc9;
+      --pixel-sky: #41a6f6;
+      --pixel-cyan: #73eff7;
+      --pixel-white: #f4f4f4;
+      --pixel-light: #94b0c2;
+      --pixel-gray: #566c86;
+      --pixel-dark: #333c57;
+
+      /* Classroom colors */
+      --wall-color: #c9a66b;
+      --wall-dark: #a68550;
+      --floor-color: #8b6f4a;
+      --floor-dark: #6b5535;
+      --desk-color: #d4a373;
+      --desk-dark: #b08050;
+      --chalkboard-color: #2d5a3d;
+      --chalkboard-frame: #8b6f4a;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--pixel-black);
+      min-height: 100vh;
+      overflow-x: hidden;
+      image-rendering: pixelated;
+    }
+
+    .pixel-font {
+      font-family: 'Press Start 2P', cursive;
     }
 
     /* Prefers reduced motion */
@@ -47,7 +74,7 @@ layout: null
     }
 
     /* =============================================
-       DOOR SCENE - INTRO
+       DOOR SCENE
        ============================================= */
 
     .door-scene {
@@ -57,12 +84,12 @@ layout: null
       width: 100%;
       height: 100%;
       z-index: 9999;
-      background: linear-gradient(180deg, var(--forest-deep) 0%, var(--forest-mid) 50%, var(--earth-warm) 100%);
+      background: linear-gradient(180deg, var(--pixel-navy) 0%, var(--pixel-dark) 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      transition: opacity 0.8s ease, visibility 0.8s ease;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
 
     .door-scene.hidden {
@@ -71,868 +98,863 @@ layout: null
       pointer-events: none;
     }
 
-    .door-scene-content {
+    .door-container {
       text-align: center;
-      max-width: 600px;
-      padding: 2rem;
     }
 
-    .door-frame {
-      position: relative;
-      width: 280px;
-      height: 380px;
+    /* Pixel art door */
+    .pixel-door-frame {
+      width: 200px;
+      height: 280px;
       margin: 0 auto 2rem;
-      perspective: 1000px;
-    }
-
-    .door-frame-border {
-      position: absolute;
-      inset: -20px;
-      background: linear-gradient(180deg, var(--earth-warm) 0%, var(--earth-light) 100%);
-      border-radius: 20px 20px 0 0;
-      z-index: 1;
-      /* Beadwork-inspired border pattern */
-      border: 4px solid var(--sunset-gold);
+      position: relative;
+      background: var(--pixel-dark);
+      border: 8px solid var(--desk-color);
       box-shadow:
-        inset 0 0 0 3px var(--earth-warm),
-        inset 0 0 0 6px var(--sunset-gold),
-        inset 0 0 0 9px var(--earth-warm);
+        inset 0 0 0 4px var(--desk-dark),
+        8px 8px 0 var(--pixel-black);
     }
 
-    .door {
+    .pixel-door {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, var(--earth-warm) 0%, #6b5535 100%);
-      border-radius: 12px 12px 0 0;
-      z-index: 2;
-      transform-origin: left center;
-      transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: inset -10px 0 20px rgba(0,0,0,0.3);
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      background: linear-gradient(180deg, var(--desk-color) 0%, var(--desk-dark) 100%);
+      transition: transform 0.8s ease;
+      transform-origin: left;
+      box-shadow: inset -8px 0 0 rgba(0,0,0,0.2);
     }
 
-    .door.open {
-      transform: rotateY(-105deg);
+    .pixel-door.open {
+      transform: perspective(500px) rotateY(-80deg);
     }
 
-    .door-panel {
+    .pixel-door-window {
       position: absolute;
-      top: 30px;
-      left: 30px;
-      right: 30px;
-      height: 120px;
-      background: var(--forest-deep);
-      border-radius: 8px;
-      border: 3px solid var(--earth-light);
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 60px;
+      background: var(--pixel-sky);
+      border: 4px solid var(--desk-dark);
     }
 
-    .door-panel-lower {
-      top: auto;
-      bottom: 60px;
-      height: 140px;
-    }
-
-    .door-handle {
+    .pixel-door-handle {
       position: absolute;
-      right: 25px;
+      right: 20px;
       top: 50%;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 50px;
-      background: linear-gradient(180deg, var(--sunset-gold) 0%, var(--earth-light) 100%);
-      border-radius: 10px;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      width: 16px;
+      height: 32px;
+      background: var(--pixel-yellow);
+      border: 2px solid var(--pixel-orange);
     }
 
-    .door-interior {
+    .door-sign {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, var(--sunset-gold) 0%, var(--birch-cream) 100%);
-      border-radius: 12px 12px 0 0;
-      z-index: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--pixel-white);
+      padding: 8px 16px;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 8px;
+      color: var(--pixel-black);
+      border: 2px solid var(--pixel-dark);
     }
 
     .door-welcome {
-      color: var(--birch-cream);
+      color: var(--pixel-white);
       margin-bottom: 1.5rem;
     }
 
     .door-welcome h1 {
-      font-family: 'Lora', serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      margin-bottom: 1rem;
+      text-shadow: 4px 4px 0 var(--pixel-black);
+      line-height: 1.5;
     }
 
     .door-welcome p {
-      font-size: 1.1rem;
-      opacity: 0.9;
+      font-size: 1rem;
+      color: var(--pixel-light);
     }
 
     .door-enter-btn {
-      background: linear-gradient(180deg, var(--sunset-gold) 0%, var(--earth-light) 100%);
-      color: var(--forest-deep);
+      font-family: 'Press Start 2P', cursive;
+      background: var(--pixel-green);
+      color: var(--pixel-white);
       border: none;
-      padding: 1rem 2.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
+      padding: 1rem 2rem;
+      font-size: 0.8rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      position: relative;
+      transition: all 0.1s;
       box-shadow:
-        0 4px 15px rgba(0,0,0,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+        0 6px 0 var(--pixel-teal),
+        0 8px 0 var(--pixel-black);
     }
 
     .door-enter-btn:hover {
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(2px);
       box-shadow:
-        0 6px 20px rgba(0,0,0,0.3),
-        inset 0 1px 0 rgba(255,255,255,0.3);
+        0 4px 0 var(--pixel-teal),
+        0 6px 0 var(--pixel-black);
     }
 
-    .door-enter-btn:focus {
-      outline: 3px solid var(--river-light);
-      outline-offset: 3px;
+    .door-enter-btn:active {
+      transform: translateY(6px);
+      box-shadow:
+        0 0 0 var(--pixel-teal),
+        0 2px 0 var(--pixel-black);
     }
 
     .door-hint {
-      color: var(--birch-cream);
-      font-size: 0.85rem;
-      margin-top: 1rem;
-      opacity: 0.7;
+      color: var(--pixel-gray);
+      font-size: 0.75rem;
+      margin-top: 1.5rem;
+      font-family: 'Press Start 2P', cursive;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0.3; }
     }
 
     /* =============================================
-       CLASSROOM INTERIOR
+       CLASSROOM SCENE
        ============================================= */
 
-    .classroom-interior {
+    .classroom-wrapper {
       min-height: 100vh;
-      background: var(--birch-cream);
+      display: none;
     }
 
-    /* Only hide when door scene is active */
-    .door-active .classroom-interior {
-      opacity: 0;
-      transition: opacity 0.8s ease 0.4s;
+    .classroom-wrapper.visible {
+      display: block;
     }
 
-    .classroom-interior.visible {
-      opacity: 1;
+    /* Top HUD bar */
+    .game-hud {
+      background: var(--pixel-black);
+      border-bottom: 4px solid var(--pixel-dark);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    /* Seasonal overlay */
-    .seasonal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 100;
-      opacity: 0.4;
+    .hud-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
-    .seasonal-overlay.winter {
-      background: linear-gradient(180deg,
-        rgba(200, 220, 240, 0.1) 0%,
-        transparent 30%);
+    .hud-back {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.6rem;
+      color: var(--pixel-light);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--pixel-dark);
+      border: 2px solid var(--pixel-gray);
+      transition: all 0.1s;
     }
 
-    /* Ambient dust particles */
-    .dust-particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 99;
-      overflow: hidden;
+    .hud-back:hover {
+      background: var(--pixel-gray);
+      color: var(--pixel-white);
     }
 
-    .dust {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(232, 192, 125, 0.6);
-      border-radius: 50%;
-      animation: float-dust 15s infinite ease-in-out;
+    .hud-title {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.7rem;
+      color: var(--pixel-yellow);
+      text-shadow: 2px 2px 0 var(--pixel-black);
     }
 
-    @keyframes float-dust {
-      0%, 100% { transform: translateY(100vh) translateX(0); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+    .hud-right {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.5rem;
+      color: var(--pixel-light);
     }
 
-    /* Light rays */
-    .light-rays {
-      position: fixed;
-      top: 0;
-      right: 10%;
-      width: 300px;
-      height: 100%;
-      background: linear-gradient(
-        180deg,
-        rgba(232, 192, 125, 0.15) 0%,
-        rgba(232, 192, 125, 0.05) 50%,
-        transparent 100%
-      );
-      transform: skewX(-15deg);
-      pointer-events: none;
-      z-index: 98;
-      animation: ray-pulse 8s infinite ease-in-out;
-    }
-
-    @keyframes ray-pulse {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 0.8; }
-    }
-
-    /* =============================================
-       ROOM HEADER
-       ============================================= */
-
-    .room-header {
-      background: linear-gradient(180deg, var(--forest-deep) 0%, var(--forest-mid) 100%);
-      padding: 2rem 0;
+    /* The classroom scene */
+    .classroom-scene {
       position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      aspect-ratio: 16/10;
+      min-height: 500px;
       overflow: hidden;
     }
 
-    .room-header::after {
-      content: '';
+    /* Background layers */
+    .classroom-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    /* Back wall */
+    .wall-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          var(--wall-color) 0px,
+          var(--wall-color) 60px,
+          var(--wall-dark) 60px,
+          var(--wall-dark) 62px
+        );
+      border-bottom: 8px solid var(--floor-dark);
+    }
+
+    /* Wall decorations strip */
+    .wall-strip {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: var(--pixel-orange);
+    }
+
+    /* Floor */
+    .floor {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      height: 60px;
-      background: linear-gradient(180deg, transparent 0%, var(--birch-cream) 100%);
+      height: 45%;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          var(--floor-color) 0px,
+          var(--floor-color) 80px,
+          var(--floor-dark) 80px,
+          var(--floor-dark) 82px
+        );
+      transform: perspective(500px) rotateX(30deg);
+      transform-origin: top;
     }
 
-    .room-header .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .room-back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--birch-cream);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      opacity: 0.8;
-      transition: opacity 0.2s;
-    }
-
-    .room-back-link:hover {
-      opacity: 1;
-    }
-
-    .room-back-link svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .room-title-area {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .room-badge {
-      background: var(--sunset-gold);
-      color: var(--forest-deep);
-      padding: 0.5rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .room-title {
-      font-family: 'Lora', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      color: var(--birch-cream);
-      margin: 0;
-    }
-
-    .room-teacher {
-      color: var(--birch-cream);
-      opacity: 0.9;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .room-teacher svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    /* =============================================
-       CLASSROOM SCENE (HOTSPOT AREA)
-       ============================================= */
-
-    .classroom-scene {
-      position: relative;
-      padding: 3rem 0;
-      min-height: 500px;
-    }
-
-    .hotspot-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    /* =============================================
-       HOTSPOT CARDS (Interactive Elements)
-       ============================================= */
-
-    .hotspot-card {
-      background: var(--panel-bg);
-      border-radius: 20px;
-      padding: 1.5rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border: 3px solid transparent;
-      position: relative;
-      overflow: hidden;
-      box-shadow:
-        0 4px 12px rgba(26, 47, 35, 0.1),
-        0 1px 3px rgba(26, 47, 35, 0.08);
-    }
-
-    .hotspot-card::before {
+    /* Floor overlay for depth */
+    .floor::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: var(--card-accent, var(--forest-light));
-      transition: height 0.3s ease;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
     }
 
-    .hotspot-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--card-accent, var(--forest-light));
-      box-shadow:
-        0 8px 25px rgba(26, 47, 35, 0.15),
-        0 4px 10px rgba(26, 47, 35, 0.1);
+    /* =============================================
+       CLASSROOM OBJECTS (Interactive)
+       ============================================= */
+
+    .classroom-objects {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
     }
 
-    .hotspot-card:hover::before {
-      height: 8px;
+    .classroom-object {
+      position: absolute;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: transform 0.2s, filter 0.2s;
     }
 
-    .hotspot-card:focus {
-      outline: 3px solid var(--river-light);
-      outline-offset: 3px;
+    .classroom-object:hover {
+      transform: scale(1.05);
+      filter: brightness(1.2);
+      z-index: 100;
     }
 
-    .hotspot-card[data-accent="newsletter"] { --card-accent: var(--river-blue); }
-    .hotspot-card[data-accent="learning"] { --card-accent: var(--forest-light); }
-    .hotspot-card[data-accent="gallery"] { --card-accent: var(--sunset-orange); }
-    .hotspot-card[data-accent="community"] { --card-accent: var(--earth-warm); }
-    .hotspot-card[data-accent="communication"] { --card-accent: var(--river-light); }
-    .hotspot-card[data-accent="schedule"] { --card-accent: var(--sunset-gold); }
+    .classroom-object:focus {
+      outline: 4px solid var(--pixel-yellow);
+      outline-offset: 4px;
+    }
 
-    .hotspot-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, var(--card-accent, var(--forest-light)) 0%, var(--forest-mid) 100%);
-      border-radius: 16px;
+    /* Chalkboard */
+    .obj-chalkboard {
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 45%;
+      max-width: 400px;
+      aspect-ratio: 16/9;
+    }
+
+    .chalkboard-frame {
+      width: 100%;
+      height: 100%;
+      background: var(--chalkboard-frame);
+      padding: 12px;
+      box-shadow: 8px 8px 0 var(--pixel-black);
+    }
+
+    .chalkboard-inner {
+      width: 100%;
+      height: 100%;
+      background: var(--chalkboard-color);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1rem;
-      color: var(--snow-white);
+      border: 4px solid var(--pixel-dark);
     }
 
-    .hotspot-icon svg {
-      width: 28px;
-      height: 28px;
+    .chalkboard-text {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(0.5rem, 1.5vw, 0.8rem);
+      color: var(--pixel-white);
+      text-align: center;
+      line-height: 2;
+      opacity: 0.9;
     }
 
-    .hotspot-title {
-      font-family: 'Lora', serif;
-      font-size: 1.25rem;
-      color: var(--forest-deep);
-      margin-bottom: 0.5rem;
+    /* Newsletter on wall */
+    .obj-newsletter {
+      top: 8%;
+      left: 5%;
+      width: 80px;
     }
 
-    .hotspot-desc {
-      font-size: 0.9rem;
-      color: var(--forest-mid);
-      line-height: 1.5;
+    .newsletter-paper {
+      background: var(--pixel-white);
+      width: 100%;
+      aspect-ratio: 3/4;
+      border: 4px solid var(--pixel-dark);
+      box-shadow: 4px 4px 0 var(--pixel-black);
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    .hotspot-prompt {
+    .newsletter-header {
+      background: var(--pixel-blue);
+      height: 15%;
+    }
+
+    .newsletter-line {
+      background: var(--pixel-gray);
+      height: 8%;
+      width: 80%;
+    }
+
+    .newsletter-line:nth-child(3) { width: 60%; }
+    .newsletter-line:nth-child(4) { width: 70%; }
+
+    /* Student work wall */
+    .obj-artwork {
+      top: 6%;
+      right: 5%;
+      display: flex;
+      gap: 8px;
+    }
+
+    .artwork-piece {
+      width: 50px;
+      aspect-ratio: 1;
+      border: 4px solid var(--pixel-dark);
+      box-shadow: 3px 3px 0 var(--pixel-black);
+    }
+
+    .artwork-piece:nth-child(1) { background: linear-gradient(135deg, var(--pixel-red) 0%, var(--pixel-orange) 100%); }
+    .artwork-piece:nth-child(2) { background: linear-gradient(135deg, var(--pixel-blue) 0%, var(--pixel-cyan) 100%); }
+    .artwork-piece:nth-child(3) { background: linear-gradient(135deg, var(--pixel-green) 0%, var(--pixel-lime) 100%); }
+
+    /* Learning table (teacher's desk) */
+    .obj-desk {
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 35%;
+      max-width: 300px;
+    }
+
+    .desk-top {
+      background: var(--desk-color);
+      height: 30px;
+      border: 4px solid var(--desk-dark);
+      box-shadow: 0 8px 0 var(--desk-dark), 4px 12px 0 var(--pixel-black);
+      position: relative;
+    }
+
+    .desk-items {
+      position: absolute;
+      top: -30px;
+      left: 10%;
+      right: 10%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .desk-book {
+      width: 25px;
+      height: 20px;
+      background: var(--pixel-red);
+      border: 2px solid var(--pixel-purple);
+    }
+
+    .desk-book:nth-child(2) { background: var(--pixel-blue); border-color: var(--pixel-navy); }
+    .desk-book:nth-child(3) { background: var(--pixel-green); border-color: var(--pixel-teal); }
+
+    /* Student desks */
+    .obj-student-desks {
+      bottom: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      pointer-events: none;
+    }
+
+    .student-desk {
+      width: 60px;
+      height: 25px;
+      background: var(--desk-color);
+      border: 3px solid var(--desk-dark);
+      box-shadow: 0 6px 0 var(--desk-dark);
+    }
+
+    /* Community corner */
+    .obj-community {
+      bottom: 30%;
+      left: 3%;
+      width: 100px;
+    }
+
+    .community-rug {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background:
+        radial-gradient(circle, var(--pixel-orange) 0%, var(--pixel-red) 50%, var(--pixel-purple) 100%);
+      border-radius: 50%;
+      border: 4px solid var(--pixel-dark);
+      box-shadow: 4px 4px 0 var(--pixel-black);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      font-size: 0.85rem;
-      color: var(--card-accent, var(--forest-light));
-      font-weight: 600;
+      justify-content: center;
     }
 
-    .hotspot-prompt svg {
-      width: 16px;
-      height: 16px;
+    .community-icon {
+      font-size: 1.5rem;
+    }
+
+    /* Calendar/Schedule */
+    .obj-calendar {
+      bottom: 35%;
+      right: 3%;
+      width: 70px;
+    }
+
+    .calendar-board {
+      background: var(--pixel-white);
+      width: 100%;
+      aspect-ratio: 3/4;
+      border: 4px solid var(--pixel-dark);
+      box-shadow: 4px 4px 0 var(--pixel-black);
+      padding: 6px;
+    }
+
+    .calendar-header {
+      background: var(--pixel-red);
+      height: 20%;
+      margin-bottom: 4px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+    }
+
+    .calendar-day {
+      aspect-ratio: 1;
+      background: var(--pixel-light);
+      border: 1px solid var(--pixel-gray);
+    }
+
+    .calendar-day.today {
+      background: var(--pixel-yellow);
+    }
+
+    /* Communication board */
+    .obj-communication {
+      top: 25%;
+      right: 8%;
+      width: 60px;
+    }
+
+    .comm-board {
+      background: var(--pixel-orange);
+      width: 100%;
+      aspect-ratio: 1;
+      border: 4px solid var(--desk-dark);
+      box-shadow: 3px 3px 0 var(--pixel-black);
+      display: flex;
+      flex-direction: column;
+      padding: 4px;
+      gap: 3px;
+    }
+
+    .comm-note {
+      background: var(--pixel-yellow);
+      flex: 1;
+      border: 1px solid var(--pixel-dark);
     }
 
     /* =============================================
-       RPG-STYLE PANELS (Modals)
+       GAME TOOLTIP
        ============================================= */
 
-    .rpg-panel-overlay {
+    .game-tooltip {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(26, 47, 35, 0.6);
+      background: var(--pixel-black);
+      border: 4px solid var(--pixel-white);
+      padding: 12px 20px;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.6rem;
+      color: var(--pixel-white);
+      pointer-events: none;
       z-index: 1000;
       opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
+      transition: opacity 0.2s;
+      box-shadow: 4px 4px 0 var(--pixel-dark);
+      max-width: 200px;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .game-tooltip.visible {
+      opacity: 1;
+    }
+
+    .game-tooltip-action {
+      display: block;
+      margin-top: 8px;
+      color: var(--pixel-yellow);
+      font-size: 0.5rem;
+    }
+
+    /* =============================================
+       RPG PANEL (Modal)
+       ============================================= */
+
+    .rpg-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
     }
 
-    .rpg-panel-overlay.active {
+    .rpg-overlay.active {
       opacity: 1;
       visibility: visible;
     }
 
     .rpg-panel {
-      background: var(--panel-bg);
-      border-radius: 24px;
-      max-width: 800px;
-      width: 100%;
-      max-height: 90vh;
-      overflow: hidden;
-      transform: scale(0.9) translateY(20px);
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      background: var(--pixel-dark);
+      border: 8px solid var(--pixel-light);
       box-shadow:
-        0 25px 80px rgba(26, 47, 35, 0.3),
-        0 10px 30px rgba(26, 47, 35, 0.2);
-      /* Pixel-RPG border style */
-      border: 4px solid var(--earth-warm);
-      outline: 2px solid var(--sunset-gold);
-      outline-offset: -8px;
+        0 0 0 4px var(--pixel-black),
+        8px 8px 0 var(--pixel-black);
+      max-width: 700px;
+      width: 100%;
+      max-height: 85vh;
+      overflow: hidden;
+      transform: scale(0.9);
+      transition: transform 0.3s;
     }
 
-    .rpg-panel-overlay.active .rpg-panel {
-      transform: scale(1) translateY(0);
+    .rpg-overlay.active .rpg-panel {
+      transform: scale(1);
     }
 
-    .rpg-panel-header {
-      background: linear-gradient(135deg, var(--forest-deep) 0%, var(--forest-mid) 100%);
-      padding: 1.25rem 1.5rem;
+    .rpg-header {
+      background: var(--pixel-navy);
+      padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      /* Beadwork-style bottom border */
-      border-bottom: 4px solid var(--sunset-gold);
+      border-bottom: 4px solid var(--pixel-black);
     }
 
-    .rpg-panel-title {
-      font-family: 'Lora', serif;
-      font-size: 1.5rem;
-      color: var(--birch-cream);
+    .rpg-title {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.8rem;
+      color: var(--pixel-yellow);
+      text-shadow: 2px 2px 0 var(--pixel-black);
       display: flex;
       align-items: center;
       gap: 0.75rem;
     }
 
-    .rpg-panel-title svg {
-      width: 24px;
-      height: 24px;
+    .rpg-title-icon {
+      font-size: 1.2rem;
     }
 
-    .rpg-panel-close {
-      background: rgba(255,255,255,0.1);
-      border: 2px solid rgba(255,255,255,0.3);
-      color: var(--birch-cream);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+    .rpg-close {
+      background: var(--pixel-red);
+      border: none;
+      color: var(--pixel-white);
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.7rem;
+      padding: 0.5rem 1rem;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
+      box-shadow: 0 4px 0 var(--pixel-purple);
+      transition: all 0.1s;
     }
 
-    .rpg-panel-close:hover {
-      background: rgba(255,255,255,0.2);
-      transform: rotate(90deg);
+    .rpg-close:hover {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 var(--pixel-purple);
     }
 
-    .rpg-panel-close:focus {
-      outline: 2px solid var(--sunset-gold);
-      outline-offset: 2px;
-    }
-
-    .rpg-panel-close svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .rpg-panel-content {
+    .rpg-body {
       padding: 1.5rem;
       overflow-y: auto;
-      max-height: calc(90vh - 80px);
-    }
-
-    /* Tab navigation inside panels */
-    .panel-tabs {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-      border-bottom: 2px solid var(--earth-light);
-      padding-bottom: 1rem;
-    }
-
-    .panel-tab {
-      background: var(--birch-cream);
-      border: 2px solid var(--earth-light);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
+      max-height: calc(85vh - 80px);
+      color: var(--pixel-white);
       font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--forest-mid);
-      transition: all 0.2s;
+      line-height: 1.8;
     }
 
-    .panel-tab:hover {
-      background: var(--earth-light);
-      color: var(--forest-deep);
-    }
-
-    .panel-tab.active {
-      background: var(--forest-mid);
-      border-color: var(--forest-mid);
-      color: var(--birch-cream);
-    }
-
-    .panel-tab:focus {
-      outline: 2px solid var(--river-light);
-      outline-offset: 2px;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Panel content styles */
-    .panel-section {
-      margin-bottom: 1.5rem;
-    }
-
-    .panel-section h3 {
-      font-family: 'Lora', serif;
-      font-size: 1.2rem;
-      color: var(--forest-deep);
-      margin-bottom: 0.75rem;
+    .rpg-body h3 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.7rem;
+      color: var(--pixel-cyan);
+      margin: 1.5rem 0 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 2px dashed var(--earth-light);
+      border-bottom: 2px dashed var(--pixel-gray);
     }
 
-    .panel-section p {
-      color: var(--forest-mid);
-      line-height: 1.7;
+    .rpg-body h3:first-child {
+      margin-top: 0;
+    }
+
+    .rpg-body p {
       margin-bottom: 1rem;
+      color: var(--pixel-light);
     }
 
-    .panel-section ul {
+    .rpg-body ul {
       list-style: none;
       padding: 0;
     }
 
-    .panel-section li {
+    .rpg-body li {
       padding: 0.5rem 0;
       padding-left: 1.5rem;
       position: relative;
-      color: var(--forest-mid);
+      color: var(--pixel-light);
     }
 
-    .panel-section li::before {
-      content: '◆';
+    .rpg-body li::before {
+      content: '▸';
       position: absolute;
       left: 0;
-      color: var(--sunset-gold);
-      font-size: 0.7rem;
+      color: var(--pixel-yellow);
     }
 
-    /* Newsletter panel specific */
-    .newsletter-current-panel {
-      background: linear-gradient(135deg, var(--river-blue) 0%, var(--river-light) 100%);
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--snow-white);
-    }
-
-    .newsletter-current-panel h4 {
-      margin-bottom: 0.5rem;
-    }
-
-    .newsletter-actions-panel {
+    /* Tab navigation */
+    .rpg-tabs {
       display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 4px;
+      margin-bottom: 1rem;
       flex-wrap: wrap;
     }
 
+    .rpg-tab {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--pixel-gray);
+      border: none;
+      color: var(--pixel-white);
+      cursor: pointer;
+      transition: all 0.1s;
+    }
+
+    .rpg-tab:hover {
+      background: var(--pixel-light);
+      color: var(--pixel-black);
+    }
+
+    .rpg-tab.active {
+      background: var(--pixel-yellow);
+      color: var(--pixel-black);
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    /* Newsletter specific */
+    .newsletter-featured {
+      background: var(--pixel-navy);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 4px solid var(--pixel-blue);
+    }
+
+    .newsletter-featured h4 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.6rem;
+      color: var(--pixel-cyan);
+      margin-bottom: 0.5rem;
+    }
+
     .newsletter-btn {
-      background: rgba(255,255,255,0.2);
-      color: var(--snow-white);
-      padding: 0.75rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 600;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      transition: all 0.2s;
-      border: 2px solid rgba(255,255,255,0.3);
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--pixel-green);
+      color: var(--pixel-white);
+      text-decoration: none;
+      margin-top: 0.75rem;
+      margin-right: 0.5rem;
+      box-shadow: 0 3px 0 var(--pixel-teal);
+      transition: all 0.1s;
     }
 
     .newsletter-btn:hover {
-      background: rgba(255,255,255,0.3);
-      transform: translateY(-2px);
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 var(--pixel-teal);
     }
 
-    .newsletter-btn svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .newsletter-archive-list {
+    .newsletter-archive {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.5rem;
     }
 
     .newsletter-archive-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
-      background: var(--birch-cream);
-      border-radius: 12px;
-      border: 2px solid var(--earth-light);
+      padding: 0.75rem;
+      background: var(--pixel-dark);
+      border: 2px solid var(--pixel-gray);
     }
 
     .newsletter-archive-item span {
-      font-weight: 500;
-      color: var(--forest-deep);
+      font-size: 0.8rem;
+      color: var(--pixel-light);
     }
 
-    .archive-download-btn {
-      background: var(--forest-mid);
-      color: var(--snow-white);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
+    .archive-dl-btn {
+      background: var(--pixel-blue);
+      color: var(--pixel-white);
+      padding: 0.4rem 0.8rem;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.4rem;
+      text-decoration: none;
+      box-shadow: 0 2px 0 var(--pixel-navy);
     }
 
-    .archive-download-btn:hover {
-      background: var(--forest-deep);
-      transform: scale(1.1);
-    }
-
-    .archive-download-btn svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    /* Gallery panel */
-    .gallery-grid-panel {
+    /* Gallery placeholder */
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-
-    .gallery-item-panel {
-      aspect-ratio: 1;
-      background: var(--birch-cream);
-      border-radius: 12px;
-      border: 3px solid var(--earth-light);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--earth-warm);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .gallery-item-panel:hover {
-      border-color: var(--sunset-orange);
-      transform: scale(1.02);
-    }
-
-    .gallery-item-panel svg {
-      width: 32px;
-      height: 32px;
-      margin-bottom: 0.5rem;
-    }
-
-    .gallery-item-panel span {
-      font-size: 0.75rem;
-    }
-
-    .gallery-item-panel img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 9px;
-    }
-
-    /* Schedule widget in panel */
-    .schedule-panel-grid {
-      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       gap: 0.75rem;
     }
 
-    .schedule-day-panel {
-      background: var(--birch-cream);
-      border-radius: 12px;
-      padding: 1rem;
-      border-left: 4px solid var(--earth-light);
-      transition: all 0.2s;
-    }
-
-    .schedule-day-panel.is-today {
-      border-left-color: var(--sunset-gold);
-      background: linear-gradient(90deg, rgba(232, 192, 125, 0.1) 0%, var(--birch-cream) 100%);
-    }
-
-    .schedule-day-panel h4 {
-      font-size: 1rem;
-      color: var(--forest-deep);
-      margin-bottom: 0.5rem;
+    .gallery-item {
+      aspect-ratio: 1;
+      background: var(--pixel-gray);
+      border: 4px solid var(--pixel-dark);
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      color: var(--pixel-light);
+      font-size: 0.6rem;
+      text-align: center;
+      font-family: 'Press Start 2P', cursive;
     }
 
-    .schedule-day-panel h4 .date {
-      font-weight: 400;
-      color: var(--forest-mid);
-      font-size: 0.9rem;
+    /* Schedule grid */
+    .schedule-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
 
-    .schedule-day-panel ul {
+    .schedule-day {
+      background: var(--pixel-dark);
+      padding: 0.75rem;
+      border: 2px solid var(--pixel-gray);
+      border-left: 4px solid var(--pixel-gray);
+    }
+
+    .schedule-day.is-today {
+      border-left-color: var(--pixel-yellow);
+      background: rgba(255, 205, 117, 0.1);
+    }
+
+    .schedule-day h4 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.5rem;
+      color: var(--pixel-yellow);
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-day ul {
       margin: 0;
-      padding: 0;
-      list-style: none;
     }
 
-    .schedule-day-panel li {
-      font-size: 0.9rem;
-      color: var(--forest-mid);
+    .schedule-day li {
+      font-size: 0.75rem;
       padding: 0.25rem 0;
-    }
-
-    /* =============================================
-       NON-JS FALLBACK CONTENT
-       ============================================= */
-
-    .fallback-content {
-      padding: 2rem 0;
-      background: var(--snow-white);
-    }
-
-    .fallback-content .container {
-      max-width: 900px;
-    }
-
-    .fallback-accordion {
-      margin-bottom: 1rem;
-    }
-
-    .fallback-accordion summary {
-      background: var(--forest-mid);
-      color: var(--birch-cream);
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1.1rem;
-      list-style: none;
-    }
-
-    .fallback-accordion summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .fallback-accordion[open] summary {
-      border-radius: 12px 12px 0 0;
-    }
-
-    .fallback-accordion-content {
-      background: var(--birch-cream);
-      padding: 1.5rem;
-      border-radius: 0 0 12px 12px;
-      border: 2px solid var(--earth-light);
-      border-top: none;
     }
 
     /* =============================================
        FOOTER
        ============================================= */
 
-    .room-footer {
-      background: var(--forest-deep);
-      padding: 2rem 0;
+    .game-footer {
+      background: var(--pixel-black);
+      border-top: 4px solid var(--pixel-dark);
+      padding: 1rem;
       text-align: center;
     }
 
-    .room-footer p {
-      color: var(--birch-cream);
-      opacity: 0.7;
-      margin: 0;
+    .game-footer p {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.5rem;
+      color: var(--pixel-gray);
     }
 
-    .room-footer a {
-      color: var(--sunset-gold);
+    .game-footer a {
+      color: var(--pixel-yellow);
     }
 
     /* =============================================
@@ -940,874 +962,577 @@ layout: null
        ============================================= */
 
     @media (max-width: 768px) {
-      .door-frame {
-        width: 220px;
-        height: 300px;
+      .classroom-scene {
+        aspect-ratio: 4/3;
+        min-height: 400px;
+      }
+
+      .obj-newsletter { width: 60px; }
+      .obj-artwork { gap: 4px; }
+      .artwork-piece { width: 35px; }
+      .obj-desk { width: 50%; }
+      .obj-community { width: 70px; }
+      .obj-calendar { width: 50px; }
+      .obj-communication { width: 45px; }
+
+      .hud-title {
+        font-size: 0.5rem;
       }
 
       .rpg-panel {
         margin: 0.5rem;
-        max-height: 95vh;
       }
 
-      .rpg-panel-content {
-        max-height: calc(95vh - 70px);
+      .rpg-title {
+        font-size: 0.6rem;
       }
+    }
 
-      .hotspot-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .panel-tabs {
-        flex-direction: column;
-      }
-
-      .panel-tab {
-        text-align: center;
-      }
-
-      .newsletter-actions-panel {
-        flex-direction: column;
-      }
-
-      .light-rays {
+    @media (max-width: 480px) {
+      .obj-student-desks {
         display: none;
       }
+
+      .obj-chalkboard {
+        width: 60%;
+      }
+    }
+
+    /* No JS fallback */
+    noscript .fallback-content {
+      padding: 2rem;
+      color: var(--pixel-white);
     }
   </style>
 </head>
-<body class="door-active">
-  <!-- Debug: If you can see this text, the page is loading -->
-  <div id="debug-test" style="position:fixed;top:0;left:0;background:red;color:white;padding:10px;z-index:99999;font-size:16px;">
-    Page is loading... Click "Open the Doors" below
+<body>
+  <!-- Game Tooltip -->
+  <div class="game-tooltip" id="gameTooltip">
+    <span class="game-tooltip-text"></span>
+    <span class="game-tooltip-action">[ CLICK TO OPEN ]</span>
   </div>
 
-  <!-- No-JS fallback style -->
-  <noscript>
-    <style>
-      .door-scene { display: none !important; }
-      .door-active .classroom-interior { opacity: 1 !important; }
-      .dust-particles, .light-rays, .seasonal-overlay { display: none !important; }
-      #debug-test { display: none !important; }
-    </style>
-  </noscript>
-
-  <!-- Door Scene (Intro) -->
-  <div class="door-scene" id="doorScene" role="dialog" aria-label="Welcome to classroom">
-    <div class="door-scene-content">
-      <div class="door-frame">
-        <div class="door-frame-border"></div>
-        <div class="door-interior">🏫</div>
-        <div class="door" id="door">
-          <div class="door-panel"></div>
-          <div class="door-panel door-panel-lower"></div>
-          <div class="door-handle"></div>
+  <!-- Door Scene -->
+  <div class="door-scene" id="doorScene">
+    <div class="door-container">
+      <div class="pixel-door-frame">
+        <div class="pixel-door" id="pixelDoor">
+          <div class="pixel-door-window"></div>
+          <div class="pixel-door-handle"></div>
+          <div class="door-sign">{{ page.grade }}</div>
         </div>
       </div>
 
       <div class="door-welcome">
         <h1>{{ page.title }}</h1>
-        <p>with {{ page.teachers | join: ' & ' }}</p>
+        <p>{{ page.teachers | join: ' & ' }}</p>
       </div>
 
-      <button class="door-enter-btn" id="enterBtn" aria-label="Open the classroom doors">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
-          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
-          <polyline points="10 17 15 12 10 7"></polyline>
-          <line x1="15" y1="12" x2="3" y2="12"></line>
-        </svg>
-        Open the Doors
+      <button class="door-enter-btn" id="enterBtn">
+        ENTER CLASSROOM
       </button>
 
-      <p class="door-hint">Press Enter or Space to open</p>
+      <p class="door-hint">PRESS ENTER OR CLICK</p>
     </div>
   </div>
 
-  <!-- Ambient Effects -->
-  <div class="seasonal-overlay winter" id="seasonalOverlay" aria-hidden="true"></div>
-  <div class="light-rays" aria-hidden="true"></div>
-  <div class="dust-particles" id="dustParticles" aria-hidden="true"></div>
+  <!-- Classroom Scene -->
+  <div class="classroom-wrapper" id="classroomWrapper">
+    <!-- HUD -->
+    <nav class="game-hud">
+      <div class="hud-left">
+        <a href="{{ '/classrooms/' | relative_url }}" class="hud-back">← BACK</a>
+        <span class="hud-title">{{ page.title }}</span>
+      </div>
+      <div class="hud-right">
+        {{ page.teachers | join: ' & ' }}
+      </div>
+    </nav>
 
-  <!-- Main Classroom Interior -->
-  <main class="classroom-interior" id="classroomInterior">
-
-    <!-- Room Header -->
-    <header class="room-header">
-      <div class="container">
-        <a href="{{ '/classrooms/' | relative_url }}" class="room-back-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 12H5"></path>
-            <path d="m12 19-7-7 7-7"></path>
-          </svg>
-          Back to All Classrooms
-        </a>
-
-        <div class="room-title-area">
-          <span class="room-badge">{{ page.grade }}</span>
-          <div>
-            <h1 class="room-title">{{ page.title }}</h1>
-            <p class="room-teacher">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              {{ page.teachers | join: ' & ' }}
-            </p>
-          </div>
+    <!-- The Pixel Classroom -->
+    <div class="classroom-scene" role="application" aria-label="Interactive classroom - click objects to explore">
+      <!-- Background -->
+      <div class="classroom-bg">
+        <div class="wall-back">
+          <div class="wall-strip"></div>
         </div>
+        <div class="floor"></div>
       </div>
-    </header>
 
-    <!-- Classroom Scene with Hotspots -->
-    <section class="classroom-scene">
-      <div class="hotspot-grid">
+      <!-- Interactive Objects -->
+      <div class="classroom-objects">
 
-        <!-- Newsletter Corner -->
-        <button class="hotspot-card" data-accent="newsletter" data-panel="newsletter" aria-haspopup="dialog">
-          <div class="hotspot-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-            </svg>
+        <!-- Chalkboard (Learning) -->
+        <button class="classroom-object obj-chalkboard" data-panel="learning" data-tooltip="Learning Board" tabindex="0" aria-label="Click to see what we're learning">
+          <div class="chalkboard-frame">
+            <div class="chalkboard-inner">
+              <div class="chalkboard-text">
+                WHAT WE'RE<br>LEARNING
+              </div>
+            </div>
           </div>
-          <h3 class="hotspot-title">Newsletter Corner</h3>
-          <p class="hotspot-desc">Monthly updates about our classroom activities, upcoming events, and student achievements.</p>
-          <span class="hotspot-prompt">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 16 16 12 12 8"></polyline>
-              <line x1="8" y1="12" x2="16" y2="12"></line>
-            </svg>
-            Click to read
-          </span>
         </button>
 
-        <!-- Learning Table -->
-        <button class="hotspot-card" data-accent="learning" data-panel="learning" aria-haspopup="dialog">
-          <div class="hotspot-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-            </svg>
+        <!-- Newsletter on wall -->
+        <button class="classroom-object obj-newsletter" data-panel="newsletter" data-tooltip="Newsletter" tabindex="0" aria-label="Click to read newsletters">
+          <div class="newsletter-paper">
+            <div class="newsletter-header"></div>
+            <div class="newsletter-line"></div>
+            <div class="newsletter-line"></div>
+            <div class="newsletter-line"></div>
           </div>
-          <h3 class="hotspot-title">Learning Table</h3>
-          <p class="hotspot-desc">Discover what we're exploring in Language Arts, Math, Science, and more.</p>
-          <span class="hotspot-prompt">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 16 16 12 12 8"></polyline>
-              <line x1="8" y1="12" x2="16" y2="12"></line>
-            </svg>
-            Click to explore
-          </span>
         </button>
 
-        <!-- Student Work Wall -->
-        <button class="hotspot-card" data-accent="gallery" data-panel="gallery" aria-haspopup="dialog">
-          <div class="hotspot-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-          </div>
-          <h3 class="hotspot-title">Student Work Wall</h3>
-          <p class="hotspot-desc">A gallery celebrating our students' artwork, projects, and achievements.</p>
-          <span class="hotspot-prompt">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 16 16 12 12 8"></polyline>
-              <line x1="8" y1="12" x2="16" y2="12"></line>
-            </svg>
-            Click to view gallery
-          </span>
+        <!-- Student artwork -->
+        <button class="classroom-object obj-artwork" data-panel="gallery" data-tooltip="Student Work" tabindex="0" aria-label="Click to view student gallery">
+          <div class="artwork-piece"></div>
+          <div class="artwork-piece"></div>
+          <div class="artwork-piece"></div>
         </button>
 
-        <!-- Community Corner -->
-        <button class="hotspot-card" data-accent="community" data-panel="community" aria-haspopup="dialog">
-          <div class="hotspot-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
+        <!-- Teacher's desk (Learning table) -->
+        <button class="classroom-object obj-desk" data-panel="learning" data-tooltip="Learning Table" tabindex="0" aria-label="Click to explore curriculum">
+          <div class="desk-items">
+            <div class="desk-book"></div>
+            <div class="desk-book"></div>
+            <div class="desk-book"></div>
           </div>
-          <h3 class="hotspot-title">Community & Culture</h3>
-          <p class="hotspot-desc">Learn about our Elder visits, land-based learning, and cultural programs.</p>
-          <span class="hotspot-prompt">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 16 16 12 12 8"></polyline>
-              <line x1="8" y1="12" x2="16" y2="12"></line>
-            </svg>
-            Click to learn more
-          </span>
+          <div class="desk-top"></div>
         </button>
 
-        <!-- Communication Board -->
-        <button class="hotspot-card" data-accent="communication" data-panel="communication" aria-haspopup="dialog">
-          <div class="hotspot-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
+        <!-- Community corner (rug) -->
+        <button class="classroom-object obj-community" data-panel="community" data-tooltip="Community Circle" tabindex="0" aria-label="Click to learn about community programs">
+          <div class="community-rug">
+            <span class="community-icon">🪶</span>
           </div>
-          <h3 class="hotspot-title">Communication Board</h3>
-          <p class="hotspot-desc">How families can stay connected with homework, progress reports, and more.</p>
-          <span class="hotspot-prompt">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 16 16 12 12 8"></polyline>
-              <line x1="8" y1="12" x2="16" y2="12"></line>
-            </svg>
-            Click to connect
-          </span>
         </button>
 
-        <!-- Weekly Schedule -->
-        <button class="hotspot-card" data-accent="schedule" data-panel="schedule" aria-haspopup="dialog">
-          <div class="hotspot-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
+        <!-- Calendar -->
+        <button class="classroom-object obj-calendar" data-panel="schedule" data-tooltip="Weekly Schedule" tabindex="0" aria-label="Click to view schedule">
+          <div class="calendar-board">
+            <div class="calendar-header"></div>
+            <div class="calendar-grid">
+              <div class="calendar-day"></div>
+              <div class="calendar-day today"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+              <div class="calendar-day"></div>
+            </div>
           </div>
-          <h3 class="hotspot-title">Weekly Schedule</h3>
-          <p class="hotspot-desc">This week's after-school programs and activities.</p>
-          <span class="hotspot-prompt">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 16 16 12 12 8"></polyline>
-              <line x1="8" y1="12" x2="16" y2="12"></line>
-            </svg>
-            Click to view
-          </span>
         </button>
+
+        <!-- Communication board -->
+        <button class="classroom-object obj-communication" data-panel="communication" data-tooltip="Message Board" tabindex="0" aria-label="Click to see communication info">
+          <div class="comm-board">
+            <div class="comm-note"></div>
+            <div class="comm-note"></div>
+            <div class="comm-note"></div>
+          </div>
+        </button>
+
+        <!-- Student desks (decorative) -->
+        <div class="obj-student-desks" aria-hidden="true">
+          <div class="student-desk"></div>
+          <div class="student-desk"></div>
+          <div class="student-desk"></div>
+          <div class="student-desk"></div>
+        </div>
 
       </div>
-    </section>
-
-    <!-- Welcome Section -->
-    <section class="fallback-content">
-      <div class="container">
-        <details class="fallback-accordion" open>
-          <summary>👋 Welcome to Our Classroom</summary>
-          <div class="fallback-accordion-content">
-            {{ content }}
-          </div>
-        </details>
-      </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="room-footer">
-      <div class="container">
-        <p>{{ site.title }} • <a href="{{ '/' | relative_url }}">Return to Main Site</a></p>
-      </div>
+    <footer class="game-footer">
+      <p><a href="{{ '/' | relative_url }}">{{ site.title }}</a> • EXPLORE THE CLASSROOM!</p>
     </footer>
+  </div>
 
-  </main>
-
-  <!-- RPG Panels (Modals) -->
+  <!-- RPG Panels -->
 
   <!-- Newsletter Panel -->
-  <div class="rpg-panel-overlay" id="panel-newsletter" role="dialog" aria-modal="true" aria-labelledby="panel-newsletter-title">
+  <div class="rpg-overlay" id="panel-newsletter">
     <div class="rpg-panel">
-      <div class="rpg-panel-header">
-        <h2 class="rpg-panel-title" id="panel-newsletter-title">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-          </svg>
-          Monthly Newsletters
-        </h2>
-        <button class="rpg-panel-close" aria-label="Close panel">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+      <div class="rpg-header">
+        <h2 class="rpg-title"><span class="rpg-title-icon">📰</span> NEWSLETTERS</h2>
+        <button class="rpg-close" data-close>CLOSE</button>
       </div>
-      <div class="rpg-panel-content">
-        <p>Stay informed about our classroom activities, upcoming events, and student progress through our monthly newsletters.</p>
-
+      <div class="rpg-body">
         {% if page.newsletters and page.newsletters.size > 0 %}
         {% assign current = page.newsletters | first %}
-        <div class="newsletter-current-panel">
-          <h4>📰 Current Newsletter: {{ current.month }}</h4>
+        <div class="newsletter-featured">
+          <h4>📌 CURRENT: {{ current.month }}</h4>
           {% if current.description %}<p>{{ current.description }}</p>{% endif %}
-          <div class="newsletter-actions-panel">
-            <a href="{{ current.file | relative_url }}" class="newsletter-btn" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Download PDF
-            </a>
-            <a href="{{ current.file | relative_url }}" class="newsletter-btn" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              View Online
-            </a>
-          </div>
+          <a href="{{ current.file | relative_url }}" class="newsletter-btn" target="_blank">📥 DOWNLOAD</a>
+          <a href="{{ current.file | relative_url }}" class="newsletter-btn" target="_blank">👁 VIEW</a>
         </div>
 
         {% if page.newsletters.size > 1 %}
-        <div class="panel-section">
-          <h3>📚 Newsletter Archive</h3>
-          <div class="newsletter-archive-list">
-            {% for newsletter in page.newsletters offset:1 %}
-            <div class="newsletter-archive-item">
-              <span>{{ newsletter.month }}{% if newsletter.title %} - {{ newsletter.title }}{% endif %}</span>
-              <a href="{{ newsletter.file | relative_url }}" class="archive-download-btn" title="Download {{ newsletter.month }} Newsletter">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-            {% endfor %}
+        <h3>📚 ARCHIVE</h3>
+        <div class="newsletter-archive">
+          {% for newsletter in page.newsletters offset:1 %}
+          <div class="newsletter-archive-item">
+            <span>{{ newsletter.month }}{% if newsletter.title %} - {{ newsletter.title }}{% endif %}</span>
+            <a href="{{ newsletter.file | relative_url }}" class="archive-dl-btn" target="_blank">GET</a>
           </div>
+          {% endfor %}
         </div>
         {% endif %}
 
         {% else %}
-        <div class="panel-section">
-          <p>📝 <strong>Newsletters coming soon!</strong> Check back for monthly updates about our classroom.</p>
-          <p><em>Newsletter files will be uploaded to: <code>/assets/newsletters/YYYY-MM-grade-3-4.pdf</code></em></p>
-        </div>
+        <p>📝 Newsletters coming soon! Check back for monthly updates.</p>
         {% endif %}
       </div>
     </div>
   </div>
 
   <!-- Learning Panel -->
-  <div class="rpg-panel-overlay" id="panel-learning" role="dialog" aria-modal="true" aria-labelledby="panel-learning-title">
+  <div class="rpg-overlay" id="panel-learning">
     <div class="rpg-panel">
-      <div class="rpg-panel-header">
-        <h2 class="rpg-panel-title" id="panel-learning-title">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-          </svg>
-          What We're Learning
-        </h2>
-        <button class="rpg-panel-close" aria-label="Close panel">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+      <div class="rpg-header">
+        <h2 class="rpg-title"><span class="rpg-title-icon">📚</span> WHAT WE'RE LEARNING</h2>
+        <button class="rpg-close" data-close>CLOSE</button>
       </div>
-      <div class="rpg-panel-content">
-        <div class="panel-tabs" role="tablist">
-          <button class="panel-tab active" role="tab" aria-selected="true" data-tab="lang-arts">Language Arts</button>
-          <button class="panel-tab" role="tab" aria-selected="false" data-tab="math">Mathematics</button>
-          <button class="panel-tab" role="tab" aria-selected="false" data-tab="science">Science & Land</button>
-          <button class="panel-tab" role="tab" aria-selected="false" data-tab="social">Social Studies</button>
-          <button class="panel-tab" role="tab" aria-selected="false" data-tab="ojicree">Oji-Cree</button>
+      <div class="rpg-body">
+        <div class="rpg-tabs" role="tablist">
+          <button class="rpg-tab active" data-tab="lang">LANGUAGE</button>
+          <button class="rpg-tab" data-tab="math">MATH</button>
+          <button class="rpg-tab" data-tab="science">SCIENCE</button>
+          <button class="rpg-tab" data-tab="social">SOCIAL</button>
+          <button class="rpg-tab" data-tab="ojicree">OJI-CREE</button>
         </div>
 
-        <div class="tab-content active" id="tab-lang-arts">
-          <div class="panel-section">
-            <h3>📖 Language Arts</h3>
-            <p>Grade 3/4 is when reading really takes off! We focus on building strong literacy foundations:</p>
-            <ul>
-              <li><strong>Comprehension strategies</strong> — making predictions, asking questions, making connections</li>
-              <li><strong>Reading stamina</strong> — building up to longer independent reading times</li>
-              <li><strong>Writing</strong> — paragraph structure, personal narratives, reports, and creative writing</li>
-              <li><strong>Grammar & conventions</strong> — proper sentence structure, punctuation, and spelling</li>
-              <li><strong>Oral language</strong> — presentations, discussions, and storytelling in both languages</li>
-            </ul>
-          </div>
+        <div class="tab-pane active" id="tab-lang">
+          <h3>📖 LANGUAGE ARTS</h3>
+          <p>Grade 3/4 is when reading really takes off!</p>
+          <ul>
+            <li><strong>Comprehension</strong> - predictions, questions, connections</li>
+            <li><strong>Reading stamina</strong> - longer independent reading</li>
+            <li><strong>Writing</strong> - paragraphs, narratives, reports</li>
+            <li><strong>Grammar</strong> - sentence structure, punctuation</li>
+          </ul>
         </div>
 
-        <div class="tab-content" id="tab-math">
-          <div class="panel-section">
-            <h3>🔢 Mathematics</h3>
-            <p>Students develop computational fluency and mathematical reasoning:</p>
-            <ul>
-              <li><strong>Multiplication & Division</strong> — mastering basic facts and applying them</li>
-              <li><strong>Fractions</strong> — understanding parts of a whole and comparing fractions</li>
-              <li><strong>Measurement</strong> — length, mass, capacity, and area</li>
-              <li><strong>Geometry</strong> — 2D and 3D shapes, angles, and symmetry</li>
-              <li><strong>Problem Solving</strong> — multi-step word problems and real-world applications</li>
-            </ul>
-          </div>
+        <div class="tab-pane" id="tab-math">
+          <h3>🔢 MATHEMATICS</h3>
+          <p>Building computational fluency and reasoning:</p>
+          <ul>
+            <li><strong>Multiplication & Division</strong> - mastering facts</li>
+            <li><strong>Fractions</strong> - parts of a whole</li>
+            <li><strong>Measurement</strong> - length, mass, capacity, area</li>
+            <li><strong>Geometry</strong> - 2D/3D shapes, angles</li>
+            <li><strong>Problem Solving</strong> - multi-step problems</li>
+          </ul>
         </div>
 
-        <div class="tab-content" id="tab-science">
-          <div class="panel-section">
-            <h3>🌲 Science & Land-Based Learning</h3>
-            <p>We integrate Western science with traditional ecological knowledge:</p>
-            <ul>
-              <li><strong>Habitats & Communities</strong> — studying local ecosystems</li>
-              <li><strong>Forces & Movement</strong> — simple machines and physics concepts</li>
-              <li><strong>Plants & Animals</strong> — identification, life cycles, and traditional uses</li>
-              <li><strong>Seasonal Activities</strong> — participating in land-based learning throughout the year</li>
-            </ul>
-          </div>
+        <div class="tab-pane" id="tab-science">
+          <h3>🌲 SCIENCE & LAND-BASED</h3>
+          <p>Western science meets traditional knowledge:</p>
+          <ul>
+            <li><strong>Habitats</strong> - studying local ecosystems</li>
+            <li><strong>Forces</strong> - simple machines, physics</li>
+            <li><strong>Plants & Animals</strong> - identification, life cycles</li>
+            <li><strong>Seasonal Activities</strong> - land-based learning</li>
+          </ul>
         </div>
 
-        <div class="tab-content" id="tab-social">
-          <div class="panel-section">
-            <h3>🌍 Social Studies</h3>
-            <p>Students explore their place in wider communities:</p>
-            <ul>
-              <li><strong>Ontario Communities</strong> — comparing urban, rural, and Indigenous communities</li>
-              <li><strong>First Nations History</strong> — Oji-Cree history and the treaties that shape our lives</li>
-              <li><strong>Geographic Inquiry</strong> — mapping skills and understanding our region</li>
-            </ul>
-          </div>
+        <div class="tab-pane" id="tab-social">
+          <h3>🌍 SOCIAL STUDIES</h3>
+          <p>Exploring our place in the world:</p>
+          <ul>
+            <li><strong>Ontario Communities</strong> - urban, rural, Indigenous</li>
+            <li><strong>First Nations History</strong> - Oji-Cree history, treaties</li>
+            <li><strong>Geographic Inquiry</strong> - mapping skills</li>
+          </ul>
         </div>
 
-        <div class="tab-content" id="tab-ojicree">
-          <div class="panel-section">
-            <h3>💬 Oji-Cree Language</h3>
-            <p>Building intermediate language skills with focus on reading, writing, and storytelling. Students engage with our language through:</p>
-            <ul>
-              <li>Daily vocabulary building and conversation practice</li>
-              <li>Reading traditional stories in Oji-Cree</li>
-              <li>Writing exercises and journaling</li>
-              <li>Storytelling with Elders and community members</li>
-              <li>Songs and cultural expressions</li>
-            </ul>
-          </div>
+        <div class="tab-pane" id="tab-ojicree">
+          <h3>💬 OJI-CREE LANGUAGE</h3>
+          <p>Building intermediate language skills:</p>
+          <ul>
+            <li>Daily vocabulary and conversation</li>
+            <li>Reading traditional stories</li>
+            <li>Writing exercises and journaling</li>
+            <li>Storytelling with Elders</li>
+            <li>Songs and cultural expressions</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Gallery Panel -->
-  <div class="rpg-panel-overlay" id="panel-gallery" role="dialog" aria-modal="true" aria-labelledby="panel-gallery-title">
+  <div class="rpg-overlay" id="panel-gallery">
     <div class="rpg-panel">
-      <div class="rpg-panel-header">
-        <h2 class="rpg-panel-title" id="panel-gallery-title">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-          Student Work Gallery
-        </h2>
-        <button class="rpg-panel-close" aria-label="Close panel">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+      <div class="rpg-header">
+        <h2 class="rpg-title"><span class="rpg-title-icon">🎨</span> STUDENT WORK</h2>
+        <button class="rpg-close" data-close>CLOSE</button>
       </div>
-      <div class="rpg-panel-content">
-        <p>A celebration of our students' artwork, projects, and achievements. Check back regularly for new additions!</p>
-
-        <div class="panel-section">
-          <h3>🎨 Gallery</h3>
-          <div class="gallery-grid-panel" id="galleryGrid">
-            <!-- Gallery items will be populated by JS or you can add images here -->
-            <div class="gallery-item-panel">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-              </svg>
-              <span>Coming Soon</span>
-            </div>
-            <div class="gallery-item-panel">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-              </svg>
-              <span>Coming Soon</span>
-            </div>
-            <div class="gallery-item-panel">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-              </svg>
-              <span>Coming Soon</span>
-            </div>
-            <div class="gallery-item-panel">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-              </svg>
-              <span>Coming Soon</span>
-            </div>
-          </div>
-          <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--forest-mid);">
-            <em>📁 Add images to: <code>/assets/classrooms/grade-3-4/gallery/</code></em>
-          </p>
+      <div class="rpg-body">
+        <p>A gallery of our students' artwork and projects!</p>
+        <div class="gallery-grid">
+          <div class="gallery-item">COMING<br>SOON</div>
+          <div class="gallery-item">COMING<br>SOON</div>
+          <div class="gallery-item">COMING<br>SOON</div>
+          <div class="gallery-item">COMING<br>SOON</div>
         </div>
+        <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--pixel-gray);">
+          Add images to: /assets/classrooms/grade-3-4/gallery/
+        </p>
       </div>
     </div>
   </div>
 
   <!-- Community Panel -->
-  <div class="rpg-panel-overlay" id="panel-community" role="dialog" aria-modal="true" aria-labelledby="panel-community-title">
+  <div class="rpg-overlay" id="panel-community">
     <div class="rpg-panel">
-      <div class="rpg-panel-header">
-        <h2 class="rpg-panel-title" id="panel-community-title">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          Community & Culture
-        </h2>
-        <button class="rpg-panel-close" aria-label="Close panel">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+      <div class="rpg-header">
+        <h2 class="rpg-title"><span class="rpg-title-icon">🪶</span> COMMUNITY & CULTURE</h2>
+        <button class="rpg-close" data-close>CLOSE</button>
       </div>
-      <div class="rpg-panel-content">
-        <div class="panel-section">
-          <h3>🏕️ Special Programs</h3>
-          <p>Our classroom is enriched by connections to our community and culture:</p>
-          <ul>
-            <li><strong>Reading Buddies</strong> — Paired with younger students for weekly reading sessions</li>
-            <li><strong>Elder Visits</strong> — Monthly visits from community Elders for cultural teachings</li>
-            <li><strong>Land-Based Outings</strong> — Seasonal trips for traditional activities</li>
-            <li><strong>Science Fair</strong> — Annual project showcasing student inquiry</li>
-          </ul>
-        </div>
+      <div class="rpg-body">
+        <h3>🏕️ SPECIAL PROGRAMS</h3>
+        <ul>
+          <li><strong>Reading Buddies</strong> - paired with younger students</li>
+          <li><strong>Elder Visits</strong> - monthly cultural teachings</li>
+          <li><strong>Land-Based Outings</strong> - seasonal trips</li>
+          <li><strong>Science Fair</strong> - annual project showcase</li>
+        </ul>
 
-        <div class="panel-section">
-          <h3>🌿 Land-Based Learning</h3>
-          <p>Throughout the year, students engage with the land through traditional activities that connect curriculum learning with Oji-Cree knowledge systems. These experiences build respect for our environment and strengthen cultural identity.</p>
-        </div>
+        <h3>🌿 LAND-BASED LEARNING</h3>
+        <p>Throughout the year, students engage with the land through traditional activities that connect learning with Oji-Cree knowledge systems.</p>
 
-        <div class="panel-section">
-          <h3>👥 Our Classroom Community</h3>
-          <p>In Grade 3/4, students take on more responsibility for their learning while still receiving the support they need. Our classroom operates on mutual respect and shared responsibility. Students help establish classroom norms at the beginning of the year, giving them ownership of their learning environment.</p>
-        </div>
+        <h3>👥 OUR CLASSROOM</h3>
+        <p>Grade 3/4 students take on more responsibility while receiving support. Our classroom operates on mutual respect. Students help establish classroom norms, giving them ownership of their learning environment.</p>
       </div>
     </div>
   </div>
 
   <!-- Communication Panel -->
-  <div class="rpg-panel-overlay" id="panel-communication" role="dialog" aria-modal="true" aria-labelledby="panel-communication-title">
+  <div class="rpg-overlay" id="panel-communication">
     <div class="rpg-panel">
-      <div class="rpg-panel-header">
-        <h2 class="rpg-panel-title" id="panel-communication-title">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-          Staying Connected
-        </h2>
-        <button class="rpg-panel-close" aria-label="Close panel">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+      <div class="rpg-header">
+        <h2 class="rpg-title"><span class="rpg-title-icon">💬</span> STAYING CONNECTED</h2>
+        <button class="rpg-close" data-close>CLOSE</button>
       </div>
-      <div class="rpg-panel-content">
-        <div class="panel-section">
-          <h3>📬 How We Communicate</h3>
-          <p>I believe in open communication with families. You can expect:</p>
-          <ul>
-            <li><strong>Monthly newsletters</strong> with curriculum updates and important dates</li>
-            <li><strong>Agenda book</strong> — daily communication tool (please check and sign nightly)</li>
-            <li><strong>Progress reports</strong> — formal reports three times per year</li>
-            <li><strong>Parent-teacher conferences</strong> — scheduled in fall and spring</li>
-            <li><strong>Open door policy</strong> — I'm always available to discuss your child's progress</li>
-          </ul>
-        </div>
+      <div class="rpg-body">
+        <h3>📬 HOW WE COMMUNICATE</h3>
+        <ul>
+          <li><strong>Monthly newsletters</strong> - curriculum updates</li>
+          <li><strong>Agenda book</strong> - daily communication (check nightly!)</li>
+          <li><strong>Progress reports</strong> - three times per year</li>
+          <li><strong>Parent-teacher conferences</strong> - fall and spring</li>
+          <li><strong>Open door policy</strong> - always available to chat</li>
+        </ul>
 
-        <div class="panel-section">
-          <h3>📚 Homework Policy</h3>
-          <p>Grade 3/4 students receive regular homework to reinforce classroom learning:</p>
-          <ul>
-            <li><strong>Reading</strong> — 20-30 minutes of independent reading nightly</li>
-            <li><strong>Math</strong> — practice sheets or problems 2-3 times weekly</li>
-            <li><strong>Spelling</strong> — weekly word lists for study</li>
-            <li><strong>Projects</strong> — occasional longer-term projects with clear timelines</li>
-          </ul>
-        </div>
+        <h3>📚 HOMEWORK</h3>
+        <ul>
+          <li><strong>Reading</strong> - 20-30 minutes nightly</li>
+          <li><strong>Math</strong> - practice 2-3 times weekly</li>
+          <li><strong>Spelling</strong> - weekly word lists</li>
+          <li><strong>Projects</strong> - occasional longer-term work</li>
+        </ul>
 
-        <div class="panel-section">
-          <h3>📞 Get in Touch</h3>
-          <p>Have questions or want to get involved? <a href="{{ '/contact/' | relative_url }}" style="color: var(--river-blue); font-weight: 600;">Contact our school</a> to reach our classroom.</p>
-        </div>
+        <h3>📞 GET IN TOUCH</h3>
+        <p><a href="{{ '/contact/' | relative_url }}" style="color: var(--pixel-cyan);">Contact our school</a> to reach our classroom.</p>
       </div>
     </div>
   </div>
 
   <!-- Schedule Panel -->
-  <div class="rpg-panel-overlay" id="panel-schedule" role="dialog" aria-modal="true" aria-labelledby="panel-schedule-title">
+  <div class="rpg-overlay" id="panel-schedule">
     <div class="rpg-panel">
-      <div class="rpg-panel-header">
-        <h2 class="rpg-panel-title" id="panel-schedule-title">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          <span id="schedule-panel-week">This Week's Schedule</span>
-        </h2>
-        <button class="rpg-panel-close" aria-label="Close panel">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+      <div class="rpg-header">
+        <h2 class="rpg-title"><span class="rpg-title-icon">📅</span> <span id="scheduleTitle">THIS WEEK</span></h2>
+        <button class="rpg-close" data-close>CLOSE</button>
       </div>
-      <div class="rpg-panel-content">
-        <div class="schedule-panel-grid" id="scheduleGrid">
-          <!-- Will be populated by JS -->
+      <div class="rpg-body">
+        <div class="schedule-grid" id="scheduleGrid">
+          <!-- Filled by JS -->
         </div>
-
-        <div class="panel-section" style="margin-top: 1.5rem;">
-          <p><a href="{{ '/calendar/' | relative_url }}" style="color: var(--river-blue); font-weight: 600;">📅 View Full School Calendar</a></p>
-        </div>
+        <p style="margin-top: 1rem;">
+          <a href="{{ '/calendar/' | relative_url }}" style="color: var(--pixel-cyan);">📅 View Full School Calendar</a>
+        </p>
       </div>
     </div>
   </div>
 
-  <script>
-    // =============================================
-    // INTERACTIVE CLASSROOM SCRIPT
-    // =============================================
+  <!-- No JS Fallback -->
+  <noscript>
+    <div class="fallback-content" style="padding: 2rem; background: var(--pixel-dark); color: var(--pixel-white);">
+      <h1 style="font-family: 'Press Start 2P', monospace; margin-bottom: 1rem;">{{ page.title }}</h1>
+      <p>JavaScript is required for the interactive classroom experience.</p>
+      <p style="margin-top: 1rem;"><a href="{{ '/classrooms/' | relative_url }}" style="color: var(--pixel-yellow);">← Back to Classrooms</a></p>
+      <div style="margin-top: 2rem;">
+        {{ content }}
+      </div>
+    </div>
+  </noscript>
 
+  <script>
     (function() {
       'use strict';
 
       // Elements
       const doorScene = document.getElementById('doorScene');
-      const door = document.getElementById('door');
+      const pixelDoor = document.getElementById('pixelDoor');
       const enterBtn = document.getElementById('enterBtn');
-      const classroomInterior = document.getElementById('classroomInterior');
-      const dustParticles = document.getElementById('dustParticles');
-      const seasonalOverlay = document.getElementById('seasonalOverlay');
+      const classroomWrapper = document.getElementById('classroomWrapper');
+      const tooltip = document.getElementById('gameTooltip');
+      const tooltipText = tooltip.querySelector('.game-tooltip-text');
 
-      // Check for reduced motion preference
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // =============================================
-      // DOOR ANIMATION
-      // =============================================
-
-      function openDoors() {
-        door.classList.add('open');
+      // Door animation - opens EVERY time
+      function openDoor() {
+        pixelDoor.classList.add('open');
 
         setTimeout(() => {
           doorScene.classList.add('hidden');
-          classroomInterior.classList.add('visible');
-        }, prefersReducedMotion ? 100 : 800);
-
-        // Store that user has entered
-        sessionStorage.setItem('classroomEntered', 'true');
+          classroomWrapper.classList.add('visible');
+        }, 600);
       }
 
-      // Check if already entered this session
-      if (sessionStorage.getItem('classroomEntered') === 'true') {
-        doorScene.classList.add('hidden');
-        classroomInterior.classList.add('visible');
-      }
+      enterBtn.addEventListener('click', openDoor);
 
-      // Button click
-      enterBtn.addEventListener('click', openDoors);
-
-      // Keyboard support for door scene
-      doorScene.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+      document.addEventListener('keydown', (e) => {
+        if (!doorScene.classList.contains('hidden') && (e.key === 'Enter' || e.key === ' ')) {
           e.preventDefault();
-          openDoors();
+          openDoor();
         }
       });
 
-      // =============================================
-      // AMBIENT EFFECTS
-      // =============================================
+      // Tooltip system
+      const objects = document.querySelectorAll('.classroom-object');
 
-      if (!prefersReducedMotion) {
-        // Create dust particles
-        for (let i = 0; i < 15; i++) {
-          const dust = document.createElement('div');
-          dust.className = 'dust';
-          dust.style.left = Math.random() * 100 + '%';
-          dust.style.animationDelay = Math.random() * 15 + 's';
-          dust.style.animationDuration = (10 + Math.random() * 10) + 's';
-          dustParticles.appendChild(dust);
-        }
-      }
+      objects.forEach(obj => {
+        obj.addEventListener('mouseenter', (e) => {
+          tooltipText.textContent = obj.dataset.tooltip;
+          tooltip.classList.add('visible');
+        });
 
-      // Seasonal overlay based on month
-      const month = new Date().getMonth();
-      let season = 'winter';
-      if (month >= 2 && month <= 4) season = 'spring';
-      else if (month >= 5 && month <= 7) season = 'summer';
-      else if (month >= 8 && month <= 10) season = 'fall';
+        obj.addEventListener('mousemove', (e) => {
+          tooltip.style.left = e.clientX + 15 + 'px';
+          tooltip.style.top = e.clientY + 15 + 'px';
+        });
 
-      seasonalOverlay.className = 'seasonal-overlay ' + season;
+        obj.addEventListener('mouseleave', () => {
+          tooltip.classList.remove('visible');
+        });
 
-      // =============================================
-      // HOTSPOT PANELS
-      // =============================================
+        // Click to open panel
+        obj.addEventListener('click', () => {
+          openPanel(obj.dataset.panel);
+        });
 
-      const hotspots = document.querySelectorAll('.hotspot-card[data-panel]');
-      const panels = document.querySelectorAll('.rpg-panel-overlay');
-      const closeButtons = document.querySelectorAll('.rpg-panel-close');
+        obj.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openPanel(obj.dataset.panel);
+          }
+        });
+      });
 
+      // Panel system
       let currentPanel = null;
-      let previousFocus = null;
 
       function openPanel(panelId) {
         const panel = document.getElementById('panel-' + panelId);
         if (!panel) return;
 
-        previousFocus = document.activeElement;
         currentPanel = panel;
         panel.classList.add('active');
-
-        // Focus first focusable element
-        const firstFocusable = panel.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        if (firstFocusable) firstFocusable.focus();
-
-        // Prevent body scroll
         document.body.style.overflow = 'hidden';
+
+        // Focus first close button
+        const closeBtn = panel.querySelector('.rpg-close');
+        if (closeBtn) closeBtn.focus();
       }
 
       function closePanel() {
         if (currentPanel) {
           currentPanel.classList.remove('active');
           document.body.style.overflow = '';
-
-          if (previousFocus) previousFocus.focus();
           currentPanel = null;
         }
       }
 
-      // Hotspot clicks
-      hotspots.forEach(hotspot => {
-        hotspot.addEventListener('click', () => {
-          openPanel(hotspot.dataset.panel);
-        });
-
-        hotspot.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openPanel(hotspot.dataset.panel);
-          }
-        });
-      });
-
-      // Close button clicks
-      closeButtons.forEach(btn => {
+      // Close buttons
+      document.querySelectorAll('[data-close]').forEach(btn => {
         btn.addEventListener('click', closePanel);
       });
 
-      // Overlay click to close
-      panels.forEach(panel => {
-        panel.addEventListener('click', (e) => {
-          if (e.target === panel) closePanel();
+      // Close on overlay click
+      document.querySelectorAll('.rpg-overlay').forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) closePanel();
         });
       });
 
       // Escape to close
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && currentPanel) {
-          closePanel();
-        }
+        if (e.key === 'Escape') closePanel();
       });
 
-      // =============================================
-      // TAB NAVIGATION
-      // =============================================
-
-      const tabs = document.querySelectorAll('.panel-tab');
-
-      tabs.forEach(tab => {
+      // Tab system
+      document.querySelectorAll('.rpg-tab').forEach(tab => {
         tab.addEventListener('click', () => {
-          const tabGroup = tab.closest('.rpg-panel-content');
-          const allTabs = tabGroup.querySelectorAll('.panel-tab');
-          const allContents = tabGroup.querySelectorAll('.tab-content');
+          const panel = tab.closest('.rpg-body');
 
-          allTabs.forEach(t => {
-            t.classList.remove('active');
-            t.setAttribute('aria-selected', 'false');
-          });
-          allContents.forEach(c => c.classList.remove('active'));
+          panel.querySelectorAll('.rpg-tab').forEach(t => t.classList.remove('active'));
+          panel.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
 
           tab.classList.add('active');
-          tab.setAttribute('aria-selected', 'true');
-
-          const targetContent = document.getElementById('tab-' + tab.dataset.tab);
-          if (targetContent) targetContent.classList.add('active');
+          const targetPane = document.getElementById('tab-' + tab.dataset.tab);
+          if (targetPane) targetPane.classList.add('active');
         });
       });
 
-      // =============================================
-      // DYNAMIC SCHEDULE
-      // =============================================
-
+      // Dynamic schedule
       function generateSchedule() {
-        const scheduleGrid = document.getElementById('scheduleGrid');
-        const scheduleWeekTitle = document.getElementById('schedule-panel-week');
-        if (!scheduleGrid) return;
+        const grid = document.getElementById('scheduleGrid');
+        const title = document.getElementById('scheduleTitle');
+        if (!grid) return;
 
         const now = new Date();
         const day = now.getDay();
         const diff = now.getDate() - day + (day === 0 ? -6 : 1);
         const monday = new Date(now);
         monday.setDate(diff);
-        monday.setHours(0, 0, 0, 0);
 
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         const fullMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-        // Update title
-        if (scheduleWeekTitle) {
-          scheduleWeekTitle.textContent = `Week of ${fullMonths[monday.getMonth()]} ${monday.getDate()}, ${monday.getFullYear()}`;
+        if (title) {
+          title.textContent = 'WEEK OF ' + fullMonths[monday.getMonth()].toUpperCase() + ' ' + monday.getDate();
         }
 
-        const scheduleRules = {
+        const schedule = {
           'Monday': ['Lunch Program', 'Traditional drumming (all grades)'],
-          'Tuesday': ['Lunch Program', 'After school: Grades 1-3', 'Traditional drumming (all grades)'],
-          'Wednesday': ['Lunch Program', 'After school: Grades 4-6', 'Traditional drumming (all grades)'],
-          'Thursday': ['Lunch Program', 'After school: Grades 7-8', 'Traditional drumming (all grades)'],
-          'Friday': ['Lunch Program', 'After school: Grades 1-8', 'Traditional drumming (all grades)']
+          'Tuesday': ['Lunch Program', 'After school: Grades 1-3'],
+          'Wednesday': ['Lunch Program', 'After school: Grades 4-6'],
+          'Thursday': ['Lunch Program', 'After school: Grades 7-8'],
+          'Friday': ['Lunch Program', 'After school: Grades 1-8']
         };
 
-        const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
         const todayStr = now.toDateString();
 
         let html = '';
-        dayNames.forEach((dayName, index) => {
-          const dayDate = new Date(monday);
-          dayDate.setDate(monday.getDate() + index);
-          const isToday = dayDate.toDateString() === todayStr;
-          const events = scheduleRules[dayName] || [];
+        days.forEach((dayName, i) => {
+          const date = new Date(monday);
+          date.setDate(monday.getDate() + i);
+          const isToday = date.toDateString() === todayStr;
+          const events = schedule[dayName];
 
           html += `
-            <div class="schedule-day-panel${isToday ? ' is-today' : ''}">
-              <h4>
-                <span>${dayName}${isToday ? ' (Today)' : ''}</span>
-                <span class="date">${months[dayDate.getMonth()]} ${dayDate.getDate()}</span>
-              </h4>
+            <div class="schedule-day${isToday ? ' is-today' : ''}">
+              <h4>${dayName}${isToday ? ' (TODAY)' : ''} - ${months[date.getMonth()]} ${date.getDate()}</h4>
               <ul>
-                ${events.map(e => `<li>• ${e}</li>`).join('')}
+                ${events.map(e => `<li>▸ ${e}</li>`).join('')}
               </ul>
             </div>
           `;
         });
 
-        scheduleGrid.innerHTML = html;
+        grid.innerHTML = html;
       }
 
       generateSchedule();
