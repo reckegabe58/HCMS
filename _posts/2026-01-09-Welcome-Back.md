@@ -3,7 +3,7 @@ layout: post
 title: "Welcome Back!"
 date: 2026-01-09
 category: Announcements
-image: /assets/images/welcome-back-winter-thumbnail
+image: /assets/images/welcome-back-winter-thumbnail.jpg
 ---
 
 Welcome back, everyone! ❄️
