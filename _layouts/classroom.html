@@ -1,0 +1,305 @@
+---
+layout: default
+---
+
+<!-- Classroom Hero Section -->
+<section class="classroom-hero classroom-hero-{{ page.color | default: 'blue' }}">
+  <div class="classroom-hero-bg">
+    {% if page.hero_image %}
+    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }} classroom">
+    {% else %}
+    <div class="classroom-hero-pattern"></div>
+    {% endif %}
+  </div>
+  <div class="classroom-hero-overlay"></div>
+  <div class="container">
+    <div class="classroom-hero-content">
+      <a href="{{ '/classrooms/' | relative_url }}" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5"></path>
+          <path d="m12 19-7-7 7-7"></path>
+        </svg>
+        Back to All Classrooms
+      </a>
+
+      <div class="classroom-hero-badge classroom-badge-{{ page.color | default: 'blue' }}">
+        {{ page.grade }}
+      </div>
+
+      <h1 class="classroom-hero-title">{{ page.title }}</h1>
+
+      <div class="classroom-teachers-hero">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>
+          {% for teacher in page.teachers %}
+            {{ teacher }}{% unless forloop.last %} & {% endunless %}
+          {% endfor %}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F5F7F8"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Classroom Content -->
+<section class="classroom-content main-area">
+  <div class="container">
+    <div class="classroom-grid">
+
+      <!-- Main Content Column -->
+      <div class="classroom-main">
+
+        <!-- Welcome Message -->
+        <div class="classroom-section">
+          <h2 class="classroom-section-title">Welcome to Our Classroom</h2>
+          <div class="classroom-welcome">
+            {{ content }}
+          </div>
+        </div>
+
+        <!-- What We're Learning -->
+        {% if page.subjects %}
+        <div class="classroom-section">
+          <h2 class="classroom-section-title">What We're Learning</h2>
+          <div class="subjects-grid">
+            {% for subject in page.subjects %}
+            <div class="subject-card">
+              <div class="subject-icon subject-icon-{{ subject.icon | default: 'book' }}">
+                {% case subject.icon %}
+                {% when 'book' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                {% when 'calculator' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                  <line x1="8" y1="6" x2="16" y2="6"></line>
+                  <line x1="8" y1="10" x2="8" y2="10"></line>
+                  <line x1="12" y1="10" x2="12" y2="10"></line>
+                  <line x1="16" y1="10" x2="16" y2="10"></line>
+                  <line x1="8" y1="14" x2="8" y2="14"></line>
+                  <line x1="12" y1="14" x2="12" y2="14"></line>
+                  <line x1="16" y1="14" x2="16" y2="14"></line>
+                  <line x1="8" y1="18" x2="8" y2="18"></line>
+                  <line x1="12" y1="18" x2="12" y2="18"></line>
+                  <line x1="16" y1="18" x2="16" y2="18"></line>
+                </svg>
+                {% when 'globe' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                  <path d="M2 12h20"></path>
+                </svg>
+                {% when 'flask' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 22V8a6 6 0 0 1 12 0v14"></path>
+                  <circle cx="12" cy="6" r="2"></circle>
+                </svg>
+                {% when 'message' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                {% when 'tree' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22v-7l-2-2"></path>
+                  <path d="M12 13l-2-2"></path>
+                  <path d="M12 15l2-2"></path>
+                  <path d="M17 8c0-2.8-2.2-5-5-5S7 5.2 7 8c0 .4.1.9.2 1.3C5.3 10.1 4 11.9 4 14c0 2.8 2.2 5 5 5h6c2.8 0 5-2.2 5-5 0-2.1-1.3-3.9-3.2-4.7.1-.4.2-.9.2-1.3z"></path>
+                </svg>
+                {% when 'palette' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="13.5" cy="6.5" r=".5"></circle>
+                  <circle cx="17.5" cy="10.5" r=".5"></circle>
+                  <circle cx="8.5" cy="7.5" r=".5"></circle>
+                  <circle cx="6.5" cy="12.5" r=".5"></circle>
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.555C21.965 6.012 17.461 2 12 2z"></path>
+                </svg>
+                {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                {% endcase %}
+              </div>
+              <h3 class="subject-name">{{ subject.name }}</h3>
+              <p class="subject-description">{{ subject.description }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Monthly Newsletters Section -->
+        <div class="classroom-section">
+          <h2 class="classroom-section-title">Monthly Newsletters</h2>
+          <p class="newsletters-intro">
+            Stay informed about classroom activities, upcoming events, and student progress through our monthly newsletters.
+          </p>
+
+          {% assign classroom_slug = page.slug | default: page.title | slugify %}
+          {% assign newsletters_found = false %}
+
+          <div class="newsletters-grid">
+            <!-- Current Newsletter (Embedded) -->
+            <div class="newsletter-current">
+              <h3>Current Newsletter</h3>
+              <div class="newsletter-embed-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <p>Newsletter will appear here when uploaded</p>
+                <p class="newsletter-instructions">
+                  <small>Upload PDF to: /assets/newsletters/YYYY-MM-{{ classroom_slug }}.pdf</small>
+                </p>
+              </div>
+            </div>
+
+            <!-- Archive -->
+            <div class="newsletter-archive">
+              <h3>Newsletter Archive</h3>
+              <ul class="newsletter-list">
+                <li class="newsletter-item placeholder">
+                  <span class="newsletter-date">January 2025</span>
+                  <span class="newsletter-download">Coming Soon</span>
+                </li>
+                <li class="newsletter-item placeholder">
+                  <span class="newsletter-date">December 2024</span>
+                  <span class="newsletter-download">Coming Soon</span>
+                </li>
+                <li class="newsletter-item placeholder">
+                  <span class="newsletter-date">November 2024</span>
+                  <span class="newsletter-download">Coming Soon</span>
+                </li>
+              </ul>
+              <p class="archive-note">
+                <small>Newsletters are uploaded monthly. Check back for updates!</small>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Gallery Placeholder -->
+        <div class="classroom-section">
+          <h2 class="classroom-section-title">Photo Gallery</h2>
+          <div class="gallery-placeholder">
+            <div class="gallery-grid">
+              <div class="gallery-item placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+              <div class="gallery-item placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+              <div class="gallery-item placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+              <div class="gallery-item placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+            </div>
+            <p class="gallery-note">Photo gallery coming soon! Check back for pictures of our classroom activities.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="classroom-sidebar">
+
+        <!-- Quick Info Card -->
+        <div class="classroom-info-card">
+          <h3>Classroom Info</h3>
+          <ul class="classroom-info-list">
+            <li>
+              <strong>Grade Level</strong>
+              <span>{{ page.grade }}</span>
+            </li>
+            <li>
+              <strong>Teacher(s)</strong>
+              <span>
+                {% for teacher in page.teachers %}
+                  {{ teacher }}{% unless forloop.last %}<br>{% endunless %}
+                {% endfor %}
+              </span>
+            </li>
+            {% if page.room %}
+            <li>
+              <strong>Room</strong>
+              <span>{{ page.room }}</span>
+            </li>
+            {% endif %}
+            {% if page.students %}
+            <li>
+              <strong>Students</strong>
+              <span>{{ page.students }}</span>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <!-- Contact Card -->
+        <div class="classroom-contact-card">
+          <h3>Contact Our Classroom</h3>
+          <p>Have questions or want to get involved? Reach out to us!</p>
+          <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary btn-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Contact Us
+          </a>
+        </div>
+
+        <!-- Schedule Widget -->
+        {% include weekly-schedule.html %}
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- Other Classrooms -->
+<section class="other-classrooms-section">
+  <div class="container">
+    <h2 class="section-title-center">Explore Other Classrooms</h2>
+    <div class="other-classrooms-grid">
+      {% assign sorted_classrooms = site.classrooms | sort: "order" %}
+      {% for classroom in sorted_classrooms %}
+      {% unless classroom.url == page.url %}
+      <a href="{{ classroom.url | relative_url }}" class="other-classroom-card other-classroom-{{ classroom.color | default: 'blue' }}">
+        <span class="other-classroom-grade">{{ classroom.grade }}</span>
+        <span class="other-classroom-title">{{ classroom.title }}</span>
+      </a>
+      {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

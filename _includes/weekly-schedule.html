@@ -1,0 +1,24 @@
+<!-- Weekly After-School Schedule Widget -->
+<div class="widget-activities standalone">
+  <div class="widget-activities-inner">
+    <h3 class="widget-title">
+      <span class="widget-title-icon">&#128197;</span>
+      Week of {{ site.data.after_school.week_of }}
+    </h3>
+
+    <ul class="event-list">
+      {% for day in site.data.after_school.schedule %}
+      <li class="schedule-day">
+        <h4 class="schedule-day-title">{{ day.day }}</h4>
+        <ul class="schedule-events">
+          {% for event in day.events %}
+          <li class="schedule-event">{{ event }}</li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <a href="{{ '/calendar/' | relative_url }}" class="btn-calendar">Full School Calendar</a>
+  </div>
+</div>
