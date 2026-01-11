@@ -51,102 +51,176 @@ subtitle: Important dates and upcoming events
       </div>
     </div>
 
-    <!-- Upcoming Events -->
+    <!-- Upcoming Events - Auto-loaded from Google Calendar -->
     <div class="upcoming-events">
       <h2 class="section-title">Upcoming Events</h2>
 
-      <div class="events-grid">
-
-        <div class="event-card">
-          <div class="event-date-large">
-            <span class="event-month">JAN</span>
-            <span class="event-day">13</span>
-          </div>
-          <div class="event-info">
-            <h3 class="event-title">Return from Winter Break</h3>
-            <p class="event-description">Welcome back! Classes resume for the new term.</p>
-            <span class="event-time">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              8:30 AM - Regular school day
-            </span>
-          </div>
+      <div class="events-grid" id="upcomingEventsGrid">
+        <!-- Loading state -->
+        <div class="events-loading" id="eventsLoading">
+          <p>Loading upcoming events...</p>
         </div>
-
-        <div class="event-card">
-          <div class="event-date-large">
-            <span class="event-month">JAN</span>
-            <span class="event-day">17</span>
-          </div>
-          <div class="event-info">
-            <h3 class="event-title">Traditional Drumming Workshop</h3>
-            <p class="event-description">Elder-led drumming session for all grades with Orville Councillor.</p>
-            <span class="event-time">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              3:30 PM - School Gym
-            </span>
-          </div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-date-large">
-            <span class="event-month">JAN</span>
-            <span class="event-day">24</span>
-          </div>
-          <div class="event-info">
-            <h3 class="event-title">Parent-Teacher Conferences</h3>
-            <p class="event-description">Mid-year progress updates. Sign up for your time slot.</p>
-            <span class="event-time">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              1:00 PM - 6:00 PM
-            </span>
-          </div>
-        </div>
-
-        <div class="event-card featured">
-          <div class="event-date-large">
-            <span class="event-month">FEB</span>
-            <span class="event-day">7</span>
-          </div>
-          <div class="event-info">
-            <h3 class="event-title">Winter Carnival</h3>
-            <p class="event-description">Annual winter celebration with outdoor games, feasting, and traditional activities.</p>
-            <span class="event-time">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              All Day Event
-            </span>
-          </div>
-        </div>
-
-        <div class="event-card no-school">
-          <div class="event-date-large">
-            <span class="event-month">FEB</span>
-            <span class="event-day">14</span>
-          </div>
-          <div class="event-info">
-            <h3 class="event-title">Professional Development Day</h3>
-            <p class="event-description">Staff training day - no school for students.</p>
-            <span class="event-badge">No School</span>
-          </div>
-        </div>
-
       </div>
 
       <div class="events-cta">
         <a href="{{ '/news/' | relative_url }}" class="btn btn-ghost-dark">View All School News</a>
       </div>
     </div>
+
+    <!-- Calendar Events Styles -->
+    <style>
+      .events-loading, .no-events, .events-error {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 2rem;
+        color: var(--text-muted, #666);
+        font-size: 1rem;
+      }
+      .events-loading p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .events-loading p::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--accent-green, #4a7c59);
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      .events-error {
+        color: #c4784a;
+      }
+    </style>
+
+    <!-- Google Calendar API Script -->
+    <script>
+    (function() {
+      const CALENDAR_ID = '227b700438569c1d622b29457fe9d090f155975f39511456055d92199d369a4f@group.calendar.google.com';
+      const API_KEY = 'AIzaSyAotC6ZS8qfj46sTdNbp0c7J6B_bTZqqtQ';
+      const MAX_EVENTS = 5;
+
+      const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+
+      function formatTime(dateStr) {
+        if (!dateStr) return 'All Day Event';
+        const date = new Date(dateStr);
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const hour12 = hours % 12 || 12;
+        const minStr = minutes.toString().padStart(2, '0');
+        return `${hour12}:${minStr} ${ampm}`;
+      }
+
+      function isAllDayEvent(event) {
+        return event.start.date && !event.start.dateTime;
+      }
+
+      function getEventDate(event) {
+        if (event.start.dateTime) {
+          return new Date(event.start.dateTime);
+        }
+        return new Date(event.start.date + 'T00:00:00');
+      }
+
+      function renderEvent(event) {
+        const date = getEventDate(event);
+        const month = months[date.getMonth()];
+        const day = date.getDate();
+        const title = event.summary || 'Untitled Event';
+        const description = event.description || '';
+        const isAllDay = isAllDayEvent(event);
+        const location = event.location || '';
+
+        // Check for special event types
+        const titleLower = title.toLowerCase();
+        let cardClass = 'event-card';
+        let badge = '';
+
+        if (titleLower.includes('no school') || titleLower.includes('pd day') || titleLower.includes('professional development')) {
+          cardClass += ' no-school';
+          badge = '<span class="event-badge">No School</span>';
+        } else if (titleLower.includes('carnival') || titleLower.includes('celebration') || titleLower.includes('festival')) {
+          cardClass += ' featured';
+        }
+
+        let timeDisplay = '';
+        if (isAllDay) {
+          timeDisplay = 'All Day Event';
+        } else {
+          const startTime = formatTime(event.start.dateTime);
+          const endTime = event.end.dateTime ? formatTime(event.end.dateTime) : '';
+          timeDisplay = endTime ? `${startTime} - ${endTime}` : startTime;
+          if (location) {
+            timeDisplay += ` - ${location}`;
+          }
+        }
+
+        return `
+          <div class="${cardClass}">
+            <div class="event-date-large">
+              <span class="event-month">${month}</span>
+              <span class="event-day">${day}</span>
+            </div>
+            <div class="event-info">
+              <h3 class="event-title">${title}</h3>
+              ${description ? `<p class="event-description">${description.substring(0, 150)}${description.length > 150 ? '...' : ''}</p>` : ''}
+              ${badge || `<span class="event-time">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                ${timeDisplay}
+              </span>`}
+            </div>
+          </div>
+        `;
+      }
+
+      function loadCalendarEvents() {
+        const grid = document.getElementById('upcomingEventsGrid');
+        const loading = document.getElementById('eventsLoading');
+
+        const now = new Date().toISOString();
+        const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&maxResults=${MAX_EVENTS}&singleEvents=true&orderBy=startTime`;
+
+        fetch(url)
+          .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch events');
+            return response.json();
+          })
+          .then(data => {
+            if (loading) loading.remove();
+
+            if (!data.items || data.items.length === 0) {
+              grid.innerHTML = '<p class="no-events">No upcoming events scheduled. Check back soon!</p>';
+              return;
+            }
+
+            grid.innerHTML = data.items.map(renderEvent).join('');
+          })
+          .catch(error => {
+            console.error('Calendar API error:', error);
+            if (loading) loading.remove();
+            grid.innerHTML = '<p class="events-error">Unable to load events. Please check the embedded calendar above.</p>';
+          });
+      }
+
+      // Load events when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadCalendarEvents);
+      } else {
+        loadCalendarEvents();
+      }
+    })();
+    </script>
 
   </div>
 </section>
