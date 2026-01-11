@@ -10,6 +10,8 @@ order: 5
 room: Room 202
 students: 15
 hero_image: /assets/images/carousel/slide-5.jpg
+# Newsletter folder - files are auto-detected from this location
+newsletter_folder: grade-5-6
 subjects:
   - name: Language Arts
     description: Critical reading, persuasive writing, research skills, and media literacy.

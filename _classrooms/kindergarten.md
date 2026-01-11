@@ -10,23 +10,9 @@ order: 1
 room: Room 101
 students: 12
 hero_image: /assets/images/carousel/slide-1.jpg
-# Monthly Newsletters - Add new newsletters at the TOP of this list
-# The first one will be displayed as "Current Newsletter" with thumbnail
-# Supported types: pdf, png, jpg
-newsletters:
-  - month: "January 2025"
-    title: "Welcome Back & Winter Activities"
-    file: /assets/newsletters/kindergarten/2025-01-newsletter.pdf
-    type: pdf
-    description: "Happy New Year! This month we're exploring winter themes, learning about animals in winter, and practicing our counting skills with snowflake math."
-  - month: "December 2024"
-    title: "Holiday Celebrations"
-    file: /assets/newsletters/kindergarten/2024-12-newsletter.pdf
-    type: pdf
-  - month: "November 2024"
-    title: "Gratitude & Fall Harvest"
-    file: /assets/newsletters/kindergarten/2024-11-newsletter.pdf
-    type: pdf
+# Newsletter folder - files are auto-detected from this location
+# Just add files named: YYYY-MM-newsletter.pdf (or .png, .jpg)
+newsletter_folder: kindergarten
 subjects:
   - name: Early Literacy
     description: Building foundational reading and writing skills through stories, songs, and play-based learning.

@@ -9,6 +9,8 @@ order: 6
 room: Room 203
 students: 12
 hero_image: /assets/images/carousel/slide-1.jpg
+# Newsletter folder - files are auto-detected from this location
+newsletter_folder: grade-7-8
 subjects:
   - name: Language Arts
     description: Literary analysis, academic writing, research, and advanced communication skills.
