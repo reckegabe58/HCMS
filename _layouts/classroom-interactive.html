@@ -2213,10 +2213,10 @@ layout: null
               widthPct: widthPct,
               heightPct: heightPct
             },
-            image: saved?.image || {
-              scalePct: 100,
-              offsetXPx: 0,
-              offsetYPx: 0
+            image: {
+              scalePct: (saved?.image?.scalePct != null && saved.image.scalePct > 0) ? saved.image.scalePct : 100,
+              offsetXPx: saved?.image?.offsetXPx ?? 0,
+              offsetYPx: saved?.image?.offsetYPx ?? 0
             },
             linked: saved?.linked || false,
             original: {
@@ -2247,11 +2247,12 @@ layout: null
         if (img) {
           // Set fixed pixel width (breaks the width:100% link)
           img.style.width = baseImgWidthPx + 'px';
-          // Apply scale on top of the fixed width
-          img.style.transform = `scale(${image.scalePct / 100})`;
+          // Apply scale on top of the fixed width (default to 100 if null/0)
+          const scale = (image.scalePct != null && image.scalePct > 0) ? image.scalePct : 100;
+          img.style.transform = `scale(${scale / 100})`;
           // Apply offset
-          img.style.left = image.offsetXPx + 'px';
-          img.style.top = image.offsetYPx + 'px';
+          img.style.left = (image.offsetXPx || 0) + 'px';
+          img.style.top = (image.offsetYPx || 0) + 'px';
         }
       }
 
