@@ -193,7 +193,11 @@ subtitle: Important dates and upcoming events
 
         fetch(url)
           .then(response => {
-            if (!response.ok) throw new Error('Failed to fetch events');
+            if (!response.ok) {
+              return response.json().then(err => {
+                throw new Error(err.error?.message || `HTTP ${response.status}`);
+              });
+            }
             return response.json();
           })
           .then(data => {
@@ -209,7 +213,15 @@ subtitle: Important dates and upcoming events
           .catch(error => {
             console.error('Calendar API error:', error);
             if (loading) loading.remove();
-            grid.innerHTML = '<p class="events-error">Unable to load events. Please check the embedded calendar above.</p>';
+            // Show specific error for debugging
+            const errorMsg = error.message || 'Unknown error';
+            if (errorMsg.includes('API key') || errorMsg.includes('403')) {
+              grid.innerHTML = '<p class="events-error">Calendar API not configured. Please ensure the API key is valid and the calendar is public.</p>';
+            } else if (errorMsg.includes('404') || errorMsg.includes('notFound')) {
+              grid.innerHTML = '<p class="events-error">Calendar not found. Please check the calendar ID.</p>';
+            } else {
+              grid.innerHTML = '<p class="events-error">Unable to load events: ' + errorMsg + '</p>';
+            }
           });
       }
 
