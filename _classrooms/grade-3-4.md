@@ -10,18 +10,22 @@ room: Room 201
 students: 16
 hero_image: /assets/images/carousel/slide-4.jpg
 # Monthly Newsletters - Add new newsletters at the TOP of this list
-# The first one will be displayed as "Current Newsletter"
+# The first one will be displayed as "Current Newsletter" with thumbnail
+# Supported types: pdf, png, jpg
 newsletters:
   - month: "January 2026"
     title: "New Year, New Adventures"
-    file: /assets/newsletters/2026-01-grade-3-4.pdf
+    file: /assets/newsletters/grade-3-4/2026-01-newsletter.pdf
+    type: pdf
     description: "Welcome back from winter break! This month we're diving into fraction fundamentals, starting our animal habitats unit, and preparing for the winter carnival."
   - month: "December 2025"
     title: "Winter Celebrations"
-    file: /assets/newsletters/2025-12-grade-3-4.pdf
+    file: /assets/newsletters/grade-3-4/2025-12-newsletter.pdf
+    type: pdf
   - month: "November 2025"
     title: "Gratitude & Growth"
-    file: /assets/newsletters/2025-11-grade-3-4.pdf
+    file: /assets/newsletters/grade-3-4/2025-11-newsletter.pdf
+    type: pdf
 subjects:
   - name: Language Arts
     description: Advancing reading comprehension, writing across genres, and oral communication.
