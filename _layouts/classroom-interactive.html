@@ -2281,9 +2281,8 @@ layout: null
         element.style.top = hitbox.topPct + '%';
         element.style.width = hitbox.widthPct + '%';
 
-        // Apply image: fixed pixel width + scale transform
+        // Apply image: scale transform (no fixed width - uses CSS width: 100%)
         if (img) {
-          img.style.width = baseImgWidthPx + 'px';
           const scale = (image.scalePct != null && image.scalePct > 0) ? image.scalePct : 100;
           img.style.transform = `scale(${scale / 100})`;
           img.style.left = (image.offsetXPx || 0) + 'px';
