@@ -360,8 +360,12 @@ layout: null
     }
 
     .hotspot:focus {
-      outline: 3px solid var(--soft-gold);
-      outline-offset: 4px;
+      outline: none;
+    }
+
+    .hotspot:focus-visible {
+      outline: 2px dashed rgba(255, 220, 140, 0.6);
+      outline-offset: 2px;
       border-radius: 4px;
     }
 
@@ -374,39 +378,39 @@ layout: null
        Based on reference: 16:9 aspect ratio
        ============================================= */
 
-    /* Newsletter - Top left clipboard */
-    .hotspot-newsletter {
-      left: 0.5%;
-      top: 8%;
-      width: 9%;
+    /* Art Wall - Left corkboard */
+    .hotspot-artwall {
+      left: 1%;
+      top: 20%;
+      width: 18%;
     }
 
-    /* Art Wall - Left corkboard below newsletter */
-    .hotspot-artwall {
+    /* Newsletter - Right of Art Wall */
+    .hotspot-newsletter {
       left: 0.5%;
-      top: 22%;
-      width: 20%;
+      top: 6%;
+      width: 8%;
     }
 
     /* SmartBoard - Central large element */
     .hotspot-smartboard {
       left: 28%;
-      top: 12%;
+      top: 10%;
       width: 40%;
     }
 
-    /* Message to Parents - Right of smartboard */
+    /* Message to Parents - Right side, larger and lower */
     .hotspot-message {
-      left: 62%;
-      top: 16%;
-      width: 14%;
+      left: 60%;
+      top: 20%;
+      width: 16%;
     }
 
-    /* Daily Schedule - Far right clipboard */
+    /* Daily Schedule - Beside message board */
     .hotspot-schedule {
-      right: 0.5%;
-      top: 12%;
-      width: 11%;
+      right: 1%;
+      top: 14%;
+      width: 13%;
     }
 
     /* Table and Chairs - Center foreground */
@@ -935,10 +939,10 @@ layout: null
 
     @media (max-width: 1024px) {
       .hotspot-smartboard { width: 42%; }
-      .hotspot-artwall { width: 22%; }
-      .hotspot-newsletter { width: 10%; }
-      .hotspot-message { width: 15%; }
-      .hotspot-schedule { width: 12%; }
+      .hotspot-artwall { width: 20%; }
+      .hotspot-newsletter { width: 9%; }
+      .hotspot-message { width: 17%; }
+      .hotspot-schedule { width: 14%; }
       .hotspot-table { width: 50%; }
     }
 
@@ -948,10 +952,10 @@ layout: null
       }
 
       .hotspot-smartboard { left: 25%; width: 46%; }
-      .hotspot-artwall { width: 24%; }
-      .hotspot-newsletter { width: 11%; }
-      .hotspot-message { left: 60%; width: 16%; }
-      .hotspot-schedule { width: 13%; }
+      .hotspot-artwall { width: 22%; }
+      .hotspot-newsletter { width: 10%; }
+      .hotspot-message { left: 58%; width: 18%; }
+      .hotspot-schedule { width: 15%; }
       .hotspot-table { left: 22%; width: 54%; }
 
       .rpg-body {
