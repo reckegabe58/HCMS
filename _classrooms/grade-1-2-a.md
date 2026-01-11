@@ -10,6 +10,8 @@ order: 2
 room: Room 102
 students: 14
 hero_image: /assets/images/carousel/slide-2.jpg
+# Newsletter folder - files are auto-detected from this location
+newsletter_folder: grade-1-2-a
 subjects:
   - name: Language Arts
     description: Developing reading fluency, writing skills, and a love for storytelling.

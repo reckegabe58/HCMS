@@ -1,54 +1,37 @@
-# Kindergarten Newsletter Upload Guide
+# Kindergarten Newsletter Upload
 
-## Folder Location
-`/assets/newsletters/kindergarten/`
+## Just 2 Steps!
 
-## File Naming Convention
+### Step 1: Name your file
 ```
-YYYY-MM-newsletter.ext
+YYYY-MM-newsletter.pdf   (or .png, .jpg)
 ```
 
 **Examples:**
-- `2025-01-newsletter.pdf`
-- `2025-02-newsletter.png`
-- `2025-03-newsletter.jpg`
+- `2025-01-newsletter.pdf` → January 2025
+- `2025-02-newsletter.png` → February 2025
+- `2025-03-newsletter.jpg` → March 2025
+
+### Step 2: Drop it in this folder
+Save your file to: `/assets/newsletters/kindergarten/`
+
+**That's it!** The website automatically:
+- Detects all newsletters in this folder
+- Shows the newest one (by date) as "Current"
+- Lists older ones in "Previous Newsletters"
+- Displays image thumbnails for PNG/JPG, or a PDF icon for PDFs
 
 ## Supported File Types
 - **PDF** (.pdf) - Best for multi-page newsletters
-- **PNG** (.png) - Single-page image newsletters
-- **JPG** (.jpg) - Single-page image newsletters
+- **PNG** (.png) - Single-page image
+- **JPG** (.jpg) - Single-page image
 
-## How to Add a Newsletter
-
-### Step 1: Save your file here
-Save your newsletter file to this folder using the naming convention above.
-
-### Step 2: Edit the classroom file
-Open `/_classrooms/kindergarten.md` and add a new entry at the **TOP** of the `newsletters:` list:
-
-```yaml
-newsletters:
-  - month: "February 2025"                                    # Required
-    title: "Winter Fun"                                       # Optional
-    file: /assets/newsletters/kindergarten/2025-02-newsletter.pdf   # Required
-    type: pdf                                                 # Required: pdf, png, or jpg
-    description: "This month we're learning about..."         # Optional
-  # ... existing newsletters below
-```
-
-### Step 3: Commit and push
+## Commit & Push
 ```bash
-git add assets/newsletters/kindergarten/2025-02-newsletter.pdf
-git add _classrooms/kindergarten.md
-git commit -m "Add February 2025 newsletter for Kindergarten"
+git add assets/newsletters/kindergarten/
+git commit -m "Add newsletter for Kindergarten"
 git push
 ```
-
-## Important Notes
-- **Add new newsletters at the TOP** of the list - the first entry is displayed as "Current"
-- The `type` field must match your file extension (pdf, png, or jpg)
-- Keep file sizes under 2MB for PDFs, under 500KB for images
-- The thumbnail preview only shows for PNG/JPG files; PDFs show a document icon
 
 ## Teachers
 - Mr. Shun

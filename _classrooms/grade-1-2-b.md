@@ -10,6 +10,8 @@ order: 3
 room: Room 103
 students: 13
 hero_image: /assets/images/carousel/slide-3.jpg
+# Newsletter folder - files are auto-detected from this location
+newsletter_folder: grade-1-2-b
 subjects:
   - name: Language Arts
     description: Building confident readers and writers through engaging literacy activities.
