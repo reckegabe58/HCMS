@@ -7,29 +7,24 @@ week_of: "January 13, 2026"
 schedule:
   - day: "Monday"
     events:
-      - "Lunch Program"
-      - "Traditional drumming with Orville Councillor (all grades)"
+      - "Lunch Program (no after school program)"
 
   - day: "Tuesday"
     events:
       - "Lunch Program"
-      - "After school program: Grades 1-3"
-      - "Traditional drumming (all grades)"
+      - "After School Program: Grades 1-3 (3:45-5:00 PM)"
 
   - day: "Wednesday"
     events:
       - "Lunch Program"
-      - "After school program: Grades 4-6"
-      - "Traditional drumming (all grades)"
+      - "After School Program: Grades 4-6 (3:45-5:00 PM)"
 
   - day: "Thursday"
     events:
       - "Lunch Program"
-      - "After school program: Grades 7-8"
-      - "Traditional drumming (all grades)"
+      - "After School Program: Grades 7-8 (3:45-5:00 PM)"
 
   - day: "Friday"
     events:
       - "Lunch Program"
-      - "After school program: Grades 1-8"
-      - "Traditional drumming (all grades)"
+      - "After School Program: Grades 1-8 (3:45-5:00 PM)"
