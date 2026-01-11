@@ -75,7 +75,7 @@
     </div>
 
     <div class="newsletter-btn-group">
-      <a href="{{ current.path | relative_url }}" class="newsletter-btn" target="_blank" download>📥 DOWNLOAD</a>
+      <a href="{{ current.path | relative_url }}" class="newsletter-btn" download>📥 DOWNLOAD</a>
       <a href="{{ current.path | relative_url }}" class="newsletter-btn" target="_blank">👁 VIEW</a>
     </div>
   </div>
@@ -105,7 +105,7 @@
       {% endcase %}
     <div class="newsletter-archive-item">
       <span>{{ nl_month }} {{ nl_year }} <small>({{ nl_ext | upcase }})</small></span>
-      <a href="{{ newsletter.path | relative_url }}" class="archive-dl-btn" target="_blank" download>GET</a>
+      <a href="{{ newsletter.path | relative_url }}" class="archive-dl-btn" target="_blank">VIEW</a>
     </div>
     {% endfor %}
   </div>
