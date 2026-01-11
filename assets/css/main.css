@@ -3342,6 +3342,7 @@ a:hover {
 .classroom-welcome {
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
+  text-align: left;
 }
 
 .classroom-welcome h2,
