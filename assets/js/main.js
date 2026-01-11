@@ -250,3 +250,74 @@ function debounce(func, wait) {
     timeout = setTimeout(later, wait);
   };
 }
+
+
+// ==========================================
+// PDF THUMBNAIL RENDERING
+// ==========================================
+
+function renderPdfThumbnails() {
+  if (typeof pdfjsLib === 'undefined') {
+    // PDF.js not loaded yet, retry after a short delay
+    setTimeout(renderPdfThumbnails, 100);
+    return;
+  }
+
+  // Set worker source
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  // Find all PDF thumbnail containers
+  const containers = document.querySelectorAll('.pdf-thumbnail-container');
+  containers.forEach(container => {
+    const pdfUrl = container.dataset.pdfUrl;
+    const canvas = container.querySelector('.pdf-canvas');
+
+    if (!pdfUrl || !canvas) return;
+
+    // Load the PDF
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+      // Get first page
+      return pdf.getPage(1);
+    }).then(page => {
+      // Set scale for good quality thumbnail
+      const viewport = page.getViewport({ scale: 1.5 });
+      const context = canvas.getContext('2d');
+
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      // Render the page
+      const renderContext = {
+        canvasContext: context,
+        viewport: viewport
+      };
+
+      return page.render(renderContext).promise;
+    }).then(() => {
+      // Mark as loaded to hide the loading indicator
+      container.classList.add('loaded');
+
+      // Add click handler to open PDF
+      container.addEventListener('click', () => {
+        window.open(pdfUrl, '_blank');
+      });
+    }).catch(err => {
+      console.warn('Could not render PDF thumbnail:', err);
+      // Show fallback on error - update text
+      const fallback = container.querySelector('.pdf-fallback span');
+      if (fallback) {
+        fallback.textContent = 'PDF';
+      }
+      container.addEventListener('click', () => {
+        window.open(pdfUrl, '_blank');
+      });
+    });
+  });
+}
+
+// Run PDF thumbnail rendering when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderPdfThumbnails);
+} else {
+  renderPdfThumbnails();
+}

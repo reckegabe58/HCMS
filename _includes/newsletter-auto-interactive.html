@@ -63,10 +63,14 @@
         <img src="{{ current.path | relative_url }}" alt="{{ current_month }} Newsletter" class="newsletter-thumb-img">
       </a>
       {% else %}
-      <a href="{{ current.path | relative_url }}" target="_blank" class="newsletter-thumb-link newsletter-thumb-pdf">
-        <span class="pdf-icon">📄</span>
-        <span class="pdf-label">PDF</span>
-      </a>
+      <!-- PDF Thumbnail with first page preview -->
+      <div class="pdf-thumbnail-container" data-pdf-url="{{ current.path | relative_url }}">
+        <canvas class="pdf-canvas" id="pdf-canvas-{{ include.folder | slugify }}"></canvas>
+        <div class="pdf-loading">
+          <span class="pdf-icon">📄</span>
+          <span class="pdf-label">Loading preview...</span>
+        </div>
+      </div>
       {% endif %}
     </div>
 

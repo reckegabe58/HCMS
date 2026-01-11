@@ -3839,6 +3839,42 @@ a:hover {
   background: var(--bg-300);
 }
 
+/* PDF Thumbnail with Canvas Preview */
+.pdf-thumbnail-container {
+  position: relative;
+  background: var(--bg-200);
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.pdf-thumbnail-container .pdf-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.pdf-thumbnail-container .pdf-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-thumbnail-container.loaded .pdf-fallback {
+  display: none;
+}
+
+.pdf-thumbnail-container:hover {
+  opacity: 0.95;
+}
+
 .newsletter-current {
   background: var(--bg-200);
   border-radius: var(--radius-md);

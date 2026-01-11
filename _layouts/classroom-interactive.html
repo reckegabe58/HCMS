@@ -13,6 +13,9 @@ layout: null
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- PDF.js for PDF thumbnail rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+
   <!-- Preload critical assets -->
   <link rel="preload" href="{{ '/assets/images/classroom-interactive/Background.png' | relative_url }}" as="image">
 
@@ -345,7 +348,9 @@ layout: null
       background: transparent;
       border: none;
       padding: 0;
-      transition: transform 180ms ease, filter 180ms ease;
+      transition: transform 150ms ease-out;
+      will-change: transform;
+      contain: layout style;
     }
 
     .hotspot img {
@@ -360,7 +365,8 @@ layout: null
     .hotspot:hover,
     .hotspot:focus-visible {
       transform: translateY(-3px) scale(1.02);
-      filter: drop-shadow(0 0 14px rgba(255, 220, 140, 0.5)) brightness(1.08);
+      /* Simplified filter for better performance */
+      filter: brightness(1.1);
       z-index: 20;
     }
 
@@ -533,8 +539,8 @@ layout: null
     .rpg-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(20, 16, 12, 0.88);
-      backdrop-filter: blur(2px);
+      background: rgba(20, 16, 12, 0.92);
+      /* Removed backdrop-filter for performance */
       z-index: 2000;
       display: flex;
       align-items: center;
@@ -557,16 +563,17 @@ layout: null
       border: 6px solid var(--wood-mid);
       box-shadow:
         inset 0 0 0 3px var(--wood-light),
-        0 8px 32px var(--shadow-deep),
-        0 2px 8px var(--shadow-soft);
+        0 8px 24px var(--shadow-deep);
       max-width: 780px;
       width: 100%;
       max-height: 88vh;
       overflow: hidden;
       border-radius: 6px;
-      transform: scale(0.96) translateY(8px);
+      transform: scale(0.98) translateY(4px);
       opacity: 0;
-      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+      transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+      will-change: transform, opacity;
+      contain: layout style;
     }
 
     .rpg-overlay.active .rpg-panel {
@@ -913,6 +920,53 @@ layout: null
 
     .newsletter-thumb-pdf:hover {
       background: linear-gradient(135deg, #f5edd5 0%, #e8dbb8 100%);
+    }
+
+    /* PDF Thumbnail Preview */
+    .pdf-thumbnail-container {
+      position: relative;
+      background: linear-gradient(135deg, #faf3e0 0%, #f0e6cc 100%);
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .pdf-canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 300px;
+      object-fit: contain;
+    }
+
+    .pdf-loading {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .pdf-loading .pdf-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pdf-loading .pdf-label {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.5rem;
+      color: var(--wood-dark);
+    }
+
+    .pdf-thumbnail-container.loaded .pdf-loading {
+      display: none;
+    }
+
+    .pdf-thumbnail-container:hover {
+      opacity: 0.95;
     }
 
     .newsletter-title-text {
@@ -1266,7 +1320,8 @@ layout: null
       <div class="classroom-bg">
         <img src="{{ '/assets/images/classroom-interactive/Background.png' | relative_url }}"
              alt="Classroom background"
-             draggable="false">
+             draggable="false"
+             decoding="async">
       </div>
 
       <!-- Interactive Hotspots -->
@@ -1278,7 +1333,9 @@ layout: null
                 aria-label="Newsletter - click to read newsletters">
           <img src="{{ '/assets/images/classroom-interactive/Newsletter.png' | relative_url }}"
                alt="Newsletter"
-               draggable="false">
+               draggable="false"
+               loading="lazy"
+               decoding="async">
         </button>
 
         <!-- Art Wall - Left corkboard -->
@@ -1288,7 +1345,9 @@ layout: null
                 aria-label="Art Wall - click to view student work">
           <img src="{{ '/assets/images/classroom-interactive/ArtWall.png' | relative_url }}"
                alt="Art Wall"
-               draggable="false">
+               draggable="false"
+               loading="lazy"
+               decoding="async">
         </button>
 
         <!-- SmartBoard - Central focus -->
@@ -1298,7 +1357,9 @@ layout: null
                 aria-label="What We're Learning - click to explore curriculum">
           <img src="{{ '/assets/images/classroom-interactive/SmartBoard.png' | relative_url }}"
                alt="SmartBoard"
-               draggable="false">
+               draggable="false"
+               loading="lazy"
+               decoding="async">
         </button>
 
         <!-- Message to Parents - Right of smartboard -->
@@ -1308,7 +1369,9 @@ layout: null
                 aria-label="Message to Parents - click to see communication info">
           <img src="{{ '/assets/images/classroom-interactive/MessageBoard.png' | relative_url }}"
                alt="Message to Parents"
-               draggable="false">
+               draggable="false"
+               loading="lazy"
+               decoding="async">
         </button>
 
         <!-- Daily Schedule - Far right -->
@@ -1318,7 +1381,9 @@ layout: null
                 aria-label="Daily Schedule - click to view schedule">
           <img src="{{ '/assets/images/classroom-interactive/DailySchedule.png' | relative_url }}"
                alt="Daily Schedule"
-               draggable="false">
+               draggable="false"
+               loading="lazy"
+               decoding="async">
         </button>
 
         <!-- Table and Chairs - Center foreground -->
@@ -1328,7 +1393,9 @@ layout: null
                 aria-label="Inside Our Classroom - click to learn about our classroom">
           <img src="{{ '/assets/images/classroom-interactive/TableAndChairs.png' | relative_url }}"
                alt="Table and Chairs"
-               draggable="false">
+               draggable="false"
+               loading="lazy"
+               decoding="async">
         </button>
       </div>
     </div>
@@ -1756,6 +1823,73 @@ layout: null
       }
 
       generateSchedule();
+
+      // PDF Thumbnail Rendering
+      function renderPdfThumbnails() {
+        if (typeof pdfjsLib === 'undefined') {
+          // PDF.js not loaded yet, retry after a short delay
+          setTimeout(renderPdfThumbnails, 100);
+          return;
+        }
+
+        // Set worker source
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        // Find all PDF thumbnail containers
+        const containers = document.querySelectorAll('.pdf-thumbnail-container');
+        containers.forEach(container => {
+          const pdfUrl = container.dataset.pdfUrl;
+          const canvas = container.querySelector('.pdf-canvas');
+
+          if (!pdfUrl || !canvas) return;
+
+          // Load the PDF
+          pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+            // Get first page
+            return pdf.getPage(1);
+          }).then(page => {
+            // Set scale for good quality thumbnail
+            const viewport = page.getViewport({ scale: 1.5 });
+            const context = canvas.getContext('2d');
+
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            // Render the page
+            const renderContext = {
+              canvasContext: context,
+              viewport: viewport
+            };
+
+            return page.render(renderContext).promise;
+          }).then(() => {
+            // Mark as loaded to hide the loading indicator
+            container.classList.add('loaded');
+
+            // Add click handler to open PDF
+            container.addEventListener('click', () => {
+              window.open(pdfUrl, '_blank');
+            });
+          }).catch(err => {
+            console.warn('Could not render PDF thumbnail:', err);
+            // Show fallback icon on error
+            const loading = container.querySelector('.pdf-loading');
+            if (loading) {
+              loading.querySelector('.pdf-label').textContent = 'Click to view PDF';
+            }
+            container.addEventListener('click', () => {
+              window.open(pdfUrl, '_blank');
+            });
+          });
+        });
+      }
+
+      // Run PDF thumbnail rendering when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderPdfThumbnails);
+      } else {
+        renderPdfThumbnails();
+      }
 
     })();
   </script>
