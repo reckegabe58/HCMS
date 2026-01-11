@@ -239,13 +239,11 @@ subtitle: Important dates and upcoming events
       <div class="weekly-content">
         <h2 class="section-title">After-School Programs</h2>
         <p>
-          We offer a variety of after-school programs throughout the week, including traditional
-          drumming, tutoring, sports, and cultural activities. Check the weekly schedule for
-          current programming.
+          We offer a variety of after-school programs throughout the week. Check the weekly
+          schedule for current programming.
         </p>
         <p>
-          After-school programs run from 3:30 PM to 5:00 PM unless otherwise noted.
-          All programs are free for HCMS students.
+          After-school programs run from 3:45 PM to 5:00 PM unless otherwise noted.
         </p>
         <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Contact for Details</a>
       </div>
