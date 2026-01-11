@@ -475,13 +475,14 @@ layout: null
       outline-offset: 0;
     }
 
-    /* In debug mode, image uses relative positioning for offset */
+    /* In debug mode, image uses fixed pixel width - NOT tied to hotspot */
     .classroom-scene.debug-mode .hotspot img {
       position: relative;
       display: block;
       pointer-events: auto;
       max-width: none;
       transform-origin: top left;
+      /* width is set via JS to fixed pixels, breaking the 100% link */
     }
 
     /* Hotspot label */
@@ -2170,6 +2171,11 @@ layout: null
           const img = hotspot.querySelector('img');
           const hotspotRect = hotspot.getBoundingClientRect();
 
+          // IMPORTANT: Get image's current pixel dimensions BEFORE we change anything
+          // This becomes the fixed base size that scale operates on
+          const imgRect = img ? img.getBoundingClientRect() : null;
+          const baseImgWidthPx = imgRect ? imgRect.width : hotspotRect.width;
+
           // Calculate hitbox position as % of scene
           const leftPx = hotspotRect.left - sceneRect.left;
           const topPx = hotspotRect.top - sceneRect.top;
@@ -2193,6 +2199,8 @@ layout: null
             element: hotspot,
             img: img,
             isCentered: isCenteredElement(hotspot),
+            // Fixed base image width in pixels (doesn't change)
+            baseImgWidthPx: baseImgWidthPx,
             hitbox: saved?.hitbox || {
               leftPct: leftPct,
               topPct: topPct,
@@ -2211,7 +2219,7 @@ layout: null
             }
           };
 
-          // Apply saved state to DOM
+          // Apply state to DOM (this sets fixed pixel width on image)
           applyStateToDOM(id);
         });
       }
@@ -2221,16 +2229,21 @@ layout: null
         const state = editorState[id];
         if (!state) return;
 
-        const { element, img, hitbox, image, isCentered } = state;
+        const { element, img, hitbox, image, baseImgWidthPx } = state;
 
         // Apply hitbox position
         element.style.left = hitbox.leftPct + '%';
         element.style.top = hitbox.topPct + '%';
         element.style.width = hitbox.widthPct + '%';
 
-        // Apply image transform
+        // Apply image: fixed pixel width + scale transform
+        // This completely decouples image size from hotspot size
         if (img) {
+          // Set fixed pixel width (breaks the width:100% link)
+          img.style.width = baseImgWidthPx + 'px';
+          // Apply scale on top of the fixed width
           img.style.transform = `scale(${image.scalePct / 100})`;
+          // Apply offset
           img.style.left = image.offsetXPx + 'px';
           img.style.top = image.offsetYPx + 'px';
         }
