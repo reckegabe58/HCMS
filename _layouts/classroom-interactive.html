@@ -855,6 +855,71 @@ layout: null
       outline-offset: 2px;
     }
 
+    .newsletter-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    /* Newsletter Thumbnail Preview */
+    .newsletter-thumbnail-preview {
+      margin: 1rem 0;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--paper-dark);
+      border: 3px solid var(--wood-light);
+    }
+
+    .newsletter-thumb-link {
+      display: block;
+      transition: opacity 0.15s ease;
+    }
+
+    .newsletter-thumb-link:hover {
+      opacity: 0.9;
+    }
+
+    .newsletter-thumb-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 300px;
+      object-fit: contain;
+    }
+
+    .newsletter-thumb-pdf {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #faf3e0 0%, #f0e6cc 100%);
+      text-decoration: none;
+    }
+
+    .newsletter-thumb-pdf .pdf-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter-thumb-pdf .pdf-label {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.6rem;
+      color: var(--wood-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .newsletter-thumb-pdf:hover {
+      background: linear-gradient(135deg, #f5edd5 0%, #e8dbb8 100%);
+    }
+
+    .newsletter-title-text {
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
     .newsletter-archive {
       display: flex;
       flex-direction: column;
@@ -1301,18 +1366,36 @@ layout: null
         {% assign current = page.newsletters | first %}
         <div class="newsletter-featured">
           <h4>📌 CURRENT: {{ current.month }}</h4>
+
+          <!-- Thumbnail Preview -->
+          <div class="newsletter-thumbnail-preview">
+            {% if current.type == 'png' or current.type == 'jpg' or current.type == 'jpeg' %}
+            <a href="{{ current.file | relative_url }}" target="_blank" class="newsletter-thumb-link">
+              <img src="{{ current.file | relative_url }}" alt="{{ current.month }} Newsletter" class="newsletter-thumb-img">
+            </a>
+            {% else %}
+            <a href="{{ current.file | relative_url }}" target="_blank" class="newsletter-thumb-link newsletter-thumb-pdf">
+              <span class="pdf-icon">📄</span>
+              <span class="pdf-label">PDF</span>
+            </a>
+            {% endif %}
+          </div>
+
+          {% if current.title %}<p class="newsletter-title-text"><strong>{{ current.title }}</strong></p>{% endif %}
           {% if current.description %}<p>{{ current.description }}</p>{% endif %}
-          <a href="{{ current.file | relative_url }}" class="newsletter-btn" target="_blank">📥 DOWNLOAD</a>
-          <a href="{{ current.file | relative_url }}" class="newsletter-btn" target="_blank">👁 VIEW</a>
+          <div class="newsletter-btn-group">
+            <a href="{{ current.file | relative_url }}" class="newsletter-btn" target="_blank" download>📥 DOWNLOAD</a>
+            <a href="{{ current.file | relative_url }}" class="newsletter-btn" target="_blank">👁 VIEW</a>
+          </div>
         </div>
 
         {% if page.newsletters.size > 1 %}
-        <h3>📚 ARCHIVE</h3>
+        <h3>📚 PREVIOUS NEWSLETTERS</h3>
         <div class="newsletter-archive">
           {% for newsletter in page.newsletters offset:1 %}
           <div class="newsletter-archive-item">
-            <span>{{ newsletter.month }}{% if newsletter.title %} - {{ newsletter.title }}{% endif %}</span>
-            <a href="{{ newsletter.file | relative_url }}" class="archive-dl-btn" target="_blank">GET</a>
+            <span>{{ newsletter.month }}{% if newsletter.title %} - {{ newsletter.title }}{% endif %}{% if newsletter.type %} <small>({{ newsletter.type | upcase }})</small>{% endif %}</span>
+            <a href="{{ newsletter.file | relative_url }}" class="archive-dl-btn" target="_blank" download>GET</a>
           </div>
           {% endfor %}
         </div>
