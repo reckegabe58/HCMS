@@ -3,48 +3,33 @@ layout: default
 ---
 
 <!-- Classroom Hero Section -->
-<section class="classroom-hero classroom-hero-{{ page.color | default: 'blue' }}">
-  <div class="classroom-hero-bg">
-    {% if page.hero_image %}
-    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }} classroom">
-    {% else %}
-    <div class="classroom-hero-pattern"></div>
-    {% endif %}
-  </div>
-  <div class="classroom-hero-overlay"></div>
+<section class="classroom-hero-simple">
   <div class="container">
-    <div class="classroom-hero-content">
-      <a href="{{ '/classrooms/' | relative_url }}" class="back-link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 12H5"></path>
-          <path d="m12 19-7-7 7-7"></path>
-        </svg>
-        Back to All Classrooms
-      </a>
+    <a href="{{ '/classrooms/' | relative_url }}" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5"></path>
+        <path d="m12 19-7-7 7-7"></path>
+      </svg>
+      Back to All Classrooms
+    </a>
 
-      <div class="classroom-hero-badge classroom-badge-{{ page.color | default: 'blue' }}">
-        {{ page.grade }}
-      </div>
-
-      <h1 class="classroom-hero-title">{{ page.title }}</h1>
-
-      <div class="classroom-teachers-hero">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg>
-        <span>
-          {% for teacher in page.teachers %}
-            {{ teacher }}{% unless forloop.last %} & {% endunless %}
-          {% endfor %}
-        </span>
-      </div>
+    <div class="classroom-hero-badge classroom-badge-{{ page.color | default: 'green' }}">
+      {{ page.grade }}
     </div>
-  </div>
-  <div class="hero-wave">
-    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F5F7F8"/>
-    </svg>
+
+    <h1 class="classroom-hero-title">{{ page.title }}</h1>
+
+    <div class="classroom-teachers-hero">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <span>
+        {% for teacher in page.teachers %}
+          {{ teacher }}{% unless forloop.last %} & {% endunless %}
+        {% endfor %}
+      </span>
+    </div>
   </div>
 </section>
 
