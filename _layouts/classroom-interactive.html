@@ -465,12 +465,17 @@ layout: null
       overflow: visible !important;
     }
 
-    /* In debug mode, image size is independent from hotspot bounds */
+    /* In debug mode, hotspot maintains explicit height */
+    .classroom-scene.debug-mode .hotspot {
+      min-height: 30px;
+    }
+
+    /* In debug mode, image uses relative positioning for offset */
     .classroom-scene.debug-mode .hotspot img {
-      width: var(--img-width, 100%);
-      position: absolute;
-      top: var(--img-top, 0);
-      left: var(--img-left, 0);
+      position: relative;
+      display: block;
+      pointer-events: auto;
+      max-width: none;
     }
 
     .classroom-scene.debug-mode .hotspot::after {
@@ -1328,10 +1333,13 @@ layout: null
 
     <div class="debug-editor-section">
       <div class="debug-instructions">
-        <kbd>D</kbd> Toggle debug mode<br>
-        <strong>Drag hotspot</strong> to move click area<br>
-        <strong>Corners</strong> to resize click area<br>
-        <strong>Shift+Drag</strong> to move image
+        <kbd>D</kbd> Toggle debug mode<br><br>
+        <strong>HOTSPOT (green box):</strong><br>
+        • Drag anywhere to move<br>
+        • Drag corners to resize<br><br>
+        <strong>IMAGE:</strong><br>
+        • <kbd>Shift</kbd>+Drag to move<br>
+        • <kbd>Ctrl</kbd>+Drag to resize
       </div>
     </div>
 
@@ -1921,11 +1929,9 @@ layout: null
 
       // =============================================
       // DEBUG MODE - Live Hotspot Editor
-      // Hotspot bounds and image can be adjusted separately
       // Toggle with ?debug=1 or press 'D'
       // =============================================
 
-      // scene is already declared above
       const debugEditor = document.getElementById('debugEditor');
       const outlineSlider = document.getElementById('outlineSlider');
       const outlineValue = document.getElementById('outlineValue');
@@ -1933,23 +1939,26 @@ layout: null
       const copyBtn = document.getElementById('copyCSS');
       const urlParams = new URLSearchParams(window.location.search);
 
-      // Hotspot position state (stores current values for both hotspot and image)
       const hotspotState = {};
+      let debugInitialized = false;
 
-      // Check if element is centered (uses translateX(-50%))
       function isCenteredElement(hotspot) {
         return hotspot.classList.contains('hotspot-smartboard') ||
                hotspot.classList.contains('hotspot-table');
       }
 
-      // Initialize debug mode
       function initDebugMode() {
+        if (!scene) return;
         scene.classList.add('debug-mode');
         debugEditor.classList.add('visible');
-        initializeState();
-        addResizeHandles();
+
+        if (!debugInitialized) {
+          initializeState();
+          addResizeHandles();
+          setupDragHandlers();
+          debugInitialized = true;
+        }
         updateHotspotList();
-        enableDragAndResize();
       }
 
       function exitDebugMode() {
@@ -1966,7 +1975,7 @@ layout: null
       }
 
       if (urlParams.get('debug') === '1') {
-        setTimeout(initDebugMode, 100);
+        setTimeout(initDebugMode, 200);
       }
 
       document.addEventListener('keydown', (e) => {
@@ -1975,66 +1984,67 @@ layout: null
         }
       });
 
-      // Outline width control
       outlineSlider.addEventListener('input', (e) => {
         const width = e.target.value + 'px';
         scene.style.setProperty('--debug-outline-width', width);
         outlineValue.textContent = width;
       });
 
-      // Initialize state from current styles
       function initializeState() {
         const sceneHotspots = scene.querySelectorAll('.hotspot');
-        const sceneWidth = scene.offsetWidth;
-        const sceneHeight = scene.offsetHeight;
+        const sceneRect = scene.getBoundingClientRect();
 
         sceneHotspots.forEach(hotspot => {
           const name = hotspot.dataset.tooltip || 'Unknown';
-          const computed = getComputedStyle(hotspot);
           const img = hotspot.querySelector('img');
+          const hotspotRect = hotspot.getBoundingClientRect();
 
-          // Get hotspot dimensions
-          const widthPx = parseFloat(computed.width);
-          const widthPct = (widthPx / sceneWidth) * 100;
-          const leftPx = parseFloat(computed.left);
-          const topPx = parseFloat(computed.top);
-          const topPct = (topPx / sceneHeight) * 100;
+          // Calculate hotspot position as percentage of scene
+          const leftPx = hotspotRect.left - sceneRect.left;
+          const topPx = hotspotRect.top - sceneRect.top;
+          const widthPct = (hotspotRect.width / sceneRect.width) * 100;
+          const heightPx = hotspotRect.height;
 
           let leftPct;
           if (isCenteredElement(hotspot)) {
-            leftPct = ((leftPx + widthPx / 2) / sceneWidth) * 100;
+            leftPct = ((leftPx + hotspotRect.width / 2) / sceneRect.width) * 100;
           } else {
-            leftPct = (leftPx / sceneWidth) * 100;
+            leftPct = (leftPx / sceneRect.width) * 100;
           }
+          const topPct = (topPx / sceneRect.height) * 100;
 
-          // Store both hotspot and image state
-          // Initially, image fills hotspot (imgWidth = 100%, imgLeft/Top = 0)
+          // Get current image width as percentage of hotspot
+          const imgWidthPct = 100; // default: 100% of hotspot width
+
           hotspotState[name] = {
             element: hotspot,
             img: img,
-            // Hotspot bounds (clickable area)
+            isCentered: isCenteredElement(hotspot),
+            // Hotspot position/size (% of scene)
             left: leftPct,
             top: topPct,
             width: widthPct,
-            height: 'auto',
-            isCentered: isCenteredElement(hotspot),
-            // Image position relative to hotspot (starts at 100% width, 0 offset)
-            imgWidth: 100,
-            imgLeft: 0,
-            imgTop: 0
+            height: heightPx,
+            // Image settings
+            imgWidthPct: imgWidthPct, // % of hotspot width
+            imgOffsetX: 0, // px offset
+            imgOffsetY: 0  // px offset
           };
 
-          // Set initial CSS vars for image
-          hotspot.style.setProperty('--img-width', '100%');
-          hotspot.style.setProperty('--img-left', '0px');
-          hotspot.style.setProperty('--img-top', '0px');
+          // Set explicit min-height on hotspot to prevent collapse
+          hotspot.style.minHeight = heightPx + 'px';
+
+          // Initialize image with default values
+          if (img) {
+            img.style.width = '100%';
+            img.style.left = '0px';
+            img.style.top = '0px';
+          }
         });
       }
 
-      // Add resize handles to hotspots
       function addResizeHandles() {
-        const sceneHotspots = scene.querySelectorAll('.hotspot');
-        sceneHotspots.forEach(hotspot => {
+        scene.querySelectorAll('.hotspot').forEach(hotspot => {
           hotspot.querySelectorAll('.resize-handle').forEach(h => h.remove());
           ['tl', 'tr', 'bl', 'br'].forEach(corner => {
             const handle = document.createElement('div');
@@ -2045,20 +2055,19 @@ layout: null
         });
       }
 
-      // Update hotspot list in editor
       function updateHotspotList() {
         let html = '';
         Object.entries(hotspotState).forEach(([name, state]) => {
           html += `
             <div class="debug-editor-hotspot" data-hotspot="${name}">
-              <div class="debug-editor-hotspot-name">${name}${state.isCentered ? ' (centered)' : ''}</div>
+              <div class="debug-editor-hotspot-name">${name}${state.isCentered ? ' (C)' : ''}</div>
               <div class="debug-editor-values">
                 <span>box L:</span><code>${state.left.toFixed(1)}%</code>
                 <span>box T:</span><code>${state.top.toFixed(1)}%</code>
                 <span>box W:</span><code>${state.width.toFixed(1)}%</code>
-                <span>img W:</span><code>${state.imgWidth.toFixed(0)}%</code>
-                <span>img L:</span><code>${state.imgLeft.toFixed(0)}px</code>
-                <span>img T:</span><code>${state.imgTop.toFixed(0)}px</code>
+                <span>img W:</span><code>${state.imgWidthPct.toFixed(0)}%</code>
+                <span>img X:</span><code>${state.imgOffsetX.toFixed(0)}px</code>
+                <span>img Y:</span><code>${state.imgOffsetY.toFixed(0)}px</code>
               </div>
             </div>
           `;
@@ -2066,43 +2075,65 @@ layout: null
         hotspotList.innerHTML = html;
       }
 
-      // Enable drag and resize
-      function enableDragAndResize() {
-        const sceneHotspots = scene.querySelectorAll('.hotspot');
-        let isDragging = false;
-        let isResizing = false;
-        let isDraggingImage = false;
+      function setupDragHandlers() {
+        let mode = null; // 'drag-hotspot', 'drag-image', 'resize-hotspot', 'resize-image'
         let activeHotspot = null;
-        let startX, startY, startLeft, startTop, startWidth;
-        let startImgLeft, startImgTop;
+        let startX, startY;
+        let startLeft, startTop, startWidth;
+        let startImgX, startImgY, startImgWPct;
         let resizeCorner = '';
 
-        sceneHotspots.forEach(hotspot => {
-          // Drag start on hotspot body
+        scene.querySelectorAll('.hotspot').forEach(hotspot => {
+          const img = hotspot.querySelector('img');
+
+          // Click on image with Shift = move image
+          // Click on image with Ctrl = resize image
+          // Click on hotspot (not image) = move hotspot
+          // Click on resize handle = resize hotspot
+
           hotspot.addEventListener('mousedown', (e) => {
             if (!scene.classList.contains('debug-mode')) return;
-            if (e.target.classList.contains('resize-handle')) return;
+
+            const name = hotspot.dataset.tooltip;
+            const state = hotspotState[name];
+            if (!state) return;
 
             e.preventDefault();
             e.stopPropagation();
 
-            const name = hotspot.dataset.tooltip;
             startX = e.clientX;
             startY = e.clientY;
+            activeHotspot = hotspot;
 
-            // Shift+Drag moves the image, regular drag moves the hotspot
-            if (e.shiftKey) {
-              isDraggingImage = true;
-              activeHotspot = hotspot;
-              hotspot.classList.add('resizing'); // cyan for image mode
-              startImgLeft = hotspotState[name]?.imgLeft || 0;
-              startImgTop = hotspotState[name]?.imgTop || 0;
+            // Check what was clicked
+            if (e.target.classList.contains('resize-handle')) {
+              mode = 'resize-hotspot';
+              resizeCorner = e.target.dataset.corner;
+              startLeft = state.left;
+              startTop = state.top;
+              startWidth = state.width;
+              hotspot.classList.add('resizing');
+            } else if (e.target.tagName === 'IMG') {
+              if (e.shiftKey) {
+                mode = 'drag-image';
+                startImgX = state.imgOffsetX;
+                startImgY = state.imgOffsetY;
+                hotspot.classList.add('resizing');
+              } else if (e.ctrlKey || e.metaKey) {
+                mode = 'resize-image';
+                startImgWPct = state.imgWidthPct;
+                hotspot.classList.add('resizing');
+              } else {
+                mode = 'drag-hotspot';
+                startLeft = state.left;
+                startTop = state.top;
+                hotspot.classList.add('dragging');
+              }
             } else {
-              isDragging = true;
-              activeHotspot = hotspot;
+              mode = 'drag-hotspot';
+              startLeft = state.left;
+              startTop = state.top;
               hotspot.classList.add('dragging');
-              startLeft = hotspotState[name]?.left || 50;
-              startTop = hotspotState[name]?.top || 50;
             }
 
             // Highlight in editor
@@ -2110,64 +2141,28 @@ layout: null
             const editorItem = document.querySelector(`.debug-editor-hotspot[data-hotspot="${name}"]`);
             if (editorItem) editorItem.classList.add('active');
           });
-
-          // Resize start on handles
-          hotspot.querySelectorAll('.resize-handle').forEach(handle => {
-            handle.addEventListener('mousedown', (e) => {
-              if (!scene.classList.contains('debug-mode')) return;
-
-              e.preventDefault();
-              e.stopPropagation();
-
-              isResizing = true;
-              activeHotspot = hotspot;
-              resizeCorner = handle.dataset.corner;
-              hotspot.classList.add('resizing');
-
-              startX = e.clientX;
-              startY = e.clientY;
-
-              const name = hotspot.dataset.tooltip;
-              startLeft = hotspotState[name]?.left || 0;
-              startTop = hotspotState[name]?.top || 0;
-              startWidth = hotspotState[name]?.width || 10;
-            });
-          });
         });
 
-        // Mouse move
         document.addEventListener('mousemove', (e) => {
-          if (!activeHotspot) return;
-
-          const rect = scene.getBoundingClientRect();
-          const deltaX = e.clientX - startX;
-          const deltaY = e.clientY - startY;
-          const deltaXPct = (deltaX / rect.width) * 100;
-          const deltaYPct = (deltaY / rect.height) * 100;
+          if (!activeHotspot || !mode) return;
 
           const name = activeHotspot.dataset.tooltip;
           const state = hotspotState[name];
           if (!state) return;
 
-          if (isDraggingImage) {
-            // Move image within hotspot (in pixels)
-            const newImgLeft = startImgLeft + deltaX;
-            const newImgTop = startImgTop + deltaY;
+          const sceneRect = scene.getBoundingClientRect();
+          const deltaX = e.clientX - startX;
+          const deltaY = e.clientY - startY;
+          const deltaXPct = (deltaX / sceneRect.width) * 100;
+          const deltaYPct = (deltaY / sceneRect.height) * 100;
 
-            state.imgLeft = newImgLeft;
-            state.imgTop = newImgTop;
-
-            activeHotspot.style.setProperty('--img-left', newImgLeft + 'px');
-            activeHotspot.style.setProperty('--img-top', newImgTop + 'px');
-
-          } else if (isDragging) {
-            // Move hotspot bounds
+          if (mode === 'drag-hotspot') {
             let newLeft = startLeft + deltaXPct;
             let newTop = startTop + deltaYPct;
 
+            // Clamp
             if (state.isCentered) {
-              const halfWidth = state.width / 2;
-              newLeft = Math.max(halfWidth, Math.min(100 - halfWidth, newLeft));
+              newLeft = Math.max(state.width/2, Math.min(100 - state.width/2, newLeft));
             } else {
               newLeft = Math.max(0, Math.min(100 - state.width, newLeft));
             }
@@ -2175,12 +2170,10 @@ layout: null
 
             state.left = newLeft;
             state.top = newTop;
-
             activeHotspot.style.left = newLeft + '%';
             activeHotspot.style.top = newTop + '%';
 
-          } else if (isResizing) {
-            // Resize hotspot bounds (click area only)
+          } else if (mode === 'resize-hotspot') {
             let newWidth = startWidth;
             let newLeft = startLeft;
             let newTop = startTop;
@@ -2189,25 +2182,22 @@ layout: null
               newWidth = startWidth + deltaXPct;
             } else if (resizeCorner.includes('l')) {
               newWidth = startWidth - deltaXPct;
-              if (!state.isCentered) {
-                newLeft = startLeft + deltaXPct;
-              }
+              if (!state.isCentered) newLeft = startLeft + deltaXPct;
             }
-
             if (resizeCorner.includes('t')) {
               newTop = startTop + deltaYPct;
             }
+            if (resizeCorner.includes('b')) {
+              // Height is auto, so bottom resize does nothing for now
+            }
 
-            // Allow very small hotspots (1% min)
-            newWidth = Math.max(1, Math.min(90, newWidth));
-            newTop = Math.max(0, Math.min(95, newTop));
-
+            newWidth = Math.max(1, Math.min(95, newWidth));
             if (state.isCentered) {
-              const halfWidth = newWidth / 2;
-              newLeft = Math.max(halfWidth, Math.min(100 - halfWidth, newLeft));
+              newLeft = Math.max(newWidth/2, Math.min(100 - newWidth/2, newLeft));
             } else {
               newLeft = Math.max(0, Math.min(100 - newWidth, newLeft));
             }
+            newTop = Math.max(0, Math.min(95, newTop));
 
             state.width = newWidth;
             state.left = newLeft;
@@ -2215,37 +2205,47 @@ layout: null
 
             activeHotspot.style.width = newWidth + '%';
             activeHotspot.style.left = newLeft + '%';
-            if (resizeCorner.includes('t')) {
-              activeHotspot.style.top = newTop + '%';
+            activeHotspot.style.top = newTop + '%';
+
+          } else if (mode === 'drag-image') {
+            const newX = startImgX + deltaX;
+            const newY = startImgY + deltaY;
+
+            state.imgOffsetX = newX;
+            state.imgOffsetY = newY;
+
+            if (state.img) {
+              state.img.style.left = newX + 'px';
+              state.img.style.top = newY + 'px';
             }
 
-            // Keep image at same visual size by adjusting imgWidth
-            // When hotspot shrinks, imgWidth needs to increase proportionally
-            const originalHotspotWidth = startWidth;
-            const ratio = originalHotspotWidth / newWidth;
-            state.imgWidth = 100 * ratio;
-            activeHotspot.style.setProperty('--img-width', state.imgWidth + '%');
+          } else if (mode === 'resize-image') {
+            // Calculate width change as percentage of hotspot
+            const hotspotRect = activeHotspot.getBoundingClientRect();
+            const deltaWPct = (deltaX / hotspotRect.width) * 100;
+            const newWPct = Math.max(20, Math.min(200, startImgWPct + deltaWPct));
+
+            state.imgWidthPct = newWPct;
+            if (state.img) {
+              state.img.style.width = newWPct + '%';
+            }
           }
 
           updateHotspotList();
         });
 
-        // Mouse up
         document.addEventListener('mouseup', () => {
           if (activeHotspot) {
             activeHotspot.classList.remove('dragging', 'resizing');
           }
-          isDragging = false;
-          isResizing = false;
-          isDraggingImage = false;
+          mode = null;
           activeHotspot = null;
         });
       }
 
       // Copy CSS to clipboard
       copyBtn.addEventListener('click', () => {
-        let css = '/* Updated Hotspot Positions */\n';
-        css += '/* Hotspot = clickable area, Image = visual asset */\n\n';
+        let css = '/* Updated Hotspot Positions */\n\n';
 
         Object.entries(hotspotState).forEach(([name, state]) => {
           const className = state.element.className.split(' ').find(c => c.startsWith('hotspot-'));
@@ -2260,16 +2260,17 @@ layout: null
           }
           css += `}\n`;
 
-          // Only add image overrides if they differ from defaults
-          if (state.imgWidth !== 100 || state.imgLeft !== 0 || state.imgTop !== 0) {
+          // Image styles if different from default (100%, 0, 0)
+          const hasCustomImg = state.imgWidthPct !== 100 || state.imgOffsetX !== 0 || state.imgOffsetY !== 0;
+          if (hasCustomImg) {
             css += `.${className} img {\n`;
-            if (state.imgWidth !== 100) {
-              css += `  width: ${state.imgWidth.toFixed(0)}%;\n`;
+            if (state.imgWidthPct !== 100) {
+              css += `  width: ${state.imgWidthPct.toFixed(0)}%;\n`;
             }
-            if (state.imgLeft !== 0 || state.imgTop !== 0) {
+            if (state.imgOffsetX !== 0 || state.imgOffsetY !== 0) {
               css += `  position: relative;\n`;
-              css += `  left: ${state.imgLeft.toFixed(0)}px;\n`;
-              css += `  top: ${state.imgTop.toFixed(0)}px;\n`;
+              css += `  left: ${state.imgOffsetX.toFixed(0)}px;\n`;
+              css += `  top: ${state.imgOffsetY.toFixed(0)}px;\n`;
             }
             css += `}\n`;
           }
