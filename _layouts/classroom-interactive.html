@@ -462,6 +462,15 @@ layout: null
     .classroom-scene.debug-mode .hotspot {
       outline: var(--debug-outline-width, 2px) solid lime !important;
       outline-offset: 0;
+      overflow: visible !important;
+    }
+
+    /* In debug mode, image size is independent from hotspot bounds */
+    .classroom-scene.debug-mode .hotspot img {
+      width: var(--img-width, 100%);
+      position: absolute;
+      top: var(--img-top, 0);
+      left: var(--img-left, 0);
     }
 
     .classroom-scene.debug-mode .hotspot::after {
@@ -1320,8 +1329,9 @@ layout: null
     <div class="debug-editor-section">
       <div class="debug-instructions">
         <kbd>D</kbd> Toggle debug mode<br>
-        <strong>Drag</strong> hotspots to move<br>
-        <strong>Corners</strong> to resize
+        <strong>Drag hotspot</strong> to move click area<br>
+        <strong>Corners</strong> to resize click area<br>
+        <strong>Shift+Drag</strong> to move image
       </div>
     </div>
 
@@ -1333,7 +1343,7 @@ layout: null
     </div>
 
     <div class="debug-editor-section">
-      <label>Hotspot Positions:</label>
+      <label>Hotspot & Image Positions:</label>
       <div id="hotspotList"></div>
     </div>
 
@@ -1728,6 +1738,9 @@ layout: null
         }
       });
 
+      // Scene reference (needed for debug mode checks)
+      const scene = document.querySelector('.classroom-scene');
+
       // Tooltip system
       const hotspots = document.querySelectorAll('.hotspot, .mobile-link');
 
@@ -1748,13 +1761,24 @@ layout: null
           tooltip.classList.remove('visible');
         });
 
-        obj.addEventListener('click', () => {
+        obj.addEventListener('click', (e) => {
+          // Disable clicking in debug mode
+          if (scene && scene.classList.contains('debug-mode')) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
           tooltip.classList.remove('visible');
           openPanel(obj.dataset.panel);
         });
 
         obj.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
+            // Disable in debug mode
+            if (scene && scene.classList.contains('debug-mode')) {
+              e.preventDefault();
+              return;
+            }
             e.preventDefault();
             openPanel(obj.dataset.panel);
           }
@@ -1897,10 +1921,11 @@ layout: null
 
       // =============================================
       // DEBUG MODE - Live Hotspot Editor
+      // Hotspot bounds and image can be adjusted separately
       // Toggle with ?debug=1 or press 'D'
       // =============================================
 
-      const scene = document.querySelector('.classroom-scene');
+      // scene is already declared above
       const debugEditor = document.getElementById('debugEditor');
       const outlineSlider = document.getElementById('outlineSlider');
       const outlineValue = document.getElementById('outlineValue');
@@ -1908,13 +1933,20 @@ layout: null
       const copyBtn = document.getElementById('copyCSS');
       const urlParams = new URLSearchParams(window.location.search);
 
-      // Hotspot position state (stores current values)
+      // Hotspot position state (stores current values for both hotspot and image)
       const hotspotState = {};
+
+      // Check if element is centered (uses translateX(-50%))
+      function isCenteredElement(hotspot) {
+        return hotspot.classList.contains('hotspot-smartboard') ||
+               hotspot.classList.contains('hotspot-table');
+      }
 
       // Initialize debug mode
       function initDebugMode() {
         scene.classList.add('debug-mode');
         debugEditor.classList.add('visible');
+        initializeState();
         addResizeHandles();
         updateHotspotList();
         enableDragAndResize();
@@ -1934,7 +1966,6 @@ layout: null
       }
 
       if (urlParams.get('debug') === '1') {
-        // Wait for classroom to be visible
         setTimeout(initDebugMode, 100);
       }
 
@@ -1951,40 +1982,66 @@ layout: null
         outlineValue.textContent = width;
       });
 
+      // Initialize state from current styles
+      function initializeState() {
+        const sceneHotspots = scene.querySelectorAll('.hotspot');
+        const sceneWidth = scene.offsetWidth;
+        const sceneHeight = scene.offsetHeight;
+
+        sceneHotspots.forEach(hotspot => {
+          const name = hotspot.dataset.tooltip || 'Unknown';
+          const computed = getComputedStyle(hotspot);
+          const img = hotspot.querySelector('img');
+
+          // Get hotspot dimensions
+          const widthPx = parseFloat(computed.width);
+          const widthPct = (widthPx / sceneWidth) * 100;
+          const leftPx = parseFloat(computed.left);
+          const topPx = parseFloat(computed.top);
+          const topPct = (topPx / sceneHeight) * 100;
+
+          let leftPct;
+          if (isCenteredElement(hotspot)) {
+            leftPct = ((leftPx + widthPx / 2) / sceneWidth) * 100;
+          } else {
+            leftPct = (leftPx / sceneWidth) * 100;
+          }
+
+          // Store both hotspot and image state
+          // Initially, image fills hotspot (imgWidth = 100%, imgLeft/Top = 0)
+          hotspotState[name] = {
+            element: hotspot,
+            img: img,
+            // Hotspot bounds (clickable area)
+            left: leftPct,
+            top: topPct,
+            width: widthPct,
+            height: 'auto',
+            isCentered: isCenteredElement(hotspot),
+            // Image position relative to hotspot (starts at 100% width, 0 offset)
+            imgWidth: 100,
+            imgLeft: 0,
+            imgTop: 0
+          };
+
+          // Set initial CSS vars for image
+          hotspot.style.setProperty('--img-width', '100%');
+          hotspot.style.setProperty('--img-left', '0px');
+          hotspot.style.setProperty('--img-top', '0px');
+        });
+      }
+
       // Add resize handles to hotspots
       function addResizeHandles() {
         const sceneHotspots = scene.querySelectorAll('.hotspot');
         sceneHotspots.forEach(hotspot => {
-          // Remove existing handles first
           hotspot.querySelectorAll('.resize-handle').forEach(h => h.remove());
-
-          // Add corner handles
           ['tl', 'tr', 'bl', 'br'].forEach(corner => {
             const handle = document.createElement('div');
             handle.className = `resize-handle resize-handle-${corner}`;
             handle.dataset.corner = corner;
             hotspot.appendChild(handle);
           });
-
-          // Initialize state from computed styles
-          const name = hotspot.dataset.tooltip || 'Unknown';
-          const style = getComputedStyle(hotspot);
-          hotspotState[name] = {
-            element: hotspot,
-            left: parseFloat(hotspot.style.left) || parseFloat(style.left) / scene.offsetWidth * 100,
-            top: parseFloat(hotspot.style.top) || parseFloat(style.top) / scene.offsetHeight * 100,
-            width: parseFloat(hotspot.style.width) || parseFloat(style.width) / scene.offsetWidth * 100
-          };
-
-          // Get actual percentages from the stylesheet
-          const classes = Array.from(hotspot.classList);
-          const hotspotClass = classes.find(c => c.startsWith('hotspot-'));
-          if (hotspotClass) {
-            const computed = getComputedStyle(hotspot);
-            hotspotState[name].left = (parseFloat(computed.left) / scene.offsetWidth * 100);
-            hotspotState[name].top = (parseFloat(computed.top) / scene.offsetHeight * 100);
-            hotspotState[name].width = (parseFloat(computed.width) / scene.offsetWidth * 100);
-          }
         });
       }
 
@@ -1994,11 +2051,14 @@ layout: null
         Object.entries(hotspotState).forEach(([name, state]) => {
           html += `
             <div class="debug-editor-hotspot" data-hotspot="${name}">
-              <div class="debug-editor-hotspot-name">${name}</div>
+              <div class="debug-editor-hotspot-name">${name}${state.isCentered ? ' (centered)' : ''}</div>
               <div class="debug-editor-values">
-                <span>left:</span><code>${state.left.toFixed(1)}%</code>
-                <span>top:</span><code>${state.top.toFixed(1)}%</code>
-                <span>width:</span><code>${state.width.toFixed(1)}%</code>
+                <span>box L:</span><code>${state.left.toFixed(1)}%</code>
+                <span>box T:</span><code>${state.top.toFixed(1)}%</code>
+                <span>box W:</span><code>${state.width.toFixed(1)}%</code>
+                <span>img W:</span><code>${state.imgWidth.toFixed(0)}%</code>
+                <span>img L:</span><code>${state.imgLeft.toFixed(0)}px</code>
+                <span>img T:</span><code>${state.imgTop.toFixed(0)}px</code>
               </div>
             </div>
           `;
@@ -2011,8 +2071,10 @@ layout: null
         const sceneHotspots = scene.querySelectorAll('.hotspot');
         let isDragging = false;
         let isResizing = false;
+        let isDraggingImage = false;
         let activeHotspot = null;
         let startX, startY, startLeft, startTop, startWidth;
+        let startImgLeft, startImgTop;
         let resizeCorner = '';
 
         sceneHotspots.forEach(hotspot => {
@@ -2024,17 +2086,24 @@ layout: null
             e.preventDefault();
             e.stopPropagation();
 
-            isDragging = true;
-            activeHotspot = hotspot;
-            hotspot.classList.add('dragging');
-
-            const rect = scene.getBoundingClientRect();
+            const name = hotspot.dataset.tooltip;
             startX = e.clientX;
             startY = e.clientY;
 
-            const name = hotspot.dataset.tooltip;
-            startLeft = hotspotState[name]?.left || 0;
-            startTop = hotspotState[name]?.top || 0;
+            // Shift+Drag moves the image, regular drag moves the hotspot
+            if (e.shiftKey) {
+              isDraggingImage = true;
+              activeHotspot = hotspot;
+              hotspot.classList.add('resizing'); // cyan for image mode
+              startImgLeft = hotspotState[name]?.imgLeft || 0;
+              startImgTop = hotspotState[name]?.imgTop || 0;
+            } else {
+              isDragging = true;
+              activeHotspot = hotspot;
+              hotspot.classList.add('dragging');
+              startLeft = hotspotState[name]?.left || 50;
+              startTop = hotspotState[name]?.top || 50;
+            }
 
             // Highlight in editor
             document.querySelectorAll('.debug-editor-hotspot').forEach(el => el.classList.remove('active'));
@@ -2071,64 +2140,91 @@ layout: null
           if (!activeHotspot) return;
 
           const rect = scene.getBoundingClientRect();
-          const deltaX = ((e.clientX - startX) / rect.width) * 100;
-          const deltaY = ((e.clientY - startY) / rect.height) * 100;
+          const deltaX = e.clientX - startX;
+          const deltaY = e.clientY - startY;
+          const deltaXPct = (deltaX / rect.width) * 100;
+          const deltaYPct = (deltaY / rect.height) * 100;
 
           const name = activeHotspot.dataset.tooltip;
-          const isCentered = activeHotspot.classList.contains('hotspot-smartboard') ||
-                            activeHotspot.classList.contains('hotspot-table');
+          const state = hotspotState[name];
+          if (!state) return;
 
-          if (isDragging) {
-            let newLeft = startLeft + deltaX;
-            let newTop = startTop + deltaY;
+          if (isDraggingImage) {
+            // Move image within hotspot (in pixels)
+            const newImgLeft = startImgLeft + deltaX;
+            const newImgTop = startImgTop + deltaY;
 
-            // Clamp values
-            newLeft = Math.max(0, Math.min(100 - hotspotState[name].width, newLeft));
-            newTop = Math.max(0, Math.min(90, newTop));
+            state.imgLeft = newImgLeft;
+            state.imgTop = newImgTop;
 
-            hotspotState[name].left = newLeft;
-            hotspotState[name].top = newTop;
+            activeHotspot.style.setProperty('--img-left', newImgLeft + 'px');
+            activeHotspot.style.setProperty('--img-top', newImgTop + 'px');
 
-            if (isCentered) {
-              // For centered elements, left is the center point
-              activeHotspot.style.left = newLeft + '%';
+          } else if (isDragging) {
+            // Move hotspot bounds
+            let newLeft = startLeft + deltaXPct;
+            let newTop = startTop + deltaYPct;
+
+            if (state.isCentered) {
+              const halfWidth = state.width / 2;
+              newLeft = Math.max(halfWidth, Math.min(100 - halfWidth, newLeft));
             } else {
-              activeHotspot.style.left = newLeft + '%';
+              newLeft = Math.max(0, Math.min(100 - state.width, newLeft));
             }
+            newTop = Math.max(0, Math.min(95, newTop));
+
+            state.left = newLeft;
+            state.top = newTop;
+
+            activeHotspot.style.left = newLeft + '%';
             activeHotspot.style.top = newTop + '%';
 
           } else if (isResizing) {
+            // Resize hotspot bounds (click area only)
             let newWidth = startWidth;
             let newLeft = startLeft;
             let newTop = startTop;
 
             if (resizeCorner.includes('r')) {
-              newWidth = startWidth + deltaX;
+              newWidth = startWidth + deltaXPct;
             } else if (resizeCorner.includes('l')) {
-              newWidth = startWidth - deltaX;
-              if (!isCentered) newLeft = startLeft + deltaX;
+              newWidth = startWidth - deltaXPct;
+              if (!state.isCentered) {
+                newLeft = startLeft + deltaXPct;
+              }
             }
 
             if (resizeCorner.includes('t')) {
-              newTop = startTop + deltaY;
+              newTop = startTop + deltaYPct;
             }
 
-            // Clamp width
-            newWidth = Math.max(5, Math.min(80, newWidth));
-            newLeft = Math.max(0, Math.min(95, newLeft));
-            newTop = Math.max(0, Math.min(90, newTop));
+            // Allow very small hotspots (1% min)
+            newWidth = Math.max(1, Math.min(90, newWidth));
+            newTop = Math.max(0, Math.min(95, newTop));
 
-            hotspotState[name].width = newWidth;
-            hotspotState[name].left = newLeft;
-            hotspotState[name].top = newTop;
+            if (state.isCentered) {
+              const halfWidth = newWidth / 2;
+              newLeft = Math.max(halfWidth, Math.min(100 - halfWidth, newLeft));
+            } else {
+              newLeft = Math.max(0, Math.min(100 - newWidth, newLeft));
+            }
+
+            state.width = newWidth;
+            state.left = newLeft;
+            state.top = newTop;
 
             activeHotspot.style.width = newWidth + '%';
-            if (!isCentered || resizeCorner.includes('l')) {
-              activeHotspot.style.left = newLeft + '%';
-            }
+            activeHotspot.style.left = newLeft + '%';
             if (resizeCorner.includes('t')) {
               activeHotspot.style.top = newTop + '%';
             }
+
+            // Keep image at same visual size by adjusting imgWidth
+            // When hotspot shrinks, imgWidth needs to increase proportionally
+            const originalHotspotWidth = startWidth;
+            const ratio = originalHotspotWidth / newWidth;
+            state.imgWidth = 100 * ratio;
+            activeHotspot.style.setProperty('--img-width', state.imgWidth + '%');
           }
 
           updateHotspotList();
@@ -2141,27 +2237,43 @@ layout: null
           }
           isDragging = false;
           isResizing = false;
+          isDraggingImage = false;
           activeHotspot = null;
         });
       }
 
       // Copy CSS to clipboard
       copyBtn.addEventListener('click', () => {
-        let css = '/* Updated Hotspot Positions */\n\n';
+        let css = '/* Updated Hotspot Positions */\n';
+        css += '/* Hotspot = clickable area, Image = visual asset */\n\n';
 
         Object.entries(hotspotState).forEach(([name, state]) => {
           const className = state.element.className.split(' ').find(c => c.startsWith('hotspot-'));
-          const isCentered = state.element.classList.contains('hotspot-smartboard') ||
-                            state.element.classList.contains('hotspot-table');
 
+          css += `/* ${name} */\n`;
           css += `.${className} {\n`;
           css += `  left: ${state.left.toFixed(1)}%;\n`;
           css += `  top: ${state.top.toFixed(1)}%;\n`;
           css += `  width: ${state.width.toFixed(1)}%;\n`;
-          if (isCentered) {
+          if (state.isCentered) {
             css += `  transform: translateX(-50%);\n`;
           }
-          css += `}\n\n`;
+          css += `}\n`;
+
+          // Only add image overrides if they differ from defaults
+          if (state.imgWidth !== 100 || state.imgLeft !== 0 || state.imgTop !== 0) {
+            css += `.${className} img {\n`;
+            if (state.imgWidth !== 100) {
+              css += `  width: ${state.imgWidth.toFixed(0)}%;\n`;
+            }
+            if (state.imgLeft !== 0 || state.imgTop !== 0) {
+              css += `  position: relative;\n`;
+              css += `  left: ${state.imgLeft.toFixed(0)}px;\n`;
+              css += `  top: ${state.imgTop.toFixed(0)}px;\n`;
+            }
+            css += `}\n`;
+          }
+          css += '\n';
         });
 
         navigator.clipboard.writeText(css).then(() => {
