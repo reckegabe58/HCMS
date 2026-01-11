@@ -193,6 +193,27 @@ layout: default
             Newsletter
           </h3>
           {% assign current_newsletter = page.newsletters | first %}
+
+          <!-- Thumbnail Preview -->
+          <div class="newsletter-thumbnail">
+            {% if current_newsletter.type == 'png' or current_newsletter.type == 'jpg' or current_newsletter.type == 'jpeg' %}
+            <a href="{{ current_newsletter.file | relative_url }}" target="_blank" class="newsletter-thumbnail-link">
+              <img src="{{ current_newsletter.file | relative_url }}" alt="{{ current_newsletter.month }} Newsletter" class="newsletter-thumbnail-img">
+            </a>
+            {% else %}
+            <a href="{{ current_newsletter.file | relative_url }}" target="_blank" class="newsletter-thumbnail-link newsletter-pdf-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <line x1="10" y1="9" x2="8" y2="9"></line>
+              </svg>
+              <span>PDF</span>
+            </a>
+            {% endif %}
+          </div>
+
           <div class="newsletter-current">
             <span class="newsletter-current-badge">Current</span>
             <span class="newsletter-current-month">{{ current_newsletter.month }}</span>
@@ -201,7 +222,7 @@ layout: default
             {% endif %}
           </div>
           <div class="newsletter-actions-sidebar">
-            <a href="{{ current_newsletter.file | relative_url }}" class="btn btn-primary btn-sm" target="_blank">
+            <a href="{{ current_newsletter.file | relative_url }}" class="btn btn-primary btn-sm" target="_blank" download>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
@@ -229,7 +250,7 @@ layout: default
             <div class="newsletter-archive-dropdown" id="newsletter-archive">
               {% for newsletter in page.newsletters offset:1 %}
               <a href="{{ newsletter.file | relative_url }}" class="newsletter-archive-item" target="_blank">
-                <span>{{ newsletter.month }}</span>
+                <span>{{ newsletter.month }}{% if newsletter.type %} <small>({{ newsletter.type | upcase }})</small>{% endif %}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>

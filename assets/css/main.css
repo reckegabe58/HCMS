@@ -3899,6 +3899,72 @@ a:hover {
   opacity: 0.7;
 }
 
+.newsletter-archive-dropdown .newsletter-archive-item small {
+  font-size: 0.7em;
+  opacity: 0.7;
+}
+
+/* Newsletter Thumbnail */
+.newsletter-thumbnail {
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-thumbnail-link {
+  display: block;
+  text-decoration: none;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.newsletter-thumbnail-link:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.newsletter-thumbnail-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.newsletter-pdf-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-lg);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  color: white;
+}
+
+.newsletter-pdf-icon svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-sm);
+  opacity: 0.9;
+}
+
+.newsletter-pdf-icon span {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.newsletter-pdf-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-pdf-icon:hover svg,
+.newsletter-pdf-icon:hover span {
+  opacity: 1;
+}
+
 /* Other Classrooms */
 .other-classrooms-section {
   background: var(--bg-200);
