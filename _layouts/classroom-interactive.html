@@ -1728,6 +1728,9 @@ layout: null
         }
       });
 
+      // Scene reference (needed for debug mode checks)
+      const scene = document.querySelector('.classroom-scene');
+
       // Tooltip system
       const hotspots = document.querySelectorAll('.hotspot, .mobile-link');
 
@@ -1748,13 +1751,24 @@ layout: null
           tooltip.classList.remove('visible');
         });
 
-        obj.addEventListener('click', () => {
+        obj.addEventListener('click', (e) => {
+          // Disable clicking in debug mode
+          if (scene && scene.classList.contains('debug-mode')) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
           tooltip.classList.remove('visible');
           openPanel(obj.dataset.panel);
         });
 
         obj.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
+            // Disable in debug mode
+            if (scene && scene.classList.contains('debug-mode')) {
+              e.preventDefault();
+              return;
+            }
             e.preventDefault();
             openPanel(obj.dataset.panel);
           }
@@ -1900,7 +1914,7 @@ layout: null
       // Toggle with ?debug=1 or press 'D'
       // =============================================
 
-      const scene = document.querySelector('.classroom-scene');
+      // scene is already declared above
       const debugEditor = document.getElementById('debugEditor');
       const outlineSlider = document.getElementById('outlineSlider');
       const outlineValue = document.getElementById('outlineValue');
@@ -1910,6 +1924,12 @@ layout: null
 
       // Hotspot position state (stores current values)
       const hotspotState = {};
+
+      // Check if element is centered (uses translateX(-50%))
+      function isCenteredElement(hotspot) {
+        return hotspot.classList.contains('hotspot-smartboard') ||
+               hotspot.classList.contains('hotspot-table');
+      }
 
       // Initialize debug mode
       function initDebugMode() {
@@ -1968,23 +1988,37 @@ layout: null
 
           // Initialize state from computed styles
           const name = hotspot.dataset.tooltip || 'Unknown';
-          const style = getComputedStyle(hotspot);
+          const computed = getComputedStyle(hotspot);
+          const sceneWidth = scene.offsetWidth;
+          const sceneHeight = scene.offsetHeight;
+
+          // Get width first
+          const widthPx = parseFloat(computed.width);
+          const widthPct = (widthPx / sceneWidth) * 100;
+
+          // Get visual left position (where element appears on screen)
+          const leftPx = parseFloat(computed.left);
+
+          // For centered elements, we need to calculate what % value produces this position
+          // Visual left = (left% / 100 * sceneWidth) - (width / 2)
+          // So: left% = ((visualLeft + width/2) / sceneWidth) * 100
+          let leftPct;
+          if (isCenteredElement(hotspot)) {
+            leftPct = ((leftPx + widthPx / 2) / sceneWidth) * 100;
+          } else {
+            leftPct = (leftPx / sceneWidth) * 100;
+          }
+
+          const topPx = parseFloat(computed.top);
+          const topPct = (topPx / sceneHeight) * 100;
+
           hotspotState[name] = {
             element: hotspot,
-            left: parseFloat(hotspot.style.left) || parseFloat(style.left) / scene.offsetWidth * 100,
-            top: parseFloat(hotspot.style.top) || parseFloat(style.top) / scene.offsetHeight * 100,
-            width: parseFloat(hotspot.style.width) || parseFloat(style.width) / scene.offsetWidth * 100
+            left: leftPct,
+            top: topPct,
+            width: widthPct,
+            isCentered: isCenteredElement(hotspot)
           };
-
-          // Get actual percentages from the stylesheet
-          const classes = Array.from(hotspot.classList);
-          const hotspotClass = classes.find(c => c.startsWith('hotspot-'));
-          if (hotspotClass) {
-            const computed = getComputedStyle(hotspot);
-            hotspotState[name].left = (parseFloat(computed.left) / scene.offsetWidth * 100);
-            hotspotState[name].top = (parseFloat(computed.top) / scene.offsetHeight * 100);
-            hotspotState[name].width = (parseFloat(computed.width) / scene.offsetWidth * 100);
-          }
         });
       }
 
@@ -1994,7 +2028,7 @@ layout: null
         Object.entries(hotspotState).forEach(([name, state]) => {
           html += `
             <div class="debug-editor-hotspot" data-hotspot="${name}">
-              <div class="debug-editor-hotspot-name">${name}</div>
+              <div class="debug-editor-hotspot-name">${name}${state.isCentered ? ' (centered)' : ''}</div>
               <div class="debug-editor-values">
                 <span>left:</span><code>${state.left.toFixed(1)}%</code>
                 <span>top:</span><code>${state.top.toFixed(1)}%</code>
@@ -2028,13 +2062,12 @@ layout: null
             activeHotspot = hotspot;
             hotspot.classList.add('dragging');
 
-            const rect = scene.getBoundingClientRect();
             startX = e.clientX;
             startY = e.clientY;
 
             const name = hotspot.dataset.tooltip;
-            startLeft = hotspotState[name]?.left || 0;
-            startTop = hotspotState[name]?.top || 0;
+            startLeft = hotspotState[name]?.left || 50;
+            startTop = hotspotState[name]?.top || 50;
 
             // Highlight in editor
             document.querySelectorAll('.debug-editor-hotspot').forEach(el => el.classList.remove('active'));
@@ -2075,26 +2108,28 @@ layout: null
           const deltaY = ((e.clientY - startY) / rect.height) * 100;
 
           const name = activeHotspot.dataset.tooltip;
-          const isCentered = activeHotspot.classList.contains('hotspot-smartboard') ||
-                            activeHotspot.classList.contains('hotspot-table');
+          const isCentered = hotspotState[name]?.isCentered || false;
+          const currentWidth = hotspotState[name]?.width || 10;
 
           if (isDragging) {
             let newLeft = startLeft + deltaX;
             let newTop = startTop + deltaY;
 
-            // Clamp values
-            newLeft = Math.max(0, Math.min(100 - hotspotState[name].width, newLeft));
+            // Clamp values - centered elements use center point, others use left edge
+            if (isCentered) {
+              // For centered, left is center point, so valid range is (width/2) to (100 - width/2)
+              const halfWidth = currentWidth / 2;
+              newLeft = Math.max(halfWidth, Math.min(100 - halfWidth, newLeft));
+            } else {
+              // For non-centered, left is left edge
+              newLeft = Math.max(0, Math.min(100 - currentWidth, newLeft));
+            }
             newTop = Math.max(0, Math.min(90, newTop));
 
             hotspotState[name].left = newLeft;
             hotspotState[name].top = newTop;
 
-            if (isCentered) {
-              // For centered elements, left is the center point
-              activeHotspot.style.left = newLeft + '%';
-            } else {
-              activeHotspot.style.left = newLeft + '%';
-            }
+            activeHotspot.style.left = newLeft + '%';
             activeHotspot.style.top = newTop + '%';
 
           } else if (isResizing) {
@@ -2102,30 +2137,40 @@ layout: null
             let newLeft = startLeft;
             let newTop = startTop;
 
+            // Handle resizing from different corners
             if (resizeCorner.includes('r')) {
+              // Right side resize - just change width
               newWidth = startWidth + deltaX;
             } else if (resizeCorner.includes('l')) {
+              // Left side resize - change width and possibly position
               newWidth = startWidth - deltaX;
-              if (!isCentered) newLeft = startLeft + deltaX;
+              if (!isCentered) {
+                newLeft = startLeft + deltaX;
+              }
             }
 
             if (resizeCorner.includes('t')) {
               newTop = startTop + deltaY;
             }
 
-            // Clamp width
-            newWidth = Math.max(5, Math.min(80, newWidth));
-            newLeft = Math.max(0, Math.min(95, newLeft));
+            // Clamp width - allow smaller minimum (2%) for fine adjustment
+            newWidth = Math.max(2, Math.min(80, newWidth));
             newTop = Math.max(0, Math.min(90, newTop));
+
+            // Clamp left position based on centering
+            if (isCentered) {
+              const halfWidth = newWidth / 2;
+              newLeft = Math.max(halfWidth, Math.min(100 - halfWidth, newLeft));
+            } else {
+              newLeft = Math.max(0, Math.min(100 - newWidth, newLeft));
+            }
 
             hotspotState[name].width = newWidth;
             hotspotState[name].left = newLeft;
             hotspotState[name].top = newTop;
 
             activeHotspot.style.width = newWidth + '%';
-            if (!isCentered || resizeCorner.includes('l')) {
-              activeHotspot.style.left = newLeft + '%';
-            }
+            activeHotspot.style.left = newLeft + '%';
             if (resizeCorner.includes('t')) {
               activeHotspot.style.top = newTop + '%';
             }
@@ -2151,14 +2196,12 @@ layout: null
 
         Object.entries(hotspotState).forEach(([name, state]) => {
           const className = state.element.className.split(' ').find(c => c.startsWith('hotspot-'));
-          const isCentered = state.element.classList.contains('hotspot-smartboard') ||
-                            state.element.classList.contains('hotspot-table');
 
           css += `.${className} {\n`;
           css += `  left: ${state.left.toFixed(1)}%;\n`;
           css += `  top: ${state.top.toFixed(1)}%;\n`;
           css += `  width: ${state.width.toFixed(1)}%;\n`;
-          if (isCentered) {
+          if (state.isCentered) {
             css += `  transform: translateX(-50%);\n`;
           }
           css += `}\n\n`;
