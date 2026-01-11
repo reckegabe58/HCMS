@@ -487,6 +487,330 @@ layout: null
       transform: translateX(-50%) translateY(-1px) scale(0.99);
     }
 
+    /* ==============================================
+       DEBUG MODE - Toggle with ?debug=1 or press 'D'
+       Developer-only overlay - hidden in normal mode
+       ============================================= */
+
+    /* Grid overlay - debug only */
+    .classroom-scene.debug-mode::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 10%, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 10.3%),
+        repeating-linear-gradient(90deg, transparent, transparent 10%, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 10.3%);
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Hotspot hitbox outline - GREEN */
+    .classroom-scene.debug-mode .hotspot {
+      outline: var(--debug-outline-width, 2px) solid lime !important;
+      outline-offset: 0;
+      overflow: visible !important;
+      cursor: move;
+    }
+
+    /* Image bounds outline - YELLOW DASHED (optional) */
+    .classroom-scene.debug-mode.show-image-bounds .hotspot img {
+      outline: 2px dashed yellow;
+      outline-offset: 0;
+    }
+
+    /* In debug mode, image uses fixed pixel width - NOT tied to hotspot */
+    .classroom-scene.debug-mode .hotspot img {
+      position: relative;
+      display: block;
+      pointer-events: auto;
+      max-width: none;
+      transform-origin: top left;
+    }
+
+    /* Hotspot label */
+    .classroom-scene.debug-mode .hotspot::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+      background: rgba(0,0,0,0.9);
+      color: lime;
+      font-size: 9px;
+      padding: 2px 6px;
+      white-space: nowrap;
+      font-family: monospace;
+      z-index: 101;
+      border-radius: 2px;
+    }
+
+    /* Debug Editor Panel */
+    .debug-editor {
+      position: fixed;
+      top: 60px;
+      right: 10px;
+      width: 340px;
+      background: rgba(0, 0, 0, 0.96);
+      border: 2px solid lime;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: monospace;
+      font-size: 11px;
+      color: lime;
+      z-index: 10000;
+      display: none;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+    }
+
+    .debug-editor.visible {
+      display: block;
+    }
+
+    .debug-editor h3 {
+      margin: 0 0 10px 0;
+      font-size: 13px;
+      color: #0f0;
+      border-bottom: 1px solid lime;
+      padding-bottom: 8px;
+    }
+
+    .debug-editor-section {
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed rgba(0, 255, 0, 0.3);
+    }
+
+    .debug-editor-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .debug-editor label {
+      display: block;
+      margin-bottom: 6px;
+      color: #8f8;
+    }
+
+    .debug-editor input[type="range"] {
+      width: 100%;
+      accent-color: lime;
+    }
+
+    .debug-editor .outline-value {
+      display: inline-block;
+      margin-left: 6px;
+      color: #fff;
+    }
+
+    .debug-editor-hotspot {
+      background: rgba(0, 40, 0, 0.6);
+      border: 1px solid rgba(0, 255, 0, 0.3);
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .debug-editor-hotspot.active {
+      border-color: lime;
+      background: rgba(0, 80, 0, 0.7);
+      box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+    }
+
+    .debug-editor-hotspot-name {
+      font-weight: bold;
+      color: #0f0;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+
+    .debug-editor-group {
+      margin-bottom: 8px;
+    }
+
+    .debug-editor-group-title {
+      color: #8f8;
+      font-size: 10px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .debug-editor-group-title::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+    }
+
+    .debug-editor-group-title.hitbox::before {
+      background: lime;
+    }
+
+    .debug-editor-group-title.image::before {
+      background: yellow;
+    }
+
+    .debug-editor-values {
+      display: grid;
+      grid-template-columns: auto 1fr auto 1fr;
+      gap: 4px 8px;
+      align-items: center;
+    }
+
+    .debug-editor-values span {
+      color: #aaa;
+      font-size: 10px;
+    }
+
+    .debug-editor-values input[type="number"] {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(0, 255, 0, 0.4);
+      color: #fff;
+      padding: 4px 6px;
+      font-family: monospace;
+      font-size: 11px;
+      border-radius: 3px;
+    }
+
+    .debug-editor-values input:focus {
+      outline: none;
+      border-color: lime;
+      background: rgba(0, 50, 0, 0.8);
+    }
+
+    .debug-editor-toggles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .debug-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      color: #8f8;
+      cursor: pointer;
+    }
+
+    .debug-toggle input {
+      accent-color: lime;
+    }
+
+    .debug-btn-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .debug-btn {
+      flex: 1;
+      background: rgba(0, 100, 0, 0.5);
+      border: 1px solid rgba(0, 255, 0, 0.4);
+      color: #8f8;
+      padding: 4px 8px;
+      font-family: monospace;
+      font-size: 9px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s;
+    }
+
+    .debug-btn:hover {
+      background: rgba(0, 150, 0, 0.6);
+      color: #fff;
+    }
+
+    .debug-copy-btn {
+      background: lime;
+      color: #000;
+      border: none;
+      padding: 10px 12px;
+      font-family: monospace;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 100%;
+      margin-top: 10px;
+      transition: all 0.15s;
+    }
+
+    .debug-copy-btn:hover {
+      background: #0f0;
+      transform: translateY(-1px);
+    }
+
+    .debug-copy-btn.copied {
+      background: #4a4;
+    }
+
+    .debug-instructions {
+      background: rgba(0, 50, 0, 0.4);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .debug-instructions kbd {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2px 6px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 255, 0, 0.5);
+      font-size: 10px;
+    }
+
+    .debug-instructions strong {
+      color: lime;
+    }
+
+    .debug-global-toggles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    /* Resize handles for hotspots */
+    .classroom-scene.debug-mode .hotspot .resize-handle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: lime;
+      border: 1px solid #000;
+      z-index: 200;
+      display: block;
+    }
+
+    .resize-handle-tl { top: -5px; left: -5px; cursor: nwse-resize; }
+    .resize-handle-tr { top: -5px; right: -5px; cursor: nesw-resize; }
+    .resize-handle-bl { bottom: -5px; left: -5px; cursor: nesw-resize; }
+    .resize-handle-br { bottom: -5px; right: -5px; cursor: nwse-resize; }
+
+    .classroom-scene:not(.debug-mode) .resize-handle {
+      display: none !important;
+    }
+
+    /* Dragging states */
+    .classroom-scene.debug-mode .hotspot.dragging-hotspot {
+      cursor: move !important;
+      outline-color: #0ff !important;
+      z-index: 150 !important;
+    }
+
+    .classroom-scene.debug-mode .hotspot.dragging-image {
+      outline-color: yellow !important;
+    }
+
+    .classroom-scene.debug-mode .hotspot.resizing {
+      outline-color: #f0f !important;
+    }
+
     /* =============================================
        TOOLTIP
        ============================================= */
@@ -1155,6 +1479,41 @@ layout: null
   </style>
 </head>
 <body>
+  <!-- Debug Editor Panel (hidden by default - developer only) -->
+  <div class="debug-editor" id="debugEditor">
+    <h3>HOTSPOT EDITOR</h3>
+
+    <div class="debug-editor-section">
+      <div class="debug-instructions">
+        <kbd>D</kbd> Toggle debug mode<br><br>
+        <strong>HITBOX (green):</strong> Drag to move, corners to resize<br>
+        <strong>IMAGE:</strong> <kbd>Alt</kbd>+Drag to move, <kbd>Ctrl</kbd>+Drag to scale
+      </div>
+    </div>
+
+    <div class="debug-editor-section">
+      <div class="debug-global-toggles">
+        <label class="debug-toggle">
+          <input type="checkbox" id="showImageBounds">
+          Show image bounds (yellow)
+        </label>
+      </div>
+      <label>
+        Outline Width: <span class="outline-value" id="outlineValue">2px</span>
+      </label>
+      <input type="range" id="outlineSlider" min="1" max="8" value="2">
+    </div>
+
+    <div class="debug-editor-section">
+      <div id="hotspotList"></div>
+    </div>
+
+    <div class="debug-editor-section">
+      <button class="debug-copy-btn" id="copyJSON">COPY JSON CONFIG</button>
+      <button class="debug-copy-btn" id="copyCSS" style="margin-top:6px; background:#8f8;">COPY CSS</button>
+    </div>
+  </div>
+
   <!-- Tooltip -->
   <div class="game-tooltip" id="gameTooltip">
     <span class="game-tooltip-text"></span>
@@ -1566,13 +1925,24 @@ layout: null
           tooltip.classList.remove('visible');
         });
 
-        obj.addEventListener('click', () => {
+        obj.addEventListener('click', (e) => {
+          // Disable clicking in debug mode
+          if (scene && scene.classList.contains('debug-mode')) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
           tooltip.classList.remove('visible');
           openPanel(obj.dataset.panel);
         });
 
         obj.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
+            // Disable in debug mode
+            if (scene && scene.classList.contains('debug-mode')) {
+              e.preventDefault();
+              return;
+            }
             e.preventDefault();
             openPanel(obj.dataset.panel);
           }
@@ -1712,6 +2082,580 @@ layout: null
       }
 
       generateSchedule();
+
+      // =============================================
+      // DEBUG MODE - Live Hotspot Editor
+      // Developer-only. Toggle: ?debug=1, press 'D', or localStorage
+      // =============================================
+
+      const debugEditor = document.getElementById('debugEditor');
+      const outlineSlider = document.getElementById('outlineSlider');
+      const outlineValue = document.getElementById('outlineValue');
+      const hotspotList = document.getElementById('hotspotList');
+      const copyJSONBtn = document.getElementById('copyJSON');
+      const copyCSSBtn = document.getElementById('copyCSS');
+      const showImageBoundsToggle = document.getElementById('showImageBounds');
+      const urlParams = new URLSearchParams(window.location.search);
+
+      // State: stores both hitbox and image data per object
+      const editorState = {};
+      let debugInitialized = false;
+      const STORAGE_KEY = 'hcms_hotspot_config';
+
+      function isCenteredElement(hotspot) {
+        return hotspot.classList.contains('hotspot-smartboard') ||
+               hotspot.classList.contains('hotspot-table');
+      }
+
+      function getHotspotId(hotspot) {
+        const classes = hotspot.className.split(' ');
+        const cls = classes.find(c => c.startsWith('hotspot-'));
+        return cls ? cls.replace('hotspot-', '') : 'unknown';
+      }
+
+      // Check if debug mode should be enabled
+      function shouldEnableDebug() {
+        return urlParams.get('debug') === '1' ||
+               localStorage.getItem('hcms_debug') === '1';
+      }
+
+      function initDebugMode() {
+        if (!scene) return;
+        scene.classList.add('debug-mode');
+        debugEditor.classList.add('visible');
+
+        if (!debugInitialized) {
+          loadSavedState();
+          initializeState();
+          addResizeHandles();
+          setupDragHandlers();
+          debugInitialized = true;
+        }
+        renderHotspotList();
+      }
+
+      function exitDebugMode() {
+        scene.classList.remove('debug-mode');
+        scene.classList.remove('show-image-bounds');
+        debugEditor.classList.remove('visible');
+      }
+
+      function toggleDebugMode() {
+        if (scene.classList.contains('debug-mode')) {
+          exitDebugMode();
+        } else {
+          initDebugMode();
+        }
+      }
+
+      // Initialize on load if debug enabled
+      if (shouldEnableDebug()) {
+        setTimeout(initDebugMode, 300);
+      }
+
+      // D key toggle
+      document.addEventListener('keydown', (e) => {
+        if ((e.key === 'd' || e.key === 'D') && !e.target.matches('input, textarea')) {
+          toggleDebugMode();
+        }
+      });
+
+      // Outline width slider
+      outlineSlider.addEventListener('input', (e) => {
+        const width = e.target.value + 'px';
+        scene.style.setProperty('--debug-outline-width', width);
+        outlineValue.textContent = width;
+      });
+
+      // Show image bounds toggle
+      showImageBoundsToggle.addEventListener('change', (e) => {
+        scene.classList.toggle('show-image-bounds', e.target.checked);
+      });
+
+      // Load saved state from localStorage
+      function loadSavedState() {
+        try {
+          const saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) {
+            const parsed = JSON.parse(saved);
+            Object.assign(editorState, parsed);
+          }
+        } catch (e) {
+          console.warn('Failed to load saved hotspot config:', e);
+        }
+      }
+
+      // Save state to localStorage
+      function saveState() {
+        try {
+          const toSave = {};
+          Object.entries(editorState).forEach(([id, state]) => {
+            toSave[id] = {
+              hitbox: { ...state.hitbox },
+              image: { ...state.image },
+              linked: state.linked
+            };
+          });
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
+        } catch (e) {
+          console.warn('Failed to save hotspot config:', e);
+        }
+      }
+
+      // Initialize state from current DOM
+      function initializeState() {
+        const sceneHotspots = scene.querySelectorAll('.hotspot');
+        const sceneRect = scene.getBoundingClientRect();
+
+        sceneHotspots.forEach(hotspot => {
+          const id = getHotspotId(hotspot);
+          const name = hotspot.dataset.tooltip || id;
+          const img = hotspot.querySelector('img');
+          const hotspotRect = hotspot.getBoundingClientRect();
+
+          // Get image's current pixel dimensions
+          const imgRect = img ? img.getBoundingClientRect() : null;
+          const baseImgWidthPx = imgRect ? imgRect.width : hotspotRect.width;
+
+          // Calculate hitbox position as % of scene
+          const leftPx = hotspotRect.left - sceneRect.left;
+          const topPx = hotspotRect.top - sceneRect.top;
+          const widthPct = (hotspotRect.width / sceneRect.width) * 100;
+          const heightPct = (hotspotRect.height / sceneRect.height) * 100;
+
+          let leftPct;
+          if (isCenteredElement(hotspot)) {
+            leftPct = ((leftPx + hotspotRect.width / 2) / sceneRect.width) * 100;
+          } else {
+            leftPct = (leftPx / sceneRect.width) * 100;
+          }
+          const topPct = (topPx / sceneRect.height) * 100;
+
+          // Use saved state if available, otherwise use current
+          const saved = editorState[id];
+
+          editorState[id] = {
+            id: id,
+            name: name,
+            element: hotspot,
+            img: img,
+            isCentered: isCenteredElement(hotspot),
+            baseImgWidthPx: baseImgWidthPx,
+            hitbox: saved?.hitbox || {
+              leftPct: leftPct,
+              topPct: topPct,
+              widthPct: widthPct,
+              heightPct: heightPct
+            },
+            image: {
+              scalePct: (saved?.image?.scalePct != null && saved.image.scalePct > 0) ? saved.image.scalePct : 100,
+              offsetXPx: saved?.image?.offsetXPx ?? 0,
+              offsetYPx: saved?.image?.offsetYPx ?? 0
+            },
+            linked: saved?.linked || false,
+            original: {
+              hitbox: { leftPct, topPct, widthPct, heightPct },
+              image: { scalePct: 100, offsetXPx: 0, offsetYPx: 0 }
+            }
+          };
+
+          applyStateToDOM(id);
+        });
+      }
+
+      // Apply state values to DOM elements
+      function applyStateToDOM(id) {
+        const state = editorState[id];
+        if (!state) return;
+
+        const { element, img, hitbox, image, baseImgWidthPx } = state;
+
+        // Apply hitbox position
+        element.style.left = hitbox.leftPct + '%';
+        element.style.top = hitbox.topPct + '%';
+        element.style.width = hitbox.widthPct + '%';
+
+        // Apply image: fixed pixel width + scale transform
+        if (img) {
+          img.style.width = baseImgWidthPx + 'px';
+          const scale = (image.scalePct != null && image.scalePct > 0) ? image.scalePct : 100;
+          img.style.transform = `scale(${scale / 100})`;
+          img.style.left = (image.offsetXPx || 0) + 'px';
+          img.style.top = (image.offsetYPx || 0) + 'px';
+        }
+      }
+
+      // Add resize handles to corners
+      function addResizeHandles() {
+        scene.querySelectorAll('.hotspot').forEach(hotspot => {
+          hotspot.querySelectorAll('.resize-handle').forEach(h => h.remove());
+          ['tl', 'tr', 'bl', 'br'].forEach(corner => {
+            const handle = document.createElement('div');
+            handle.className = `resize-handle resize-handle-${corner}`;
+            handle.dataset.corner = corner;
+            hotspot.appendChild(handle);
+          });
+        });
+      }
+
+      // Render the hotspot list in the panel
+      function renderHotspotList() {
+        let html = '';
+
+        Object.entries(editorState).forEach(([id, state]) => {
+          const { name, hitbox, image, linked, isCentered } = state;
+
+          html += `
+            <div class="debug-editor-hotspot" data-id="${id}">
+              <div class="debug-editor-hotspot-name">${name}${isCentered ? ' (centered)' : ''}</div>
+
+              <div class="debug-editor-group">
+                <div class="debug-editor-group-title hitbox">Hitbox (click area)</div>
+                <div class="debug-editor-values">
+                  <span>Left</span>
+                  <input type="number" step="0.5" value="${hitbox.leftPct.toFixed(1)}"
+                         data-id="${id}" data-group="hitbox" data-prop="leftPct">
+                  <span>Top</span>
+                  <input type="number" step="0.5" value="${hitbox.topPct.toFixed(1)}"
+                         data-id="${id}" data-group="hitbox" data-prop="topPct">
+                  <span>Width</span>
+                  <input type="number" step="0.5" value="${hitbox.widthPct.toFixed(1)}"
+                         data-id="${id}" data-group="hitbox" data-prop="widthPct">
+                  <span></span><span></span>
+                </div>
+              </div>
+
+              <div class="debug-editor-group">
+                <div class="debug-editor-group-title image">Image (visual)</div>
+                <div class="debug-editor-values">
+                  <span>Scale %</span>
+                  <input type="number" step="1" value="${image.scalePct.toFixed(0)}"
+                         data-id="${id}" data-group="image" data-prop="scalePct">
+                  <span>X px</span>
+                  <input type="number" step="1" value="${image.offsetXPx.toFixed(0)}"
+                         data-id="${id}" data-group="image" data-prop="offsetXPx">
+                  <span>Y px</span>
+                  <input type="number" step="1" value="${image.offsetYPx.toFixed(0)}"
+                         data-id="${id}" data-group="image" data-prop="offsetYPx">
+                  <span></span><span></span>
+                </div>
+              </div>
+
+              <div class="debug-editor-toggles">
+                <label class="debug-toggle">
+                  <input type="checkbox" ${linked ? 'checked' : ''} data-id="${id}" data-toggle="linked">
+                  Link to hitbox
+                </label>
+              </div>
+
+              <div class="debug-btn-row">
+                <button class="debug-btn" data-id="${id}" data-reset="hitbox">Reset Hitbox</button>
+                <button class="debug-btn" data-id="${id}" data-reset="image">Reset Image</button>
+                <button class="debug-btn" data-id="${id}" data-reset="both">Reset Both</button>
+              </div>
+            </div>
+          `;
+        });
+
+        hotspotList.innerHTML = html;
+        attachPanelListeners();
+      }
+
+      // Attach event listeners to panel inputs
+      function attachPanelListeners() {
+        hotspotList.querySelectorAll('input[type="number"]').forEach(input => {
+          input.addEventListener('input', handleInputChange);
+          input.addEventListener('change', handleInputChange);
+        });
+
+        hotspotList.querySelectorAll('input[data-toggle]').forEach(input => {
+          input.addEventListener('change', handleToggleChange);
+        });
+
+        hotspotList.querySelectorAll('button[data-reset]').forEach(btn => {
+          btn.addEventListener('click', handleReset);
+        });
+      }
+
+      function handleInputChange(e) {
+        const { id, group, prop } = e.target.dataset;
+        const value = parseFloat(e.target.value);
+        if (isNaN(value)) return;
+
+        const state = editorState[id];
+        if (!state) return;
+
+        state[group][prop] = value;
+        applyStateToDOM(id);
+        saveState();
+      }
+
+      function handleToggleChange(e) {
+        const { id, toggle } = e.target.dataset;
+        const state = editorState[id];
+        if (!state) return;
+
+        state[toggle] = e.target.checked;
+        saveState();
+      }
+
+      function handleReset(e) {
+        const { id, reset } = e.target.dataset;
+        const state = editorState[id];
+        if (!state) return;
+
+        if (reset === 'hitbox' || reset === 'both') {
+          state.hitbox = { ...state.original.hitbox };
+        }
+        if (reset === 'image' || reset === 'both') {
+          state.image = { ...state.original.image };
+        }
+
+        applyStateToDOM(id);
+        renderHotspotList();
+        saveState();
+      }
+
+      function updateFieldDisplay(id, group, prop, value) {
+        const input = hotspotList.querySelector(`input[data-id="${id}"][data-group="${group}"][data-prop="${prop}"]`);
+        if (input && document.activeElement !== input) {
+          input.value = value.toFixed(prop.includes('Pct') ? 1 : 0);
+        }
+      }
+
+      // Setup drag handlers for hotspot and image
+      function setupDragHandlers() {
+        let mode = null;
+        let activeId = null;
+        let startX, startY;
+        let startValues = {};
+        let resizeCorner = '';
+        const DRAG_THRESHOLD = 3;
+        let hasMoved = false;
+
+        scene.querySelectorAll('.hotspot').forEach(hotspot => {
+          const id = getHotspotId(hotspot);
+
+          hotspot.addEventListener('mousedown', (e) => {
+            if (!scene.classList.contains('debug-mode')) return;
+
+            const state = editorState[id];
+            if (!state) return;
+
+            e.preventDefault();
+            hasMoved = false;
+            startX = e.clientX;
+            startY = e.clientY;
+            activeId = id;
+
+            if (e.target.classList.contains('resize-handle')) {
+              mode = 'resize-hitbox';
+              resizeCorner = e.target.dataset.corner;
+              startValues = { ...state.hitbox };
+              hotspot.classList.add('resizing');
+            } else if (e.target.tagName === 'IMG') {
+              if (e.altKey) {
+                mode = 'drag-image';
+                startValues = { ...state.image };
+                hotspot.classList.add('dragging-image');
+              } else if (e.ctrlKey || e.metaKey) {
+                mode = 'scale-image';
+                startValues = { ...state.image };
+                hotspot.classList.add('dragging-image');
+              } else {
+                mode = 'drag-hitbox';
+                startValues = { ...state.hitbox };
+                hotspot.classList.add('dragging-hotspot');
+              }
+            } else {
+              mode = 'drag-hitbox';
+              startValues = { ...state.hitbox };
+              hotspot.classList.add('dragging-hotspot');
+            }
+
+            document.querySelectorAll('.debug-editor-hotspot').forEach(el => el.classList.remove('active'));
+            const editorItem = document.querySelector(`.debug-editor-hotspot[data-id="${id}"]`);
+            if (editorItem) editorItem.classList.add('active');
+          });
+        });
+
+        document.addEventListener('mousemove', (e) => {
+          if (!activeId || !mode) return;
+
+          const state = editorState[activeId];
+          if (!state) return;
+
+          const deltaX = e.clientX - startX;
+          const deltaY = e.clientY - startY;
+
+          if (!hasMoved && Math.abs(deltaX) < DRAG_THRESHOLD && Math.abs(deltaY) < DRAG_THRESHOLD) {
+            return;
+          }
+          hasMoved = true;
+
+          const sceneRect = scene.getBoundingClientRect();
+          const deltaXPct = (deltaX / sceneRect.width) * 100;
+          const deltaYPct = (deltaY / sceneRect.height) * 100;
+
+          if (mode === 'drag-hitbox') {
+            let newLeft = startValues.leftPct + deltaXPct;
+            let newTop = startValues.topPct + deltaYPct;
+
+            if (state.isCentered) {
+              newLeft = Math.max(state.hitbox.widthPct / 2, Math.min(100 - state.hitbox.widthPct / 2, newLeft));
+            } else {
+              newLeft = Math.max(0, Math.min(100 - state.hitbox.widthPct, newLeft));
+            }
+            newTop = Math.max(0, Math.min(95, newTop));
+
+            state.hitbox.leftPct = newLeft;
+            state.hitbox.topPct = newTop;
+
+            applyStateToDOM(activeId);
+            updateFieldDisplay(activeId, 'hitbox', 'leftPct', newLeft);
+            updateFieldDisplay(activeId, 'hitbox', 'topPct', newTop);
+
+          } else if (mode === 'resize-hitbox') {
+            let newWidth = startValues.widthPct;
+            let newLeft = startValues.leftPct;
+
+            if (resizeCorner.includes('r')) {
+              newWidth = startValues.widthPct + deltaXPct;
+            } else if (resizeCorner.includes('l')) {
+              newWidth = startValues.widthPct - deltaXPct;
+              if (!state.isCentered) {
+                newLeft = startValues.leftPct + deltaXPct;
+              }
+            }
+
+            newWidth = Math.max(2, Math.min(80, newWidth));
+            if (!state.isCentered) {
+              newLeft = Math.max(0, Math.min(100 - newWidth, newLeft));
+            }
+
+            state.hitbox.widthPct = newWidth;
+            state.hitbox.leftPct = newLeft;
+
+            if (state.linked) {
+              const scaleRatio = newWidth / startValues.widthPct;
+              state.image.scalePct = startValues.scalePct * scaleRatio;
+              updateFieldDisplay(activeId, 'image', 'scalePct', state.image.scalePct);
+            }
+
+            applyStateToDOM(activeId);
+            updateFieldDisplay(activeId, 'hitbox', 'widthPct', newWidth);
+            updateFieldDisplay(activeId, 'hitbox', 'leftPct', newLeft);
+
+          } else if (mode === 'drag-image') {
+            const newX = startValues.offsetXPx + deltaX;
+            const newY = startValues.offsetYPx + deltaY;
+
+            state.image.offsetXPx = newX;
+            state.image.offsetYPx = newY;
+
+            applyStateToDOM(activeId);
+            updateFieldDisplay(activeId, 'image', 'offsetXPx', newX);
+            updateFieldDisplay(activeId, 'image', 'offsetYPx', newY);
+
+          } else if (mode === 'scale-image') {
+            const scaleChange = deltaX * 0.5;
+            const newScale = Math.max(10, Math.min(500, startValues.scalePct + scaleChange));
+
+            state.image.scalePct = newScale;
+
+            applyStateToDOM(activeId);
+            updateFieldDisplay(activeId, 'image', 'scalePct', newScale);
+          }
+        });
+
+        document.addEventListener('mouseup', () => {
+          if (activeId) {
+            const state = editorState[activeId];
+            if (state) {
+              state.element.classList.remove('dragging-hotspot', 'dragging-image', 'resizing');
+            }
+            saveState();
+          }
+          mode = null;
+          activeId = null;
+          hasMoved = false;
+        });
+      }
+
+      // Generate JSON config
+      function generateJSON() {
+        const config = {};
+        Object.entries(editorState).forEach(([id, state]) => {
+          config[id] = {
+            hitbox: { ...state.hitbox },
+            image: { ...state.image }
+          };
+        });
+        return JSON.stringify(config, null, 2);
+      }
+
+      // Generate CSS
+      function generateCSS() {
+        let css = '/* Hotspot Configuration - Generated */\n\n';
+
+        Object.entries(editorState).forEach(([id, state]) => {
+          const { hitbox, image, isCentered, name } = state;
+
+          css += `/* ${name} */\n`;
+          css += `.hotspot-${id} {\n`;
+          css += `  left: ${hitbox.leftPct.toFixed(1)}%;\n`;
+          css += `  top: ${hitbox.topPct.toFixed(1)}%;\n`;
+          css += `  width: ${hitbox.widthPct.toFixed(1)}%;\n`;
+          if (isCentered) {
+            css += `  transform: translateX(-50%);\n`;
+          }
+          css += `}\n`;
+
+          const hasCustomImage = image.scalePct !== 100 || image.offsetXPx !== 0 || image.offsetYPx !== 0;
+          if (hasCustomImage) {
+            css += `.hotspot-${id} img {\n`;
+            if (image.scalePct !== 100) {
+              css += `  transform: scale(${(image.scalePct / 100).toFixed(2)});\n`;
+              css += `  transform-origin: top left;\n`;
+            }
+            if (image.offsetXPx !== 0 || image.offsetYPx !== 0) {
+              css += `  position: relative;\n`;
+              css += `  left: ${image.offsetXPx}px;\n`;
+              css += `  top: ${image.offsetYPx}px;\n`;
+            }
+            css += `}\n`;
+          }
+          css += '\n';
+        });
+
+        return css;
+      }
+
+      // Copy JSON button
+      copyJSONBtn.addEventListener('click', () => {
+        const json = generateJSON();
+        navigator.clipboard.writeText(json).then(() => {
+          copyJSONBtn.textContent = 'JSON COPIED!';
+          copyJSONBtn.classList.add('copied');
+          setTimeout(() => {
+            copyJSONBtn.textContent = 'COPY JSON CONFIG';
+            copyJSONBtn.classList.remove('copied');
+          }, 2000);
+        });
+      });
+
+      // Copy CSS button
+      copyCSSBtn.addEventListener('click', () => {
+        const css = generateCSS();
+        navigator.clipboard.writeText(css).then(() => {
+          copyCSSBtn.textContent = 'CSS COPIED!';
+          copyCSSBtn.classList.add('copied');
+          setTimeout(() => {
+            copyCSSBtn.textContent = 'COPY CSS';
+            copyCSSBtn.classList.remove('copied');
+          }, 2000);
+        });
+      });
 
     })();
   </script>
