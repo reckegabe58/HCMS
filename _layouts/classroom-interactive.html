@@ -2037,8 +2037,9 @@ layout: null
           }
           const topPct = (topPx / sceneRect.height) * 100;
 
-          // Get current image width as percentage of hotspot
-          const imgWidthPct = 100; // default: 100% of hotspot width
+          // Get current image size in pixels (absolute, not relative to hotspot)
+          const imgRect = img ? img.getBoundingClientRect() : null;
+          const imgWidthPx = imgRect ? imgRect.width : hotspotRect.width;
 
           hotspotState[name] = {
             element: hotspot,
@@ -2049,18 +2050,18 @@ layout: null
             top: topPct,
             width: widthPct,
             height: heightPx,
-            // Image settings
-            imgWidthPct: imgWidthPct, // % of hotspot width
-            imgOffsetX: 0, // px offset
-            imgOffsetY: 0  // px offset
+            // Image settings (pixels - independent of hotspot size)
+            imgWidthPx: imgWidthPx,
+            imgOffsetX: 0,
+            imgOffsetY: 0
           };
 
           // Set explicit min-height on hotspot to prevent collapse
           hotspot.style.minHeight = heightPx + 'px';
 
-          // Initialize image with default values
+          // Initialize image with pixel width (stays same size when hotspot changes)
           if (img) {
-            img.style.width = '100%';
+            img.style.width = imgWidthPx + 'px';
             img.style.left = '0px';
             img.style.top = '0px';
           }
@@ -2081,7 +2082,7 @@ layout: null
             const imgWEl = document.getElementById(`imgW_${safeName}`);
             const imgXEl = document.getElementById(`imgX_${safeName}`);
             const imgYEl = document.getElementById(`imgY_${safeName}`);
-            if (imgWEl) imgWEl.textContent = state.imgWidthPct.toFixed(0) + '%';
+            if (imgWEl) imgWEl.textContent = state.imgWidthPx.toFixed(0) + 'px';
             if (imgXEl) imgXEl.textContent = state.imgOffsetX.toFixed(0) + 'px';
             if (imgYEl) imgYEl.textContent = state.imgOffsetY.toFixed(0) + 'px';
           });
@@ -2106,7 +2107,7 @@ layout: null
                        data-hotspot="${name}" data-prop="width" class="hotspot-input">
                 <span></span><span></span>
                 <div class="debug-editor-separator"></div>
-                <span>img W:</span><code id="imgW_${safeName}">${state.imgWidthPct.toFixed(0)}%</code>
+                <span>img W:</span><code id="imgW_${safeName}">${state.imgWidthPx.toFixed(0)}px</code>
                 <span>img X:</span><code id="imgX_${safeName}">${state.imgOffsetX.toFixed(0)}px</code>
                 <span>img Y:</span><code id="imgY_${safeName}">${state.imgOffsetY.toFixed(0)}px</code>
                 <span></span><span></span>
@@ -2170,7 +2171,7 @@ layout: null
         let mode = null; // 'drag-image', 'resize-image'
         let activeHotspot = null;
         let startX, startY;
-        let startImgX, startImgY, startImgWPct;
+        let startImgX, startImgY, startImgWPx;
 
         scene.querySelectorAll('.hotspot').forEach(hotspot => {
           const img = hotspot.querySelector('img');
@@ -2193,7 +2194,7 @@ layout: null
 
             if (e.ctrlKey || e.metaKey) {
               mode = 'resize-image';
-              startImgWPct = state.imgWidthPct;
+              startImgWPx = state.imgWidthPx;
               img.style.cursor = 'ew-resize';
             } else {
               mode = 'drag-image';
@@ -2234,14 +2235,12 @@ layout: null
             }
 
           } else if (mode === 'resize-image') {
-            // Calculate width change as percentage of hotspot
-            const hotspotRect = activeHotspot.getBoundingClientRect();
-            const deltaWPct = (deltaX / hotspotRect.width) * 100;
-            const newWPct = Math.max(20, Math.min(300, startImgWPct + deltaWPct));
+            // Resize in pixels (independent of hotspot)
+            const newWPx = Math.max(20, startImgWPx + deltaX);
 
-            state.imgWidthPct = newWPct;
+            state.imgWidthPx = newWPx;
             if (state.img) {
-              state.img.style.width = newWPct + '%';
+              state.img.style.width = newWPx + 'px';
             }
           }
 
@@ -2262,6 +2261,7 @@ layout: null
       // Copy CSS to clipboard
       copyBtn.addEventListener('click', () => {
         let css = '/* Updated Hotspot Positions */\n\n';
+        const sceneRect = scene.getBoundingClientRect();
 
         Object.entries(hotspotState).forEach(([name, state]) => {
           const className = state.element.className.split(' ').find(c => c.startsWith('hotspot-'));
@@ -2276,12 +2276,16 @@ layout: null
           }
           css += `}\n`;
 
-          // Image styles if different from default (100%, 0, 0)
-          const hasCustomImg = state.imgWidthPct !== 100 || state.imgOffsetX !== 0 || state.imgOffsetY !== 0;
+          // Calculate image width as % of hotspot for CSS output
+          const hotspotWidthPx = (state.width / 100) * sceneRect.width;
+          const imgWidthPct = (state.imgWidthPx / hotspotWidthPx) * 100;
+
+          // Image styles if different from default (100% width, 0 offset)
+          const hasCustomImg = Math.abs(imgWidthPct - 100) > 1 || state.imgOffsetX !== 0 || state.imgOffsetY !== 0;
           if (hasCustomImg) {
             css += `.${className} img {\n`;
-            if (state.imgWidthPct !== 100) {
-              css += `  width: ${state.imgWidthPct.toFixed(0)}%;\n`;
+            if (Math.abs(imgWidthPct - 100) > 1) {
+              css += `  width: ${imgWidthPct.toFixed(0)}%;\n`;
             }
             if (state.imgOffsetX !== 0 || state.imgOffsetY !== 0) {
               css += `  position: relative;\n`;
