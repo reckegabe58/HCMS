@@ -8,6 +8,7 @@ layout: null
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/images/logo.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -2212,10 +2213,10 @@ layout: null
               widthPct: widthPct,
               heightPct: heightPct
             },
-            image: saved?.image || {
-              scalePct: 100,
-              offsetXPx: 0,
-              offsetYPx: 0
+            image: {
+              scalePct: (saved?.image?.scalePct != null && saved.image.scalePct > 0) ? saved.image.scalePct : 100,
+              offsetXPx: saved?.image?.offsetXPx ?? 0,
+              offsetYPx: saved?.image?.offsetYPx ?? 0
             },
             linked: saved?.linked || false,
             original: {
@@ -2246,11 +2247,12 @@ layout: null
         if (img) {
           // Set fixed pixel width (breaks the width:100% link)
           img.style.width = baseImgWidthPx + 'px';
-          // Apply scale on top of the fixed width
-          img.style.transform = `scale(${image.scalePct / 100})`;
+          // Apply scale on top of the fixed width (default to 100 if null/0)
+          const scale = (image.scalePct != null && image.scalePct > 0) ? image.scalePct : 100;
+          img.style.transform = `scale(${scale / 100})`;
           // Apply offset
-          img.style.left = image.offsetXPx + 'px';
-          img.style.top = image.offsetYPx + 'px';
+          img.style.left = (image.offsetXPx || 0) + 'px';
+          img.style.top = (image.offsetYPx || 0) + 'px';
         }
       }
 
