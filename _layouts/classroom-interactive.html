@@ -460,7 +460,7 @@ layout: null
     }
 
     .classroom-scene.debug-mode .hotspot {
-      outline: 2px solid lime !important;
+      outline: var(--debug-outline-width, 2px) solid lime !important;
       outline-offset: 0;
     }
 
@@ -476,6 +476,173 @@ layout: null
       white-space: nowrap;
       font-family: monospace;
       z-index: 101;
+    }
+
+    /* Debug Editor Panel */
+    .debug-editor {
+      position: fixed;
+      top: 60px;
+      right: 10px;
+      width: 320px;
+      background: rgba(0, 0, 0, 0.95);
+      border: 2px solid lime;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: monospace;
+      font-size: 11px;
+      color: lime;
+      z-index: 10000;
+      display: none;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+    }
+
+    .debug-editor.visible {
+      display: block;
+    }
+
+    .debug-editor h3 {
+      margin: 0 0 10px 0;
+      font-size: 12px;
+      color: #0f0;
+      border-bottom: 1px solid lime;
+      padding-bottom: 6px;
+    }
+
+    .debug-editor-section {
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed rgba(0, 255, 0, 0.3);
+    }
+
+    .debug-editor-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .debug-editor label {
+      display: block;
+      margin-bottom: 6px;
+      color: #8f8;
+    }
+
+    .debug-editor input[type="range"] {
+      width: 100%;
+      accent-color: lime;
+    }
+
+    .debug-editor .outline-value {
+      display: inline-block;
+      margin-left: 6px;
+      color: #fff;
+    }
+
+    .debug-editor-hotspot {
+      background: rgba(0, 50, 0, 0.5);
+      border: 1px solid rgba(0, 255, 0, 0.3);
+      border-radius: 4px;
+      padding: 8px;
+      margin-bottom: 8px;
+    }
+
+    .debug-editor-hotspot.active {
+      border-color: #0f0;
+      background: rgba(0, 80, 0, 0.7);
+    }
+
+    .debug-editor-hotspot-name {
+      font-weight: bold;
+      color: #0f0;
+      margin-bottom: 4px;
+    }
+
+    .debug-editor-values {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .debug-editor-values span {
+      color: #8f8;
+    }
+
+    .debug-editor-values code {
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1px 4px;
+      border-radius: 2px;
+    }
+
+    .debug-copy-btn {
+      background: lime;
+      color: #000;
+      border: none;
+      padding: 8px 12px;
+      font-family: monospace;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 100%;
+      margin-top: 8px;
+      transition: all 0.15s;
+    }
+
+    .debug-copy-btn:hover {
+      background: #0f0;
+      transform: translateY(-1px);
+    }
+
+    .debug-copy-btn.copied {
+      background: #4a4;
+    }
+
+    .debug-instructions {
+      background: rgba(0, 50, 0, 0.3);
+      padding: 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .debug-instructions kbd {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2px 5px;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 255, 0, 0.5);
+    }
+
+    /* Resize handles for hotspots in debug mode */
+    .classroom-scene.debug-mode .hotspot .resize-handle {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: lime;
+      border: 1px solid #000;
+      z-index: 200;
+      cursor: pointer;
+      display: block;
+    }
+
+    .resize-handle-tl { top: -6px; left: -6px; cursor: nwse-resize; }
+    .resize-handle-tr { top: -6px; right: -6px; cursor: nesw-resize; }
+    .resize-handle-bl { bottom: -6px; left: -6px; cursor: nesw-resize; }
+    .resize-handle-br { bottom: -6px; right: -6px; cursor: nwse-resize; }
+
+    .classroom-scene:not(.debug-mode) .resize-handle {
+      display: none !important;
+    }
+
+    /* Dragging state */
+    .classroom-scene.debug-mode .hotspot.dragging {
+      cursor: move !important;
+      outline-color: yellow !important;
+      z-index: 150 !important;
+    }
+
+    .classroom-scene.debug-mode .hotspot.resizing {
+      outline-color: cyan !important;
     }
 
     /* =============================================
@@ -1146,6 +1313,33 @@ layout: null
   </style>
 </head>
 <body>
+  <!-- Debug Editor Panel (hidden by default) -->
+  <div class="debug-editor" id="debugEditor">
+    <h3>🛠️ HOTSPOT EDITOR</h3>
+
+    <div class="debug-editor-section">
+      <div class="debug-instructions">
+        <kbd>D</kbd> Toggle debug mode<br>
+        <strong>Drag</strong> hotspots to move<br>
+        <strong>Corners</strong> to resize
+      </div>
+    </div>
+
+    <div class="debug-editor-section">
+      <label>
+        Outline Width: <span class="outline-value" id="outlineValue">2px</span>
+      </label>
+      <input type="range" id="outlineSlider" min="1" max="8" value="2">
+    </div>
+
+    <div class="debug-editor-section">
+      <label>Hotspot Positions:</label>
+      <div id="hotspotList"></div>
+    </div>
+
+    <button class="debug-copy-btn" id="copyCSS">📋 COPY CSS TO CLIPBOARD</button>
+  </div>
+
   <!-- Tooltip -->
   <div class="game-tooltip" id="gameTooltip">
     <span class="game-tooltip-text"></span>
@@ -1701,18 +1895,286 @@ layout: null
 
       generateSchedule();
 
-      // Debug mode - toggle with ?debug=1 or press 'D'
+      // =============================================
+      // DEBUG MODE - Live Hotspot Editor
+      // Toggle with ?debug=1 or press 'D'
+      // =============================================
+
       const scene = document.querySelector('.classroom-scene');
+      const debugEditor = document.getElementById('debugEditor');
+      const outlineSlider = document.getElementById('outlineSlider');
+      const outlineValue = document.getElementById('outlineValue');
+      const hotspotList = document.getElementById('hotspotList');
+      const copyBtn = document.getElementById('copyCSS');
       const urlParams = new URLSearchParams(window.location.search);
 
-      if (urlParams.get('debug') === '1') {
+      // Hotspot position state (stores current values)
+      const hotspotState = {};
+
+      // Initialize debug mode
+      function initDebugMode() {
         scene.classList.add('debug-mode');
+        debugEditor.classList.add('visible');
+        addResizeHandles();
+        updateHotspotList();
+        enableDragAndResize();
+      }
+
+      function exitDebugMode() {
+        scene.classList.remove('debug-mode');
+        debugEditor.classList.remove('visible');
+      }
+
+      function toggleDebugMode() {
+        if (scene.classList.contains('debug-mode')) {
+          exitDebugMode();
+        } else {
+          initDebugMode();
+        }
+      }
+
+      if (urlParams.get('debug') === '1') {
+        // Wait for classroom to be visible
+        setTimeout(initDebugMode, 100);
       }
 
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'd' || e.key === 'D') {
-          scene.classList.toggle('debug-mode');
+        if ((e.key === 'd' || e.key === 'D') && !e.target.matches('input, textarea')) {
+          toggleDebugMode();
         }
+      });
+
+      // Outline width control
+      outlineSlider.addEventListener('input', (e) => {
+        const width = e.target.value + 'px';
+        scene.style.setProperty('--debug-outline-width', width);
+        outlineValue.textContent = width;
+      });
+
+      // Add resize handles to hotspots
+      function addResizeHandles() {
+        const sceneHotspots = scene.querySelectorAll('.hotspot');
+        sceneHotspots.forEach(hotspot => {
+          // Remove existing handles first
+          hotspot.querySelectorAll('.resize-handle').forEach(h => h.remove());
+
+          // Add corner handles
+          ['tl', 'tr', 'bl', 'br'].forEach(corner => {
+            const handle = document.createElement('div');
+            handle.className = `resize-handle resize-handle-${corner}`;
+            handle.dataset.corner = corner;
+            hotspot.appendChild(handle);
+          });
+
+          // Initialize state from computed styles
+          const name = hotspot.dataset.tooltip || 'Unknown';
+          const style = getComputedStyle(hotspot);
+          hotspotState[name] = {
+            element: hotspot,
+            left: parseFloat(hotspot.style.left) || parseFloat(style.left) / scene.offsetWidth * 100,
+            top: parseFloat(hotspot.style.top) || parseFloat(style.top) / scene.offsetHeight * 100,
+            width: parseFloat(hotspot.style.width) || parseFloat(style.width) / scene.offsetWidth * 100
+          };
+
+          // Get actual percentages from the stylesheet
+          const classes = Array.from(hotspot.classList);
+          const hotspotClass = classes.find(c => c.startsWith('hotspot-'));
+          if (hotspotClass) {
+            const computed = getComputedStyle(hotspot);
+            hotspotState[name].left = (parseFloat(computed.left) / scene.offsetWidth * 100);
+            hotspotState[name].top = (parseFloat(computed.top) / scene.offsetHeight * 100);
+            hotspotState[name].width = (parseFloat(computed.width) / scene.offsetWidth * 100);
+          }
+        });
+      }
+
+      // Update hotspot list in editor
+      function updateHotspotList() {
+        let html = '';
+        Object.entries(hotspotState).forEach(([name, state]) => {
+          html += `
+            <div class="debug-editor-hotspot" data-hotspot="${name}">
+              <div class="debug-editor-hotspot-name">${name}</div>
+              <div class="debug-editor-values">
+                <span>left:</span><code>${state.left.toFixed(1)}%</code>
+                <span>top:</span><code>${state.top.toFixed(1)}%</code>
+                <span>width:</span><code>${state.width.toFixed(1)}%</code>
+              </div>
+            </div>
+          `;
+        });
+        hotspotList.innerHTML = html;
+      }
+
+      // Enable drag and resize
+      function enableDragAndResize() {
+        const sceneHotspots = scene.querySelectorAll('.hotspot');
+        let isDragging = false;
+        let isResizing = false;
+        let activeHotspot = null;
+        let startX, startY, startLeft, startTop, startWidth;
+        let resizeCorner = '';
+
+        sceneHotspots.forEach(hotspot => {
+          // Drag start on hotspot body
+          hotspot.addEventListener('mousedown', (e) => {
+            if (!scene.classList.contains('debug-mode')) return;
+            if (e.target.classList.contains('resize-handle')) return;
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            isDragging = true;
+            activeHotspot = hotspot;
+            hotspot.classList.add('dragging');
+
+            const rect = scene.getBoundingClientRect();
+            startX = e.clientX;
+            startY = e.clientY;
+
+            const name = hotspot.dataset.tooltip;
+            startLeft = hotspotState[name]?.left || 0;
+            startTop = hotspotState[name]?.top || 0;
+
+            // Highlight in editor
+            document.querySelectorAll('.debug-editor-hotspot').forEach(el => el.classList.remove('active'));
+            const editorItem = document.querySelector(`.debug-editor-hotspot[data-hotspot="${name}"]`);
+            if (editorItem) editorItem.classList.add('active');
+          });
+
+          // Resize start on handles
+          hotspot.querySelectorAll('.resize-handle').forEach(handle => {
+            handle.addEventListener('mousedown', (e) => {
+              if (!scene.classList.contains('debug-mode')) return;
+
+              e.preventDefault();
+              e.stopPropagation();
+
+              isResizing = true;
+              activeHotspot = hotspot;
+              resizeCorner = handle.dataset.corner;
+              hotspot.classList.add('resizing');
+
+              startX = e.clientX;
+              startY = e.clientY;
+
+              const name = hotspot.dataset.tooltip;
+              startLeft = hotspotState[name]?.left || 0;
+              startTop = hotspotState[name]?.top || 0;
+              startWidth = hotspotState[name]?.width || 10;
+            });
+          });
+        });
+
+        // Mouse move
+        document.addEventListener('mousemove', (e) => {
+          if (!activeHotspot) return;
+
+          const rect = scene.getBoundingClientRect();
+          const deltaX = ((e.clientX - startX) / rect.width) * 100;
+          const deltaY = ((e.clientY - startY) / rect.height) * 100;
+
+          const name = activeHotspot.dataset.tooltip;
+          const isCentered = activeHotspot.classList.contains('hotspot-smartboard') ||
+                            activeHotspot.classList.contains('hotspot-table');
+
+          if (isDragging) {
+            let newLeft = startLeft + deltaX;
+            let newTop = startTop + deltaY;
+
+            // Clamp values
+            newLeft = Math.max(0, Math.min(100 - hotspotState[name].width, newLeft));
+            newTop = Math.max(0, Math.min(90, newTop));
+
+            hotspotState[name].left = newLeft;
+            hotspotState[name].top = newTop;
+
+            if (isCentered) {
+              // For centered elements, left is the center point
+              activeHotspot.style.left = newLeft + '%';
+            } else {
+              activeHotspot.style.left = newLeft + '%';
+            }
+            activeHotspot.style.top = newTop + '%';
+
+          } else if (isResizing) {
+            let newWidth = startWidth;
+            let newLeft = startLeft;
+            let newTop = startTop;
+
+            if (resizeCorner.includes('r')) {
+              newWidth = startWidth + deltaX;
+            } else if (resizeCorner.includes('l')) {
+              newWidth = startWidth - deltaX;
+              if (!isCentered) newLeft = startLeft + deltaX;
+            }
+
+            if (resizeCorner.includes('t')) {
+              newTop = startTop + deltaY;
+            }
+
+            // Clamp width
+            newWidth = Math.max(5, Math.min(80, newWidth));
+            newLeft = Math.max(0, Math.min(95, newLeft));
+            newTop = Math.max(0, Math.min(90, newTop));
+
+            hotspotState[name].width = newWidth;
+            hotspotState[name].left = newLeft;
+            hotspotState[name].top = newTop;
+
+            activeHotspot.style.width = newWidth + '%';
+            if (!isCentered || resizeCorner.includes('l')) {
+              activeHotspot.style.left = newLeft + '%';
+            }
+            if (resizeCorner.includes('t')) {
+              activeHotspot.style.top = newTop + '%';
+            }
+          }
+
+          updateHotspotList();
+        });
+
+        // Mouse up
+        document.addEventListener('mouseup', () => {
+          if (activeHotspot) {
+            activeHotspot.classList.remove('dragging', 'resizing');
+          }
+          isDragging = false;
+          isResizing = false;
+          activeHotspot = null;
+        });
+      }
+
+      // Copy CSS to clipboard
+      copyBtn.addEventListener('click', () => {
+        let css = '/* Updated Hotspot Positions */\n\n';
+
+        Object.entries(hotspotState).forEach(([name, state]) => {
+          const className = state.element.className.split(' ').find(c => c.startsWith('hotspot-'));
+          const isCentered = state.element.classList.contains('hotspot-smartboard') ||
+                            state.element.classList.contains('hotspot-table');
+
+          css += `.${className} {\n`;
+          css += `  left: ${state.left.toFixed(1)}%;\n`;
+          css += `  top: ${state.top.toFixed(1)}%;\n`;
+          css += `  width: ${state.width.toFixed(1)}%;\n`;
+          if (isCentered) {
+            css += `  transform: translateX(-50%);\n`;
+          }
+          css += `}\n\n`;
+        });
+
+        navigator.clipboard.writeText(css).then(() => {
+          copyBtn.textContent = '✓ COPIED!';
+          copyBtn.classList.add('copied');
+          setTimeout(() => {
+            copyBtn.textContent = '📋 COPY CSS TO CLIPBOARD';
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy:', err);
+          copyBtn.textContent = '❌ FAILED';
+        });
       });
 
     })();
