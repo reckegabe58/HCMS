@@ -103,7 +103,7 @@ subtitle: Important dates and upcoming events
     <script>
     (function() {
       const CALENDAR_ID = '227b700438569c1d622b29457fe9d090f155975f39511456055d92199d369a4f@group.calendar.google.com';
-      const API_KEY = 'AIzaSyAotC6ZS8qfj46sTdNbp0c7J6B_bTZqqtQ';
+      const API_KEY = 'AIzaSyAJ6-AUJH2qFSiD-XIyc0OD6ftCD95GMYA';
       const MAX_EVENTS = 5;
 
       const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
