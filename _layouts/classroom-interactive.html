@@ -1240,6 +1240,375 @@ layout: null
       }
     }
 
+    /* =============================================
+       PARENTS MODAL - NAMESPACED STYLES
+       ============================================= */
+
+    .parents-modal {
+      --pm-bg: #fdfbf7;
+      --pm-card: #ffffff;
+      --pm-border: #e8dcc8;
+      --pm-text: #3d3529;
+      --pm-text-muted: #6b5d4d;
+      --pm-accent: #5a8a6b;
+      --pm-accent-hover: #4a7359;
+      --pm-highlight: #fff8e7;
+      --pm-shadow: rgba(0,0,0,0.08);
+    }
+
+    .parents-modal .rpg-body {
+      background: var(--pm-bg);
+      padding: 0;
+      background-image: none;
+    }
+
+    .parents-modal .pm-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Header */
+    .parents-modal .pm-header {
+      text-align: center;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px dashed var(--pm-border);
+    }
+
+    .parents-modal .pm-title {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.65rem;
+      color: var(--pm-text);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .parents-modal .pm-subtitle {
+      font-size: 0.85rem;
+      color: var(--pm-text-muted);
+      line-height: 1.5;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Card Base */
+    .parents-modal .pm-card {
+      background: var(--pm-card);
+      border-radius: 8px;
+      padding: 1rem;
+      border: 1px solid var(--pm-border);
+      box-shadow: 0 2px 8px var(--pm-shadow);
+    }
+
+    .parents-modal .pm-card-title {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.5rem;
+      color: var(--pm-text);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .parents-modal .pm-card-title .icon {
+      font-size: 1rem;
+    }
+
+    /* Quick Start Panel - Highlighted */
+    .parents-modal .pm-quickstart {
+      background: var(--pm-highlight);
+      border: 2px solid #e8d9a8;
+      position: relative;
+    }
+
+    .parents-modal .pm-quickstart::before {
+      content: '⭐';
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      font-size: 1.2rem;
+    }
+
+    .parents-modal .pm-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .parents-modal .pm-step {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      padding: 0.6rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .parents-modal .pm-step-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .parents-modal .pm-step-text strong {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--pm-text);
+      margin-bottom: 0.2rem;
+    }
+
+    .parents-modal .pm-step-text span {
+      font-size: 0.7rem;
+      color: var(--pm-text-muted);
+      line-height: 1.4;
+    }
+
+    /* Mini Cards Grid */
+    .parents-modal .pm-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+    }
+
+    .parents-modal .pm-mini-card {
+      background: var(--pm-card);
+      border-radius: 6px;
+      padding: 0.75rem;
+      border: 1px solid var(--pm-border);
+      text-align: center;
+    }
+
+    .parents-modal .pm-mini-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .parents-modal .pm-mini-card h4 {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--pm-text);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+
+    .parents-modal .pm-mini-card p {
+      font-size: 0.7rem;
+      color: var(--pm-text-muted);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Support List */
+    .parents-modal .pm-support-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    .parents-modal .pm-support-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--pm-text-muted);
+      padding: 0.4rem 0;
+    }
+
+    .parents-modal .pm-support-item .icon {
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    /* Tool Cards */
+    .parents-modal .pm-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .parents-modal .pm-tool-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--pm-card);
+      border-radius: 8px;
+      padding: 0.75rem;
+      border: 2px solid var(--pm-border);
+      text-decoration: none;
+      color: var(--pm-text);
+      transition: all 0.15s ease;
+      position: relative;
+    }
+
+    .parents-modal .pm-tool-card:hover {
+      border-color: var(--pm-accent);
+      box-shadow: 0 4px 12px rgba(90, 138, 107, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .parents-modal .pm-tool-card .tool-name {
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .parents-modal .pm-tool-card .tool-name .icon {
+      font-size: 1.1rem;
+    }
+
+    .parents-modal .pm-tool-card .tool-purpose {
+      font-size: 0.7rem;
+      color: var(--pm-text-muted);
+      line-height: 1.4;
+      flex-grow: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .parents-modal .pm-tool-card .tool-login {
+      font-size: 0.6rem;
+      color: var(--pm-accent);
+      font-style: italic;
+    }
+
+    .parents-modal .pm-tool-card .tool-open {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 0.7rem;
+      opacity: 0.4;
+    }
+
+    .parents-modal .pm-tool-card:hover .tool-open {
+      opacity: 1;
+    }
+
+    /* Email Copy Box */
+    .parents-modal .pm-email-box {
+      background: #f0f7f2;
+      border: 1px dashed var(--pm-accent);
+      border-radius: 6px;
+      padding: 0.6rem 0.75rem;
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+    }
+
+    .parents-modal .pm-email-box strong {
+      display: block;
+      font-size: 0.6rem;
+      color: var(--pm-text-muted);
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .parents-modal .pm-email-copy {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--pm-border);
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: var(--pm-text);
+      transition: all 0.15s ease;
+    }
+
+    .parents-modal .pm-email-copy:hover {
+      background: var(--pm-highlight);
+      border-color: var(--pm-accent);
+    }
+
+    .parents-modal .pm-email-copy .copy-icon {
+      font-size: 0.8rem;
+    }
+
+    .parents-modal .pm-email-copy.copied {
+      background: #e8f5e9;
+      border-color: var(--pm-accent);
+    }
+
+    .parents-modal .pm-email-copy.copied::after {
+      content: 'Copied!';
+      font-size: 0.6rem;
+      color: var(--pm-accent);
+      margin-left: 0.3rem;
+    }
+
+    /* Tools Note */
+    .parents-modal .pm-tools-note {
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--pm-text-muted);
+      font-style: italic;
+    }
+
+    /* Expect Section */
+    .parents-modal .pm-expect {
+      background: #f8f6f2;
+      padding: 0.75rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .parents-modal .pm-expect p {
+      font-size: 0.75rem;
+      color: var(--pm-text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    .parents-modal .pm-footer {
+      text-align: center;
+      padding-top: 0.75rem;
+      border-top: 2px dashed var(--pm-border);
+    }
+
+    .parents-modal .pm-footer-text {
+      font-size: 0.75rem;
+      color: var(--pm-text-muted);
+      line-height: 1.6;
+    }
+
+    .parents-modal .pm-footer-text strong {
+      color: var(--pm-accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .parents-modal .pm-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .parents-modal .pm-mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .parents-modal .pm-tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .parents-modal .pm-support-list {
+        grid-template-columns: 1fr;
+      }
+
+      .parents-modal .pm-content {
+        padding: 1rem;
+      }
+    }
+
     /* No JS fallback */
     noscript .fallback-content {
       padding: 2rem;
@@ -1558,33 +1927,173 @@ layout: null
     </div>
   </div>
 
-  <!-- Communication Panel -->
-  <div class="rpg-overlay" id="panel-communication">
-    <div class="rpg-panel">
+  <!-- Communication Panel - Parents Modal -->
+  <div class="rpg-overlay parents-modal" id="panel-communication">
+    <div class="rpg-panel" role="dialog" aria-modal="true" aria-labelledby="parents-modal-title">
       <div class="rpg-header">
-        <h2 class="rpg-title"><span class="rpg-title-icon">💬</span> STAYING CONNECTED</h2>
-        <button class="rpg-close" data-close aria-label="Close">✕</button>
+        <h2 class="rpg-title" id="parents-modal-title"><span class="rpg-title-icon">💬</span> MESSAGE TO FAMILIES</h2>
+        <button class="rpg-close" data-close aria-label="Close modal">✕</button>
       </div>
       <div class="rpg-body">
-        <h3>📬 HOW WE COMMUNICATE</h3>
-        <ul>
-          <li><strong>Monthly newsletters</strong> - curriculum updates</li>
-          <li><strong>Agenda book</strong> - daily communication (check nightly!)</li>
-          <li><strong>Progress reports</strong> - three times per year</li>
-          <li><strong>Parent-teacher conferences</strong> - fall and spring</li>
-          <li><strong>Open door policy</strong> - always available to chat</li>
-        </ul>
+        <div class="pm-content">
 
-        <h3>📚 HOMEWORK</h3>
-        <ul>
-          <li><strong>Reading</strong> - 20-30 minutes nightly</li>
-          <li><strong>Math</strong> - practice 2-3 times weekly</li>
-          <li><strong>Spelling</strong> - weekly word lists</li>
-          <li><strong>Projects</strong> - occasional longer-term work</li>
-        </ul>
+          <!-- Header -->
+          <div class="pm-header">
+            <h3 class="pm-title">Welcome to Our Grade 3/4 Family Hub</h3>
+            <p class="pm-subtitle">Every child grows at their own pace. This classroom is a safe place to build confidence, try new things, and celebrate progress—big and small.</p>
+          </div>
 
-        <h3>📞 GET IN TOUCH</h3>
-        <p><a href="{{ '/contact/' | relative_url }}" style="color: var(--soft-green); font-weight: 600;">Contact our school</a> to reach our classroom.</p>
+          <!-- Quick Start Panel -->
+          <div class="pm-card pm-quickstart">
+            <div class="pm-card-title">
+              <span class="icon">🌟</span>
+              New Here? Start Here.
+            </div>
+            <div class="pm-steps">
+              <div class="pm-step">
+                <span class="pm-step-icon">🌱</span>
+                <div class="pm-step-text">
+                  <strong>Different paces are normal</strong>
+                  <span>Kids learn at their own speed—and that's expected here.</span>
+                </div>
+              </div>
+              <div class="pm-step">
+                <span class="pm-step-icon">⏰</span>
+                <div class="pm-step-text">
+                  <strong>Short routines beat long sessions</strong>
+                  <span>10 minutes daily does more than an hour once a week.</span>
+                </div>
+              </div>
+              <div class="pm-step">
+                <span class="pm-step-icon">💬</span>
+                <div class="pm-step-text">
+                  <strong>Talking counts as learning</strong>
+                  <span>Conversations about ideas help just as much as worksheets.</span>
+                </div>
+              </div>
+              <div class="pm-step">
+                <span class="pm-step-icon">📱</span>
+                <div class="pm-step-text">
+                  <strong>Use this page anytime</strong>
+                  <span>Updates, newsletters, and tools are all here when you need them.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- How Learning Works -->
+          <div class="pm-card">
+            <div class="pm-card-title">
+              <span class="icon">📚</span>
+              How Learning Works Here
+            </div>
+            <div class="pm-mini-grid">
+              <div class="pm-mini-card">
+                <div class="icon">📖</div>
+                <h4>Reading & Language</h4>
+                <p>Shared reading, guided practice, talking about stories—building confidence one book at a time.</p>
+              </div>
+              <div class="pm-mini-card">
+                <div class="icon">🔢</div>
+                <h4>Math & Problem Solving</h4>
+                <p>Hands-on learning, understanding before speed. We build strong foundations first.</p>
+              </div>
+              <div class="pm-mini-card">
+                <div class="icon">🗣️</div>
+                <h4>Learning Through Experience</h4>
+                <p>Discussion, real-world connections, and learning by doing—inside and outside.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supporting at Home -->
+          <div class="pm-card">
+            <div class="pm-card-title">
+              <span class="icon">🏠</span>
+              Supporting Learning at Home
+            </div>
+            <ul class="pm-support-list">
+              <li class="pm-support-item">
+                <span class="icon">📚</span>
+                <span>Reading aloud together counts—even for older kids</span>
+              </li>
+              <li class="pm-support-item">
+                <span class="icon">💭</span>
+                <span>Talk about stories, pictures, or your day together</span>
+              </li>
+              <li class="pm-support-item">
+                <span class="icon">🧠</span>
+                <span>Ask your child to explain their thinking out loud</span>
+              </li>
+              <li class="pm-support-item">
+                <span class="icon">❤️</span>
+                <span>Encouragement matters more than perfection</span>
+              </li>
+              <li class="pm-support-item">
+                <span class="icon">🔄</span>
+                <span>Routine is more helpful than pressure</span>
+              </li>
+              <li class="pm-support-item">
+                <span class="icon">🌧️</span>
+                <span>Some days are harder—and that's completely normal</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Learning Tools -->
+          <div class="pm-card">
+            <div class="pm-card-title">
+              <span class="icon">🛠️</span>
+              Learning Tools Hub
+            </div>
+            <div class="pm-tools-grid">
+              <a href="https://www.lexiacore5.com/" target="_blank" rel="noopener" class="pm-tool-card">
+                <span class="tool-open">↗</span>
+                <span class="tool-name"><span class="icon">📗</span> Lexia Core5</span>
+                <span class="tool-purpose">Reading and language practice that adapts to your child's level.</span>
+                <span class="tool-login">Students already know their login.</span>
+              </a>
+              <a href="https://sign-in.mathletics.com/" target="_blank" rel="noopener" class="pm-tool-card">
+                <span class="tool-open">↗</span>
+                <span class="tool-name"><span class="icon">🔵</span> Mathletics</span>
+                <span class="tool-purpose">Math practice to build confidence and fluency.</span>
+                <span class="tool-login">Students already know their login.</span>
+              </a>
+              <a href="https://content.symphonylearning.com/assets/student/start.html?v=7092" target="_blank" rel="noopener" class="pm-tool-card">
+                <span class="tool-open">↗</span>
+                <span class="tool-name"><span class="icon">🎵</span> Symphony Math</span>
+                <span class="tool-purpose">Foundational math that builds understanding step-by-step.</span>
+                <span class="tool-login">Students already know their login.</span>
+              </a>
+            </div>
+
+            <!-- Email for Lexia registration -->
+            <div class="pm-email-box">
+              <strong>📧 School email for Lexia registration prompts only:</strong>
+              <button class="pm-email-copy" onclick="copyEmail(this)" type="button" aria-label="Copy email to clipboard">
+                <span class="email-text">reckegabe@gmail.com</span>
+                <span class="copy-icon">📋</span>
+              </button>
+              <span style="font-size: 0.65rem; color: var(--pm-text-muted); margin-left: 0.5rem;">(This is not a password—only use if Lexia asks for a school email.)</span>
+            </div>
+
+            <p class="pm-tools-note">💡 Short, regular use is more helpful than long sessions.</p>
+          </div>
+
+          <!-- What to Expect -->
+          <div class="pm-expect">
+            <p>This page will continue to grow—classroom highlights, newsletters, updates, and new resources will appear here throughout the year.</p>
+          </div>
+
+          <!-- Footer -->
+          <div class="pm-footer">
+            <p class="pm-footer-text">
+              School and home are on the same team.<br>
+              <strong>Progress over perfection. Confidence before speed.</strong>
+            </p>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -1821,6 +2330,29 @@ layout: null
       }
 
       generateSchedule();
+
+      // Copy email to clipboard (Parents Modal)
+      window.copyEmail = function(btn) {
+        const email = btn.querySelector('.email-text').textContent;
+        navigator.clipboard.writeText(email).then(() => {
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.classList.remove('copied');
+          }, 2000);
+        }).catch(() => {
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = email;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      };
 
       // PDF Thumbnail Rendering
       function renderPdfThumbnails() {
