@@ -9,9 +9,9 @@ description: >-
   Henry Coaster Memorial School serves the Marten Falls First Nation community,
   providing K-8 education rooted in Oji-Cree culture and dedicated to land-based learning.
 
-# CRITICAL: This must match your GitHub repository name exactly
-baseurl: "/HCMS"
-url: "https://reckegabe58.github.io"
+# Custom domain configuration
+baseurl: ""
+url: "https://henrycoastermemorialschool.ca"
 
 # Location information
 location:
