@@ -24,18 +24,18 @@ subtitle: Working together for our students
 </section>
 
 <!-- Matawa Education Section -->
-<section class="partner-section partner-featured">
+<section class="partner-section partner-section-alt">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title"><span class="title-accent">—</span> Matawa Education</h2>
-      <p class="section-subtitle">Our Key Foundational Partner</p>
+      <h2 class="section-title"><span class="title-accent">—</span> Our Key Foundational Partner</h2>
     </div>
 
-    <div class="partner-feature">
-      <div class="partner-logo-featured">
-        <img src="{{ '/assets/images/partners/matawa-logo.png' | relative_url }}" alt="Matawa First Nations Logo">
-      </div>
-      <div class="partner-content">
+    <div class="partners-grid partners-grid-single">
+      <div class="partner-card partner-card-featured">
+        <div class="partner-card-logo partner-card-logo-large">
+          <img src="{{ '/assets/images/partners/matawa-logo.png' | relative_url }}" alt="Matawa First Nations Logo">
+        </div>
+        <h3>Matawa Education</h3>
         <p>
           Matawa First Nations Management is a tribal council representing nine Ojibwe and Cree First Nations in Northern Ontario, including Marten Falls First Nation. The Matawa Education Department is dedicated to supporting schools across Matawa communities through advisory services, educational programs, and resources that promote culturally relevant education.
         </p>
