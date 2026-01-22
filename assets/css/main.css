@@ -4140,22 +4140,27 @@ a:hover {
   margin-bottom: var(--space-md);
 }
 
-.newsletter-thumbnail {
+/* Newsletter Preview Link */
+.newsletter-preview-link {
+  display: block;
+  text-decoration: none;
   margin-bottom: var(--space-md);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--bg-200);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.newsletter-preview-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.newsletter-thumbnail {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-100);
   border: 1px solid var(--bg-300);
-}
-
-.newsletter-thumbnail-link {
-  display: block;
-  text-decoration: none;
-  transition: opacity var(--transition-fast);
-}
-
-.newsletter-thumbnail-link:hover {
-  opacity: 0.9;
 }
 
 .newsletter-thumbnail-img {
@@ -4169,8 +4174,8 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-xl) var(--space-lg);
-  background: var(--bg-200);
+  padding: var(--space-2xl) var(--space-lg);
+  background: var(--bg-100);
   color: var(--accent-green);
 }
 
@@ -4188,15 +4193,11 @@ a:hover {
   color: var(--text-muted);
 }
 
-.newsletter-pdf-icon:hover {
-  background: var(--bg-300);
-}
-
 /* PDF Thumbnail with Canvas Preview */
 .pdf-thumbnail-container {
   position: relative;
-  background: var(--bg-200);
-  min-height: 200px;
+  background: var(--bg-100);
+  min-height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4207,7 +4208,6 @@ a:hover {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 320px;
   object-fit: contain;
 }
 
@@ -4224,62 +4224,9 @@ a:hover {
   display: none;
 }
 
-.pdf-thumbnail-container:hover {
-  opacity: 0.95;
-}
-
-.newsletter-current {
-  background: var(--bg-200);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-  margin-bottom: var(--space-md);
-  border: 1px solid var(--bg-300);
-}
-
-.newsletter-current-badge {
-  display: inline-block;
-  background: var(--accent-green);
-  color: white;
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: var(--space-xs);
-}
-
-.newsletter-current-month {
-  display: block;
-  font-size: var(--text-base);
-  font-weight: 700;
-  margin-top: var(--space-xs);
-  color: var(--text-dark);
-}
-
-.newsletter-current-title {
-  font-size: var(--text-sm);
-  color: var(--text-muted);
-  margin-top: var(--space-xs);
-  line-height: 1.4;
-}
-
-.newsletter-actions-sidebar {
-  display: flex;
-  gap: var(--space-sm);
+/* Newsletter download button styling */
+.classroom-newsletter-card .btn-full {
   margin-bottom: var(--space-sm);
-}
-
-.newsletter-actions-sidebar .btn {
-  flex: 1;
-  justify-content: center;
-  font-size: var(--text-sm);
-  padding: var(--space-sm) var(--space-md);
-}
-
-.newsletter-actions-sidebar .btn svg {
-  width: 14px;
-  height: 14px;
 }
 
 .newsletter-archive-link {
