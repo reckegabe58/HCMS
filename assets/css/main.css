@@ -4123,10 +4123,21 @@ a:hover {
   color: var(--text-dark);
 }
 
-.classroom-newsletter-card h3 svg {
+.classroom-newsletter-card h3 svg,
+.newsletter-title svg {
   width: 20px;
   height: 20px;
   color: var(--accent-green);
+}
+
+.newsletter-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
 }
 
 .newsletter-thumbnail {
@@ -4185,7 +4196,7 @@ a:hover {
 .pdf-thumbnail-container {
   position: relative;
   background: var(--bg-200);
-  min-height: 150px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4196,7 +4207,7 @@ a:hover {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 200px;
+  max-height: 320px;
   object-fit: contain;
 }
 
