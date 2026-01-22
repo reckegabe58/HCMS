@@ -40,12 +40,11 @@ subtitle: Working together for our students
           Matawa First Nations Management is a tribal council representing nine Ojibwe and Cree First Nations in Northern Ontario, including Marten Falls First Nation. The Matawa Education Department is dedicated to supporting schools across Matawa communities through advisory services, educational programs, and resources that promote culturally relevant education.
         </p>
         <p>
-          Through the PASS (Pathways to Achieve Student Success) program, Matawa Education provides Henry Coaster Memorial School with comprehensive support including literacy and numeracy resources, mental health services, cultural education programming, nutrition support, and school success planning. This partnership ensures our students benefit from a network of Indigenous education expertise while maintaining strong connections to our community's values and traditions.
+          Matawa Education provides Henry Coaster Memorial School with comprehensive support including literacy and numeracy resources, mental health services, cultural education programming, and school success planning. This partnership ensures our students benefit from a network of Indigenous education expertise while maintaining strong connections to our community's values and traditions.
         </p>
         <h4>Key Services:</h4>
         <ul class="partner-services-list">
           <li>School advisory and support services</li>
-          <li>PASS Program (literacy, numeracy, mental health, cultural education)</li>
           <li>Language revitalization initiatives</li>
           <li>Professional development for educators</li>
           <li>Post-secondary pathway support</li>
