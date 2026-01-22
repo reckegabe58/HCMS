@@ -1919,7 +1919,7 @@ a:hover {
   margin: var(--space-xs) 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-dropdown-menu {
     position: static;
     opacity: 1;
@@ -1932,13 +1932,13 @@ a:hover {
   }
 
   .nav-dropdown-menu li a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9) !important;
     padding: var(--space-xs) var(--space-lg);
   }
 
   .nav-dropdown-menu li a:hover {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
+    color: var(--white) !important;
   }
 }
 

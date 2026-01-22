@@ -163,7 +163,6 @@ subtitle: We'd love to hear from you
       <p class="map-note">
         <strong>Getting Here:</strong> Marten Falls is accessible via North Star Air flights on Monday, Wednesday, Friday, Saturday, and Sunday.
         During winter months (typically December to March), a winter road provides ground access.
-        Please contact the school office for visitor arrangements.
       </p>
     </div>
   </div>
