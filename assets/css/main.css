@@ -1919,7 +1919,7 @@ a:hover {
   margin: var(--space-xs) 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-dropdown-menu {
     position: static;
     opacity: 1;
@@ -1932,13 +1932,13 @@ a:hover {
   }
 
   .nav-dropdown-menu li a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9) !important;
     padding: var(--space-xs) var(--space-lg);
   }
 
   .nav-dropdown-menu li a:hover {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
+    color: var(--white) !important;
   }
 }
 
@@ -2383,6 +2383,261 @@ a:hover {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   margin: 0;
+}
+
+/* ==========================================
+   LEADERSHIP PAGE COMPONENTS
+   ========================================== */
+
+.leadership-section {
+  padding: var(--space-3xl) 0;
+}
+
+.leadership-section .section-intro {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-bottom: var(--space-2xl);
+}
+
+.leadership-featured {
+  background: var(--bg-200);
+}
+
+/* Leadership Grid */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* Leader Cards */
+.leader-card {
+  background: var(--bg-400);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  text-align: center;
+  border: 1px solid var(--border-light);
+}
+
+.leader-photo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--bg-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+  border: 3px solid var(--primary-100);
+}
+
+.leader-photo-placeholder svg {
+  width: 50px;
+  height: 50px;
+  color: var(--primary-100);
+}
+
+.leader-photo-placeholder.large {
+  width: 180px;
+  height: 180px;
+}
+
+.leader-photo-placeholder.large svg {
+  width: 70px;
+  height: 70px;
+}
+
+.leader-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--space-lg);
+  border: 3px solid var(--primary-100);
+}
+
+.leader-info {
+  text-align: center;
+}
+
+.leader-name {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  color: var(--text-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.leader-title {
+  font-size: var(--text-base);
+  color: var(--primary-100);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.leader-bio {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* Featured Leader (Ed Director & Principal) */
+.featured-leader {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.featured-leader-photo {
+  text-align: center;
+}
+
+.featured-leader-content {
+  text-align: left;
+}
+
+.featured-leader-content .leader-name {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-xs);
+}
+
+.featured-leader-content .leader-title {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.leader-message {
+  margin-bottom: var(--space-xl);
+}
+
+.leader-message h4 {
+  font-size: var(--text-lg);
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.leader-message blockquote {
+  background: var(--bg-400);
+  border-left: 4px solid var(--primary-100);
+  padding: var(--space-lg);
+  margin: 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.leader-message blockquote p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+.leader-contact {
+  background: var(--bg-400);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+}
+
+.leader-contact p {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--text-sm);
+}
+
+.leader-contact p:last-child {
+  margin-bottom: 0;
+}
+
+.leader-contact a {
+  color: var(--primary-100);
+}
+
+.leader-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Councillors Feature Layout */
+.councillors-feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.councillors-photos {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.councillors-content .leader-name {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  color: var(--text-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.councillors-content .leader-title {
+  font-size: var(--text-lg);
+  color: var(--primary-100);
+  font-weight: 600;
+  margin-bottom: var(--space-xl);
+}
+
+.leader-bio-full p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-md);
+}
+
+.leader-bio-full p:last-child {
+  margin-bottom: 0;
+}
+
+/* Credentials styling */
+.credentials {
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+/* Leadership Page Responsive */
+@media (max-width: 768px) {
+  .featured-leader,
+  .councillors-feature {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .featured-leader-content,
+  .councillors-content {
+    text-align: center;
+  }
+
+  .councillors-photos {
+    justify-content: center;
+  }
+
+  .leader-message blockquote {
+    border-left: none;
+    border-top: 4px solid var(--primary-100);
+    border-radius: var(--radius-md);
+  }
+
+  .leader-photo-placeholder.large {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto var(--space-lg);
+  }
+
+  .leader-photo-placeholder.large svg {
+    width: 55px;
+    height: 55px;
+  }
 }
 
 /* CTA Section */
@@ -5361,5 +5616,400 @@ a:hover {
   .carousel-dot {
     width: 10px;
     height: 10px;
+  }
+}
+
+/* ==========================================
+   PROGRAMS PAGE ENHANCED STYLES
+   ========================================== */
+
+.programs-section {
+  padding: var(--space-3xl) 0;
+}
+
+.programs-section-alt {
+  background: var(--bg-200);
+}
+
+.programs-section .section-subtitle {
+  color: var(--text-secondary);
+  margin-top: var(--space-sm);
+}
+
+.program-card.featured-link {
+  border: 2px solid var(--primary-100);
+}
+
+.program-card .btn-sm {
+  margin-top: var(--space-md);
+}
+
+.coming-soon-text {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.program-contact {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+}
+
+.partnerships-highlight {
+  background: var(--primary-100);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  text-align: center;
+}
+
+.partnerships-highlight h2 {
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.partnerships-highlight p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+/* ==========================================
+   ELDER PROGRAM PAGE STYLES
+   ========================================== */
+
+.elder-section {
+  padding: var(--space-3xl) 0;
+}
+
+.elder-section-alt {
+  background: var(--bg-200);
+}
+
+.elder-feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.elder-icon-large {
+  width: 100px;
+  height: 100px;
+  background: var(--bg-200);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-100);
+}
+
+.elder-section-alt .elder-icon-large {
+  background: var(--bg-400);
+}
+
+.elder-content h4 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--text-dark);
+}
+
+.placeholder-list {
+  list-style: disc;
+  padding-left: var(--space-lg);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.placeholder-list li {
+  margin-bottom: var(--space-xs);
+}
+
+.elders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.elder-card {
+  background: var(--bg-400);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.elder-photo-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--bg-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  border: 3px solid var(--primary-100);
+}
+
+.elder-photo-placeholder svg {
+  width: 40px;
+  height: 40px;
+  color: var(--primary-100);
+}
+
+.elder-card h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.elder-note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ==========================================
+   SUPPORT SERVICES PAGE STYLES
+   ========================================== */
+
+.support-section {
+  padding: var(--space-3xl) 0;
+}
+
+.support-section-alt {
+  background: var(--bg-200);
+}
+
+.support-feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.support-icon-large {
+  width: 100px;
+  height: 100px;
+  background: var(--bg-200);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-100);
+}
+
+.support-section-alt .support-icon-large {
+  background: var(--bg-400);
+}
+
+.support-content h4 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--text-dark);
+}
+
+.support-content.centered {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.support-content.centered .placeholder-list {
+  text-align: left;
+  display: inline-block;
+}
+
+.interventions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-xl);
+}
+
+.intervention-card {
+  background: var(--bg-400);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+}
+
+.intervention-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--bg-200);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-100);
+  margin-bottom: var(--space-lg);
+}
+
+.intervention-card h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.intervention-subtitle {
+  color: var(--primary-100);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.intervention-card h4 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--text-dark);
+  font-size: var(--text-sm);
+}
+
+/* ==========================================
+   PARTNERSHIPS PAGE STYLES
+   ========================================== */
+
+.partner-section {
+  padding: var(--space-3xl) 0;
+}
+
+.partner-section-alt {
+  background: var(--bg-200);
+}
+
+.partner-featured {
+  background: var(--primary-100);
+  color: var(--white);
+}
+
+.partner-featured .section-title,
+.partner-featured .section-subtitle {
+  color: var(--white);
+}
+
+.partner-featured .title-accent {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.partner-feature {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.partner-logo-placeholder {
+  width: 200px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.partner-content {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.partner-content h4 {
+  color: var(--white);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.partner-content .placeholder-list {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.partner-content .btn-primary {
+  margin-top: var(--space-lg);
+  background: var(--white);
+  color: var(--primary-100);
+}
+
+.partner-content .btn-primary:hover {
+  background: var(--bg-200);
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+}
+
+.partner-card {
+  background: var(--bg-400);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+}
+
+.partner-section-alt .partner-card {
+  background: var(--white);
+}
+
+.partner-card-logo {
+  width: 100%;
+  height: 80px;
+  background: var(--bg-200);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.partner-card h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.partner-card h4 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--text-dark);
+  font-size: var(--text-sm);
+}
+
+.partner-contact {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-md);
+}
+
+/* Responsive for new pages */
+@media (max-width: 768px) {
+  .elder-feature,
+  .support-feature,
+  .partner-feature {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .elder-icon-large,
+  .support-icon-large {
+    margin: 0 auto var(--space-lg);
+  }
+
+  .partner-logo-placeholder {
+    width: 100%;
+    margin: 0 auto var(--space-lg);
+  }
+
+  .placeholder-list {
+    text-align: left;
+  }
+
+  .interventions-grid {
+    grid-template-columns: 1fr;
   }
 }
