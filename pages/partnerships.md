@@ -116,8 +116,8 @@ subtitle: Working together for our students
 
     <div class="partners-grid">
       <div class="partner-card">
-        <div class="partner-card-logo">
-          <span>Anderson Support Services</span>
+        <div class="partner-card-logo partner-card-logo-img">
+          <img src="{{ '/assets/images/partners/anderson-therapy-logo.png' | relative_url }}" alt="Anderson Therapy Services Logo">
         </div>
         <h3>Anderson Support Services</h3>
         <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
@@ -155,8 +155,8 @@ subtitle: Working together for our students
 
     <div class="partners-grid">
       <div class="partner-card">
-        <div class="partner-card-logo">
-          <span>Barn Owl Music</span>
+        <div class="partner-card-logo partner-card-logo-img">
+          <img src="{{ '/assets/images/partners/barn-owl-music-logo.png' | relative_url }}" alt="Barn Owl Music Logo">
         </div>
         <h3>Barn Owl Music</h3>
         <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
