@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', function() {
       mainNav.classList.toggle('active');
-      
+
       // Animate hamburger to X
       const spans = menuToggle.querySelectorAll('span');
       if (mainNav.classList.contains('active')) {
@@ -28,7 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
+        // Close all dropdowns when menu closes
+        document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('active'));
       }
+    });
+
+    // Handle dropdown toggles on mobile
+    const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        // Only handle on mobile (when menu toggle is visible)
+        if (window.getComputedStyle(menuToggle).display !== 'none') {
+          e.preventDefault();
+          const parent = this.parentElement;
+
+          // Close other dropdowns
+          document.querySelectorAll('.nav-dropdown').forEach(dd => {
+            if (dd !== parent) dd.classList.remove('active');
+          });
+
+          // Toggle this dropdown
+          parent.classList.toggle('active');
+        }
+      });
     });
 
     // Close menu when clicking outside
@@ -39,6 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
+        // Close all dropdowns
+        document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('active'));
       }
     });
   }
