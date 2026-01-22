@@ -40,7 +40,7 @@ subtitle: Important dates and upcoming events
           </svg>
           Download Full Calendar (PDF)
         </a>
-        <a href="#" class="btn btn-ghost-dark">
+        <a href="#" class="btn btn-outline">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
             <polyline points="16 6 12 2 8 6"></polyline>
@@ -63,7 +63,7 @@ subtitle: Important dates and upcoming events
       </div>
 
       <div class="events-cta">
-        <a href="{{ '/news/' | relative_url }}" class="btn btn-ghost-dark">View All School News</a>
+        <a href="{{ '/news/' | relative_url }}" class="btn btn-outline">View All School News</a>
       </div>
     </div>
 
@@ -234,28 +234,5 @@ subtitle: Important dates and upcoming events
     })();
     </script>
 
-  </div>
-</section>
-
-<!-- Weekly Schedule Widget -->
-<section class="weekly-section main-area">
-  <div class="container">
-    <div class="weekly-grid">
-      <div class="weekly-content">
-        <h2 class="section-title">After-School Programs</h2>
-        <p>
-          We offer a variety of after-school programs throughout the week. Check the weekly
-          schedule for current programming.
-        </p>
-        <p>
-          After-school programs run from 3:45 PM to 5:00 PM unless otherwise noted.
-        </p>
-        <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Contact for Details</a>
-      </div>
-
-      <div class="weekly-schedule">
-        {% include weekly-schedule.html %}
-      </div>
-    </div>
   </div>
 </section>
