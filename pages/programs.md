@@ -25,64 +25,8 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
   </div>
 </section>
 
-<!-- Academic Programs Section -->
-<section class="programs-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title"><span class="title-accent">—</span> Academic Programs</h2>
-      <p class="section-subtitle">Building strong foundations in literacy, numeracy, and critical thinking</p>
-    </div>
-
-    <div class="programs-grid">
-      <div class="program-card">
-        <div class="program-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-          </svg>
-        </div>
-        <h3>Core Academic Program</h3>
-        <p>
-          Our K-8 curriculum follows Ontario standards while integrating local knowledge
-          and perspectives. Students receive instruction in literacy, numeracy, science,
-          social studies, and the arts.
-        </p>
-      </div>
-
-      <div class="program-card">
-        <div class="program-icon green">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 20h9"></path>
-            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-          </svg>
-        </div>
-        <h3>Lexia Learning</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
-        </p>
-        <p class="program-contact">Contact: <em>To be confirmed</em></p>
-      </div>
-
-      <div class="program-card">
-        <div class="program-icon orange">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="20" x2="18" y2="10"></line>
-            <line x1="12" y1="20" x2="12" y2="4"></line>
-            <line x1="6" y1="20" x2="6" y2="14"></line>
-          </svg>
-        </div>
-        <h3>Symphony Math</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
-        </p>
-        <p class="program-contact">Contact: <em>To be confirmed</em></p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Cultural Programs Section -->
-<section class="programs-section programs-section-alt">
+<section class="programs-section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title"><span class="title-accent">—</span> Cultural Programs</h2>
@@ -100,7 +44,6 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <p class="coming-soon-text">
           <em>Program information coming soon.</em>
         </p>
-        <p class="program-contact">Contact: <em>To be confirmed</em></p>
       </div>
 
       <div class="program-card">
@@ -115,7 +58,6 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <p class="coming-soon-text">
           <em>Program information coming soon.</em>
         </p>
-        <p class="program-contact">Contact: Orville & Dave</p>
       </div>
 
       <div class="program-card">
@@ -130,7 +72,6 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <p class="coming-soon-text">
           <em>Program information coming soon.</em>
         </p>
-        <p class="program-contact">Contact: Orville & Dave</p>
       </div>
 
       <div class="program-card">
@@ -168,50 +109,62 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
   </div>
 </section>
 
-<!-- Arts & Enrichment Section -->
-<section class="programs-section">
+<!-- Academic Programs Section -->
+<section class="programs-section programs-section-alt">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title"><span class="title-accent">—</span> Arts & Enrichment</h2>
-      <p class="section-subtitle">Expanding horizons through music, technology, and creative expression</p>
+      <h2 class="section-title"><span class="title-accent">—</span> Academic Programs</h2>
+      <p class="section-subtitle">Building strong foundations in literacy, numeracy, and critical thinking</p>
     </div>
 
     <div class="programs-grid">
       <div class="program-card">
         <div class="program-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 18V5l12-2v13"></path>
-            <circle cx="6" cy="18" r="3"></circle>
-            <circle cx="18" cy="16" r="3"></circle>
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
           </svg>
         </div>
-        <h3>Barn Owl Music Program</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <h3>Core Academic Program</h3>
+        <p>
+          Our K-8 curriculum follows Ontario standards while integrating local knowledge
+          and perspectives. Students receive instruction in literacy, numeracy, science,
+          social studies, and the arts.
         </p>
-        <p class="program-contact">Contact: Felipe</p>
       </div>
 
       <div class="program-card">
         <div class="program-icon green">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
           </svg>
         </div>
-        <h3>Connected North</h3>
+        <h3>Lexia Learning</h3>
         <p class="coming-soon-text">
           <em>Program information coming soon.</em>
         </p>
-        <p class="program-contact">Contact: Fiona</p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon orange">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        <h3>Symphony Math</h3>
+        <p class="coming-soon-text">
+          <em>Program information coming soon.</em>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Student Support Section -->
-<section class="programs-section programs-section-alt">
+<section class="programs-section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title"><span class="title-accent">—</span> Student Support Programs</h2>
@@ -232,7 +185,6 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <p class="coming-soon-text">
           <em>Program information coming soon.</em>
         </p>
-        <p class="program-contact">Contact: Sam</p>
       </div>
 
       <div class="program-card">
@@ -248,7 +200,6 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <p class="coming-soon-text">
           <em>Program information coming soon.</em>
         </p>
-        <p class="program-contact">Contact: Sam</p>
       </div>
 
       <div class="program-card">
@@ -262,7 +213,6 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <p class="coming-soon-text">
           <em>Program information coming soon.</em>
         </p>
-        <p class="program-contact">Contact: Sam</p>
       </div>
 
       <div class="program-card">
@@ -309,6 +259,46 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
   </div>
 </section>
 
+<!-- Arts & Enrichment Section -->
+<section class="programs-section programs-section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title"><span class="title-accent">—</span> Arts & Enrichment</h2>
+      <p class="section-subtitle">Expanding horizons through music, technology, and creative expression</p>
+    </div>
+
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="program-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </div>
+        <h3>Barn Owl Music Program</h3>
+        <p class="coming-soon-text">
+          <em>Program information coming soon.</em>
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon green">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3>Connected North</h3>
+        <p class="coming-soon-text">
+          <em>Program information coming soon.</em>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Nutrition Section -->
 <section class="programs-section">
   <div class="container">
@@ -332,7 +322,6 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <p class="coming-soon-text">
           <em>Program information coming soon.</em>
         </p>
-        <p class="program-contact">Contact: <em>To be confirmed</em></p>
       </div>
 
       <div class="program-card">
@@ -347,23 +336,6 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <p class="coming-soon-text">
           <em>Program information coming soon.</em>
         </p>
-        <p class="program-contact">Contact: <em>To be confirmed</em></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Partnerships Link Section -->
-<section class="programs-section programs-section-alt">
-  <div class="container">
-    <div class="partnerships-highlight">
-      <div class="partnerships-content">
-        <h2>Our Partners</h2>
-        <p>
-          Henry Coaster Memorial School works with key partners including Matawa Education and Department Services
-          to provide comprehensive support and services for our students and community.
-        </p>
-        <a href="{{ '/partnerships/' | relative_url }}" class="btn btn-primary">View Our Partnerships</a>
       </div>
     </div>
   </div>

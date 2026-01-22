@@ -1706,7 +1706,7 @@ a:hover {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .header-inner {
     flex-wrap: wrap;
     padding: var(--space-sm) 0;
@@ -1919,7 +1919,7 @@ a:hover {
   margin: var(--space-xs) 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .nav-dropdown-menu {
     position: static;
     opacity: 1;
