@@ -149,7 +149,7 @@ subtitle: We'd love to hear from you
 
       <div class="map-container">
         <iframe
-          src="https://www.google.com/maps?q=51.63009108063665,-85.94040653674006&z=10&output=embed"
+          src="https://www.google.com/maps?q=51.63009108063665,-85.94040653674006&z=14&output=embed"
           width="100%"
           height="450"
           style="border:0; border-radius: 12px;"
@@ -161,7 +161,7 @@ subtitle: We'd love to hear from you
       </div>
 
       <p class="map-note">
-        <strong>Getting Here:</strong> Marten Falls is accessible via charter flights from Thunder Bay or Nakina.
+        <strong>Getting Here:</strong> Marten Falls is accessible via North Star Air flights on Monday, Wednesday, Friday, Saturday, and Sunday.
         During winter months (typically December to March), a winter road provides ground access.
         Please contact the school office for visitor arrangements.
       </p>
