@@ -40,9 +40,9 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
         </div>
-        <h3>Native Language Program</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <h3>Oji-Cree Language Program</h3>
+        <p>
+          Our Oji-Cree Language Program invites students to learn and celebrate the Oji-Cree language through daily classes led by Ms. Brenda with guidance from community Elders. Students actively speak, repeat, and practice conversational and traditional vocabulary through interactive lessons, storytelling, and hands-on learning methods that honor our culture and heritage.
         </p>
       </div>
 
@@ -54,23 +54,9 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
             <circle cx="12" cy="12" r="2"></circle>
           </svg>
         </div>
-        <h3>Traditional Drumming</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
-        </p>
-      </div>
-
-      <div class="program-card">
-        <div class="program-icon orange">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 16v-4"></path>
-            <path d="M12 8h.01"></path>
-          </svg>
-        </div>
-        <h3>Hoop Dancing</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <h3>Traditional Drumming & Hoop Dancing</h3>
+        <p>
+          Every two weeks, Orville Councillor brings rich cultural learning into the school. During the day, he teaches culture and language connected to drumming and dance. After school, students and community youth gather to learn traditional drumming, singing, rhythms, and hoop dancing — building confidence, community connection, and cultural pride.
         </p>
       </div>
 
@@ -86,24 +72,8 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         </div>
         <h3>Land-Based Learning</h3>
         <p>
-          Students spend time outdoors learning traditional skills and ecological knowledge.
-          Activities include harvesting, trapping skills, plant identification, and
-          seasonal activities guided by community members.
+          At HCMS we partner with Choose Life and community members to bring learning out onto the land. Students gain real-world skills including snare setting, fishing, boating, and other traditional outdoor activities that strengthen their connection to nature, survival skills, and Indigenous ways of knowing.
         </p>
-      </div>
-
-      <div class="program-card featured-link">
-        <div class="program-icon sage">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </div>
-        <h3>Elder Program</h3>
-        <p>
-          Our elders are at the heart of cultural learning at HCMS. Learn more about our elder sharing sessions, elders in the classroom, and school visits to elders at home.
-        </p>
-        <a href="{{ '/elders/' | relative_url }}" class="btn btn-sm btn-primary">Learn More</a>
       </div>
     </div>
   </div>
@@ -141,8 +111,8 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
           </svg>
         </div>
         <h3>Lexia Learning</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <p>
+          Lexia is a research-proven literacy program that supports students in developing strong foundational reading skills through personalized, adaptive online lessons. Students work at their own pace to build phonics, vocabulary, fluency, comprehension, and confidence, while teachers monitor progress to target support where it's needed most.
         </p>
       </div>
 
@@ -155,8 +125,8 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
           </svg>
         </div>
         <h3>Symphony Math</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <p>
+          Symphony Math helps students build deep understanding of mathematics beyond memorization. Through visual, intuitive lessons that progress from concrete concepts to abstract thinking, learners develop confidence and mastery at their own pace. The program identifies learning needs, supports conceptual growth, and strengthens number sense for lasting success.
         </p>
       </div>
     </div>
@@ -182,23 +152,8 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
           </svg>
         </div>
         <h3>Alternative Education</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
-        </p>
-      </div>
-
-      <div class="program-card">
-        <div class="program-icon orange">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-        </div>
-        <h3>Youth & Weekend Program</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <p>
+          Our Alternative Education program supports students who may struggle in traditional school settings by meeting them where they are most comfortable. Staff collaborate with each student to create personalized learning plans that respect their strengths, interests, and goals — ensuring every learner can succeed and feel confident in their educational journey.
         </p>
       </div>
 
@@ -206,12 +161,12 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <div class="program-icon green">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
+            <path d="M12 8v4l2 2"></path>
           </svg>
         </div>
-        <h3>Arena Program</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <h3>Learn to Skate Program</h3>
+        <p>
+          During the colder months, classes attend the local arena for our Learn to Skate Program. Students spend mornings developing skating skills and foundational hockey techniques in a supportive environment that encourages physical fitness, balance, coordination, and enjoyment on the ice.
         </p>
       </div>
 
@@ -277,8 +232,8 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
           </svg>
         </div>
         <h3>Barn Owl Music Program</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <p>
+          The Barn Owl Music Program brings daily music instruction to our school! Students enjoy one-on-one piano lessons, ukulele skills, rhythm practice, and group music activities that foster creativity, musicality, and confidence. From fundamentals to performance skills, this program makes music a joyful part of every day.
         </p>
       </div>
 
@@ -291,8 +246,8 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
           </svg>
         </div>
         <h3>Connected North</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <p>
+          Connected North provides our students with access to engaging virtual learning experiences through a dynamic online platform. This program connects HCMS learners with expert educators and culturally relevant lessons, activities, and collaborations, bringing the world into our classroom and expanding opportunities beyond traditional boundaries.
         </p>
       </div>
     </div>
@@ -319,22 +274,8 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
           </svg>
         </div>
         <h3>Nutrition Program</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
-        </p>
-      </div>
-
-      <div class="program-card">
-        <div class="program-icon sage">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
-            <path d="M7 2v20"></path>
-            <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
-          </svg>
-        </div>
-        <h3>Kitchen Services Community Program</h3>
-        <p class="coming-soon-text">
-          <em>Program information coming soon.</em>
+        <p>
+          Our Nutrition Program ensures every student has access to healthy meals each day, with hot and cold breakfasts and lunches prepared by our community chef. Good food fuels learning — promoting concentration, well-being, and growth for all students.
         </p>
       </div>
     </div>

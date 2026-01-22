@@ -1195,48 +1195,86 @@ layout: null
       }
     }
 
-    /* Mobile quick links fallback */
+    /* Mobile quick links - vertical card layout */
     .mobile-links {
       display: none;
-      background: var(--panel-bg);
-      padding: 1rem;
+      background: linear-gradient(180deg, var(--panel-bg) 0%, rgba(30, 25, 20, 0.98) 100%);
+      padding: 1.5rem 1rem;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
+      /* Hide the interactive hotspots on mobile */
+      .classroom-hotspots {
+        display: none !important;
+      }
+
+      /* Show mobile cards instead */
       .mobile-links {
         display: block;
       }
 
       .mobile-links-title {
         font-family: 'Press Start 2P', cursive;
-        font-size: 0.55rem;
+        font-size: 0.6rem;
         color: var(--soft-gold);
-        margin-bottom: 0.75rem;
+        margin-bottom: 1rem;
         text-align: center;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
       }
 
       .mobile-links-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
       }
 
       .mobile-link {
-        background: rgba(255,255,255,0.05);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
         border: 2px solid var(--warm-wood);
-        border-radius: 6px;
-        padding: 0.75rem;
-        text-align: center;
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        text-align: left;
         cursor: pointer;
-        font-family: 'Press Start 2P', cursive;
-        font-size: 0.38rem;
         color: var(--text-light);
-        transition: all 0.15s ease;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       }
 
-      .mobile-link:hover {
-        background: var(--warm-wood);
-        color: var(--ivory);
+      .mobile-link:hover,
+      .mobile-link:active {
+        background: linear-gradient(135deg, var(--warm-wood) 0%, rgba(139, 90, 43, 0.8) 100%);
+        border-color: var(--soft-gold);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      }
+
+      .mobile-link-icon {
+        font-size: 1.75rem;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+
+      .mobile-link-text {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 0.5rem;
+        line-height: 1.4;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .mobile-link {
+        padding: 0.875rem 1rem;
+      }
+
+      .mobile-link-icon {
+        font-size: 1.5rem;
+      }
+
+      .mobile-link-text {
+        font-size: 0.45rem;
       }
     }
 
@@ -2121,14 +2159,32 @@ layout: null
 
     <!-- Mobile Quick Links -->
     <div class="mobile-links">
-      <h3 class="mobile-links-title">QUICK LINKS</h3>
+      <h3 class="mobile-links-title">EXPLORE THE CLASSROOM</h3>
       <div class="mobile-links-grid">
-        <button class="mobile-link" data-panel="learning">What We're Learning</button>
-        <button class="mobile-link" data-panel="gallery">Art Wall</button>
-        <button class="mobile-link" data-panel="newsletter">Newsletter</button>
-        <button class="mobile-link" data-panel="communication">Message to Parents</button>
-        <button class="mobile-link" data-panel="schedule">Daily Schedule</button>
-        <button class="mobile-link" data-panel="community">Inside Our Classroom</button>
+        <button class="mobile-link" data-panel="learning">
+          <span class="mobile-link-icon">📚</span>
+          <span class="mobile-link-text">What We're Learning</span>
+        </button>
+        <button class="mobile-link" data-panel="gallery">
+          <span class="mobile-link-icon">🎨</span>
+          <span class="mobile-link-text">Art Wall</span>
+        </button>
+        <button class="mobile-link" data-panel="newsletter">
+          <span class="mobile-link-icon">📰</span>
+          <span class="mobile-link-text">Newsletter</span>
+        </button>
+        <button class="mobile-link" data-panel="communication">
+          <span class="mobile-link-icon">💬</span>
+          <span class="mobile-link-text">Message to Parents</span>
+        </button>
+        <button class="mobile-link" data-panel="schedule">
+          <span class="mobile-link-icon">📅</span>
+          <span class="mobile-link-text">Daily Schedule</span>
+        </button>
+        <button class="mobile-link" data-panel="community">
+          <span class="mobile-link-icon">🏠</span>
+          <span class="mobile-link-text">Inside Our Classroom</span>
+        </button>
       </div>
     </div>
 
