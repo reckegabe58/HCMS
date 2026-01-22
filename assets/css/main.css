@@ -5917,6 +5917,44 @@ a:hover {
   padding: var(--space-md);
 }
 
+.partner-logo-featured {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo-featured img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.partner-services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.partner-services-list li {
+  padding: var(--space-xs) 0;
+  padding-left: var(--space-lg);
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.partner-services-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-green);
+}
+
 .partner-content {
   color: rgba(255, 255, 255, 0.9);
 }

@@ -32,18 +32,22 @@ subtitle: Working together for our students
     </div>
 
     <div class="partner-feature">
-      <div class="partner-logo-placeholder">
-        <span>Matawa Education Logo</span>
+      <div class="partner-logo-featured">
+        <img src="{{ '/assets/images/partners/matawa-logo.png' | relative_url }}" alt="Matawa First Nations Logo">
       </div>
       <div class="partner-content">
-        <p class="coming-soon-text"><em>Information about our partnership with Matawa Education coming soon.</em></p>
-        <h4>What to include:</h4>
-        <ul class="placeholder-list">
-          <li>Overview of Matawa Education</li>
-          <li>History of partnership with HCMS</li>
-          <li>Services and supports they provide</li>
-          <li>Programs they help deliver</li>
-          <li>Contact information</li>
+        <p>
+          Matawa First Nations Management is a tribal council representing nine Ojibwe and Cree First Nations in Northern Ontario, including Marten Falls First Nation. The Matawa Education Department is dedicated to supporting schools across Matawa communities through advisory services, educational programs, and resources that promote culturally relevant education.
+        </p>
+        <p>
+          Matawa Education provides Henry Coaster Memorial School with comprehensive support including literacy and numeracy resources, mental health services, cultural education programming, and school success planning. This partnership ensures our students benefit from a network of Indigenous education expertise while maintaining strong connections to our community's values and traditions.
+        </p>
+        <h4>Key Services:</h4>
+        <ul class="partner-services-list">
+          <li>School advisory and support services</li>
+          <li>Language revitalization initiatives</li>
+          <li>Professional development for educators</li>
+          <li>Post-secondary pathway support</li>
         </ul>
         <a href="https://www.matawaeducation.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
           Visit Matawa Education
