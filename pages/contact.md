@@ -147,20 +147,17 @@ subtitle: We'd love to hear from you
       <h2>Find Us</h2>
       <p>Henry Coaster Memorial School is located in the heart of Marten Falls First Nation. As a fly-in community, we are accessible by air year-round and by winter road during the colder months.</p>
 
-      <div class="map-placeholder">
-        <!-- Replace this with an actual map embed or image -->
-        <div class="map-image">
-          <img src="{{ '/assets/images/carousel/slide-5.jpg' | relative_url }}" alt="Aerial view of Marten Falls area">
-          <div class="map-overlay">
-            <div class="map-pin">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3" fill="white"></circle>
-              </svg>
-            </div>
-            <span class="map-label">Henry Coaster Memorial School<br>Marten Falls First Nation</span>
-          </div>
-        </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps?q=51.63009108063665,-85.94040653674006&z=10&output=embed"
+          width="100%"
+          height="450"
+          style="border:0; border-radius: 12px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Henry Coaster Memorial School - Marten Falls First Nation Location">
+        </iframe>
       </div>
 
       <p class="map-note">

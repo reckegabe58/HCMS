@@ -2724,6 +2724,18 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
+.map-container {
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  min-height: 400px;
+}
+
 .map-note {
   margin-top: var(--space-xl);
   font-size: var(--text-base);
