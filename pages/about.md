@@ -172,53 +172,6 @@ subtitle: Where our students walk in the footsteps of their ancestors to achieve
   </div>
 </section>
 
-<!-- Our Values Section -->
-<section class="values-section-alt">
-  <div class="container">
-    <div class="section-header text-center">
-      <h2 class="section-title-center">Our Values</h2>
-      <p class="section-subtitle">Guided by the Seven Grandfather Teachings</p>
-    </div>
-
-    <div class="values-grid">
-      <div class="value-card">
-        <h4>Zaagi'idiwin</h4>
-        <p>Love - We create a nurturing environment where every child feels valued and supported.</p>
-      </div>
-
-      <div class="value-card">
-        <h4>Mnaadendimowin</h4>
-        <p>Respect - We honor our Elders, our traditions, and each other in all that we do.</p>
-      </div>
-
-      <div class="value-card">
-        <h4>Aakwa'ode'ewin</h4>
-        <p>Bravery - We encourage students to face challenges with courage and determination.</p>
-      </div>
-
-      <div class="value-card">
-        <h4>Gwekwaadziwin</h4>
-        <p>Honesty - We teach the importance of truthfulness in words and actions.</p>
-      </div>
-
-      <div class="value-card">
-        <h4>Nbwaakaawin</h4>
-        <p>Wisdom - We seek knowledge from both traditional teachings and modern education.</p>
-      </div>
-
-      <div class="value-card">
-        <h4>Dbaadendiziwin</h4>
-        <p>Humility - We learn to walk gently on the earth and recognize our place in creation.</p>
-      </div>
-
-      <div class="value-card">
-        <h4>Debwewin</h4>
-        <p>Truth - We seek authentic understanding and stay true to our cultural identity.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Call to Action -->
 <section class="cta-section">
   <div class="container">
