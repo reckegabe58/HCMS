@@ -68,6 +68,25 @@ subtitle: Working together for our students
     <div class="partners-grid">
       <div class="partner-card">
         <div class="partner-card-logo">
+          <span>Greenfield Learning</span>
+        </div>
+        <h3>Greenfield Learning</h3>
+        <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
+        <p>Greenfield Learning provides HCMS with research-based intervention programs that support student success in literacy and numeracy:</p>
+        <ul class="partner-programs-list">
+          <li><strong>Lexia Learning</strong> — Personalized literacy program building phonics, vocabulary, fluency, and comprehension</li>
+          <li><strong>Symphony Math</strong> — Visual math program developing number sense and conceptual understanding</li>
+        </ul>
+        <h4>What to include:</h4>
+        <ul class="placeholder-list">
+          <li>Overview of Greenfield Learning</li>
+          <li>History of partnership with HCMS</li>
+          <li>How they support diverse learners</li>
+        </ul>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-card-logo">
           <span>Connected North</span>
         </div>
         <h3>Connected North</h3>
@@ -79,34 +98,6 @@ subtitle: Working together for our students
           <li>Types of sessions offered</li>
         </ul>
         <p class="partner-contact">School Contact: Fiona</p>
-      </div>
-
-      <div class="partner-card">
-        <div class="partner-card-logo">
-          <span>Lexia Learning</span>
-        </div>
-        <h3>Lexia Learning</h3>
-        <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
-        <h4>What to include:</h4>
-        <ul class="placeholder-list">
-          <li>Literacy intervention support</li>
-          <li>Multi-tiered interventions</li>
-          <li>Supporting neurodiversity</li>
-        </ul>
-      </div>
-
-      <div class="partner-card">
-        <div class="partner-card-logo">
-          <span>Symphony Math</span>
-        </div>
-        <h3>Symphony Math</h3>
-        <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
-        <h4>What to include:</h4>
-        <ul class="placeholder-list">
-          <li>Numeracy intervention support</li>
-          <li>Multi-tiered interventions</li>
-          <li>Supporting neurodiversity</li>
-        </ul>
       </div>
     </div>
   </div>
