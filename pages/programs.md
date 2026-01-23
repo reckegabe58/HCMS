@@ -18,69 +18,16 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
 <section class="programs-intro main-area">
   <div class="container">
     <p class="intro-text">
-      Our programs are foundational to who we are at HCMS. They ground our school in cultural learning,
-      academic excellence, and community connection. From language revitalization to land-based learning,
-      from special education supports to enrichment programs, we ensure every student has the opportunity to thrive.
+      At HCMS, we offer programs that support academic excellence, student well-being, and community connection. From literacy and numeracy interventions to arts enrichment and after-school activities, we ensure every student has the opportunity to thrive.
+    </p>
+    <p class="intro-note">
+      <strong>Looking for language, culture, and land-based learning?</strong> These are central to who we are as a school and community. Visit <a href="{{ '/heritage/' | relative_url }}">Our Heritage</a> to learn more.
     </p>
   </div>
 </section>
 
-<!-- Cultural Programs Section -->
-<section class="programs-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title"><span class="title-accent">—</span> Cultural Programs</h2>
-      <p class="section-subtitle">Connecting students to their heritage through language, tradition, and community</p>
-    </div>
-
-    <div class="programs-grid">
-      <div class="program-card">
-        <div class="program-icon sage">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-        </div>
-        <h3>Oji-Cree Language Program</h3>
-        <p>
-          Our Oji-Cree Language Program invites students to learn and celebrate the Oji-Cree language through daily classes led by Ms. Brenda with guidance from community Elders. Students actively speak, repeat, and practice conversational and traditional vocabulary through interactive lessons, storytelling, and hands-on learning methods that honor our culture and heritage.
-        </p>
-      </div>
-
-      <div class="program-card">
-        <div class="program-icon red">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <circle cx="12" cy="12" r="6"></circle>
-            <circle cx="12" cy="12" r="2"></circle>
-          </svg>
-        </div>
-        <h3>Traditional Drumming & Hoop Dancing</h3>
-        <p>
-          Every two weeks, Orville Councillor brings rich cultural learning into the school. During the day, he teaches culture and language connected to drumming and dance. After school, students and community youth gather to learn traditional drumming, singing, rhythms, and hoop dancing — building confidence, community connection, and cultural pride.
-        </p>
-      </div>
-
-      <div class="program-card">
-        <div class="program-icon green">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
-            <path d="M6 8H5a4 4 0 1 0 0 8h1"></path>
-            <path d="M12 17v4"></path>
-            <path d="M12 3v4"></path>
-            <circle cx="12" cy="12" r="4"></circle>
-          </svg>
-        </div>
-        <h3>Land-Based Learning</h3>
-        <p>
-          At HCMS we partner with Choose Life and community members to bring learning out onto the land. Students gain real-world skills including snare setting, fishing, boating, and other traditional outdoor activities that strengthen their connection to nature, survival skills, and Indigenous ways of knowing.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Academic Programs Section -->
-<section class="programs-section programs-section-alt">
+<section class="programs-section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title"><span class="title-accent">—</span> Academic Programs</h2>
