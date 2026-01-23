@@ -6379,3 +6379,282 @@ a:hover {
     text-align: left;
   }
 }
+
+/* ========================================
+   HERITAGE PAGE - NEW SECTIONS
+   ======================================== */
+
+/* Our Land Section */
+.land-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.land-intro {
+  font-size: var(--text-lg);
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  color: var(--text-dark);
+}
+
+.land-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.land-card {
+  text-align: center;
+  padding: var(--space-xl);
+  background: var(--bg-400);
+  border-radius: var(--radius-xl);
+}
+
+.heritage-section-alt .land-card {
+  background: var(--white);
+}
+
+.land-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--primary-100);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  color: var(--white);
+}
+
+.land-card h4 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.land-card p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Seasons Grid */
+.seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.season-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  border-top: 4px solid var(--primary-100);
+}
+
+.season-card.fall {
+  border-top-color: #D97706;
+}
+
+.season-card.winter {
+  border-top-color: #3B82F6;
+}
+
+.season-card.spring {
+  border-top-color: #10B981;
+}
+
+.season-card.summer {
+  border-top-color: #F59E0B;
+}
+
+.season-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.season-icon {
+  font-size: 1.5rem;
+}
+
+.season-card h3 {
+  color: var(--text-dark);
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+.season-card p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* Oji-Cree Words */
+.language-words {
+  margin-top: var(--space-2xl);
+  text-align: center;
+}
+
+.language-words h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-lg);
+}
+
+.words-grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.word-card {
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
+  color: var(--white);
+  padding: var(--space-xl) var(--space-2xl);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  min-width: 180px;
+}
+
+.word-ojicree {
+  display: block;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.word-english {
+  display: block;
+  font-size: var(--text-sm);
+  opacity: 0.9;
+}
+
+/* History Timeline */
+.history-timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: var(--space-2xl);
+}
+
+.history-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary-100);
+  border-radius: 3px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--space-xl);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: calc(-1 * var(--space-2xl) + 1px);
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  background: var(--primary-100);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+.timeline-content {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.timeline-year {
+  display: inline-block;
+  background: var(--primary-100);
+  color: var(--white);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Community Highlights */
+.community-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.community-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.community-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.community-card h4 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.community-card p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* Heritage New Sections Responsive */
+@media (max-width: 1024px) {
+  .seasons-grid,
+  .community-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .land-features {
+    grid-template-columns: 1fr;
+  }
+
+  .seasons-grid,
+  .community-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .words-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .word-card {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .history-timeline {
+    padding-left: var(--space-xl);
+  }
+
+  .timeline-marker {
+    left: calc(-1 * var(--space-xl) + 1px);
+  }
+}
