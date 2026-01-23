@@ -350,17 +350,17 @@ a:hover {
 
 .nav-list {
   display: flex;
-  gap: 2px;
+  gap: var(--space-xs);
   list-style: none;
   align-items: center;
 }
 
 .nav-link {
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
-  padding: var(--space-xs) var(--space-sm);
+  padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
   position: relative;
@@ -375,40 +375,6 @@ a:hover {
 .nav-link.active {
   color: var(--white);
   background: rgba(255, 255, 255, 0.2);
-}
-
-/* Search Bar */
-.header-search {
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-full);
-  padding: var(--space-xs) var(--space-md);
-  gap: var(--space-xs);
-  transition: all var(--transition-fast);
-}
-
-.header-search:focus-within {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.header-search input {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--white);
-  font-size: var(--text-sm);
-  width: 100px;
-}
-
-.header-search input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.header-search svg {
-  width: 16px;
-  height: 16px;
-  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Student Portal Button */
@@ -1678,11 +1644,7 @@ a:hover {
 @media (max-width: 1400px) {
   .nav-link {
     padding: var(--space-xs) 0.5rem;
-    font-size: 0.75rem;
-  }
-
-  .header-search {
-    display: none;
+    font-size: 0.8rem;
   }
 }
 
@@ -6656,5 +6618,242 @@ a:hover {
 
   .timeline-marker {
     left: calc(-1 * var(--space-xl) + 1px);
+  }
+}
+
+/* ===========================================
+   CAREERS/JOIN OUR TEAM PAGE STYLES
+   =========================================== */
+
+.careers-intro {
+  text-align: center;
+  padding: var(--space-2xl) 0;
+}
+
+.careers-section {
+  padding: var(--space-2xl) 0;
+}
+
+.careers-section-alt {
+  background: linear-gradient(180deg, var(--cream-100) 0%, var(--cream-200) 100%);
+}
+
+/* Benefits Grid */
+.careers-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.benefit-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.benefit-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
+  color: var(--white);
+}
+
+.benefit-icon.green {
+  background: linear-gradient(135deg, var(--secondary-100) 0%, var(--secondary-200) 100%);
+}
+
+.benefit-icon.orange {
+  background: linear-gradient(135deg, var(--accent-100) 0%, var(--accent-200) 100%);
+}
+
+.benefit-card h3 {
+  color: var(--text-dark);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.benefit-card p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* Opportunities List */
+.opportunities-list {
+  max-width: 800px;
+  margin: 0 auto var(--space-xl);
+}
+
+.opportunity-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+  border-left: 4px solid var(--primary-100);
+}
+
+.opportunity-card.opportunity-placeholder {
+  border-left-color: var(--text-light);
+  background: var(--cream-100);
+}
+
+.opportunity-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-100);
+  color: var(--white);
+  border-radius: var(--radius-md);
+}
+
+.opportunity-placeholder .opportunity-icon {
+  background: var(--text-light);
+}
+
+.opportunity-content h3 {
+  color: var(--text-dark);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.opportunity-content p {
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.opportunity-content .btn {
+  margin-top: var(--space-sm);
+}
+
+.opportunities-note {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.opportunities-note p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* How to Apply Steps */
+.apply-steps {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.apply-step {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  position: relative;
+}
+
+.apply-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  bottom: -20px;
+  width: 2px;
+  background: var(--primary-100);
+  opacity: 0.3;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-100);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  border-radius: var(--radius-full);
+}
+
+.step-content h3 {
+  color: var(--text-dark);
+  font-size: var(--text-md);
+  margin-bottom: var(--space-xs);
+}
+
+.step-content p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Partner Recruitment Grid */
+.partner-recruitment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.partner-recruitment-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.partner-recruitment-card h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.partner-recruitment-card p {
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+}
+
+/* Careers Page Responsive */
+@media (max-width: 1024px) {
+  .careers-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .partner-recruitment-grid {
+    grid-template-columns: 1fr;
   }
 }
