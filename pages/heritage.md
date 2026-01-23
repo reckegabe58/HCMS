@@ -23,6 +23,99 @@ subtitle: Language, culture, and connection to the land
   </div>
 </section>
 
+<!-- Our Land Section -->
+<section class="heritage-section heritage-land">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title"><span class="title-accent">—</span> Our Land</h2>
+      <p class="section-subtitle">The rivers, forests, and waters that sustain us</p>
+    </div>
+
+    <div class="land-content">
+      <p class="land-intro">
+        Marten Falls First Nation sits at the intersection of the <strong>Ogoki and Albany Rivers</strong> — the mighty waters that have sustained our people for generations. Our traditional territory spans forests of White Spruce, Cedar, Balsam, Pine, and Tamarack, home to abundant wildlife that provides for our community.
+      </p>
+
+      <div class="land-features">
+        <div class="land-card">
+          <div class="land-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h4>The Waters</h4>
+          <p>Pickerel, trout, pike, whitefish, and sturgeon fill our rivers and lakes</p>
+        </div>
+        <div class="land-card">
+          <div class="land-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+              <path d="M6 8H5a4 4 0 1 0 0 8h1"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+          </div>
+          <h4>The Forests</h4>
+          <p>White Spruce, Cedar, Balsam, Pine, and Tamarack shelter our land</p>
+        </div>
+        <div class="land-card">
+          <div class="land-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a7 7 0 0 0 0 14 7 7 0 0 0 0-14z"></path>
+            </svg>
+          </div>
+          <h4>The Animals</h4>
+          <p>Moose, caribou, bears, beavers, and martens roam our territory</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seasonal Cycle Section -->
+<section class="heritage-section heritage-section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title"><span class="title-accent">—</span> Living with the Seasons</h2>
+      <p class="section-subtitle">Our cultural activities follow the rhythm of the land</p>
+    </div>
+
+    <div class="seasons-grid">
+      <div class="season-card fall">
+        <div class="season-header">
+          <span class="season-icon">🍂</span>
+          <h3>Fall</h3>
+        </div>
+        <p>Moose hunting begins, along with beaver trapping and harvesting fur-bearing animals. The community prepares for the long winter ahead.</p>
+      </div>
+
+      <div class="season-card winter">
+        <div class="season-header">
+          <span class="season-icon">❄️</span>
+          <h3>Winter</h3>
+        </div>
+        <p>Trapping continues — mink, marten, and rabbit. Hides are prepared for gauntlets and mitts. This is the time for <strong>storytelling</strong>, learning rites of passage, values, and legends passed down through generations.</p>
+      </div>
+
+      <div class="season-card spring">
+        <div class="season-header">
+          <span class="season-icon">🌱</span>
+          <h3>Spring</h3>
+        </div>
+        <p>April brings <strong>geese and duck hunting</strong>. Elders teach youth how to clean game, keep it fresh, dry and preserve meat, and live off the land.</p>
+      </div>
+
+      <div class="season-card summer">
+        <div class="season-header">
+          <span class="season-icon">☀️</span>
+          <h3>Summer</h3>
+        </div>
+        <p>Fishing, boating, and camping on the land. The <strong>annual community Powwow</strong> takes place in the third week of August — a celebration of culture, dance, and togetherness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Oji-Cree Language Section -->
 <section class="heritage-section">
   <div class="container">
@@ -46,6 +139,21 @@ subtitle: Language, culture, and connection to the land
         </p>
         <div class="heritage-contact">
           <strong>Language Teacher:</strong> Ms. Brenda
+        </div>
+      </div>
+    </div>
+
+    <!-- Oji-Cree Words -->
+    <div class="language-words">
+      <h3>Learn Some Oji-Cree</h3>
+      <div class="words-grid">
+        <div class="word-card">
+          <span class="word-ojicree">Boozhoo</span>
+          <span class="word-english">Hello / Welcome</span>
+        </div>
+        <div class="word-card">
+          <span class="word-ojicree">Miigwech</span>
+          <span class="word-english">Thank you</span>
         </div>
       </div>
     </div>
@@ -114,8 +222,49 @@ subtitle: Language, culture, and connection to the land
   </div>
 </section>
 
-<!-- Our Elders Section -->
+<!-- Our History Section -->
 <section class="heritage-section heritage-section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title"><span class="title-accent">—</span> Our History</h2>
+      <p class="section-subtitle">A story that spans generations</p>
+    </div>
+
+    <div class="history-timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">1600s</span>
+          <p>Our history dates back to the inland movement of the fur trade era. Marten Falls becomes an important location for travel and trade.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">1794</span>
+          <p>Marten Falls serves as a valuable supply depot for people travelling inland. Boats and canoes are built here, making it the main post for the district.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">1905</span>
+          <p>Marten Falls First Nation becomes a signatory of <strong>James Bay Treaty 9</strong>, affirming our rights and relationship with the Crown.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-year">1926</span>
+          <p>The community settles at its current location along the Albany River, where we continue to live, learn, and thrive today.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Elders Section -->
+<section class="heritage-section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title"><span class="title-accent">—</span> Guidance from Elders</h2>
@@ -136,6 +285,39 @@ subtitle: Language, culture, and connection to the land
         <p>
           We are grateful for the Elders who visit our school, share meals with students, and pass on the knowledge that has sustained our people for generations.
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Community Life Section -->
+<section class="heritage-section heritage-section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title"><span class="title-accent">—</span> Community Life</h2>
+      <p class="section-subtitle">Where tradition meets everyday life</p>
+    </div>
+
+    <div class="community-highlights">
+      <div class="community-card">
+        <div class="community-icon">🏒</div>
+        <h4>Hockey</h4>
+        <p>Hockey is a huge part of our community. The indoor arena hosts games evenings and weekends during winter, and floor hockey, volleyball, and Powwows in summer.</p>
+      </div>
+      <div class="community-card">
+        <div class="community-icon">🛷</div>
+        <h4>Outdoor Life</h4>
+        <p>Snowmobiling, hunting, fishing, and camping are part of everyday life. The Albany River offers canoeing and white-water rafting adventures.</p>
+      </div>
+      <div class="community-card">
+        <div class="community-icon">🪶</div>
+        <h4>Annual Powwow</h4>
+        <p>Every August, the community comes together for the annual Powwow — a celebration of culture, dance, drumming, and community spirit.</p>
+      </div>
+      <div class="community-card">
+        <div class="community-icon">🍲</div>
+        <h4>Community Feasts</h4>
+        <p>Throughout the year, community feasts bring everyone together to share food, stories, and connection. Everyone is welcome to participate.</p>
       </div>
     </div>
   </div>
