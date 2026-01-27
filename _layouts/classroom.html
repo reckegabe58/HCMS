@@ -2,7 +2,47 @@
 layout: default
 ---
 
-<!-- Classroom Hero Section -->
+{% if page.hero_carousel and page.photos and page.photos.size > 0 %}
+<!-- Hero Carousel Mode -->
+<section class="classroom-hero-carousel">
+  <div class="hero-carousel-wrapper">
+    {% include photo-carousel.html photos=page.photos interval=5000 %}
+    <div class="hero-carousel-overlay">
+      <div class="container">
+        <a href="{{ '/classrooms/' | relative_url }}" class="back-link back-link-light">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"></path>
+            <path d="m12 19-7-7 7-7"></path>
+          </svg>
+          Back to All Classrooms
+        </a>
+
+        <div class="hero-carousel-content">
+          <div class="classroom-hero-badge classroom-badge-{{ page.color | default: 'green' }}">
+            {{ page.grade }}
+          </div>
+
+          <h1 class="classroom-hero-title">{{ page.title }}</h1>
+
+          <div class="classroom-teachers-hero">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>
+              {% for teacher in page.teachers %}
+                {{ teacher }}{% unless forloop.last %} & {% endunless %}
+              {% endfor %}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% else %}
+<!-- Standard Hero Section -->
 <section class="classroom-hero-simple">
   <div class="container">
     <a href="{{ '/classrooms/' | relative_url }}" class="back-link">
@@ -42,6 +82,7 @@ layout: default
     </div>
   </div>
 </section>
+{% endif %}
 {% endif %}
 
 <!-- Classroom Content - Two Column Layout -->
