@@ -2750,6 +2750,18 @@ a:hover {
   margin-bottom: var(--space-xl);
 }
 
+.google-form-container {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.google-form-container iframe {
+  display: block;
+  min-height: 900px;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;

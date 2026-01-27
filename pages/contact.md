@@ -24,50 +24,18 @@ subtitle: We'd love to hear from you
         <h2 class="form-title">Send Us a Message</h2>
         <p class="form-intro">Fill out the form below and we'll get back to you as soon as possible.</p>
 
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name <span class="required">*</span></label>
-              <input type="text" id="name" name="name" required placeholder="Your name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="(807) 000-0000">
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject <span class="required">*</span></label>
-              <select id="subject" name="subject" required>
-                <option value="">Select a subject...</option>
-                <option value="general">General Inquiry</option>
-                <option value="enrollment">Student Enrollment</option>
-                <option value="staff">Staff/Employment</option>
-                <option value="programs">Programs & Activities</option>
-                <option value="volunteer">Volunteering</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message <span class="required">*</span></label>
-            <textarea id="message" name="message" rows="6" required placeholder="Your message here"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-accent btn-submit">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m22 2-7 20-4-9-9-4Z"></path>
-              <path d="M22 2 11 13"></path>
-            </svg>
-            Send Message
-          </button>
-        </form>
+        <div class="google-form-container">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSefNWnNr5PGuMLKCuXkmHDHGd3IfJQLvyYIa7lBL4uYSKetLw/viewform?embedded=true"
+            width="100%"
+            height="1078"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Contact Form">
+            Loading…
+          </iframe>
+        </div>
 
         <!-- Form Instructions -->
         <div class="form-note">
