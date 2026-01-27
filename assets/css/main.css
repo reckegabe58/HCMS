@@ -4147,6 +4147,29 @@ a:hover {
   box-shadow: var(--shadow-lg);
 }
 
+/* Newsletter Download Button - Smaller */
+.newsletter-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--text-xs);
+  background: var(--primary-100);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.newsletter-download-btn:hover {
+  background: var(--primary-200);
+}
+
+.newsletter-download-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
 .newsletter-thumbnail {
   border-radius: var(--radius-md);
   overflow: hidden;

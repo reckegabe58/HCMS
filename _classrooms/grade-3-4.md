@@ -7,13 +7,16 @@ teachers:
 color: green
 order: 4
 room: Room 201
-students: 16
+students: 11
 hero_image: /assets/images/carousel/slide-4.jpg
 # Newsletter folder - files are auto-detected from this location
 # Just add files named: YYYY-MM-newsletter.pdf (or .png, .jpg)
 newsletter_folder: grade-3-4
 hero_carousel: true
 photos: []
+teacher_emails:
+  - name: Mr. Gabe
+    email: reckegabe@gmail.com
 subjects:
   - name: Language Arts
     description: Advancing reading comprehension, writing across genres, and oral communication.
@@ -73,14 +76,6 @@ Students explore their place in wider communities:
 - **Ontario Communities** - comparing urban, rural, and Indigenous communities
 - **First Nations History** - Oji-Cree history and the treaties that shape our lives
 - **Geographic Inquiry** - mapping skills and understanding our region
-
-## Homework Policy
-
-Grade 3/4 students receive regular homework to reinforce classroom learning:
-- **Reading** - 20-30 minutes of independent reading nightly
-- **Math** - practice sheets or problems 2-3 times weekly
-- **Spelling** - weekly word lists for study
-- **Projects** - occasional longer-term projects with clear timelines
 
 ## Special Programs
 
