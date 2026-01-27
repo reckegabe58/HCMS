@@ -77,6 +77,28 @@ Students explore their place in wider communities:
 - **First Nations History** - Oji-Cree history and the treaties that shape our lives
 - **Geographic Inquiry** - mapping skills and understanding our region
 
+## How Families Can Support Learning at Home
+
+Every child grows at their own pace. This classroom is a safe place to build confidence, try new things, and celebrate progress—big and small.
+
+**Quick Tips for Families:**
+- **Different paces are normal** - Kids learn at their own speed, and that's expected here
+- **Short routines beat long sessions** - 10 minutes daily does more than an hour once a week
+- **Talking counts as learning** - Conversations about ideas help just as much as worksheets
+- **Reading aloud together counts** - Even for older kids!
+- **Ask your child to explain their thinking** - This builds understanding
+- **Encouragement matters more than perfection** - Progress over perfection, confidence before speed
+- **Some days are harder** - And that's completely normal
+
+**Learning Tools for Home:**
+
+Students can practice at home using these tools (they already know their logins):
+- **Lexia Core5** - Reading and language practice that adapts to your child's level ([lexiacore5.com](https://www.lexiacore5.com/))
+- **Symphony Math** - Foundational math that builds understanding step-by-step
+- **Mathletics** - Math practice to build confidence and fluency ([mathletics.com](https://sign-in.mathletics.com/))
+
+*Short, regular use is more helpful than long sessions.*
+
 ## Special Programs
 
 - **Reading Buddies** - Paired with younger students for weekly reading sessions
