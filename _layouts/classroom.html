@@ -165,7 +165,14 @@ layout: default
       <!-- Sidebar -->
       <aside class="classroom-sidebar">
 
-        <!-- Newsletter Card (Top of Sidebar) - Auto-detected from folder -->
+        <!-- Daily Schedule Widget (if enabled) -->
+        {% if page.show_daily_schedule %}
+        <div class="classroom-schedule-card">
+          {% include daily-schedule.html %}
+        </div>
+        {% endif %}
+
+        <!-- Newsletter Card - Auto-detected from folder -->
         {% if page.newsletter_folder %}
         <div class="classroom-newsletter-card">
           {% include newsletter-auto.html folder=page.newsletter_folder %}

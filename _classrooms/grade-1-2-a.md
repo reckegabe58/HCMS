@@ -4,89 +4,102 @@ title: Grade 1/2 Class A
 grade: "1-2"
 teachers:
   - Ms. Verna
-  - Ms. Meaghan
+  - Ms. Meagan
 color: blue
 order: 2
 room: Room 102
 students: 14
 hero_image: /assets/images/carousel/slide-2.jpg
-# Newsletter folder - files are auto-detected from this location
 newsletter_folder: grade-1-2-a
+show_daily_schedule: true
 subjects:
   - name: Language Arts
-    description: Developing reading fluency, writing skills, and a love for storytelling.
+    description: Reading, writing, phonics, and language development through whole-group, small-group, and independent activities.
     icon: book
   - name: Mathematics
-    description: Building number sense, addition, subtraction, and problem-solving skills.
+    description: Number sense, problem-solving, and math thinking through hands-on learning and guided instruction.
     icon: calculator
-  - name: Oji-Cree Language
-    description: Expanding vocabulary and conversational skills in our ancestral language.
-    icon: message
-  - name: Science & Nature
-    description: Exploring the natural world through observation, experiments, and land-based learning.
+  - name: Science
+    description: Exploring the world through observation, questions, and simple experiments.
     icon: flask
   - name: Social Studies
-    description: Learning about our community, families, and Oji-Cree history and traditions.
+    description: Learning about community, traditions, and caring for one another and the environment.
     icon: globe
-  - name: Arts & Culture
-    description: Traditional and contemporary art, music, and cultural expressions.
-    icon: palette
+  - name: Native Language
+    description: Taught by Ms. Brenda, focusing on language development and cultural learning.
+    icon: message
+  - name: Culture
+    description: Taught by Mr. Orville, helping students connect with traditions, identity, and community.
+    icon: tree
 ---
 
-**Aaniin! Welcome to Grade 1/2 Class A!**
+**Welcome to our Grade 1/2 classroom!**
 
-We're Ms. Verna and Ms. Meaghan, and we're thrilled to guide your children through this exciting stage of their learning journey. In our classroom, students build on their Kindergarten foundations while developing stronger academic skills and deeper cultural connections.
+Our class theme is **"Never Stop Growing."** We believe that learning is a journey, and every child grows in their own unique way.
 
-## Our Teaching Approach
+In our classroom, students are encouraged to try new things, learn from mistakes, and grow academically, socially, and emotionally. We also incorporate the Seven Sacred Teachings to guide students in becoming kind, respectful, and responsible community members.
 
-Our multi-grade classroom allows us to meet each student where they are while fostering a supportive learning community. Grade 1 and Grade 2 students learn together, with older students often helping younger ones—a practice that reflects our community values of cooperation and mentorship.
+## Class Motto
 
-We integrate Oji-Cree language and culture throughout all subjects, making learning meaningful and connected to students' identities. Whether we're reading stories, solving math problems, or exploring science concepts, we find ways to incorporate traditional knowledge.
+*In Grade 1/2, we learn, we try, and we never stop growing.*
 
-## What Students Will Learn
+## What Makes Our Class Special
 
-### Language Arts
-- Phonics and word recognition
-- Reading comprehension strategies
-- Creative and journal writing
-- Oral storytelling in English and Oji-Cree
+Our classroom is a safe and welcoming space where students are encouraged to be themselves, take risks in their learning, and grow at their own pace.
 
-### Mathematics
-- Number operations to 100 (Grade 1) and 1000 (Grade 2)
-- Addition and subtraction strategies
-- Telling time and counting money
-- Shapes, patterns, and measurement
+We look forward to working together with families to support each child's growth this year.
 
-### Science & Land-Based Learning
-- Seasonal changes in our environment
-- Animals and plants of our region
-- Traditional ecological knowledge
-- Hands-on experiments and observations
+## Subjects We Teach
 
-## Classroom Expectations
+### Language Arts / Literacy
+Reading, writing, phonics, and language development through whole-group, small-group, and independent activities. Students also use **Lexia**, **ABC Duo Linguo**, and **Raz-Kids** for additional support.
 
-We follow the Seven Grandfather Teachings in our classroom:
-- **Respect** - We treat others the way we want to be treated
-- **Love** - We show kindness to all living things
-- **Honesty** - We tell the truth and do our own work
-- **Bravery** - We try new things even when they're hard
-- **Wisdom** - We think before we act
-- **Humility** - We know we can always learn more
-- **Truth** - We stay true to who we are
+### Math
+Number sense, problem-solving, and math thinking through hands-on learning and guided instruction, supported by **Symphony Math** and **IXL**.
 
-## Important Information
+### Science
+Exploring the world through observation, questions, and simple experiments.
 
-**Homework:** Students receive weekly homework packets on Mondays, due Friday. This includes reading practice, spelling words, and math review.
+### Social Studies
+Learning about community, traditions, and caring for one another and the environment.
 
-**Supplies:** Please ensure your child comes to school with:
-- Backpack
-- Water bottle
-- Indoor shoes
-- Warm outdoor clothes (we go outside daily!)
+### Native Language
+Taught by Ms. Brenda (in person and virtual), focusing on language development and cultural learning.
 
-**Communication:** We send home a classroom newsletter at the beginning of each month and communicate through the agenda book daily.
+### Culture
+Taught by Mr. Orville, helping students connect with traditions, identity, and community.
 
-We're honored to be part of your child's educational journey!
+### Physical Education
+Building movement skills, healthy habits, and teamwork through games and activities.
+
+### Music
+Taught by Mr. Felipe (in person and virtual), focusing on singing, rhythm, listening, and musical expression.
+
+### Art
+Creative projects that build fine-motor skills and self-expression.
+
+## How Families Can Support Learning at Home
+
+Families can support learning by:
+- Reading books sent home together regularly
+- Encouraging your child to use Lexia and Symphony Math at home
+- Talking about school learning and celebrating effort and progress
+- Supporting routines such as regular bedtime and morning preparation
+
+## Upcoming Dates
+
+**February 11** - 100th Day of School
+We will celebrate the 100th Day of School with special activities focused on counting, creativity, and fun learning.
+
+**February 13** - Valentine's Day
+Students will spend the afternoon celebrating Valentine's Day with their families in our classroom.
+
+## Contact Information
+
+Families are welcome to reach out with questions or concerns.
+
+- **Ms. Verna:** vernaruthp@gmail.com
+- **Ms. Meagan:** meagan.washburn@martenfalls.com
 
 **Miigwech!**
-*Ms. Verna & Ms. Meaghan*
+*Ms. Verna & Ms. Meagan*
