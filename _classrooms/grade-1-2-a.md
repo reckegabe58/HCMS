@@ -12,6 +12,35 @@ students: 14
 hero_image: /assets/images/carousel/slide-2.jpg
 newsletter_folder: grade-1-2-a
 show_daily_schedule: true
+photos:
+  - src: /assets/images/classrooms/grade-1-2-a/IMG_4719.JPG
+    alt: Grade 1/2 classroom
+  - src: /assets/images/classrooms/grade-1-2-a/image0.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image1.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image2.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image3.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image6.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image9.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image11.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image14.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image15.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image16.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image19.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image21.jpeg
+    alt: Classroom activities
+  - src: /assets/images/classrooms/grade-1-2-a/image23.jpeg
+    alt: Classroom activities
 subjects:
   - name: Language Arts
     description: Reading, writing, phonics, and language development through whole-group, small-group, and independent activities.
