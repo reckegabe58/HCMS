@@ -6638,6 +6638,599 @@ a:hover {
 }
 
 /* ===========================================
+   HERITAGE PAGE - REDESIGNED LAYOUT
+   =========================================== */
+
+/* Heritage Hero Section */
+.heritage-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
+  padding: var(--space-3xl) 0;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.heritage-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.heritage-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heritage-hero-content h1 {
+  color: var(--white);
+  font-size: 3.5rem;
+  margin: var(--space-md) 0;
+}
+
+.heritage-hero-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.heritage-hero-words {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.hero-word {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: var(--space-lg) var(--space-xl);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  min-width: 160px;
+}
+
+.hero-word-ojicree {
+  display: block;
+  color: var(--white);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.hero-word-english {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--text-sm);
+}
+
+/* Quote Banner */
+.heritage-quote {
+  background: var(--cream-100);
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--cream-200);
+}
+
+.heritage-quote blockquote {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heritage-quote blockquote p {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Section Label */
+.section-label {
+  display: inline-block;
+  background: var(--primary-100);
+  color: var(--white);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-md);
+}
+
+.section-label.light {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.section-header.centered {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.section-header.centered h2 {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Land Feature Section */
+.heritage-land-feature {
+  padding: var(--space-3xl) 0;
+}
+
+.land-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.land-feature-content h2 {
+  font-size: var(--text-3xl);
+  color: var(--text-dark);
+  margin-bottom: var(--space-lg);
+}
+
+.land-feature-intro {
+  font-size: var(--text-lg);
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.land-feature-content > p {
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.land-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.land-feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--bg-400);
+  border-radius: var(--radius-lg);
+}
+
+.land-feature-icon {
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: var(--radius-md);
+}
+
+.land-feature-item strong {
+  display: block;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.land-feature-item span {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.land-feature-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.land-visual-card {
+  aspect-ratio: 1;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.land-visual-card span {
+  color: var(--white);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.land-visual-rivers {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+  grid-column: span 2;
+  aspect-ratio: 2/1;
+}
+
+.land-visual-albany {
+  background: linear-gradient(135deg, #2d5a87 0%, #4a7fa8 100%);
+  grid-column: span 2;
+  aspect-ratio: 2/1;
+}
+
+/* Seasons Visual Grid */
+.heritage-seasons {
+  padding: var(--space-3xl) 0;
+  background: var(--bg-400);
+}
+
+.seasons-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.season-visual-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base);
+}
+
+.season-visual-card:hover {
+  transform: translateY(-4px);
+}
+
+.season-visual-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.season-visual-card.fall::before { background: #D97706; }
+.season-visual-card.winter::before { background: #3B82F6; }
+.season-visual-card.spring::before { background: #10B981; }
+.season-visual-card.summer::before { background: #F59E0B; }
+
+.season-visual-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.season-visual-card h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.season-visual-card p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* Cultural Pillars */
+.heritage-pillars {
+  padding: var(--space-3xl) 0;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.pillar-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pillar-card.featured {
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
+  color: var(--white);
+}
+
+.pillar-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background: var(--bg-400);
+  color: var(--primary-100);
+}
+
+.pillar-icon.blue { background: rgba(59, 130, 246, 0.1); color: #3B82F6; }
+.pillar-icon.red { background: rgba(255, 255, 255, 0.2); color: var(--white); }
+.pillar-icon.green { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+
+.pillar-card h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.pillar-card.featured h3 {
+  color: var(--white);
+}
+
+.pillar-card p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.pillar-card.featured p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pillar-teacher {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background: var(--bg-400);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.pillar-card.featured .pillar-teacher {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+/* History Horizontal Timeline */
+.heritage-history {
+  padding: var(--space-3xl) 0;
+  background: var(--bg-400);
+}
+
+.history-horizontal {
+  position: relative;
+  padding-top: var(--space-2xl);
+}
+
+.history-line {
+  position: absolute;
+  top: calc(var(--space-2xl) + 60px);
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-100);
+  border-radius: 2px;
+}
+
+.history-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.history-card {
+  text-align: center;
+  position: relative;
+}
+
+.history-year {
+  display: inline-block;
+  background: var(--primary-100);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.history-dot {
+  width: 20px;
+  height: 20px;
+  background: var(--white);
+  border: 4px solid var(--primary-100);
+  border-radius: 50%;
+  margin: 0 auto var(--space-lg);
+}
+
+.history-card p {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Split Section */
+.heritage-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.heritage-split-left {
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
+  padding: var(--space-3xl);
+  display: flex;
+  align-items: center;
+}
+
+.heritage-split-right {
+  background: var(--cream-100);
+  padding: var(--space-3xl);
+  display: flex;
+  align-items: center;
+}
+
+.heritage-split-content {
+  max-width: 500px;
+}
+
+.heritage-split-left h2,
+.heritage-split-left p {
+  color: var(--white);
+}
+
+.heritage-split-left p {
+  opacity: 0.9;
+  margin-bottom: var(--space-md);
+}
+
+.heritage-split-right h2 {
+  color: var(--text-dark);
+  margin-bottom: var(--space-lg);
+}
+
+.community-mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.community-mini-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--white);
+  border-radius: var(--radius-md);
+}
+
+.community-mini-item span {
+  font-size: 1.5rem;
+}
+
+.community-mini-item strong {
+  color: var(--text-dark);
+  font-size: var(--text-sm);
+}
+
+/* Values Bar */
+.heritage-values-bar {
+  background: var(--text-dark);
+  padding: var(--space-xl) 0;
+}
+
+.heritage-values-bar h3 {
+  color: var(--white);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  font-size: var(--text-lg);
+}
+
+.values-bar-grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.value-bar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.value-bar-item svg {
+  color: var(--accent-gold);
+}
+
+.value-bar-item strong {
+  color: var(--white);
+}
+
+/* Heritage Redesign Responsive */
+@media (max-width: 1024px) {
+  .land-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .land-feature-visual {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .seasons-visual-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .history-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .history-line {
+    display: none;
+  }
+
+  .heritage-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .heritage-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .heritage-hero-words {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-word {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .heritage-quote blockquote p {
+    font-size: var(--text-lg);
+  }
+
+  .seasons-visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .community-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-bar-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+}
+
+/* ===========================================
    CAREERS/JOIN OUR TEAM PAGE STYLES
    =========================================== */
 
