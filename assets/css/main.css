@@ -6382,6 +6382,72 @@ a:hover {
 }
 
 /* ========================================
+   COMMUNITY VIDEO SECTION
+   ======================================== */
+
+.community-video-section {
+  background: linear-gradient(135deg, #2d5a3d 0%, #1a3d2a 100%);
+  padding: var(--space-2xl) 0;
+}
+
+.video-section-content {
+  text-align: center;
+}
+
+.video-section-header {
+  margin-bottom: var(--space-xl);
+}
+
+.video-section-header .heritage-badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.video-section-header h2 {
+  color: var(--white);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.video-section-header p {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .community-video-section {
+    padding: var(--space-xl) 0;
+  }
+
+  .video-section-header h2 {
+    font-size: var(--text-xl);
+  }
+}
+
+/* ========================================
    HERITAGE PAGE - NEW SECTIONS
    ======================================== */
 
