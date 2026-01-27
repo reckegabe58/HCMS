@@ -12,6 +12,8 @@ hero_image: /assets/images/carousel/slide-4.jpg
 # Newsletter folder - files are auto-detected from this location
 # Just add files named: YYYY-MM-newsletter.pdf (or .png, .jpg)
 newsletter_folder: grade-3-4
+hero_carousel: true
+photos: []
 subjects:
   - name: Language Arts
     description: Advancing reading comprehension, writing across genres, and oral communication.

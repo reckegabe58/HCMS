@@ -7622,6 +7622,109 @@ a:hover {
 }
 
 /* ========================================
+   Hero Carousel Mode
+   ======================================== */
+
+.classroom-hero-carousel {
+  position: relative;
+  margin-top: calc(-1 * var(--navbar-height));
+  padding-top: var(--navbar-height);
+}
+
+.hero-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.hero-carousel-wrapper .photo-carousel {
+  border-radius: 0;
+}
+
+.hero-carousel-wrapper .carousel-viewport {
+  aspect-ratio: 21 / 9;
+  min-height: 400px;
+  max-height: 550px;
+}
+
+.hero-carousel-wrapper .carousel-indicators {
+  bottom: var(--space-xl);
+}
+
+.hero-carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-xl) 0;
+  pointer-events: none;
+}
+
+.hero-carousel-overlay .container {
+  pointer-events: auto;
+}
+
+.hero-carousel-overlay .back-link-light {
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.hero-carousel-overlay .back-link-light:hover {
+  opacity: 1;
+}
+
+.hero-carousel-content {
+  position: absolute;
+  bottom: var(--space-2xl);
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.hero-carousel-content .classroom-hero-badge {
+  margin-bottom: var(--space-sm);
+}
+
+.hero-carousel-content .classroom-hero-title {
+  color: var(--white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-carousel-content .classroom-teachers-hero {
+  color: var(--white);
+  opacity: 0.95;
+}
+
+.hero-carousel-content .classroom-teachers-hero svg {
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .hero-carousel-wrapper .carousel-viewport {
+    aspect-ratio: 16 / 10;
+    min-height: 300px;
+  }
+
+  .hero-carousel-content {
+    bottom: var(--space-xl);
+  }
+
+  .hero-carousel-content .classroom-hero-title {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* ========================================
    Gallery Feature Section (Full Width)
    ======================================== */
 
