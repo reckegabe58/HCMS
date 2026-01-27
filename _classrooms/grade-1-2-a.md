@@ -12,7 +12,7 @@ students: 14
 hero_image: /assets/images/carousel/slide-2.jpg
 newsletter_folder: grade-1-2-a
 show_daily_schedule: true
-hero_carousel: true
+hero_carousel: false
 photos:
   - src: /assets/images/classrooms/grade-1-2-a/IMG_4719.JPG
     alt: Grade 1/2 classroom
