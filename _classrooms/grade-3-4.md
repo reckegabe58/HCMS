@@ -18,21 +18,27 @@ teacher_emails:
   - name: Mr. Gabe
     email: reckegabe@gmail.com
 subjects:
-  - name: Language Arts
-    description: Advancing reading comprehension, writing across genres, and oral communication.
+  - name: Oji-Cree Language
+    description: Intermediate language skills with focus on reading, writing, syllabics, and traditional storytelling.
+    icon: message
+  - name: Language
+    description: Reading comprehension, writing across genres, oral communication, and media literacy aligned with Ontario curriculum.
     icon: book
   - name: Mathematics
-    description: Multiplication, division, fractions, and multi-step problem solving.
+    description: Multiplication, division, fractions, measurement, geometry, and multi-step problem solving.
     icon: calculator
-  - name: Oji-Cree Language
-    description: Intermediate language skills with focus on reading, writing, and storytelling.
-    icon: message
-  - name: Science
-    description: Investigating forces, habitats, and the natural world through inquiry.
+  - name: Science & Technology
+    description: STEM skills, life systems, matter and energy, structures, and Earth/space systems through hands-on inquiry.
     icon: flask
   - name: Social Studies
-    description: Ontario communities, First Nations history, and geographic concepts.
+    description: Communities in Canada, First Nations history, and People and Environments studies.
     icon: globe
+  - name: Health & Physical Education
+    description: Physical literacy, mental health and well-being, healthy relationships, and active living.
+    icon: heart
+  - name: The Arts
+    description: Visual arts, music, drama, and dance with connections to Oji-Cree cultural expression.
+    icon: palette
   - name: Land-Based Learning
     description: Traditional skills including trapping basics, plant identification, and seasonal activities.
     icon: tree
@@ -48,34 +54,67 @@ In Grade 3/4, students take on more responsibility for their learning while stil
 
 ## Academic Focus Areas
 
-### Language Arts
-Grade 3/4 is when reading really takes off! We focus on:
-- **Comprehension strategies** - making predictions, asking questions, making connections
-- **Reading stamina** - building up to longer independent reading times
-- **Writing** - paragraph structure, personal narratives, reports, and creative writing
+### Oji-Cree Language (Native Language)
+Our Native Language program is central to who we are. Students develop:
+- **Syllabics** - reading and writing in Canadian Aboriginal Syllabics (ᑭᑭᓄᒪᑫᐃᐠ)
+- **Oral traditions** - listening to and retelling traditional stories from Elders
+- **Vocabulary building** - words for land, animals, seasons, family, and daily life
+- **Conversational skills** - greetings, instructions, and everyday phrases
+- **Cultural connections** - language tied to ceremonies, songs, and traditional practices
+- **Storytelling** - creating and sharing stories in Oji-Cree
+
+*Language carries our identity. Learning Oji-Cree connects students to their ancestors and community.*
+
+### Language (Ontario Curriculum)
+Language development is central to intellectual, social, and emotional growth. We focus on:
+- **Reading** - comprehension strategies, making predictions, asking questions, making connections
+- **Writing** - paragraph structure, personal narratives, reports, persuasive writing, and creative pieces
+- **Oral communication** - presentations, discussions, and active listening
+- **Media literacy** - understanding and creating media texts
 - **Grammar & conventions** - proper sentence structure, punctuation, and spelling
-- **Oral language** - presentations, discussions, and storytelling in both languages
 
 ### Mathematics
 Students develop computational fluency and mathematical reasoning:
-- **Multiplication & Division** - mastering basic facts and applying them
-- **Fractions** - understanding parts of a whole and comparing fractions
-- **Measurement** - length, mass, capacity, and area
-- **Geometry** - 2D and 3D shapes, angles, and symmetry
-- **Problem Solving** - multi-step word problems and real-world applications
+- **Number sense** - multiplication, division, and place value understanding
+- **Fractions** - understanding parts of a whole, comparing, and ordering fractions
+- **Measurement** - length, mass, capacity, area, and perimeter
+- **Geometry** - 2D and 3D shapes, angles, symmetry, and transformations
+- **Data literacy** - collecting, organizing, and interpreting data
+- **Problem solving** - multi-step word problems and real-world applications
 
-### Science & Land-Based Learning
-We integrate Western science with traditional ecological knowledge:
-- **Habitats & Communities** - studying local ecosystems
-- **Forces & Movement** - simple machines and physics concepts
-- **Plants & Animals** - identification, life cycles, and traditional uses
-- **Seasonal Activities** - participating in land-based learning throughout the year
+### Science & Technology
+We use a STEM-focused approach aligned with Ontario curriculum:
+- **Life systems** - habitats, communities, and local ecosystems
+- **Matter & energy** - light, sound, and properties of materials
+- **Structures & mechanisms** - pulleys, gears, and simple machines
+- **Earth & space systems** - rocks, minerals, and weather patterns
+- **STEM skills** - scientific inquiry, experimentation, and technological design
+
+We integrate traditional ecological knowledge throughout, connecting Western science with Oji-Cree understanding of the natural world.
 
 ### Social Studies
-Students explore their place in wider communities:
-- **Ontario Communities** - comparing urban, rural, and Indigenous communities
-- **First Nations History** - Oji-Cree history and the treaties that shape our lives
-- **Geographic Inquiry** - mapping skills and understanding our region
+Students explore communities past and present:
+- **Grade 3: Heritage and Identity** - Communities in Canada, 1780–1850
+- **Grade 3: People and Environments** - Living and Working in Ontario
+- **Grade 4: Heritage and Identity** - First Nations and Europeans in New France and Early Canada
+- **Grade 4: People and Environments** - Political and Physical Regions of Canada
+- **First Nations perspectives** - Oji-Cree history, treaties, and contemporary issues
+- **Geographic inquiry** - mapping skills and understanding our region
+
+### Health & Physical Education
+Building foundations for lifelong well-being:
+- **Physical literacy** - movement skills, active games, and sports
+- **Mental health** - coping strategies, emotional regulation, and resilience
+- **Healthy relationships** - communication, conflict resolution, and respect
+- **Personal safety** - online safety, substance awareness, and making safe choices
+- **Active living** - daily physical activity integrated with land-based learning
+
+### The Arts
+Encouraging creativity through multiple disciplines:
+- **Visual arts** - drawing, painting, and traditional Oji-Cree art forms
+- **Music** - singing, rhythm, and traditional drumming
+- **Drama** - storytelling, role-play, and performances
+- **Dance** - movement, traditional dance, and creative expression
 
 ## How Families Can Support Learning at Home
 
@@ -92,12 +131,14 @@ Every child grows at their own pace. This classroom is a safe place to build con
 
 **Learning Tools for Home:**
 
-Students can practice at home using these tools (they already know their logins):
+Students can practice at home using these tools:
+- **TVO Learn** - Free Ontario curriculum-aligned resources for Language, Math, Science, and Social Studies ([tvolearn.com](https://tvolearn.com/pages/grade-3) | [Grade 4](https://tvolearn.com/pages/grade-4))
+- **TVO Mathify** - Free online math tutoring with Ontario Certified Teachers for Grades 4+
 - **Lexia Core5** - Reading and language practice that adapts to your child's level ([lexiacore5.com](https://www.lexiacore5.com/))
 - **Symphony Math** - Foundational math that builds understanding step-by-step
 - **Mathletics** - Math practice to build confidence and fluency ([mathletics.com](https://sign-in.mathletics.com/))
 
-*Short, regular use is more helpful than long sessions.*
+*Short, regular use is more helpful than long sessions. TVO Learn resources are free with no ads or hidden fees.*
 
 ## Special Programs
 
