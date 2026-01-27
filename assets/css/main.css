@@ -6426,7 +6426,7 @@ a:hover {
 
 .video-schedule-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: var(--space-xl);
   align-items: start;
 }
@@ -6435,8 +6435,8 @@ a:hover {
 .video-card {
   background: var(--white);
   border-radius: var(--radius-xl);
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-md);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
   border: 1px solid var(--bg-300);
 }
 
@@ -6444,7 +6444,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 700;
   color: var(--primary-100);
   margin-bottom: var(--space-xs);
@@ -6481,11 +6481,16 @@ a:hover {
 /* Schedule Column Styling */
 .schedule-column .widget-activities {
   background: var(--white);
-  border-radius: var(--radius-xl);
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
   border: 1px solid var(--bg-300);
   height: 100%;
+  font-size: var(--text-sm);
+}
+
+.schedule-column .widget-title {
+  font-size: var(--text-base);
 }
 
 @media (max-width: 900px) {
