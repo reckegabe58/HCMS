@@ -41,6 +41,11 @@ photos:
     alt: Classroom activities
   - src: /assets/images/classrooms/grade-1-2-a/image23.jpeg
     alt: Classroom activities
+teacher_emails:
+  - name: Ms. Verna
+    email: vernaruthp@gmail.com
+  - name: Ms. Meagan
+    email: meagan.washburn@martenfalls.com
 subjects:
   - name: Language Arts
     description: Reading, writing, phonics, and language development through whole-group, small-group, and independent activities.
