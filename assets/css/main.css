@@ -180,6 +180,8 @@
   /* ===================
      Z-INDEX SCALE
      =================== */
+  --z-base: 1;
+  --z-overlay: 10;
   --z-dropdown: 100;
   --z-sticky: 200;
   --z-fixed: 300;
@@ -1708,7 +1710,7 @@ a:hover {
     width: 260px;
     max-width: 85vw;
     display: none;
-    z-index: 1000;
+    z-index: var(--z-fixed);
   }
 
   .main-nav.active {
@@ -1746,7 +1748,7 @@ a:hover {
   .nav-dropdown-menu {
     position: static !important;
     display: none;
-    background: rgba(0, 0, 0, 0.15) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
     box-shadow: none !important;
     border-radius: 0 !important;
     padding: 0 !important;
@@ -1754,20 +1756,35 @@ a:hover {
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .nav-dropdown.active .nav-dropdown-menu {
     display: block !important;
   }
 
+  .nav-dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+
   .nav-dropdown-menu li a {
     padding: var(--space-xs) var(--space-md) var(--space-xs) var(--space-lg) !important;
     font-size: 0.85rem;
     color: white !important;
+    display: block;
   }
 
   .nav-dropdown-menu li a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Rotate dropdown arrow when active on mobile */
+  .nav-dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
   }
 }
 
@@ -1907,7 +1924,7 @@ a:hover {
   list-style: none;
   padding: var(--space-sm) 0;
   margin: 0;
-  z-index: 1000;
+  z-index: var(--z-dropdown);
 }
 
 .nav-dropdown:hover .nav-dropdown-menu {
@@ -5221,7 +5238,7 @@ a:hover {
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
-  z-index: 10;
+  z-index: var(--z-overlay);
 }
 
 .carousel-dot {
@@ -8064,7 +8081,7 @@ a:hover {
   transform: translateX(-50%);
   display: flex;
   gap: var(--space-xs);
-  z-index: 10;
+  z-index: var(--z-overlay);
 }
 
 .carousel-dot {
