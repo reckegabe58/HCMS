@@ -17,17 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
   if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', function() {
       mainNav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
 
-      // Animate hamburger to X
-      const spans = menuToggle.querySelectorAll('span');
+      // Prevent body scroll when menu is open
       if (mainNav.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+        document.body.style.overflow = 'hidden';
       } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
+        document.body.style.overflow = '';
         // Close all dropdowns when menu closes
         document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('active'));
       }
@@ -57,10 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
       if (!menuToggle.contains(event.target) && !mainNav.contains(event.target)) {
         mainNav.classList.remove('active');
-        const spans = menuToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
+        menuToggle.classList.remove('active');
+        document.body.style.overflow = '';
         // Close all dropdowns
         document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.remove('active'));
       }
@@ -201,6 +195,8 @@ document.addEventListener('DOMContentLoaded', function() {
     mainNav.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && mainNav.classList.contains('active')) {
         mainNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        document.body.style.overflow = '';
         menuToggle.focus();
       }
     });
