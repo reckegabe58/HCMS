@@ -19,10 +19,10 @@ teacher_emails:
     email: reckegabe@gmail.com
 subjects:
   - name: Oji-Cree Language
-    description: Intermediate language skills with focus on reading, writing, syllabics, and traditional storytelling.
+    description: Intermediate language skills with focus on reading, writing, and traditional storytelling.
     icon: message
   - name: Language
-    description: Reading comprehension, writing across genres, oral communication, and media literacy aligned with Ontario curriculum.
+    description: Reading comprehension, writing across genres, oral communication, and media literacy.
     icon: book
   - name: Mathematics
     description: Multiplication, division, fractions, measurement, geometry, and multi-step problem solving.
@@ -56,7 +56,6 @@ In Grade 3/4, students take on more responsibility for their learning while stil
 
 ### Oji-Cree Language (Native Language)
 Our Native Language program is central to who we are. Students develop:
-- **Syllabics** - reading and writing in Canadian Aboriginal Syllabics (ᑭᑭᓄᒪᑫᐃᐠ)
 - **Oral traditions** - listening to and retelling traditional stories from Elders
 - **Vocabulary building** - words for land, animals, seasons, family, and daily life
 - **Conversational skills** - greetings, instructions, and everyday phrases
@@ -65,7 +64,7 @@ Our Native Language program is central to who we are. Students develop:
 
 *Language carries our identity. Learning Oji-Cree connects students to their ancestors and community.*
 
-### Language (Ontario Curriculum)
+### Language
 Language development is central to intellectual, social, and emotional growth. We focus on:
 - **Reading** - comprehension strategies, making predictions, asking questions, making connections
 - **Writing** - paragraph structure, personal narratives, reports, persuasive writing, and creative pieces
@@ -83,7 +82,7 @@ Students develop computational fluency and mathematical reasoning:
 - **Problem solving** - multi-step word problems and real-world applications
 
 ### Science & Technology
-We use a STEM-focused approach aligned with Ontario curriculum:
+We use a STEM-focused approach:
 - **Life systems** - habitats, communities, and local ecosystems
 - **Matter & energy** - light, sound, and properties of materials
 - **Structures & mechanisms** - pulleys, gears, and simple machines
@@ -131,27 +130,17 @@ Every child grows at their own pace. This classroom is a safe place to build con
 
 **Learning Tools for Home:**
 
-Students can practice at home using these tools:
-- **TVO Learn** - Free Ontario curriculum-aligned resources for Language, Math, Science, and Social Studies ([tvolearn.com](https://tvolearn.com/pages/grade-3) | [Grade 4](https://tvolearn.com/pages/grade-4))
-- **TVO Mathify** - Free online math tutoring with Ontario Certified Teachers for Grades 4+
+Students can practice at home using these tools. Students know their logins for these programs:
 - **Lexia Core5** - Reading and language practice that adapts to your child's level ([lexiacore5.com](https://www.lexiacore5.com/))
 - **Symphony Math** - Foundational math that builds understanding step-by-step
 - **Mathletics** - Math practice to build confidence and fluency ([mathletics.com](https://sign-in.mathletics.com/))
 
-*Short, regular use is more helpful than long sessions. TVO Learn resources are free with no ads or hidden fees.*
-
-## Special Programs
-
-- **Reading Buddies** - Paired with younger students for weekly reading sessions
-- **Elder Visits** - Monthly visits from community Elders for cultural teachings
-- **Land-Based Outings** - Seasonal trips for traditional activities
-- **Science Fair** - Annual project showcasing student inquiry
+*Short, regular use is more helpful than long sessions.*
 
 ## Communication
 
 I believe in open communication with families. You can expect:
 - **Monthly newsletters** with curriculum updates and important dates
-- **Agenda book** - daily communication tool (please check and sign nightly)
 - **Progress reports** - formal reports three times per year
 - **Parent-teacher conferences** - scheduled in fall and spring
 - **Open door policy** - I'm always available to discuss your child's progress

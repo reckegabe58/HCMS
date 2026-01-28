@@ -7624,7 +7624,7 @@ a:hover {
 
 .classroom-two-column {
   display: grid;
-  grid-template-columns: 1fr 340px;
+  grid-template-columns: 1fr 400px;
   gap: var(--space-2xl);
   align-items: start;
 }
@@ -7672,19 +7672,8 @@ a:hover {
 /* Newsletter Sidebar Card Enhanced */
 .newsletter-sidebar-card {
   background: linear-gradient(135deg, var(--bg-400) 0%, var(--bg-300) 100%);
-  border: 2px solid var(--primary-100);
   position: relative;
   overflow: hidden;
-}
-
-.newsletter-sidebar-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-100), var(--accent-gold), var(--primary-100));
 }
 
 .sidebar-info-list {
