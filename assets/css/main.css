@@ -2285,8 +2285,20 @@ a:hover {
 }
 
 .curriculum-icon {
-  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-100);
+  color: var(--white);
+  border-radius: var(--radius-md);
+}
+
+.curriculum-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .curriculum-item span:last-child {
@@ -3467,8 +3479,33 @@ a:hover {
   box-shadow: var(--shadow-lg);
 }
 
+/* Color-coded hover effects for classroom cards */
+.classroom-card[data-color="sage"]:hover {
+  box-shadow: 0 8px 24px rgba(139, 168, 136, 0.25), var(--shadow-lg);
+}
+
+.classroom-card[data-color="blue"]:hover {
+  box-shadow: 0 8px 24px rgba(7, 83, 175, 0.25), var(--shadow-lg);
+}
+
+.classroom-card[data-color="green"]:hover {
+  box-shadow: 0 8px 24px rgba(107, 139, 104, 0.25), var(--shadow-lg);
+}
+
+.classroom-card[data-color="orange"]:hover {
+  box-shadow: 0 8px 24px rgba(230, 126, 34, 0.25), var(--shadow-lg);
+}
+
+.classroom-card[data-color="red"]:hover {
+  box-shadow: 0 8px 24px rgba(154, 51, 45, 0.25), var(--shadow-lg);
+}
+
+.classroom-card[data-color="terracotta"]:hover {
+  box-shadow: 0 8px 24px rgba(168, 71, 61, 0.25), var(--shadow-lg);
+}
+
 .classroom-accent {
-  height: 6px;
+  height: 8px;
 }
 
 .classroom-accent-sage { background: var(--sage-300); }
@@ -3476,6 +3513,7 @@ a:hover {
 .classroom-accent-green { background: var(--sage-100); }
 .classroom-accent-orange { background: #E67E22; }
 .classroom-accent-red { background: var(--accent-100); }
+.classroom-accent-terracotta { background: var(--accent-200); }
 
 .classroom-image {
   height: 160px;
@@ -3515,11 +3553,36 @@ a:hover {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-muted);
+  color: var(--white);
   background: var(--bg-200);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
   margin-bottom: var(--space-sm);
+}
+
+/* Color-coded grade badges */
+.classroom-card[data-color="sage"] .classroom-grade {
+  background: var(--sage-300);
+}
+
+.classroom-card[data-color="blue"] .classroom-grade {
+  background: var(--primary-100);
+}
+
+.classroom-card[data-color="green"] .classroom-grade {
+  background: var(--sage-100);
+}
+
+.classroom-card[data-color="orange"] .classroom-grade {
+  background: #E67E22;
+}
+
+.classroom-card[data-color="red"] .classroom-grade {
+  background: var(--accent-100);
+}
+
+.classroom-card[data-color="terracotta"] .classroom-grade {
+  background: var(--accent-200);
 }
 
 .classroom-title {
@@ -3703,6 +3766,7 @@ a:hover {
 .classroom-badge-green { background: var(--sage-100); }
 .classroom-badge-orange { background: #E67E22; }
 .classroom-badge-red { background: var(--accent-100); }
+.classroom-badge-terracotta { background: var(--accent-200); }
 
 .classroom-hero-title {
   font-family: var(--font-serif);
@@ -3850,6 +3914,14 @@ a:hover {
   width: 24px;
   height: 24px;
 }
+
+/* Color-specific subject icons to match classroom colors */
+.subject-icon-sage { background: var(--sage-300); }
+.subject-icon-blue { background: var(--primary-100); }
+.subject-icon-green { background: var(--sage-100); }
+.subject-icon-orange { background: #E67E22; }
+.subject-icon-red { background: var(--accent-100); }
+.subject-icon-terracotta { background: var(--accent-200); }
 
 .subject-name {
   font-size: var(--text-base);
@@ -4471,6 +4543,7 @@ a:hover {
 .other-classroom-green .other-classroom-grade { color: var(--sage-100); }
 .other-classroom-orange .other-classroom-grade { color: #E67E22; }
 .other-classroom-red .other-classroom-grade { color: var(--accent-100); }
+.other-classroom-terracotta .other-classroom-grade { color: var(--accent-200); }
 
 .other-classroom-title {
   font-size: var(--text-sm);
