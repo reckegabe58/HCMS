@@ -22,6 +22,53 @@
 
   <!-- RSS Feed -->
   {% feed_meta %}
+
+  <!-- Structured Data (JSON-LD) for School Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "@id": "{{ site.url }}",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/assets/images/logo.png",
+    "description": "{{ site.description }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.location.physical_address }}",
+      "addressLocality": "{{ site.location.community }}",
+      "addressRegion": "Ontario",
+      "postalCode": "P0T 2L0",
+      "addressCountry": "CA"
+    },
+    "telephone": "{{ site.location.phone }}",
+    "email": "{{ site.email }}",
+    "foundingDate": "{{ site.school.established }}",
+    "sameAs": [
+      "https://www.facebook.com/henrycoasterschool"
+    ],
+    "priceRange": "Free",
+    "educationalCredentialAwarded": "K-8 Education",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Educational Programs",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Course",
+            "name": "Kindergarten to Grade 8",
+            "description": "K-8 education rooted in Oji-Cree culture and land-based learning",
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "{{ site.title }}"
+            }
+          }
+        }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="site-container">

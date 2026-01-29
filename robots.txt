@@ -1,0 +1,12 @@
+# robots.txt for Henry Coaster Memorial School
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://henrycoastermemorialschool.ca/sitemap.xml
+
+# Disallow crawling of assets and system files (optional)
+Disallow: /assets/js/
+Disallow: /assets/css/

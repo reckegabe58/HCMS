@@ -5,6 +5,8 @@ permalink: /about/
 hero_image: /assets/images/carousel/slide-1.jpg
 hero_badge: Marten Falls First Nation
 subtitle: Where our students walk in the footsteps of their ancestors to achieve their dreams
+description: "Learn about Henry Coaster Memorial School's history, mission, and culturally-responsive K-8 curriculum combining Ontario standards with Oji-Cree language and land-based learning."
+keywords: "First Nations school Ontario, Indigenous education curriculum, Oji-Cree language programs, land-based learning, Marten Falls community school"
 ---
 
 <!-- About Hero Section - Clean design without wave -->

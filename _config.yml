@@ -27,11 +27,29 @@ school:
   students: 60
   staff: 25
 
+# Social media and SEO
+logo: /assets/images/logo.png
+twitter:
+  username: henrycoasterschool
+  card: summary_large_image
+facebook:
+  app_id:
+  publisher:
+social:
+  name: Henry Coaster Memorial School
+  links:
+    - https://www.facebook.com/henrycoasterschool
+    - https://twitter.com/henrycoasterschool
+
+# Google Site Verification (add your verification code when you get it)
+google_site_verification:
+
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Collections
 collections:

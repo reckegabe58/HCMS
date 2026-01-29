@@ -3,6 +3,8 @@ layout: default
 title: Our Classrooms
 permalink: /classrooms/
 subtitle: Meet our dedicated teachers and explore our learning spaces
+description: "Meet our dedicated K-8 teachers and explore multi-grade classrooms at Henry Coaster Memorial School. Small class sizes ensure personalized attention and culturally-responsive instruction."
+keywords: "small class sizes, multi-grade classrooms, First Nations teachers, bilingual instruction, Oji-Cree education, K-8 classrooms"
 ---
 
 <!-- Classrooms Header -->
