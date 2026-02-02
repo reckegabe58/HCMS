@@ -9,7 +9,7 @@ color: sage
 order: 1
 room: Room 101
 students: 12
-hero_image: /assets/images/classrooms/kindergarten/Kindergarten welcome - webpage banner.png
+hero_image: /assets/images/classrooms/kindergarten/hero-banner.png
 newsletter_folder: kindergarten
 show_daily_schedule: true
 show_photo_gallery: true

@@ -95,6 +95,18 @@ layout: default
       <!-- Sidebar Column -->
       <aside class="classroom-sidebar-column">
 
+        <!-- Newsletter Card -->
+        {% if page.newsletter_folder %}
+        <div class="sidebar-card newsletter-sidebar-card">
+          {% include newsletter-auto.html folder=page.newsletter_folder %}
+        </div>
+        {% endif %}
+
+        <!-- Daily Schedule Card -->
+        {% if page.show_daily_schedule %}
+        {% include daily-schedule-simple.html %}
+        {% endif %}
+
         <!-- What We're Learning - Stacked Vertically -->
         {% if page.subjects %}
         <div class="sidebar-card subjects-sidebar-card">
@@ -108,18 +120,6 @@ layout: default
             {% endfor %}
           </div>
         </div>
-        {% endif %}
-
-        <!-- Newsletter Card -->
-        {% if page.newsletter_folder %}
-        <div class="sidebar-card newsletter-sidebar-card">
-          {% include newsletter-auto.html folder=page.newsletter_folder %}
-        </div>
-        {% endif %}
-
-        <!-- Daily Schedule Card -->
-        {% if page.show_daily_schedule %}
-        {% include daily-schedule-simple.html %}
         {% endif %}
 
         <!-- Classroom Info Card -->
