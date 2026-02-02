@@ -24,6 +24,24 @@
 
 <script>
 (function() {
+  // Use schedule data from Jekyll frontmatter if available
+  {% if page.schedule %}
+  const scheduleData = {
+    {% for day in page.schedule %}
+    "{{ day[0] }}": [
+      {% for item in day[1] %}
+      {
+        time: "{{ item.time }}",
+        activity: "{{ item.activity }}"{% if item.details %},
+        details: "{{ item.details }}"{% endif %}{% if item.highlight %},
+        highlight: true{% endif %}
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+  {% else %}
+  // Fallback schedule data
   const scheduleData = {
     monday: [
       { time: "9:00-9:30", activity: "Morning Work & Language Arts" },
@@ -99,6 +117,7 @@
       { time: "2:45-3:15", activity: "Choice Time" }
     ]
   };
+  {% endif %}
 
   function updateSchedule() {
     const dayIndex = new Date().getDay();
@@ -125,7 +144,12 @@
 
     let html = '';
     todaySchedule.forEach(item => {
-      html += `<div class="schedule-row"><span class="schedule-time">${item.time}</span><span class="schedule-activity">${item.activity}</span></div>`;
+      const highlightClass = item.highlight ? ' schedule-row-highlight' : '';
+      const details = item.details ? `<span class="schedule-details">${item.details}</span>` : '';
+      html += `<div class="schedule-row${highlightClass}">
+        <span class="schedule-time">${item.time}</span>
+        <span class="schedule-activity">${item.activity}${details}</span>
+      </div>`;
     });
 
     scheduleList.innerHTML = html;

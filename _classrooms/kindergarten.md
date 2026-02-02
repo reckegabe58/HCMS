@@ -13,7 +13,39 @@ hero_image: /assets/images/classrooms/kindergarten/hero-banner.png
 newsletter_folder: kindergarten
 show_daily_schedule: true
 show_photo_gallery: true
-photo_gallery_folder: kindergarten
+photos:
+  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.39 PM (1).jpeg
+    alt: Kindergarten classroom activity
+  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.39 PM.jpeg
+    alt: Kindergarten students learning
+  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.40 PM (1).jpeg
+    alt: Kindergarten play-based learning
+  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.40 PM (3).jpeg
+    alt: Kindergarten classroom environment
+  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.40 PM (4).jpeg
+    alt: Kindergarten learning activities
+  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.41 PM (1).jpeg
+    alt: Kindergarten students engaged
+  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.41 PM.jpeg
+    alt: Kindergarten classroom moments
+  - src: /assets/images/classrooms/kindergarten/0a3527b2-f806-4b27-ae89-27a1789ae908.jpg
+    alt: Kindergarten learning space
+  - src: /assets/images/classrooms/kindergarten/2a8ea5b1-a9b3-4e36-8385-dc883c756771.jpg
+    alt: Kindergarten activities
+  - src: /assets/images/classrooms/kindergarten/7281cef1-0f95-47d0-9be3-f33ee061d68c.jpg
+    alt: Kindergarten classroom
+  - src: /assets/images/classrooms/kindergarten/768ffbf3-b47d-419d-8579-30bc4ade8a96.jpg
+    alt: Kindergarten learning environment
+  - src: /assets/images/classrooms/kindergarten/86e5a591-104f-4e1c-974a-319f2df1960d.jpg
+    alt: Kindergarten students at work
+  - src: /assets/images/classrooms/kindergarten/bbefbe4b-3ca1-4d51-b517-51fdef8b7b79.jpg
+    alt: Kindergarten play time
+  - src: /assets/images/classrooms/kindergarten/c07c64d9-e3dd-408d-a178-912899df24c8.jpg
+    alt: Kindergarten classroom setting
+  - src: /assets/images/classrooms/kindergarten/e013bb00-fe51-437d-965c-d5d54e5c4cb4.jpg
+    alt: Kindergarten learning moments
+  - src: /assets/images/classrooms/kindergarten/f0d14455-c26f-4afd-99d4-82402f626561.jpg
+    alt: Kindergarten classroom life
 teacher_emails:
   - name: Ms. Lauren
     email: lauren.moreau@martenfalls.com
