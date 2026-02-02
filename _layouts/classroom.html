@@ -43,7 +43,7 @@ layout: default
 
 {% else %}
 <!-- Professional Hero Section with Optional Background -->
-<section class="classroom-hero-professional {% if page.hero_image %}with-background{% endif %}" {% if page.hero_image %}style="background-image: linear-gradient(135deg, rgba(var(--{{ page.color }}-rgb, 147, 169, 145), 0.95) 0%, rgba(var(--{{ page.color }}-rgb, 147, 169, 145), 0.85) 100%), url('{{ page.hero_image | relative_url }}');"{% endif %}>
+<section class="classroom-hero-professional {% if page.hero_image %}with-background{% endif %}" {% if page.hero_image %}style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%), url('{{ page.hero_image | relative_url }}');"{% endif %}>
   <div class="container">
     <a href="{{ '/classrooms/' | relative_url }}" class="back-link back-link-light">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
