@@ -3,122 +3,138 @@ layout: classroom
 title: Grade 5/6
 grade: "5-6"
 teachers:
-  - Mr. Ankush
-  - Ms. Fiona
+  - Mr. Ankush Thakur
+  - Ms. Fiona van Wissen
 color: orange
 order: 5
-room: Room 202
+room: Classroom 5
 students: 15
-hero_image: /assets/images/carousel/slide-5.jpg
-# Newsletter folder - files are auto-detected from this location
 newsletter_folder: grade-5-6
+show_daily_schedule: false
+show_photo_gallery: false
+teacher_emails:
+  - name: Mr. Ankush Thakur
+    email: ankush.thakur@hcmschool.ca
+  - name: Ms. Fiona van Wissen
+    email: fiona.vanwissen@martenfalls.com
 subjects:
   - name: Language Arts
-    description: Critical reading, persuasive writing, research skills, and media literacy.
+    description: Developing reading, writing, speaking, and listening skills through literacy centres, guided reading, writing activities, and class discussions.
     icon: book
   - name: Mathematics
-    description: Decimals, percentages, ratios, algebra concepts, and data analysis.
+    description: Number sense, operations, and problem-solving with regular practice and hands-on activities to build confidence.
     icon: calculator
-  - name: Oji-Cree Language
-    description: Advanced language skills including traditional storytelling and written expression.
-    icon: message
   - name: Science
-    description: Earth science, human body systems, and environmental stewardship.
+    description: Exploring scientific concepts through observation, discussion, and inquiry-based learning connected to real-life examples and the environment.
     icon: flask
-  - name: History & Civics
-    description: Canadian history, Indigenous rights, and understanding governance.
+  - name: Social Studies
+    description: Hands-on activities and cultural experiences celebrating community, stories of the past, and dreams for the future. Learning mapping skills, Indigenous governing, and government roles and responsibilities.
     icon: globe
-  - name: Land-Based Skills
-    description: Advanced traditional skills including survival training and environmental monitoring.
-    icon: tree
+  - name: Oji-Cree Language
+    description: Daily language lessons with Ms. Brenda (virtual and in-person) learning introductions, weather, clothing items, body parts, and the names of the moons for each month.
+    icon: message
+  - name: Art
+    description: Expressing ideas and creativity through drawing, building, and hands-on art activities.
+    icon: palette
+  - name: Physical Education
+    description: Daily physical activity and skill progressions in gym and outdoors, including basketball, badminton, skating, healthy living, and mental health.
+    icon: heart
+  - name: Music
+    description: Lessons with Mr. Felipe (online and in-person) learning keyboard, drums, violin, and vocal skills. Music concerts throughout the year highlight student talent.
+    icon: music
 ---
 
-**Aaniin! Welcome to Grade 5/6!**
+**Boozhoo! Welcome to Grade 5/6!**
 
-We're Mr. Ankush and Ms. Fiona, and we're excited to work with your children during these pivotal years. Grade 5/6 marks the transition to intermediate learning, where students develop critical thinking skills, take ownership of their education, and prepare for the challenges ahead.
+Welcome to our classroom! Our teaching team includes Mr. Ankush Thakur and Ms. Fiona van Wissen, and together we work to create a safe, respectful, and supportive learning environment for all students. Our focus is on building strong routines, confidence, and foundational skills in reading, writing, and mathematics.
 
-## Our Educational Philosophy
+We value learning that is connected to the land, community, and students' lived experiences. Through observation, discussion, and hands-on activities, students are encouraged to develop respect for the land, nature, and the environment around them.
 
-We believe in developing the whole student—academically, socially, emotionally, and culturally. Our classroom is a place where questions are valued, mistakes are celebrated as learning opportunities, and every student's perspective is respected.
+We value collaboration with families and look forward to working together to support each student's growth throughout the school year.
 
-We work to balance rigorous academics with meaningful cultural education, preparing students for success in both their traditional world and the broader society.
+## Our Weekly Schedule
 
-## Curriculum Overview
+Below is an overview of our weekly classroom schedule. While activities may occasionally change due to special events or learning opportunities, this timetable reflects our regular structure:
+
+**9:00–9:30** - Morning Work
+**9:30–10:00** - Language Arts – Literacy Centres
+**10:00–10:30** - Language Arts / Native Language (varies by day)
+**10:30–10:45** - Recess
+**10:45–11:30** - Mathematics
+**11:30–12:00** - Writing / Science / Art (varies by day)
+**12:00–1:00** - Lunch
+**1:00–1:45** - Gym / Language Arts (Writing) / Native Language / Read Aloud (varies by day)
+**1:45–2:30** - Gym / Native Language / Read Aloud (varies by day)
+**2:45–3:30** - Guided Reading (Lexia) / Social Studies (varies by day)
+
+### Music Lesson Schedule
+
+Music lessons for Grade 5/6 take place on:
+- **Tuesday**: 2:45 p.m. – 3:15 p.m.
+- **Thursday**: 2:45 p.m. – 3:15 p.m.
+
+Music lessons are part of the school-wide music program and may occasionally change due to special events or scheduling adjustments.
+
+## What We're Learning
 
 ### Language Arts
-Students become sophisticated readers and writers:
-- **Reading** - Analyzing fiction, non-fiction, and Indigenous literature
-- **Writing** - Essays, research papers, creative writing, and journalism
-- **Media Literacy** - Understanding and evaluating media messages
-- **Public Speaking** - Formal presentations and debate skills
-- **Research Skills** - Finding, evaluating, and citing sources
+I support students in developing reading, writing, speaking, and listening skills through literacy centres, guided reading, writing activities, and class discussions.
 
 ### Mathematics
-Building toward high school readiness:
-- **Number Sense** - Decimals, fractions, percentages, and their relationships
-- **Algebra** - Variables, expressions, and equations
-- **Geometry** - Area, volume, angles, and coordinate graphing
-- **Data Management** - Collecting, organizing, and analyzing data
-- **Financial Literacy** - Budgeting and understanding money
+Instruction focuses on number sense, operations, and problem-solving, with regular practice and hands-on activities to build confidence.
 
 ### Science
-Inquiry-based learning connected to our environment:
-- **Earth & Space** - Geology, weather, climate change, and astronomy
-- **Human Body** - Systems, health, and development
-- **Biodiversity** - Understanding ecosystems and environmental stewardship
-- **Traditional Ecological Knowledge** - Learning from Elders about the land
+Students explore scientific concepts through observation, discussion, and inquiry-based learning connected to real-life examples and the environment.
 
-### Social Studies
-Understanding our place in history and society:
-- **Canadian History** - Exploration, Confederation, and national development
-- **Indigenous History** - Treaties, residential schools, and the path forward
-- **Civics** - How governments work, Indigenous governance, and active citizenship
-- **Geography** - Physical and human geography of Canada
+### Art
+Students express ideas and creativity through drawing, building, and hands-on art activities.
 
-## Land-Based Learning Program
+### Read Aloud
+Students listen to a variety of texts to build comprehension, vocabulary, and a love for reading.
 
-Our Grade 5/6 students participate in an enhanced land-based learning program:
+### Guided Reading / Lexia
+Students receive targeted reading support through guided instruction and the Lexia literacy program.
 
-- **Fall Camp** - Harvesting, preservation, and seasonal activities
-- **Winter Skills** - Ice safety, snow shelters, and winter survival
-- **Spring Activities** - Maple syrup, fishing, and spring harvests
-- **Summer Preparation** - End-of-year land camp experience
+### Physical Education - Ms. Fiona
+Students are offered daily physical activity and skill progressions in a variety of activities in the gym and outdoors. Basketball and badminton are popular sports, as well as skating at the local arena in the winter. Students learn healthy living, the importance of sleep and nutrition, and ways to promote their mental health.
 
-Students learn from community experts and Elders, developing practical skills alongside traditional knowledge.
+### Social Studies - Ms. Fiona
+Students engage in hands-on activities and cultural experiences as they celebrate their community, stories of the past, and dreams for the future. Students are learning mapping skills as they label maps of rivers and lakes of Ontario and study the importance of the local watershed historically and for the present day. They study Indigenous governing, as well as learning roles and responsibilities of federal, provincial and municipal governments. Students also learn Indigenous teachings and drumming from Orville Councillor who visits the school twice a month.
 
-## Student Responsibilities
+### Music - Mr. Felipe
+Music and the arts are a very important component of the education program at HCMS. Students participate in online and in-person music lessons with Mr. Felipe, the school music teacher. They have the opportunity to learn keyboard, drums or violin, as well as vocal skills. Several music concerts take place during the school year to highlight student talent.
 
-At this level, students take more ownership of their learning:
-- Maintain an organized binder and assignment tracker
-- Complete homework independently and on time
-- Participate actively in class discussions
-- Show leadership and help younger students
-- Represent our school with pride
+### Oji-Cree Language - Ms. Brenda
+Learning their language is a very important way for students to engage with their culture at HCMS. Ms. Brenda teaches students both virtually and in-person. Native language lessons are every day for half an hour, in the morning or afternoon depending on the day. Students are learning to introduce themselves, to speak about the weather, to name clothing items and body parts, as well as learning the name of the moons for each month.
 
-## Assessment & Evaluation
+## How Families Can Support Learning
 
-Students receive regular feedback through:
-- **Formative assessments** - Ongoing feedback during learning
-- **Summative assessments** - Tests, projects, and assignments
-- **Self-assessment** - Reflecting on their own learning
-- **Portfolios** - Collecting evidence of growth over time
-- **Report cards** - Three formal reports per year
+**Ask your child to explain one thing they learned** each day and how they learned it (for example, by reading, writing, drawing, or solving a problem).
 
-## Technology Integration
+**Encourage short, regular reading at home** (10–15 minutes). Reading together or listening to your child read is just as valuable as independent reading.
 
-Students develop digital literacy skills:
-- Word processing and presentation software
-- Internet research and source evaluation
-- Coding and computational thinking
-- Digital citizenship and online safety
+**Encourage independent problem-solving** - Encourage your child to try learning tasks independently first before asking for help to build confidence and problem-solving skills.
 
-## Preparing for High School
+**Practice math in everyday situations** such as counting items, measuring while cooking, telling time, or discussing numbers seen in daily life.
 
-We prepare students for the transition to secondary school by:
-- Building study skills and time management
-- Encouraging independence and self-advocacy
-- Exploring career and education pathways
-- Discussing the importance of education for community leadership
+**Ensure adequate sleep** each night, as rest has a strong impact on focus, behaviour, and learning during the school day.
 
-**Miigwech for your partnership in your child's education!**
-*Mr. Ankush & Ms. Fiona*
+**Support consistent routines** for sleep, attendance, and arriving at school on time to help your child feel prepared and ready to learn.
+
+**Stay connected** - Please inform the school if there are changes at home or concerns that may affect your child's learning or well-being.
+
+## Contact Information
+
+Families are welcome to contact us directly with any questions, concerns, or updates.
+
+**Mr. Ankush Thakur**
+Email: [ankush.thakur@hcmschool.ca](mailto:ankush.thakur@hcmschool.ca)
+Phone (call or text): 437-445-1617
+
+**Ms. Fiona van Wissen**
+Email: [fiona.vanwissen@martenfalls.com](mailto:fiona.vanwissen@martenfalls.com)
+
+We are happy to connect by email or text and will respond as soon as possible.
+
+**Miigwech!**
+*Mr. Ankush Thakur & Ms. Fiona van Wissen*
