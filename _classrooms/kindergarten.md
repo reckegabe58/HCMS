@@ -9,7 +9,7 @@ color: sage
 order: 1
 room: Classroom 1
 students: 12
-hero_image: /assets/images/classrooms/kindergarten/hero-banner.png
+hero_image: /assets/images/classrooms/kindergarten/Hero-Banner.png
 newsletter_folder: kindergarten
 show_daily_schedule: true
 show_photo_gallery: true
