@@ -3788,6 +3788,25 @@ a:hover {
   height: 20px;
 }
 
+/* Classroom Hero Banner Image */
+.classroom-hero-banner {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-200);
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
 /* Simple Classroom Hero (no image/wave) */
 .classroom-hero-simple {
   background: var(--bg-200);

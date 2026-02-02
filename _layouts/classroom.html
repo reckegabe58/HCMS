@@ -42,6 +42,13 @@ layout: default
 </section>
 
 {% else %}
+<!-- Hero Banner Image (if provided) -->
+{% if page.hero_image %}
+<section class="classroom-hero-banner">
+  <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }} banner" class="hero-banner-image">
+</section>
+{% endif %}
+
 <!-- Standard Hero Section -->
 <section class="classroom-hero-simple">
   <div class="container">
