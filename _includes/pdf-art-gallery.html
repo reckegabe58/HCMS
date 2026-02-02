@@ -1,0 +1,176 @@
+{% comment %}
+  PDF Art Gallery - Displays all pages of a PDF as a grid of images
+
+  Usage: {% include pdf-art-gallery.html pdf_path="/assets/path/to/file.pdf" title="Student Art" %}
+{% endcomment %}
+
+<div class="pdf-art-gallery">
+  {% if include.title %}
+  <h2 class="art-gallery-title">{{ include.title }}</h2>
+  {% endif %}
+
+  <div class="art-gallery-grid" id="pdf-art-grid-{{ include.pdf_path | slugify }}">
+    <div class="art-loading">
+      <div class="loading-spinner"></div>
+      <p>Loading artwork...</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(function() {
+  // Configure PDF.js worker
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  const pdfUrl = '{{ include.pdf_path | relative_url }}';
+  const containerId = 'pdf-art-grid-{{ include.pdf_path | slugify }}';
+  const container = document.getElementById(containerId);
+
+  // Load the PDF
+  pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+    // Clear loading message
+    container.innerHTML = '';
+
+    // Render each page
+    const numPages = pdf.numPages;
+    const renderPromises = [];
+
+    for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+      renderPromises.push(renderPage(pdf, pageNum, container));
+    }
+
+    return Promise.all(renderPromises);
+  }).catch(function(error) {
+    console.error('Error loading PDF:', error);
+    container.innerHTML = '<p class="art-error">Unable to load artwork. Please try refreshing the page.</p>';
+  });
+
+  function renderPage(pdf, pageNum, container) {
+    return pdf.getPage(pageNum).then(function(page) {
+      // Create canvas element for this page
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      // Calculate scale to fit nicely in grid
+      const desiredWidth = 400; // Base width for art pieces
+      const viewport = page.getViewport({ scale: 1 });
+      const scale = desiredWidth / viewport.width;
+      const scaledViewport = page.getViewport({ scale: scale });
+
+      canvas.width = scaledViewport.width;
+      canvas.height = scaledViewport.height;
+
+      // Wrap canvas in a container
+      const artItem = document.createElement('div');
+      artItem.className = 'art-item';
+      artItem.appendChild(canvas);
+
+      // Add page number label if there are multiple pages
+      if (pdf.numPages > 1) {
+        const label = document.createElement('div');
+        label.className = 'art-item-label';
+        label.textContent = `Artwork ${pageNum}`;
+        artItem.appendChild(label);
+      }
+
+      container.appendChild(artItem);
+
+      // Render the page
+      const renderContext = {
+        canvasContext: ctx,
+        viewport: scaledViewport
+      };
+
+      return page.render(renderContext).promise;
+    });
+  }
+})();
+</script>
+
+<style>
+.pdf-art-gallery {
+  margin: var(--space-2xl) 0;
+}
+
+.art-gallery-title {
+  text-align: center;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xl);
+}
+
+.art-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--color-background-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.art-item {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.art-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.art-item canvas {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.art-item-label {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.art-loading {
+  text-align: center;
+  padding: var(--space-2xl);
+  color: var(--color-text-secondary);
+}
+
+.loading-spinner {
+  border: 3px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto var(--space-md);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.art-error {
+  text-align: center;
+  color: var(--color-error, #dc2626);
+  padding: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .art-gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    padding: var(--space-md);
+  }
+}
+</style>

@@ -216,6 +216,15 @@ layout: default
 </section>
 {% endif %}
 
+<!-- Student Art Gallery - PDF Pages as Grid -->
+{% if page.art_pdf %}
+<section class="classroom-gallery-feature">
+  <div class="container">
+    {% include pdf-art-gallery.html pdf_path=page.art_pdf title="Student Art Gallery" %}
+  </div>
+</section>
+{% endif %}
+
 <!-- Other Classrooms -->
 <section class="other-classrooms-section">
   <div class="container">

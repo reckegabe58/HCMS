@@ -6,14 +6,13 @@ teachers:
   - Mr. Gabe
 color: green
 order: 4
-room: Room 201
+room: Classroom 4
 students: 11
 hero_image: /assets/images/carousel/slide-4.jpg
-# Newsletter folder - files are auto-detected from this location
-# Just add files named: YYYY-MM-newsletter.pdf (or .png, .jpg)
 newsletter_folder: grade-3-4
-hero_carousel: true
-photos: []
+show_daily_schedule: false
+show_photo_gallery: false
+art_pdf: /assets/images/classrooms/grade-3-4/class-art.pdf
 teacher_emails:
   - name: Mr. Gabe
     email: reckegabe@gmail.com
@@ -44,7 +43,7 @@ subjects:
     icon: tree
 ---
 
-**Aaniin! Welcome to Grade 3/4!**
+**Boozhoo! Welcome to Grade 3/4!**
 
 I'm Mr. Gabe, and I'm honored to guide your children through this important stage of their education. The Grade 3/4 years are a time of tremendous growth as students transition from "learning to read" to "reading to learn" and develop more sophisticated thinking skills.
 
