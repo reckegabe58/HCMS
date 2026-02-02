@@ -3788,47 +3788,130 @@ a:hover {
   height: 20px;
 }
 
-/* Classroom Hero Banner Image */
-.classroom-hero-banner {
-  width: 100%;
-  max-height: 400px;
+/* Professional Classroom Hero */
+.classroom-hero-professional {
+  background: linear-gradient(135deg, var(--sage-300) 0%, var(--sage-200) 100%);
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  position: relative;
   overflow: hidden;
+}
+
+.classroom-hero-professional.with-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 320px;
+}
+
+.classroom-hero-professional::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
+  pointer-events: none;
+}
+
+.classroom-hero-professional .container {
+  position: relative;
+  z-index: 1;
+}
+
+.classroom-hero-professional .back-link-light {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  transition: all 0.2s ease;
+}
+
+.classroom-hero-professional .back-link-light:hover {
+  color: white;
+  transform: translateX(-4px);
+}
+
+.classroom-hero-professional .back-link-light svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hero-content-professional {
+  max-width: 800px;
+}
+
+.classroom-hero-professional .classroom-hero-badge {
+  margin-bottom: var(--space-md);
+  display: inline-block;
+  font-size: var(--text-xl);
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-md);
+}
+
+.classroom-hero-title-professional {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.classroom-teachers-professional {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--bg-200);
-}
-
-.hero-banner-image {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Simple Classroom Hero (no image/wave) */
-.classroom-hero-simple {
-  background: var(--bg-200);
-  padding: var(--space-2xl) 0;
-  border-bottom: 1px solid var(--bg-300);
-}
-
-.classroom-hero-simple .back-link {
-  color: var(--text-muted);
-}
-
-.classroom-hero-simple .back-link:hover {
-  color: var(--accent-green);
-}
-
-.classroom-hero-simple .classroom-hero-title {
-  color: var(--text-dark);
+  gap: var(--space-sm);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: var(--text-lg);
+  font-weight: 500;
   margin-bottom: var(--space-md);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
-.classroom-hero-simple .classroom-teachers-hero {
-  color: var(--text-muted);
+.classroom-teachers-professional svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.classroom-meta-professional {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+.classroom-meta-professional .meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--text-base);
+  font-weight: 500;
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(4px);
+}
+
+.classroom-meta-professional .meta-item svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .classroom-hero-title-professional {
+    font-size: 2.25rem;
+  }
+
+  .classroom-meta-professional {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: flex-start;
+  }
 }
 
 /* Classroom Content */
