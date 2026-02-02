@@ -72,18 +72,6 @@ layout: default
     </div>
   </div>
 </section>
-
-<!-- Photo Gallery - Full Width Feature -->
-{% if page.photos and page.photos.size > 0 %}
-<section class="classroom-gallery-feature">
-  <div class="container">
-    <h2 class="section-title-center" style="margin-bottom: var(--space-xl);">Classroom Photos</h2>
-    <div class="gallery-feature-wrapper">
-      {% include photo-carousel.html photos=page.photos interval=5000 %}
-    </div>
-  </div>
-</section>
-{% endif %}
 {% endif %}
 
 <!-- Classroom Content - Two Column Layout -->
@@ -102,105 +90,25 @@ layout: default
           </div>
         </div>
 
-        <!-- What We're Learning -->
+      </div>
+
+      <!-- Sidebar Column -->
+      <aside class="classroom-sidebar-column">
+
+        <!-- What We're Learning - Stacked Vertically -->
         {% if page.subjects %}
-        <div class="classroom-section">
-          <h2 class="classroom-section-title">What We're Learning</h2>
-          <div class="subjects-grid">
+        <div class="sidebar-card subjects-sidebar-card">
+          <h3>What We're Learning</h3>
+          <div class="subjects-list-vertical">
             {% for subject in page.subjects %}
-            <div class="subject-card">
-              <div class="subject-icon subject-icon-{{ page.color | default: 'blue' }}">
-                {% case subject.icon %}
-                {% when 'book' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                </svg>
-                {% when 'calculator' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                  <line x1="8" y1="6" x2="16" y2="6"></line>
-                  <line x1="8" y1="10" x2="8" y2="10"></line>
-                  <line x1="12" y1="10" x2="12" y2="10"></line>
-                  <line x1="16" y1="10" x2="16" y2="10"></line>
-                  <line x1="8" y1="14" x2="8" y2="14"></line>
-                  <line x1="12" y1="14" x2="12" y2="14"></line>
-                  <line x1="16" y1="14" x2="16" y2="14"></line>
-                  <line x1="8" y1="18" x2="8" y2="18"></line>
-                  <line x1="12" y1="18" x2="12" y2="18"></line>
-                  <line x1="16" y1="18" x2="16" y2="18"></line>
-                </svg>
-                {% when 'globe' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                  <path d="M2 12h20"></path>
-                </svg>
-                {% when 'flask' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 22V8a6 6 0 0 1 12 0v14"></path>
-                  <circle cx="12" cy="6" r="2"></circle>
-                </svg>
-                {% when 'message' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-                {% when 'tree' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22v-7l-2-2"></path>
-                  <path d="M12 13l-2-2"></path>
-                  <path d="M12 15l2-2"></path>
-                  <path d="M17 8c0-2.8-2.2-5-5-5S7 5.2 7 8c0 .4.1.9.2 1.3C5.3 10.1 4 11.9 4 14c0 2.8 2.2 5 5 5h6c2.8 0 5-2.2 5-5 0-2.1-1.3-3.9-3.2-4.7.1-.4.2-.9.2-1.3z"></path>
-                </svg>
-                {% when 'palette' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="13.5" cy="6.5" r=".5"></circle>
-                  <circle cx="17.5" cy="10.5" r=".5"></circle>
-                  <circle cx="8.5" cy="7.5" r=".5"></circle>
-                  <circle cx="6.5" cy="12.5" r=".5"></circle>
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.555C21.965 6.012 17.461 2 12 2z"></path>
-                </svg>
-                {% when 'heart' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-                {% when 'music' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 18V5l12-2v13"></path>
-                  <circle cx="6" cy="18" r="3"></circle>
-                  <circle cx="18" cy="16" r="3"></circle>
-                </svg>
-                {% when 'users' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-                {% when 'activity' %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-                </svg>
-                {% else %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                </svg>
-                {% endcase %}
-              </div>
-              <h3 class="subject-name">{{ subject.name }}</h3>
-              <p class="subject-description">{{ subject.description }}</p>
+            <div class="subject-item-compact">
+              <strong class="subject-compact-name">{{ subject.name }}</strong>
+              <p class="subject-compact-desc">{{ subject.description }}</p>
             </div>
             {% endfor %}
           </div>
         </div>
         {% endif %}
-
-      </div>
-
-      <!-- Sidebar Column -->
-      <aside class="classroom-sidebar-column">
 
         <!-- Newsletter Card -->
         {% if page.newsletter_folder %}
@@ -274,6 +182,18 @@ layout: default
     </div>
   </div>
 </section>
+
+<!-- Photo Gallery - Full Width Feature -->
+{% if page.photos and page.photos.size > 0 %}
+<section class="classroom-gallery-feature">
+  <div class="container">
+    <h2 class="section-title-center" style="margin-bottom: var(--space-xl);">Classroom Photos</h2>
+    <div class="gallery-feature-wrapper">
+      {% include photo-carousel.html photos=page.photos interval=5000 %}
+    </div>
+  </div>
+</section>
+{% endif %}
 
 <!-- Other Classrooms -->
 <section class="other-classrooms-section">
