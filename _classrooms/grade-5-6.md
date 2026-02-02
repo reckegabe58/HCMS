@@ -11,7 +11,14 @@ room: Classroom 5
 students: 15
 newsletter_folder: grade-5-6
 show_daily_schedule: false
-show_photo_gallery: false
+show_photo_gallery: true
+photos:
+  - src: /assets/images/classrooms/grade-5-6/IMG_2236.jpg
+    alt: Grade 5/6 classroom learning
+  - src: /assets/images/classrooms/grade-5-6/IMG_2784.jpg
+    alt: Students engaged in activities
+  - src: /assets/images/classrooms/grade-5-6/IMG_2830.jpg
+    alt: Classroom learning environment
 teacher_emails:
   - name: Mr. Ankush Thakur
     email: ankush.thakur@hcmschool.ca
