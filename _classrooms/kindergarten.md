@@ -3,81 +3,344 @@ layout: classroom
 title: Kindergarten
 grade: "K"
 teachers:
-  - Mr. Shun
-  - Ms. Lauren
+  - Ms. Lauren Moreau
+  - Mr. Shun Michael Villegas
 color: sage
 order: 1
 room: Room 101
 students: 12
-hero_image: /assets/images/carousel/slide-1.jpg
-# Newsletter folder - files are auto-detected from this location
-# Just add files named: YYYY-MM-newsletter.pdf (or .png, .jpg)
+hero_image: /assets/images/classrooms/kindergarten/hero-banner.png
 newsletter_folder: kindergarten
+show_daily_schedule: true
+show_photo_gallery: true
+photo_gallery_folder: kindergarten
+teacher_emails:
+  - name: Ms. Lauren
+    email: lauren.moreau@martenfalls.com
+  - name: Mr. Shun
+    email: shun.villegas@martenfalls.com
 subjects:
   - name: Early Literacy
-    description: Building foundational reading and writing skills through stories, songs, and play-based learning.
+    description: Learning through Lexia, building phonemic awareness and phonics by exploring letter sounds. Developing oral storytelling, word study, reading comprehension, rhyming, syllables, and alphabet knowledge.
     icon: book
   - name: Numeracy
-    description: Exploring numbers, patterns, and basic math concepts through hands-on activities.
+    description: Learning about measurement, patterning, probability, counting 1–20, addition and subtraction, money (coins and bills), and 2D and 3D shapes through play-based activities.
     icon: calculator
-  - name: Oji-Cree Language
-    description: Daily immersion in Oji-Cree through songs, greetings, and storytelling with Elders.
-    icon: message
   - name: Land-Based Learning
-    description: Outdoor exploration, nature walks, and introduction to traditional knowledge.
+    description: Learning through outdoor exploration and nature walks while being introduced to traditional knowledge. Building curiosity, respect for the land, and meaningful connections to nature.
     icon: tree
+  - name: Oji-Cree Language
+    description: Learning with Miss Brenda through songs, artwork, and hands-on activities. Building language skills, cultural connections, and confidence in a warm and engaging way.
+    icon: message
   - name: Creative Arts
     description: Expressing creativity through drawing, painting, crafts, and traditional art forms.
     icon: palette
   - name: Social Skills
-    description: Learning to share, cooperate, and build friendships in our classroom community.
-    icon: globe
+    description: Learning to share, cooperate, and show empathy. Building trust and friendships while practicing respect and kindness, incorporating the Seven Grandfather Teachings.
+    icon: users
+schedule:
+  monday:
+    - time: "9:05 - 9:30"
+      activity: "Arrival / Quiet Time"
+      details: "Breakfast"
+    - time: "9:30 - 10:15"
+      activity: "EMK"
+      details: ""
+    - time: "10:15 - 10:30"
+      activity: "Free Play"
+      details: ""
+    - time: "10:30 - 10:55"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "10:55 - 11:15"
+      activity: "Cleanup / Preparation"
+      details: "Outside or in Lobby activities"
+    - time: "11:15 - 11:55"
+      activity: "Activities"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Playground or Quiet"
+      details: "Depending"
+    - time: "1:30 - 1:45"
+      activity: "Free Play / Learning"
+      details: ""
+    - time: "1:45 - 2:15"
+      activity: "Through Play Learning"
+      details: "Through Play"
+    - time: "2:15 - 2:30"
+      activity: "Learning Through Play"
+      details: "Language (yellow)"
+    - time: "2:30 - 3:00"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "3:00 - 3:15"
+      activity: "Cleanup / Preparation"
+      details: "For Bus/Going Home"
+  tuesday:
+    - time: "9:05 - 9:30"
+      activity: "Arrival / Quiet Time"
+      details: "Breakfast"
+    - time: "9:30 - 10:15"
+      activity: "EMK"
+      details: ""
+    - time: "10:15 - 10:30"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "10:30 - 10:55"
+      activity: "Music (yellow)"
+      details: "Learning Through Play"
+    - time: "10:55 - 11:15"
+      activity: "Cleanup / Preparation"
+      details: "Outside or in Lobby activities"
+    - time: "11:15 - 11:55"
+      activity: "Activities"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Playground or Quiet"
+      details: "Depending"
+    - time: "1:30 - 1:45"
+      activity: "Free Play / Learning"
+      details: ""
+    - time: "1:45 - 2:15"
+      activity: "Learning Through Play"
+      details: "Through Play"
+    - time: "2:15 - 2:30"
+      activity: "Gym (yellow)"
+      details: "Learning Through Play"
+    - time: "2:30 - 3:00"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "3:00 - 3:15"
+      activity: "Cleanup / Preparation"
+      details: "For Bus/Going Home"
+  wednesday:
+    - time: "9:05 - 9:30"
+      activity: "Arrival / Quiet Time"
+      details: "Breakfast"
+    - time: "9:30 - 10:15"
+      activity: "EMK"
+      details: ""
+    - time: "10:15 - 10:30"
+      activity: "Free Play"
+      details: ""
+    - time: "10:30 - 10:55"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "10:55 - 11:15"
+      activity: "Cleanup / Preparation"
+      details: "Outside or in Lobby activities"
+    - time: "11:15 - 11:55"
+      activity: "Activities"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Playground or Quiet"
+      details: "Depending"
+    - time: "1:30 - 1:45"
+      activity: "Free Play / Learning"
+      details: ""
+    - time: "1:45 - 2:15"
+      activity: "Language (yellow)"
+      details: "Learning Through Play"
+    - time: "2:15 - 2:30"
+      activity: "Learning Through Play"
+      details: "Language (yellow)"
+    - time: "2:30 - 3:00"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "3:00 - 3:15"
+      activity: "Cleanup / Preparation"
+      details: "For Bus/Going Home"
+  thursday:
+    - time: "9:05 - 9:30"
+      activity: "Arrival / Quiet Time"
+      details: "Breakfast"
+    - time: "9:30 - 10:15"
+      activity: "EMK"
+      details: ""
+    - time: "10:15 - 10:30"
+      activity: "Learning Through Play"
+      details: "Free Play"
+    - time: "10:30 - 10:55"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "10:55 - 11:15"
+      activity: "Cleanup / Preparation"
+      details: "Outside or in Lobby activities"
+    - time: "11:15 - 11:55"
+      activity: "Activities"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Playground or Quiet"
+      details: "Depending"
+    - time: "1:30 - 1:45"
+      activity: "Free Play / Learning"
+      details: ""
+    - time: "1:45 - 2:15"
+      activity: "Language (yellow)"
+      details: "Learning Through Play"
+    - time: "2:15 - 2:30"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "2:30 - 3:00"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "3:00 - 3:15"
+      activity: "Cleanup / Preparation"
+      details: "For Bus/Going Home"
+  friday:
+    - time: "9:05 - 9:30"
+      activity: "Arrival / Quiet Time"
+      details: "Breakfast"
+    - time: "9:30 - 10:15"
+      activity: "EMK"
+      details: ""
+    - time: "10:15 - 10:30"
+      activity: "Music (Friday)"
+      details: "Free Play"
+      highlight: true
+    - time: "10:30 - 10:55"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "10:55 - 11:15"
+      activity: "Cleanup / Preparation"
+      details: "Outside or in Lobby activities"
+    - time: "11:15 - 11:55"
+      activity: "Activities"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Playground or Quiet"
+      details: "Depending"
+    - time: "1:30 - 1:45"
+      activity: "Free Play / Learning"
+      details: ""
+    - time: "1:45 - 2:15"
+      activity: "Through Play Learning"
+      details: "Through Play"
+    - time: "2:15 - 2:30"
+      activity: "Music (Friday)"
+      details: "Learning Through Play"
+      highlight: true
+    - time: "2:30 - 3:00"
+      activity: "Learning Through Play"
+      details: ""
+    - time: "3:00 - 3:15"
+      activity: "Cleanup / Preparation"
+      details: "For Bus/Going Home"
 ---
 
-**Aaniin! Welcome to Kindergarten!**
+## Aaniin! Welcome to Kindergarten!
 
-We're Mr. Shun and Ms. Lauren, and we're so excited to welcome you to our Kindergarten classroom. This is a special place where our youngest learners begin their educational journey in an environment that celebrates Oji-Cree culture and nurtures curiosity.
+Dear Parents/Guardians,
+
+Welcome to Henry Coaster Memorial School! Let us introduce ourselves. Ms. Lauren Moreau and Mr. Shun Michael Villegas, we are your Kindergarten Team this year. We are excited to start the school year and support your child in their learning journey.
+
+Our hope is to create a classroom environment where every child is seen, cared for, and celebrated for who they are. Each child brings their own special gifts and stories, and together we will build a classroom community rooted in kindness, respect, and belonging that engages your child's heart, mind, and body.
+
+In our classroom, we will focus on building a love for learning through play, exploration, and creativity. Together, we will encourage your child to try new things, build confidence, and celebrate every success, no matter how small!
+
+**Ms. Lauren Moreau** is from Windsor, Ontario. She holds a General Bachelor's Degree in Psychology and a Diploma in Early Childhood Education. She has three years of experience working with children and has always had a passion for teaching. She loves getting to know her students and their curiosity to learn about the world around them brings her joy.
+
+**Mr. Shun Michael Villegas** is from Toronto, Ontario, and holds a diploma in Early Childhood Education. He has more than 10 years of work experience with children in infants, toddlers, preschool, kindergarten, and grades 2, 4, and 6, where he was the social and emotional learning educator. It fills his heart with joy to be part of the children's development and progress in their learning process while they enjoy and have fun in the activities and the indoor and outdoor settings, engaging their mind, body, spirit.
+
+This year, your child will take part in activities that spark curiosity, strengthen early literacy and numeracy skills, and encourage creativity and problem-solving. Just as importantly, we will work on developing kindness, respect, and friendships, as well as social and emotional skills that will support their growth in school and beyond.
+
+If you have any questions, concerns, or feedback, don't hesitate to reach out. We are happy to discuss and partner with you and look forward to a joyful year of learning, laughter, and discovery in Kindergarten!
+
+Warm regards from the Kindergarten Team,
+**Ms. Lauren and Mr. Shun**
+
+---
 
 ## Our Classroom Philosophy
 
-In Kindergarten, we believe that children learn best through play, exploration, and meaningful connections. Our classroom is designed to encourage discovery while building strong foundations in literacy, numeracy, and cultural identity.
+We believe that teaching and learning go hand in hand and are shaped through meaningful relationships among the child, their family, educators, the community, and the environment. Learning is most powerful when the child is placed at the center, and when educators take a professional, reflective approach that values collaboration and shared responsibility in supporting each child's growth.
 
-Every day, our students engage in:
-- **Circle Time** - We start each morning with songs, stories, and Oji-Cree greetings
-- **Learning Centers** - Hands-on exploration in areas like dramatic play, blocks, art, and science
-- **Story Time** - Both English and Oji-Cree stories from our rich cultural heritage
-- **Outdoor Play** - Connecting with the land and developing gross motor skills
-- **Snack & Rest** - Building healthy habits and self-care routines
+We believe children are capable, curious, and full of potential. They learn best through play-based, hands-on experiences that build on their interests, strengths, and natural sense of wonder. Our learning environment is loving, caring, and safe—one that is dynamic and responsive, evolving to reflect the voices, ideas, interests, and needs of the children.
+
+We believe families are essential partners in children's learning and development. Through open communication and consistent collaboration, we work together with families and stakeholders to support each child's well-being and success. We also believe that community involvement enriches learning by connecting classroom experiences to real-world knowledge and relationships.
+
+Our practice is guided by **Etuaptmumk**, or **Two-Eyed Seeing**, which invites us to bring together Indigenous ways of knowing and Western perspectives in respectful and balanced ways. Grounded in the First Peoples Principles of Learning, we view learning as holistic, relational, experiential, and connected to the land, culture, and community. Through this approach, we nurture inclusive, respectful, and meaningful learning experiences for all children.
+
+---
 
 ## Cultural Integration
 
-Our Kindergarten program is deeply rooted in Oji-Cree culture. Students learn traditional songs, participate in seasonal celebrations, and have regular visits from community Elders who share stories and teachings. We believe that a strong cultural foundation helps children develop confidence and a sense of belonging.
+Our Kindergarten program is deeply rooted in Oji-Cree culture, honoring the knowledge, traditions, and values of the community. Children learn through meaningful cultural experiences such as singing traditional songs, participating in seasonal celebrations, and engaging in regular visits from community Elders who generously share stories, teachings, and lived experiences. These experiences help children understand who they are, where they come from, and the importance of respect, relationships, and the land.
 
-## Daily Schedule
+We believe that a strong cultural foundation supports children in developing confidence, identity, and a deep sense of belonging. Culture is woven naturally into our daily routines and learning experiences, rather than taught as a separate subject.
 
-| Time | Activity |
-|------|----------|
-| 8:30 AM | Arrival & Free Play |
-| 9:00 AM | Circle Time & Morning Greeting |
-| 9:30 AM | Learning Centers |
-| 10:30 AM | Outdoor Play |
-| 11:00 AM | Snack & Story |
-| 11:30 AM | Numeracy Activities |
-| 12:00 PM | Lunch |
-| 12:45 PM | Rest Time |
-| 1:30 PM | Language & Literacy |
-| 2:15 PM | Creative Arts |
-| 3:00 PM | Circle Time & Dismissal |
+Language learning is an important part of our program. Children learn the Oji-Cree language with Miss Brenda through a variety of engaging language activities. In addition, Orville supports cultural learning through drumming, dancing, hula hoops, and language-based activities, allowing children to express themselves through movement, rhythm, and music. The language is incorporated into learning materials, classroom labels, routines, and play-based learning experiences, helping children hear, practice, and use the language in meaningful ways.
+
+Through cultural integration, we nurture respectful, confident learners who feel connected to their culture, language, community, and identity.
+
+---
 
 ## How Families Can Support Learning
 
-- Read with your child every day, even for just 10 minutes
-- Practice counting objects around the house
-- Use Oji-Cree words and phrases at home
-- Share family stories and traditions
-- Encourage outdoor play and exploration
+Families play an important role in supporting children's learning and development. Learning continues at home through everyday moments, routines, and shared experiences. Simple activities done consistently help children build confidence, curiosity, and a love of learning.
 
-We look forward to partnering with you this year as your child grows and learns!
+**Reading with your child every day**—even for just 10 minutes—helps develop language, listening skills, and imagination. Talking about the story, looking at pictures, and asking questions strengthens understanding and connection.
+
+**Practicing counting** during daily routines, such as counting toys, steps, snacks, or household items, helps build early math skills in meaningful ways.
+
+**Using Oji-Cree words and phrases at home** supports language development and strengthens children's cultural identity. Sharing family stories, traditions, and experiences helps children feel proud of who they are and deepens their sense of belonging.
+
+**Establishing daily routines**, such as regular mealtimes, bedtime routines, and time for play and learning, provides children with a sense of security and structure. Encouraging outdoor play and exploration supports physical development, creativity, and a connection to the land.
+
+By learning together at home, families help create strong foundations for lifelong learning and success.
+
+---
+
+## What We Are Learning
+
+### Early Literacy
+In Literacy, we are learning through Lexia (ongoing), building phonemic awareness and phonics by exploring letter sounds and sounding out simple words. Children are also developing oral storytelling, word study (patterns and compound words), reading comprehension, rhyming, syllables, and alphabet knowledge in warm, engaging, and playful ways.
+
+### Numeracy
+In Numeracy, we are learning about measurement, patterning, probability, counting 1–20, addition and subtraction, money (coins and bills), and 2D and 3D shapes. Through warm, play-based activities, children are building number sense, problem-solving skills, and confidence as they connect math to everyday life.
+
+### Land-Based Learning
+In Land-Based Learning, we are learning through outdoor exploration and nature walks while being introduced to traditional knowledge. Through play-based experiences, our children build curiosity, respect for the land, and meaningful connections to nature.
+
+### Oji-Cree Language
+In Oji-Cree Language, we are learning with Miss Brenda through songs, artwork, and hands-on activities in a hybrid format. These joyful experiences help children build language skills, cultural connections, and confidence in a warm and engaging way.
+
+### Creative Arts
+Expressing creativity through drawing, painting, crafts, and traditional art forms.
+
+### Social Skills
+In Social Skills, we are learning to share, cooperate, and show empathy through helping and caring for one another. As we build trust and friendships, we practice respect and kindness while incorporating the Seven Grandfather Teachings into our classroom community.
+
+---
+
+## Contact Us
+
+**Ms. Lauren**
+[lauren.moreau@martenfalls.com](mailto:lauren.moreau@martenfalls.com)
+
+**Mr. Shun**
+[shun.villegas@martenfalls.com](mailto:shun.villegas@martenfalls.com)
+
+---
 
 **Miigwech!**
-*Mr. Shun & Ms. Lauren*
