@@ -7,41 +7,29 @@ teachers:
   - Ms. Meagan
 color: blue
 order: 2
-room: Room 102
+room: Classroom 2
 students: 14
-hero_image: /assets/images/carousel/slide-2.jpg
+hero_image: /assets/images/classrooms/grade-1-2-a/Hero-Banner.png
 newsletter_folder: grade-1-2-a
 show_daily_schedule: true
-hero_carousel: false
+show_photo_gallery: true
 photos:
-  - src: /assets/images/classrooms/grade-1-2-a/IMG_4719.JPG
-    alt: Grade 1/2 classroom
   - src: /assets/images/classrooms/grade-1-2-a/image0.jpeg
-    alt: Classroom activities
-  - src: /assets/images/classrooms/grade-1-2-a/image1.jpeg
-    alt: Classroom activities
+    alt: Grade 1/2 classroom learning
   - src: /assets/images/classrooms/grade-1-2-a/image2.jpeg
-    alt: Classroom activities
+    alt: Students engaged in activities
   - src: /assets/images/classrooms/grade-1-2-a/image3.jpeg
-    alt: Classroom activities
+    alt: Classroom learning environment
   - src: /assets/images/classrooms/grade-1-2-a/image6.jpeg
-    alt: Classroom activities
+    alt: Hands-on learning activities
   - src: /assets/images/classrooms/grade-1-2-a/image9.jpeg
-    alt: Classroom activities
-  - src: /assets/images/classrooms/grade-1-2-a/image11.jpeg
-    alt: Classroom activities
+    alt: Student collaboration
+  - src: /assets/images/classrooms/grade-1-2-a/image13.jpeg
+    alt: Creative classroom activities
   - src: /assets/images/classrooms/grade-1-2-a/image14.jpeg
-    alt: Classroom activities
-  - src: /assets/images/classrooms/grade-1-2-a/image15.jpeg
-    alt: Classroom activities
+    alt: Learning and discovery
   - src: /assets/images/classrooms/grade-1-2-a/image16.jpeg
-    alt: Classroom activities
-  - src: /assets/images/classrooms/grade-1-2-a/image19.jpeg
-    alt: Classroom activities
-  - src: /assets/images/classrooms/grade-1-2-a/image21.jpeg
-    alt: Classroom activities
-  - src: /assets/images/classrooms/grade-1-2-a/image23.jpeg
-    alt: Classroom activities
+    alt: Classroom moments
 teacher_emails:
   - name: Ms. Verna
     email: vernaruthp@gmail.com
@@ -49,10 +37,10 @@ teacher_emails:
     email: meagan.washburn@martenfalls.com
 subjects:
   - name: Language Arts
-    description: Reading, writing, phonics, and language development through whole-group, small-group, and independent activities.
+    description: Reading, writing, phonics, and language development through whole-group, small-group, and independent activities using Lexia, ABC Duo Linguo, and Raz-Kids.
     icon: book
   - name: Mathematics
-    description: Number sense, problem-solving, and math thinking through hands-on learning and guided instruction.
+    description: Number sense, problem-solving, and math thinking through hands-on learning and guided instruction, supported by Symphony Math and IXL.
     icon: calculator
   - name: Science
     description: Exploring the world through observation, questions, and simple experiments.
@@ -60,68 +48,213 @@ subjects:
   - name: Social Studies
     description: Learning about community, traditions, and caring for one another and the environment.
     icon: globe
-  - name: Native Language
-    description: Taught by Ms. Brenda, focusing on language development and cultural learning.
+  - name: Oji-Cree Language
+    description: Taught by Ms. Brenda (in person and virtual), focusing on language development and cultural learning.
     icon: message
   - name: Culture
     description: Taught by Mr. Orville, helping students connect with traditions, identity, and community.
     icon: tree
+  - name: Physical Education
+    description: Building movement skills, healthy habits, and teamwork through games and activities.
+    icon: heart
+  - name: Music
+    description: Taught by Mr. Felipe (in person and virtual), focusing on singing, rhythm, listening, and musical expression.
+    icon: music
+  - name: Art
+    description: Creative projects that build fine-motor skills and self-expression.
+    icon: palette
+schedule:
+  monday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work & Language Arts"
+    - time: "9:30 - 9:45"
+      activity: "Breakfast"
+    - time: "9:45 - 10:00"
+      activity: "Recess"
+    - time: "10:00 - 10:30"
+      activity: "Native Language"
+    - time: "10:30 - 11:00"
+      activity: "Literacy"
+    - time: "11:00 - 11:15"
+      activity: "Gym"
+    - time: "11:15 - 11:35"
+      activity: "Math"
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      highlight: true
+    - time: "1:00 - 1:15"
+      activity: "Symphony Math / Lexia"
+    - time: "1:15 - 1:45"
+      activity: "Science"
+    - time: "2:00 - 2:15"
+      activity: "Recess"
+    - time: "2:15 - 2:45"
+      activity: "Music (Group)"
+    - time: "2:45 - 3:15"
+      activity: "Choice Time"
+  tuesday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work & Language Arts"
+    - time: "9:30 - 9:45"
+      activity: "Breakfast"
+    - time: "9:45 - 10:30"
+      activity: "Literacy"
+    - time: "10:30 - 11:00"
+      activity: "Math"
+    - time: "11:00 - 11:15"
+      activity: "Gym"
+    - time: "11:15 - 11:35"
+      activity: "Math"
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      highlight: true
+    - time: "1:00 - 1:15"
+      activity: "Native Language"
+    - time: "1:15 - 1:45"
+      activity: "Social Studies"
+    - time: "2:00 - 2:15"
+      activity: "Recess"
+    - time: "2:15 - 2:45"
+      activity: "Snack & Art"
+    - time: "2:45 - 3:15"
+      activity: "Choice Time"
+  wednesday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work & Language Arts"
+    - time: "9:30 - 9:45"
+      activity: "Breakfast"
+    - time: "9:45 - 10:00"
+      activity: "Recess"
+    - time: "10:00 - 10:30"
+      activity: "Native Language"
+    - time: "10:30 - 11:00"
+      activity: "Literacy"
+    - time: "11:00 - 11:15"
+      activity: "Gym"
+    - time: "11:15 - 11:35"
+      activity: "Math"
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      highlight: true
+    - time: "1:00 - 1:15"
+      activity: "Symphony Math / Lexia"
+    - time: "1:15 - 1:45"
+      activity: "Science"
+    - time: "2:00 - 2:15"
+      activity: "Recess"
+    - time: "2:15 - 2:45"
+      activity: "Therapy & Music"
+    - time: "2:45 - 3:15"
+      activity: "Choice Time"
+  thursday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work & Language Arts"
+    - time: "9:30 - 9:45"
+      activity: "Breakfast"
+    - time: "9:45 - 10:30"
+      activity: "Literacy"
+    - time: "10:30 - 11:00"
+      activity: "Math"
+    - time: "11:00 - 11:15"
+      activity: "Gym"
+    - time: "11:15 - 11:35"
+      activity: "Math"
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      highlight: true
+    - time: "1:00 - 1:15"
+      activity: "Native Language"
+    - time: "1:15 - 1:45"
+      activity: "Social Studies"
+    - time: "2:00 - 2:15"
+      activity: "Recess"
+    - time: "2:15 - 2:45"
+      activity: "Snack & Art"
+    - time: "2:45 - 3:15"
+      activity: "Choice Time"
+  friday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work & Language Arts"
+    - time: "9:30 - 9:45"
+      activity: "Breakfast"
+    - time: "9:45 - 10:00"
+      activity: "Recess"
+    - time: "10:00 - 10:30"
+      activity: "Native Language"
+    - time: "10:30 - 11:00"
+      activity: "Literacy"
+    - time: "11:00 - 11:15"
+      activity: "Gym"
+    - time: "11:15 - 11:35"
+      activity: "Math"
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      highlight: true
+    - time: "1:00 - 1:15"
+      activity: "Symphony Math / Lexia"
+    - time: "1:15 - 1:45"
+      activity: "Science"
+    - time: "2:00 - 2:15"
+      activity: "Recess"
+    - time: "2:15 - 2:45"
+      activity: "Snack & Art"
+    - time: "2:45 - 3:15"
+      activity: "Choice Time"
 ---
 
-**Welcome to our Grade 1/2 classroom!**
+## Welcome to Grade 1/2!
 
-Our class theme is **"Never Stop Growing."** We believe that learning is a journey, and every child grows in their own unique way.
+Dear Parents/Guardians,
 
-In our classroom, students are encouraged to try new things, learn from mistakes, and grow academically, socially, and emotionally. We also incorporate the Seven Sacred Teachings to guide students in becoming kind, respectful, and responsible community members.
+Welcome to our Grade 1/2 classroom at Henry Coaster Memorial School! We are Ms. Verna and Ms. Meagan, and we are excited to be your child's teachers this year. We look forward to supporting your child's learning journey as they continue to grow academically, socially, and emotionally.
 
-## Class Motto
+Our class theme is **"Never Stop Growing."** We believe that learning is a journey, and every child grows in their own unique way. In our classroom, students are encouraged to try new things, learn from mistakes, and develop confidence in themselves as learners.
 
 *In Grade 1/2, we learn, we try, and we never stop growing.*
 
-## What Makes Our Class Special
+**Ms. Verna** brings a warm and nurturing approach to our classroom. She is passionate about creating a safe and welcoming environment where every child feels valued and supported in their learning journey.
 
-Our classroom is a safe and welcoming space where students are encouraged to be themselves, take risks in their learning, and grow at their own pace.
+**Ms. Meagan** is dedicated to making learning engaging and meaningful. She loves helping students discover their strengths and build confidence as they tackle new challenges.
 
-We look forward to working together with families to support each child's growth this year.
+Together, we work as a team to create a classroom community where students feel safe to take risks, ask questions, and celebrate their progress. We look forward to partnering with you to support each child's growth this year.
 
-## Subjects We Teach
+## Our Classroom Philosophy
 
-### Language Arts / Literacy
-Reading, writing, phonics, and language development through whole-group, small-group, and independent activities. Students also use **Lexia**, **ABC Duo Linguo**, and **Raz-Kids** for additional support.
+We believe that every child is a capable learner with unique gifts and strengths. Our classroom is built on the foundation of respect, kindness, and community. We create a safe and welcoming space where students are encouraged to be themselves, take risks in their learning, and grow at their own pace.
 
-### Math
-Number sense, problem-solving, and math thinking through hands-on learning and guided instruction, supported by **Symphony Math** and **IXL**.
+Learning in Grade 1/2 is hands-on, engaging, and meaningful. We balance whole-group instruction with small-group learning and independent activities, allowing students to learn at their level while also being challenged to reach their full potential.
 
-### Science
-Exploring the world through observation, questions, and simple experiments.
+We incorporate the **Seven Sacred Teachings** into our daily practice, guiding students in becoming kind, respectful, and responsible community members. These teachings help children understand the importance of respect, honesty, courage, wisdom, humility, truth, and love in their interactions with others and the world around them.
 
-### Social Studies
-Learning about community, traditions, and caring for one another and the environment.
+Our multi-grade classroom creates a family-like atmosphere where older students support younger learners, and everyone learns from one another. This structure helps build leadership skills, empathy, and a strong sense of community.
 
-### Native Language
-Taught by Ms. Brenda (in person and virtual), focusing on language development and cultural learning.
+## Cultural Integration
 
-### Culture
-Taught by Mr. Orville, helping students connect with traditions, identity, and community.
+Culture and language are woven into every aspect of our classroom. We honor Oji-Cree traditions, knowledge, and values through daily learning experiences. Students participate in cultural activities, learn traditional teachings, and develop a strong sense of identity and belonging.
 
-### Physical Education
-Building movement skills, healthy habits, and teamwork through games and activities.
+**Oji-Cree Language** is taught by Ms. Brenda, both in person and virtually. Students learn through songs, stories, conversation, and hands-on activities. Language learning is not limited to a specific time block—we incorporate Oji-Cree words and phrases throughout our day, helping children hear, practice, and use the language in meaningful ways.
 
-### Music
-Taught by Mr. Felipe (in person and virtual), focusing on singing, rhythm, listening, and musical expression.
+**Cultural Learning** is supported by Mr. Orville, who helps students connect with traditions, identity, and community. Through drumming, storytelling, and traditional activities, students build a deep understanding of their heritage and develop pride in their culture.
 
-### Art
-Creative projects that build fine-motor skills and self-expression.
+We believe that a strong cultural foundation supports children in developing confidence, identity, and a deep sense of belonging. By honoring and celebrating Oji-Cree culture every day, we help students grow as proud, confident learners who are connected to their community and traditions.
 
-## How Families Can Support Learning at Home
+## How Families Can Support Learning
 
-Families can support learning by:
-- Reading books sent home together regularly
-- Encouraging your child to use Lexia and Symphony Math at home
-- Talking about school learning and celebrating effort and progress
-- Supporting routines such as regular bedtime and morning preparation
+Families play an essential role in supporting children's learning and development. Here are some ways you can help your child succeed:
 
-## Upcoming Dates
+**Reading Together** - Read books sent home together regularly. Even 10-15 minutes each day makes a big difference in building literacy skills and a love of reading.
+
+**Using Online Learning Tools** - Encourage your child to use **Lexia** and **Symphony Math** at home. These programs provide personalized practice that supports classroom learning.
+
+**Talking About Learning** - Ask your child about what they learned at school. Celebrate their effort and progress, not just their results. This helps build confidence and a growth mindset.
+
+**Supporting Routines** - Establish consistent routines for bedtime, morning preparation, and homework. Routines help children feel secure and ready to learn.
+
+**Practicing Oji-Cree** - Use Oji-Cree words and phrases at home when possible. Sharing family stories, traditions, and experiences helps children feel proud of who they are and strengthens their cultural identity.
+
+**Staying Connected** - Reach out with questions or concerns. We are here to support you and your child, and we value open communication and collaboration.
+
+## Upcoming Events
 
 **February 11** - 100th Day of School
 We will celebrate the 100th Day of School with special activities focused on counting, creativity, and fun learning.
@@ -129,12 +262,6 @@ We will celebrate the 100th Day of School with special activities focused on cou
 **February 13** - Valentine's Day
 Students will spend the afternoon celebrating Valentine's Day with their families in our classroom.
 
-## Contact Information
+Miigwech for trusting us with your children. We look forward to a wonderful year of learning, growth, and discovery!
 
-Families are welcome to reach out with questions or concerns.
-
-- **Ms. Verna:** vernaruthp@gmail.com
-- **Ms. Meagan:** meagan.washburn@martenfalls.com
-
-**Miigwech!**
-*Ms. Verna & Ms. Meagan*
+**Ms. Verna & Ms. Meagan**
