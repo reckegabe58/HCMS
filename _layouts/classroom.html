@@ -202,17 +202,40 @@ layout: default
       <!-- Sidebar Column -->
       <aside class="classroom-sidebar-column">
 
-        <!-- Daily Schedule Card -->
-        {% if page.show_daily_schedule %}
-        {% include daily-schedule-simple.html %}
-        {% endif %}
-
         <!-- Newsletter Card -->
         {% if page.newsletter_folder %}
         <div class="sidebar-card newsletter-sidebar-card">
           {% include newsletter-auto.html folder=page.newsletter_folder %}
         </div>
         {% endif %}
+
+        <!-- Daily Schedule Card -->
+        {% if page.show_daily_schedule %}
+        {% include daily-schedule-simple.html %}
+        {% endif %}
+
+        <!-- Classroom Info Card -->
+        <div class="sidebar-card info-sidebar-card">
+          <h3>Classroom Info</h3>
+          <ul class="sidebar-info-list">
+            <li>
+              <strong>Grade Level</strong>
+              <span>{{ page.grade }}</span>
+            </li>
+            {% if page.room %}
+            <li>
+              <strong>Room</strong>
+              <span>{{ page.room }}</span>
+            </li>
+            {% endif %}
+            {% if page.students %}
+            <li>
+              <strong>Students</strong>
+              <span>{{ page.students }}</span>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
 
         <!-- Contact Card with Teacher Emails -->
         <div class="sidebar-card contact-sidebar-card">
@@ -244,29 +267,6 @@ layout: default
               {% endfor %}
             {% endif %}
           </div>
-        </div>
-
-        <!-- Classroom Info Card -->
-        <div class="sidebar-card info-sidebar-card">
-          <h3>Classroom Info</h3>
-          <ul class="sidebar-info-list">
-            <li>
-              <strong>Grade Level</strong>
-              <span>{{ page.grade }}</span>
-            </li>
-            {% if page.room %}
-            <li>
-              <strong>Room</strong>
-              <span>{{ page.room }}</span>
-            </li>
-            {% endif %}
-            {% if page.students %}
-            <li>
-              <strong>Students</strong>
-              <span>{{ page.students }}</span>
-            </li>
-            {% endif %}
-          </ul>
         </div>
 
       </aside>

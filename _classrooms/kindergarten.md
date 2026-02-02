@@ -9,7 +9,7 @@ color: sage
 order: 1
 room: Room 101
 students: 12
-hero_image: /assets/images/classrooms/kindergarten/hero-banner.png
+hero_image: /assets/images/classrooms/kindergarten/Kindergarten welcome - webpage banner.png
 newsletter_folder: kindergarten
 show_daily_schedule: true
 show_photo_gallery: true
@@ -340,38 +340,6 @@ Families play an important role in supporting children's learning and developmen
 **Establishing daily routines**, such as regular mealtimes, bedtime routines, and time for play and learning, provides children with a sense of security and structure. Encouraging outdoor play and exploration supports physical development, creativity, and a connection to the land.
 
 By learning together at home, families help create strong foundations for lifelong learning and success.
-
----
-
-## What We Are Learning
-
-### Early Literacy
-In Literacy, we are learning through Lexia (ongoing), building phonemic awareness and phonics by exploring letter sounds and sounding out simple words. Children are also developing oral storytelling, word study (patterns and compound words), reading comprehension, rhyming, syllables, and alphabet knowledge in warm, engaging, and playful ways.
-
-### Numeracy
-In Numeracy, we are learning about measurement, patterning, probability, counting 1–20, addition and subtraction, money (coins and bills), and 2D and 3D shapes. Through warm, play-based activities, children are building number sense, problem-solving skills, and confidence as they connect math to everyday life.
-
-### Land-Based Learning
-In Land-Based Learning, we are learning through outdoor exploration and nature walks while being introduced to traditional knowledge. Through play-based experiences, our children build curiosity, respect for the land, and meaningful connections to nature.
-
-### Oji-Cree Language
-In Oji-Cree Language, we are learning with Miss Brenda through songs, artwork, and hands-on activities in a hybrid format. These joyful experiences help children build language skills, cultural connections, and confidence in a warm and engaging way.
-
-### Creative Arts
-Expressing creativity through drawing, painting, crafts, and traditional art forms.
-
-### Social Skills
-In Social Skills, we are learning to share, cooperate, and show empathy through helping and caring for one another. As we build trust and friendships, we practice respect and kindness while incorporating the Seven Grandfather Teachings into our classroom community.
-
----
-
-## Contact Us
-
-**Ms. Lauren**
-[lauren.moreau@martenfalls.com](mailto:lauren.moreau@martenfalls.com)
-
-**Mr. Shun**
-[shun.villegas@martenfalls.com](mailto:shun.villegas@martenfalls.com)
 
 ---
 
