@@ -3947,6 +3947,54 @@ a:hover {
   text-align: left;
 }
 
+.classroom-welcome h2 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--bg-200);
+}
+
+.classroom-welcome h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.classroom-welcome p {
+  margin-bottom: var(--space-lg);
+  line-height: 1.8;
+}
+
+.classroom-welcome p:last-child {
+  margin-bottom: 0;
+}
+
+.classroom-welcome strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.classroom-welcome ul,
+.classroom-welcome ol {
+  margin: var(--space-lg) 0;
+  padding-left: var(--space-xl);
+}
+
+.classroom-welcome li {
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
+}
+
+/* Special styling for welcome intro */
+.classroom-welcome > p:first-of-type {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
 .classroom-welcome h2,
 .classroom-welcome h3 {
   margin-top: var(--space-xl);

@@ -7,7 +7,7 @@ teachers:
   - Mr. Shun Michael Villegas
 color: sage
 order: 1
-room: Room 101
+room: Classroom 1
 students: 12
 hero_image: /assets/images/classrooms/kindergarten/hero-banner.png
 newsletter_folder: kindergarten
@@ -280,7 +280,7 @@ schedule:
       details: "For Bus/Going Home"
 ---
 
-## Aaniin! Welcome to Kindergarten!
+## Boozhoo! Welcome to Kindergarten!
 
 Dear Parents/Guardians,
 
@@ -301,8 +301,6 @@ If you have any questions, concerns, or feedback, don't hesitate to reach out. W
 Warm regards from the Kindergarten Team,
 **Ms. Lauren and Mr. Shun**
 
----
-
 ## Our Classroom Philosophy
 
 We believe that teaching and learning go hand in hand and are shaped through meaningful relationships among the child, their family, educators, the community, and the environment. Learning is most powerful when the child is placed at the center, and when educators take a professional, reflective approach that values collaboration and shared responsibility in supporting each child's growth.
@@ -313,8 +311,6 @@ We believe families are essential partners in children's learning and developmen
 
 Our practice is guided by **Etuaptmumk**, or **Two-Eyed Seeing**, which invites us to bring together Indigenous ways of knowing and Western perspectives in respectful and balanced ways. Grounded in the First Peoples Principles of Learning, we view learning as holistic, relational, experiential, and connected to the land, culture, and community. Through this approach, we nurture inclusive, respectful, and meaningful learning experiences for all children.
 
----
-
 ## Cultural Integration
 
 Our Kindergarten program is deeply rooted in Oji-Cree culture, honoring the knowledge, traditions, and values of the community. Children learn through meaningful cultural experiences such as singing traditional songs, participating in seasonal celebrations, and engaging in regular visits from community Elders who generously share stories, teachings, and lived experiences. These experiences help children understand who they are, where they come from, and the importance of respect, relationships, and the land.
@@ -324,8 +320,6 @@ We believe that a strong cultural foundation supports children in developing con
 Language learning is an important part of our program. Children learn the Oji-Cree language with Miss Brenda through a variety of engaging language activities. In addition, Orville supports cultural learning through drumming, dancing, hula hoops, and language-based activities, allowing children to express themselves through movement, rhythm, and music. The language is incorporated into learning materials, classroom labels, routines, and play-based learning experiences, helping children hear, practice, and use the language in meaningful ways.
 
 Through cultural integration, we nurture respectful, confident learners who feel connected to their culture, language, community, and identity.
-
----
 
 ## How Families Can Support Learning
 
@@ -340,7 +334,5 @@ Families play an important role in supporting children's learning and developmen
 **Establishing daily routines**, such as regular mealtimes, bedtime routines, and time for play and learning, provides children with a sense of security and structure. Encouraging outdoor play and exploration supports physical development, creativity, and a connection to the land.
 
 By learning together at home, families help create strong foundations for lifelong learning and success.
-
----
 
 **Miigwech!**
