@@ -113,3 +113,4 @@ Once this is deployed and working:
 **Everything is ready. Just follow DEPLOYMENT-INSTRUCTIONS.md and you'll be live in 10 minutes!** 🚀
 
 Built with care for Henry Coaster Memorial School and the Marten Falls First Nation community. ❤️
+# Force rebuild
