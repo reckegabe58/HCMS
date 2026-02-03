@@ -1767,7 +1767,7 @@ a:hover {
 
   .nav-list > li {
     border-bottom: none;
-    margin: var(--space-xs) 0;
+    margin: var(--space-md) 0;
   }
 
   .nav-list > li:last-child {

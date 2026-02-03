@@ -71,9 +71,6 @@ subtitle: Working together for our students
 
     <div class="partners-grid">
       <div class="partner-card">
-        <div class="partner-card-logo">
-          <span>Greenfield Learning</span>
-        </div>
         <h3>Greenfield Learning</h3>
         <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
         <p>Greenfield Learning provides HCMS with research-based intervention programs that support student success in literacy and numeracy:</p>
@@ -90,9 +87,6 @@ subtitle: Working together for our students
       </div>
 
       <div class="partner-card">
-        <div class="partner-card-logo">
-          <span>Connected North</span>
-        </div>
         <h3>Connected North</h3>
         <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
         <h4>What to include:</h4>
@@ -130,9 +124,6 @@ subtitle: Working together for our students
       </div>
 
       <div class="partner-card">
-        <div class="partner-card-logo">
-          <span>Creative Therapy</span>
-        </div>
         <h3>Creative Therapy Services</h3>
         <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
         <h4>What to include:</h4>
@@ -180,9 +171,6 @@ subtitle: Working together for our students
 
     <div class="partners-grid">
       <div class="partner-card">
-        <div class="partner-card-logo">
-          <span>Marten Falls First Nation</span>
-        </div>
         <h3>Marten Falls First Nation</h3>
         <p>
           Henry Coaster Memorial School proudly serves the Marten Falls First Nation community.

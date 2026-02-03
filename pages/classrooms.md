@@ -37,21 +37,6 @@ keywords: "small class sizes, multi-grade classrooms, First Nations teachers, bi
       <div class="classroom-card" data-color="{{ classroom.color | default: 'blue' }}">
         <div class="classroom-accent classroom-accent-{{ classroom.color | default: 'blue' }}"></div>
 
-        <div class="classroom-image">
-          {% if classroom.image %}
-          <img src="{{ classroom.image | relative_url }}" alt="{{ classroom.title }} classroom">
-          {% else %}
-          <div class="classroom-image-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          {% endif %}
-        </div>
-
         <div class="classroom-content">
           <span class="classroom-grade">{{ classroom.grade }}</span>
           <h3 class="classroom-title">{{ classroom.title }}</h3>

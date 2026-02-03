@@ -97,8 +97,8 @@ subtitle: Career opportunities at Henry Coaster Memorial School
           </svg>
         </div>
         <div class="opportunity-content">
-          <h3>No Current Openings</h3>
-          <p>We don't have any positions available at this time. Please check back later or contact us to express your interest in future opportunities.</p>
+          <h3>Currently Hiring Teachers for 2026-27 Academic Year</h3>
+          <p>We are seeking passionate educators to join our team for the 2026-27 school year. If you're interested in making a difference in a remote First Nations community, please contact Tom for more information.</p>
         </div>
       </div>
     </div>
