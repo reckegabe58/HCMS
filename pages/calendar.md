@@ -131,32 +131,29 @@ subtitle: Important dates and upcoming events
         const month = months[date.getMonth()];
         const day = date.getDate();
         const title = event.summary || 'Untitled Event';
-        const description = event.description || '';
         const isAllDay = isAllDayEvent(event);
         const location = event.location || '';
 
         // Check for special event types
         const titleLower = title.toLowerCase();
         let cardClass = 'event-card';
-        let badge = '';
+        let badgeHTML = '';
 
         if (titleLower.includes('no school') || titleLower.includes('pd day') || titleLower.includes('professional development')) {
           cardClass += ' no-school';
-          badge = '<span class="event-badge">No School</span>';
-        } else if (titleLower.includes('carnival') || titleLower.includes('celebration') || titleLower.includes('festival')) {
-          cardClass += ' featured';
+          badgeHTML = '<span class="event-badge">No School</span>';
         }
 
-        let timeDisplay = '';
+        // Format time/date info
+        let timeHTML = '';
         if (isAllDay) {
-          timeDisplay = 'All Day Event';
+          timeHTML = `<span class="event-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>All Day Event</span>`;
         } else {
           const startTime = formatTime(event.start.dateTime);
           const endTime = event.end.dateTime ? formatTime(event.end.dateTime) : '';
-          timeDisplay = endTime ? `${startTime} - ${endTime}` : startTime;
-          if (location) {
-            timeDisplay += ` - ${location}`;
-          }
+          const timeText = endTime ? `${startTime} - ${endTime}` : startTime;
+          const locationText = location ? ` • ${location}` : '';
+          timeHTML = `<span class="event-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>${timeText}${locationText}</span>`;
         }
 
         return `
@@ -167,14 +164,8 @@ subtitle: Important dates and upcoming events
             </div>
             <div class="event-info">
               <h3 class="event-title">${title}</h3>
-              ${description ? `<p class="event-description">${description.substring(0, 150)}${description.length > 150 ? '...' : ''}</p>` : ''}
-              ${badge || `<span class="event-time">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                ${timeDisplay}
-              </span>`}
+              ${badgeHTML}
+              ${timeHTML}
             </div>
           </div>
         `;
