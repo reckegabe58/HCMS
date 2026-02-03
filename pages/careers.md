@@ -98,7 +98,7 @@ subtitle: Career opportunities at Henry Coaster Memorial School
         </div>
         <div class="opportunity-content">
           <h3>Currently Hiring Teachers for 2026-27 Academic Year</h3>
-          <p>We are seeking passionate educators to join our team for the 2026-27 school year. If you're interested in making a difference in a remote First Nations community, please contact Tom for more information.</p>
+          <p>We are seeking passionate educators to join our team for the 2026-27 school year. If you're interested in making a difference in a remote First Nations community, please contact Tom Recke at <a href="mailto:tom.recke@martenfalls.com">tom.recke@martenfalls.com</a>.</p>
         </div>
       </div>
     </div>

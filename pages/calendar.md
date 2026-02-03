@@ -61,10 +61,6 @@ subtitle: Important dates and upcoming events
           <p>Loading upcoming events...</p>
         </div>
       </div>
-
-      <div class="events-cta">
-        <a href="{{ '/news/' | relative_url }}" class="btn btn-outline">View All School News</a>
-      </div>
     </div>
 
     <!-- Calendar Events Styles -->
