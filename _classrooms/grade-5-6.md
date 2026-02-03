@@ -10,7 +10,7 @@ order: 5
 room: Classroom 5
 students: 15
 newsletter_folder: grade-5-6
-show_daily_schedule: false
+show_daily_schedule: true
 show_photo_gallery: true
 photos:
   - src: /assets/images/classrooms/grade-5-6/IMG_2236.jpg
@@ -49,6 +49,172 @@ subjects:
   - name: Music
     description: Lessons with Mr. Felipe (online and in-person) learning keyboard, drums, violin, and vocal skills. Music concerts throughout the year highlight student talent.
     icon: music
+schedule:
+  monday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work"
+      details: ""
+    - time: "9:30 - 10:00"
+      activity: "Language Arts"
+      details: "Literacy Centres"
+    - time: "10:00 - 10:30"
+      activity: "Language Arts"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "10:45 - 11:30"
+      activity: "Mathematics"
+      details: ""
+    - time: "11:30 - 12:00"
+      activity: "Writing"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:45"
+      activity: "Gym"
+      details: ""
+    - time: "1:45 - 2:30"
+      activity: "Gym"
+      details: ""
+    - time: "2:45 - 3:30"
+      activity: "Guided Reading"
+      details: "Lexia"
+  tuesday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work"
+      details: ""
+    - time: "9:30 - 10:00"
+      activity: "Language Arts"
+      details: "Literacy Centres"
+    - time: "10:00 - 10:30"
+      activity: "Native Language"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "10:45 - 11:30"
+      activity: "Mathematics"
+      details: ""
+    - time: "11:30 - 12:00"
+      activity: "Science"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:45"
+      activity: "Language Arts"
+      details: "Writing"
+    - time: "1:45 - 2:30"
+      activity: "Native Language"
+      details: ""
+    - time: "2:45 - 3:15"
+      activity: "Music"
+      details: "Mr. Felipe"
+  wednesday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work"
+      details: ""
+    - time: "9:30 - 10:00"
+      activity: "Language Arts"
+      details: "Literacy Centres"
+    - time: "10:00 - 10:30"
+      activity: "Language Arts"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "10:45 - 11:30"
+      activity: "Mathematics"
+      details: ""
+    - time: "11:30 - 12:00"
+      activity: "Art"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:45"
+      activity: "Read Aloud"
+      details: ""
+    - time: "1:45 - 2:30"
+      activity: "Read Aloud"
+      details: ""
+    - time: "2:45 - 3:30"
+      activity: "Social Studies"
+      details: ""
+  thursday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work"
+      details: ""
+    - time: "9:30 - 10:00"
+      activity: "Language Arts"
+      details: "Literacy Centres"
+    - time: "10:00 - 10:30"
+      activity: "Native Language"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "10:45 - 11:30"
+      activity: "Mathematics"
+      details: ""
+    - time: "11:30 - 12:00"
+      activity: "Writing"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:45"
+      activity: "Gym"
+      details: ""
+    - time: "1:45 - 2:30"
+      activity: "Gym"
+      details: ""
+    - time: "2:45 - 3:15"
+      activity: "Music"
+      details: "Mr. Felipe"
+  friday:
+    - time: "9:00 - 9:30"
+      activity: "Morning Work"
+      details: ""
+    - time: "9:30 - 10:00"
+      activity: "Language Arts"
+      details: "Literacy Centres"
+    - time: "10:00 - 10:30"
+      activity: "Language Arts"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "10:45 - 11:30"
+      activity: "Mathematics"
+      details: ""
+    - time: "11:30 - 12:00"
+      activity: "Science"
+      details: ""
+    - time: "12:00 - 1:00"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:45"
+      activity: "Native Language"
+      details: ""
+    - time: "1:45 - 2:30"
+      activity: "Native Language"
+      details: ""
+    - time: "2:45 - 3:30"
+      activity: "Guided Reading"
+      details: "Lexia"
 ---
 
 **Boozhoo! Welcome to Grade 5/6!**
@@ -58,29 +224,6 @@ Welcome to our classroom! Our teaching team includes Mr. Ankush Thakur and Ms. F
 We value learning that is connected to the land, community, and students' lived experiences. Through observation, discussion, and hands-on activities, students are encouraged to develop respect for the land, nature, and the environment around them.
 
 We value collaboration with families and look forward to working together to support each student's growth throughout the school year.
-
-## Our Weekly Schedule
-
-Below is an overview of our weekly classroom schedule. While activities may occasionally change due to special events or learning opportunities, this timetable reflects our regular structure:
-
-**9:00–9:30** - Morning Work
-**9:30–10:00** - Language Arts – Literacy Centres
-**10:00–10:30** - Language Arts / Native Language (varies by day)
-**10:30–10:45** - Recess
-**10:45–11:30** - Mathematics
-**11:30–12:00** - Writing / Science / Art (varies by day)
-**12:00–1:00** - Lunch
-**1:00–1:45** - Gym / Language Arts (Writing) / Native Language / Read Aloud (varies by day)
-**1:45–2:30** - Gym / Native Language / Read Aloud (varies by day)
-**2:45–3:30** - Guided Reading (Lexia) / Social Studies (varies by day)
-
-### Music Lesson Schedule
-
-Music lessons for Grade 5/6 take place on:
-- **Tuesday**: 2:45 p.m. – 3:15 p.m.
-- **Thursday**: 2:45 p.m. – 3:15 p.m.
-
-Music lessons are part of the school-wide music program and may occasionally change due to special events or scheduling adjustments.
 
 ## What We're Learning
 
