@@ -13,6 +13,7 @@ newsletter_folder: grade-3-4
 show_daily_schedule: false
 show_photo_gallery: false
 art_pdf: /assets/images/classrooms/grade-3-4/class-art.pdf
+art_student_names: "MJ,Brody,Jenelle,,Harry,Leah,Jaze,Gabby,Conner,Leah,,Cytheria"
 teacher_emails:
   - name: Mr. Gabe
     email: reckegabe@gmail.com

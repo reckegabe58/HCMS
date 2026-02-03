@@ -2,6 +2,7 @@
   PDF Art Gallery - Displays all pages of a PDF as a grid of images
 
   Usage: {% include pdf-art-gallery.html pdf_path="/assets/path/to/file.pdf" title="Student Art" %}
+  Optional: student_names="Name1,Name2,Name3" - Comma-separated list of student names for labels
 {% endcomment %}
 
 <div class="pdf-art-gallery">
@@ -26,6 +27,10 @@
   const pdfUrl = '{{ include.pdf_path | relative_url }}';
   const containerId = 'pdf-art-grid-{{ include.pdf_path | slugify }}';
   const container = document.getElementById(containerId);
+
+  // Parse student names if provided
+  const studentNamesStr = '{{ include.student_names }}';
+  const studentNames = studentNamesStr ? studentNamesStr.split(',').map(name => name.trim()) : [];
 
   // Load the PDF
   pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
@@ -66,11 +71,19 @@
       artItem.className = 'art-item';
       artItem.appendChild(canvas);
 
-      // Add page number label if there are multiple pages
+      // Add label if there are multiple pages
       if (pdf.numPages > 1) {
         const label = document.createElement('div');
         label.className = 'art-item-label';
-        label.textContent = `Artwork ${pageNum}`;
+
+        // Use student name if available, otherwise use generic label
+        const studentName = studentNames[pageNum - 1];
+        if (studentName && studentName.length > 0) {
+          label.textContent = `${studentName}'s Art`;
+        } else {
+          label.textContent = `Artwork ${pageNum}`;
+        }
+
         artItem.appendChild(label);
       }
 

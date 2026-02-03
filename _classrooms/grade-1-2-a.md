@@ -254,14 +254,6 @@ Families play an essential role in supporting children's learning and developmen
 
 **Staying Connected** - Reach out with questions or concerns. We are here to support you and your child, and we value open communication and collaboration.
 
-## Upcoming Events
-
-**February 11** - 100th Day of School
-We will celebrate the 100th Day of School with special activities focused on counting, creativity, and fun learning.
-
-**February 13** - Valentine's Day
-Students will spend the afternoon celebrating Valentine's Day with their families in our classroom.
-
 Miigwech for trusting us with your children. We look forward to a wonderful year of learning, growth, and discovery!
 
 **Ms. Verna & Ms. Meagan**

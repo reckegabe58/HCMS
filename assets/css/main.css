@@ -3798,7 +3798,7 @@ a:hover {
 
 .classroom-hero-professional.with-background {
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   background-repeat: no-repeat;
   min-height: 320px;
 }

@@ -220,7 +220,7 @@ layout: default
 {% if page.art_pdf %}
 <section class="classroom-gallery-feature">
   <div class="container">
-    {% include pdf-art-gallery.html pdf_path=page.art_pdf title="Student Art Gallery" %}
+    {% include pdf-art-gallery.html pdf_path=page.art_pdf title="Student Art Gallery" student_names=page.art_student_names %}
   </div>
 </section>
 {% endif %}

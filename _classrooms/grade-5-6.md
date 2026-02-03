@@ -129,19 +129,3 @@ Learning their language is a very important way for students to engage with thei
 **Support consistent routines** for sleep, attendance, and arriving at school on time to help your child feel prepared and ready to learn.
 
 **Stay connected** - Please inform the school if there are changes at home or concerns that may affect your child's learning or well-being.
-
-## Contact Information
-
-Families are welcome to contact us directly with any questions, concerns, or updates.
-
-**Mr. Ankush Thakur**
-Email: [ankush.thakur@hcmschool.ca](mailto:ankush.thakur@hcmschool.ca)
-Phone (call or text): 437-445-1617
-
-**Ms. Fiona van Wissen**
-Email: [fiona.vanwissen@martenfalls.com](mailto:fiona.vanwissen@martenfalls.com)
-
-We are happy to connect by email or text and will respond as soon as possible.
-
-**Miigwech!**
-*Mr. Ankush Thakur & Ms. Fiona van Wissen*
