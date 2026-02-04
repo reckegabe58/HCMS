@@ -8,9 +8,9 @@ color: green
 order: 4
 room: Classroom 4
 students: 11
-hero_image: /assets/images/carousel/slide-4.jpg
+hero_image: /assets/images/classrooms/grade-3-4/hero-banner.jpg
 newsletter_folder: grade-3-4
-show_daily_schedule: false
+show_daily_schedule: true
 show_photo_gallery: false
 art_pdf: /assets/images/classrooms/grade-3-4/class-art.pdf
 art_student_names: "MJ,Brody,Jenelle,,Harry,Leah,Jaze,Gabby,Conner,Leah,,Cytheria"
@@ -42,6 +42,177 @@ subjects:
   - name: Land-Based Learning
     description: Traditional skills including trapping basics, plant identification, and seasonal activities.
     icon: tree
+schedule:
+  monday:
+    - time: "9:00 - 9:45"
+      activity: "Lexia + Symphony"
+      details: ""
+    - time: "10:00 - 10:15"
+      activity: "Morning Worksheets"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "10:45 - 11:00"
+      activity: "Math"
+      details: ""
+    - time: "11:30 - 12:00"
+      activity: "Gym"
+      details: ""
+    - time: "12:00 - 12:45"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Language"
+      details: ""
+    - time: "2:00 - 2:15"
+      activity: "Science"
+      details: ""
+    - time: "2:45 - 3:15"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "3:15 - 3:30"
+      activity: "Read Aloud"
+      details: ""
+  tuesday:
+    - time: "9:00 - 9:45"
+      activity: "Lexia + Symphony"
+      details: ""
+    - time: "10:00 - 10:15"
+      activity: "Morning Worksheets"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "11:00 - 11:15"
+      activity: "Language"
+      details: ""
+    - time: "11:30 - 11:45"
+      activity: "Preferred Activities"
+      details: ""
+    - time: "12:00 - 12:45"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Music"
+      details: ""
+    - time: "2:00 - 2:15"
+      activity: "Social Studies"
+      details: ""
+    - time: "2:30 - 2:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "3:15 - 3:30"
+      activity: "Gym"
+      details: ""
+  wednesday:
+    - time: "9:00 - 9:45"
+      activity: "Lexia + Symphony"
+      details: ""
+    - time: "10:00 - 10:15"
+      activity: "Morning Worksheets"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "10:45 - 11:00"
+      activity: "Math"
+      details: ""
+    - time: "11:30 - 12:00"
+      activity: "Gym"
+      details: ""
+    - time: "12:00 - 12:45"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Science"
+      details: ""
+    - time: "2:00 - 2:15"
+      activity: "Language"
+      details: ""
+    - time: "2:30 - 2:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "3:15 - 3:30"
+      activity: "Read Aloud"
+      details: ""
+  thursday:
+    - time: "9:00 - 9:45"
+      activity: "Lexia + Symphony"
+      details: ""
+    - time: "10:00 - 10:15"
+      activity: "Morning Worksheets"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "11:00 - 11:15"
+      activity: "Language"
+      details: ""
+    - time: "11:30 - 11:45"
+      activity: "Preferred Activities"
+      details: ""
+    - time: "12:00 - 12:45"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Music"
+      details: ""
+    - time: "2:00 - 2:15"
+      activity: "Building Literacy"
+      details: ""
+    - time: "2:30 - 2:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "3:15 - 3:30"
+      activity: "Gym"
+      details: ""
+  friday:
+    - time: "9:00 - 9:45"
+      activity: "Lexia + Symphony"
+      details: ""
+    - time: "10:00 - 10:15"
+      activity: "Morning Worksheets"
+      details: ""
+    - time: "10:30 - 10:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "10:45 - 11:00"
+      activity: "Math"
+      details: ""
+    - time: "11:30 - 12:00"
+      activity: "Gym"
+      details: ""
+    - time: "12:00 - 12:45"
+      activity: "Lunch"
+      details: ""
+      highlight: true
+    - time: "1:00 - 1:30"
+      activity: "Science"
+      details: ""
+    - time: "2:00 - 2:15"
+      activity: "Language"
+      details: ""
+    - time: "2:30 - 2:45"
+      activity: "Recess"
+      details: ""
+      highlight: true
+    - time: "3:15 - 3:30"
+      activity: "Art"
+      details: ""
 ---
 
 **Boozhoo! Welcome to Grade 3/4!**
@@ -51,69 +222,6 @@ I'm Mr. Gabe, and I'm honored to guide your children through this important stag
 ## Our Classroom Community
 
 In Grade 3/4, students take on more responsibility for their learning while still receiving the support they need. Our classroom operates on mutual respect and shared responsibility. Students help establish classroom norms at the beginning of the year, giving them ownership of their learning environment.
-
-## Academic Focus Areas
-
-### Oji-Cree Language (Native Language)
-Our Native Language program is central to who we are. Students develop:
-- **Oral traditions** - listening to and retelling traditional stories from Elders
-- **Vocabulary building** - words for land, animals, seasons, family, and daily life
-- **Conversational skills** - greetings, instructions, and everyday phrases
-- **Cultural connections** - language tied to ceremonies, songs, and traditional practices
-- **Storytelling** - creating and sharing stories in Oji-Cree
-
-*Language carries our identity. Learning Oji-Cree connects students to their ancestors and community.*
-
-### Language
-Language development is central to intellectual, social, and emotional growth. We focus on:
-- **Reading** - comprehension strategies, making predictions, asking questions, making connections
-- **Writing** - paragraph structure, personal narratives, reports, persuasive writing, and creative pieces
-- **Oral communication** - presentations, discussions, and active listening
-- **Media literacy** - understanding and creating media texts
-- **Grammar & conventions** - proper sentence structure, punctuation, and spelling
-
-### Mathematics
-Students develop computational fluency and mathematical reasoning:
-- **Number sense** - multiplication, division, and place value understanding
-- **Fractions** - understanding parts of a whole, comparing, and ordering fractions
-- **Measurement** - length, mass, capacity, area, and perimeter
-- **Geometry** - 2D and 3D shapes, angles, symmetry, and transformations
-- **Data literacy** - collecting, organizing, and interpreting data
-- **Problem solving** - multi-step word problems and real-world applications
-
-### Science & Technology
-We use a STEM-focused approach:
-- **Life systems** - habitats, communities, and local ecosystems
-- **Matter & energy** - light, sound, and properties of materials
-- **Structures & mechanisms** - pulleys, gears, and simple machines
-- **Earth & space systems** - rocks, minerals, and weather patterns
-- **STEM skills** - scientific inquiry, experimentation, and technological design
-
-We integrate traditional ecological knowledge throughout, connecting Western science with Oji-Cree understanding of the natural world.
-
-### Social Studies
-Students explore communities past and present:
-- **Grade 3: Heritage and Identity** - Communities in Canada, 1780–1850
-- **Grade 3: People and Environments** - Living and Working in Ontario
-- **Grade 4: Heritage and Identity** - First Nations and Europeans in New France and Early Canada
-- **Grade 4: People and Environments** - Political and Physical Regions of Canada
-- **First Nations perspectives** - Oji-Cree history, treaties, and contemporary issues
-- **Geographic inquiry** - mapping skills and understanding our region
-
-### Health & Physical Education
-Building foundations for lifelong well-being:
-- **Physical literacy** - movement skills, active games, and sports
-- **Mental health** - coping strategies, emotional regulation, and resilience
-- **Healthy relationships** - communication, conflict resolution, and respect
-- **Personal safety** - online safety, substance awareness, and making safe choices
-- **Active living** - daily physical activity integrated with land-based learning
-
-### The Arts
-Encouraging creativity through multiple disciplines:
-- **Visual arts** - drawing, painting, and traditional Oji-Cree art forms
-- **Music** - singing, rhythm, and traditional drumming
-- **Drama** - storytelling, role-play, and performances
-- **Dance** - movement, traditional dance, and creative expression
 
 ## How Families Can Support Learning at Home
 
@@ -136,14 +244,6 @@ Students can practice at home using these tools. Students know their logins for 
 - **Mathletics** - Math practice to build confidence and fluency ([mathletics.com](https://sign-in.mathletics.com/))
 
 *Short, regular use is more helpful than long sessions.*
-
-## Communication
-
-I believe in open communication with families. You can expect:
-- **Monthly newsletters** with curriculum updates and important dates
-- **Progress reports** - formal reports three times per year
-- **Parent-teacher conferences** - scheduled in fall and spring
-- **Open door policy** - I'm always available to discuss your child's progress
 
 I look forward to a wonderful year of learning together!
 

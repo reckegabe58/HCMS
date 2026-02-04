@@ -225,38 +225,6 @@ We value learning that is connected to the land, community, and students' lived 
 
 We value collaboration with families and look forward to working together to support each student's growth throughout the school year.
 
-## What We're Learning
-
-### Language Arts
-I support students in developing reading, writing, speaking, and listening skills through literacy centres, guided reading, writing activities, and class discussions.
-
-### Mathematics
-Instruction focuses on number sense, operations, and problem-solving, with regular practice and hands-on activities to build confidence.
-
-### Science
-Students explore scientific concepts through observation, discussion, and inquiry-based learning connected to real-life examples and the environment.
-
-### Art
-Students express ideas and creativity through drawing, building, and hands-on art activities.
-
-### Read Aloud
-Students listen to a variety of texts to build comprehension, vocabulary, and a love for reading.
-
-### Guided Reading / Lexia
-Students receive targeted reading support through guided instruction and the Lexia literacy program.
-
-### Physical Education - Ms. Fiona
-Students are offered daily physical activity and skill progressions in a variety of activities in the gym and outdoors. Basketball and badminton are popular sports, as well as skating at the local arena in the winter. Students learn healthy living, the importance of sleep and nutrition, and ways to promote their mental health.
-
-### Social Studies - Ms. Fiona
-Students engage in hands-on activities and cultural experiences as they celebrate their community, stories of the past, and dreams for the future. Students are learning mapping skills as they label maps of rivers and lakes of Ontario and study the importance of the local watershed historically and for the present day. They study Indigenous governing, as well as learning roles and responsibilities of federal, provincial and municipal governments. Students also learn Indigenous teachings and drumming from Orville Councillor who visits the school twice a month.
-
-### Music - Mr. Felipe
-Music and the arts are a very important component of the education program at HCMS. Students participate in online and in-person music lessons with Mr. Felipe, the school music teacher. They have the opportunity to learn keyboard, drums or violin, as well as vocal skills. Several music concerts take place during the school year to highlight student talent.
-
-### Oji-Cree Language - Ms. Brenda
-Learning their language is a very important way for students to engage with their culture at HCMS. Ms. Brenda teaches students both virtually and in-person. Native language lessons are every day for half an hour, in the morning or afternoon depending on the day. Students are learning to introduce themselves, to speak about the weather, to name clothing items and body parts, as well as learning the name of the moons for each month.
-
 ## How Families Can Support Learning
 
 **Ask your child to explain one thing they learned** each day and how they learned it (for example, by reading, writing, drawing, or solving a problem).

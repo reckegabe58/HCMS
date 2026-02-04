@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Our Heritage
-permalink: /heritage/
+title: Our Identity
+permalink: /identity/
 subtitle: Language, culture, and connection to the land
 ---
 
@@ -11,7 +11,7 @@ subtitle: Language, culture, and connection to the land
   <div class="container">
     <div class="heritage-hero-content">
       <span class="hero-badge">Who We Are</span>
-      <h1>Our Heritage</h1>
+      <h1>Our Identity</h1>
       <p class="heritage-hero-text">At Henry Coaster Memorial School, language and culture are not programs — they are who we are.</p>
       <div class="heritage-hero-words">
         <div class="hero-word">
@@ -74,10 +74,12 @@ subtitle: Language, culture, and connection to the land
         </div>
       </div>
       <div class="land-feature-visual">
-        <div class="land-visual-card land-visual-rivers">
-          <span>Ogoki River</span>
+        <div class="land-visual-card land-visual-image">
+          <img src="{{ '/assets/images/identity/albany-ogoki-intersection.jpg' | relative_url }}" alt="Albany and Ogoki Rivers Intersection">
+          <span>Albany & Ogoki Intersection</span>
         </div>
-        <div class="land-visual-card land-visual-albany">
+        <div class="land-visual-card land-visual-image">
+          <img src="{{ '/assets/images/identity/albany-river.jpg' | relative_url }}" alt="Albany River">
           <span>Albany River</span>
         </div>
       </div>
@@ -123,7 +125,7 @@ subtitle: Language, culture, and connection to the land
   <div class="container">
     <div class="section-header centered">
       <span class="section-label">Our Cultural Foundations</span>
-      <h2>How We Pass On Our Heritage</h2>
+      <h2>How We Pass On Our Identity</h2>
     </div>
 
     <div class="pillars-grid">
