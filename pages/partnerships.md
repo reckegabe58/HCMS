@@ -27,10 +27,10 @@ subtitle: Working together for our students
 <section class="partner-section partner-section-alt">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title"><span class="title-accent">—</span> Our Key Foundational Partner</h2>
+      <h2 class="section-title"><span class="title-accent">—</span> Our Key Foundational Partners</h2>
     </div>
 
-    <div class="partners-grid partners-grid-single">
+    <div class="partners-grid">
       <div class="partner-card partner-card-featured">
         <div class="partner-card-logo partner-card-logo-large">
           <img src="{{ '/assets/images/partners/matawa-logo.png' | relative_url }}" alt="Matawa First Nations Logo">
@@ -58,6 +58,14 @@ subtitle: Working together for our students
           </svg>
         </a>
       </div>
+
+      <div class="partner-card partner-card-featured">
+        <h3>Anishinaabeg Animiikii Bimaadiziwin</h3>
+        <p class="partner-tagline">Culture, Identity & Community Learning</p>
+        <p>
+          Anishinaabeg Animiikii Bimaadiziwin supports Henry Coaster Memorial School through culturally grounded learning led by Orville Councillor and David Samard. Students participate in drumming, storytelling, and the foundations of traditional dance, while also learning through visits from guest hoop dancers, youth performers, and flute players. This partnership creates meaningful opportunities for students to connect with Anishinaabe culture, identity, and artistic expression through lived, hands-on experiences rooted in community knowledge.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -72,30 +80,18 @@ subtitle: Working together for our students
     <div class="partners-grid">
       <div class="partner-card">
         <h3>Greenfield Learning</h3>
-        <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
-        <p>Greenfield Learning provides HCMS with research-based intervention programs that support student success in literacy and numeracy:</p>
-        <ul class="partner-programs-list">
-          <li><strong>Lexia Learning</strong> — Personalized literacy program building phonics, vocabulary, fluency, and comprehension</li>
-          <li><strong>Symphony Math</strong> — Visual math program developing number sense and conceptual understanding</li>
-        </ul>
-        <h4>What to include:</h4>
-        <ul class="placeholder-list">
-          <li>Overview of Greenfield Learning</li>
-          <li>History of partnership with HCMS</li>
-          <li>How they support diverse learners</li>
-        </ul>
+        <p class="partner-tagline">Literacy & Numeracy Support</p>
+        <p>
+          Greenfield Learning supports Henry Coaster Memorial School through evidence-based digital learning programs that strengthen foundational skills in reading and math. Their primary supports include Lexia Core5 Reading, which provides structured literacy instruction in phonics, vocabulary, fluency, and comprehension, and Symphony Math, a visual and concept-based math program that builds strong number sense and problem-solving skills. These tools allow learning to be personalized for each student while providing teachers with data to guide instruction and targeted support.
+        </p>
       </div>
 
       <div class="partner-card">
         <h3>Connected North</h3>
-        <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
-        <h4>What to include:</h4>
-        <ul class="placeholder-list">
-          <li>What is Connected North</li>
-          <li>How it benefits our students</li>
-          <li>Types of sessions offered</li>
-        </ul>
-        <p class="partner-contact">School Contact: Fiona</p>
+        <p class="partner-tagline">Live Learning Beyond the Community</p>
+        <p>
+          Connected North brings live, interactive learning experiences into the classroom through two-way video technology. This partnership connects students with Indigenous mentors, role models, and experts, giving them access to learning opportunities that may not be available locally. Sessions are engaging, culturally relevant, and designed to inspire curiosity, confidence, and a broader sense of possibility while supporting student well-being and engagement.
+        </p>
       </div>
     </div>
   </div>
@@ -113,14 +109,11 @@ subtitle: Working together for our students
         <div class="partner-card-logo partner-card-logo-img">
           <img src="{{ '/assets/images/partners/anderson-therapy-logo.png' | relative_url }}" alt="Anderson Therapy Services Logo">
         </div>
-        <h3>Anderson Support Services</h3>
-        <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
-        <h4>What to include:</h4>
-        <ul class="placeholder-list">
-          <li>Special education support</li>
-          <li>Neurodivergence support</li>
-          <li>Wellness and mental health</li>
-        </ul>
+        <h3>Anderson Therapy Services</h3>
+        <p class="partner-tagline">Student Development & Well-Being</p>
+        <p>
+          Anderson Therapy Services partners with schools to provide professional allied-health supports that promote student development and well-being. Their services may include speech and language supports, developmental and social-emotional interventions, and collaborative work with educators and families. Designed with northern and remote communities in mind, these supports help students build communication skills, confidence, and strategies for success both in and out of the classroom.
+        </p>
       </div>
 
       <div class="partner-card">

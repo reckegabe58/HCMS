@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Leadership & Staff
+title: Leadership
 permalink: /leadership/
 subtitle: Meet the people who guide our school community
 ---
@@ -9,7 +9,7 @@ subtitle: Meet the people who guide our school community
 <section class="page-header-simple">
   <div class="container">
     <span class="hero-badge page-badge">Our Team</span>
-    <h1 class="page-header-title">Leadership & Staff</h1>
+    <h1 class="page-header-title">Leadership</h1>
     <p class="page-header-subtitle">The dedicated individuals who guide Henry Coaster Memorial School and support our students' journey.</p>
   </div>
 </section>
@@ -71,11 +71,6 @@ subtitle: Meet the people who guide our school community
 
         <div class="leader-bio-full">
           <p>A Marten Falls First Nation community member, with a post-secondary education and lived experience of the education system on reserve and through the transitions to high school and post-secondary. Susanna Baxter is helping to strengthen the integration of Oji-Cree language learning among the staff and students, as well as supporting special education needs and cultural programming.</p>
-        </div>
-
-        <div class="leader-contact">
-          <p><strong>Contact:</strong></p>
-          <p>Email: <a href="mailto:">Contact information coming soon</a></p>
         </div>
       </div>
     </div>
