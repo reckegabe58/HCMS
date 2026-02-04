@@ -21,7 +21,7 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
       At HCMS, we offer programs that support academic excellence, student well-being, and community connection. From literacy and numeracy interventions to arts enrichment and after-school activities, we ensure every student has the opportunity to thrive.
     </p>
     <p class="intro-note">
-      <strong>Looking for language, culture, and land-based learning?</strong> These are central to who we are as a school and community. Visit <a href="{{ '/heritage/' | relative_url }}">Our Heritage</a> to learn more.
+      <strong>Looking for language, culture, and land-based learning?</strong> These are central to who we are as a school and community. Visit <a href="{{ '/identity/' | relative_url }}">Our Identity</a> to learn more.
     </p>
   </div>
 </section>
