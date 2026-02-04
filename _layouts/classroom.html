@@ -111,6 +111,13 @@ layout: default
           </div>
         </div>
 
+        <!-- Student Art Gallery - In Main Column -->
+        {% if page.art_pdf %}
+        <div class="classroom-section">
+          {% include pdf-art-gallery.html pdf_path=page.art_pdf title="Student Art Gallery" student_names=page.art_student_names %}
+        </div>
+        {% endif %}
+
       </div>
 
       <!-- Sidebar Column -->
@@ -216,14 +223,6 @@ layout: default
 </section>
 {% endif %}
 
-<!-- Student Art Gallery - PDF Pages as Grid -->
-{% if page.art_pdf %}
-<section class="classroom-gallery-feature">
-  <div class="container">
-    {% include pdf-art-gallery.html pdf_path=page.art_pdf title="Student Art Gallery" student_names=page.art_student_names %}
-  </div>
-</section>
-{% endif %}
 
 <!-- Other Classrooms -->
 <section class="other-classrooms-section">
