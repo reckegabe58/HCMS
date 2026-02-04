@@ -844,6 +844,60 @@ a:hover {
 }
 
 /* ==========================================
+   AUTO-CENTERING WHEN SIDEBAR IS EMPTY
+   Centers main content when sidebar is empty using modern CSS :has() selector
+   ========================================== */
+
+/* Homepage Grid - center when sidebar is empty */
+.homepage-grid:has(.sidebar:empty) {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Post Grid - center when post-sidebar is empty */
+.post-grid:has(.post-sidebar:empty) {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About Grid - center when about-sidebar is empty */
+.about-grid:has(.about-sidebar:empty) {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contact Grid - center when contact sidebar is empty */
+.contact-grid:has(.contact-sidebar:empty) {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Classroom Two-Column - center when classroom-sidebar-column is empty */
+.classroom-two-column:has(.classroom-sidebar-column:empty) {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hide empty sidebars completely */
+.sidebar:empty,
+.post-sidebar:empty,
+.about-sidebar:empty,
+.contact-sidebar:empty,
+.classroom-sidebar-column:empty {
+  display: none;
+}
+
+/* ==========================================
    SIDEBAR WIDGET - THIS WEEK'S ACTIVITIES
    ========================================== */
 
