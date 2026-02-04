@@ -7374,12 +7374,12 @@ a:hover {
 
 .land-feature-visual {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
 }
 
 .land-visual-card {
-  aspect-ratio: 1;
+  aspect-ratio: 2/1;
   border-radius: var(--radius-xl);
   display: flex;
   align-items: flex-end;
