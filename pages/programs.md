@@ -155,7 +155,6 @@ subtitle: Learning opportunities at Henry Coaster Memorial School
         <p>
           Comprehensive support services including Anderson Support Services, Creative Therapy, and multi-tiered interventions through Lexia and Symphony Math.
         </p>
-        <a href="{{ '/support-services/' | relative_url }}" class="btn btn-sm btn-primary">Learn More</a>
       </div>
     </div>
   </div>
