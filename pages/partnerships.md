@@ -65,6 +65,13 @@ subtitle: Working together for our students
         <p>
           Anishinaabeg Animiikii Bimaadiziwin supports Henry Coaster Memorial School through culturally grounded learning led by Orville Councillor and David Samard. Students participate in drumming, storytelling, and the foundations of traditional dance, while also learning through visits from guest hoop dancers, youth performers, and flute players. This partnership creates meaningful opportunities for students to connect with Anishinaabe culture, identity, and artistic expression through lived, hands-on experiences rooted in community knowledge.
         </p>
+        <h4>Key Services:</h4>
+        <ul class="partner-services-list">
+          <li>Traditional drumming and singing instruction</li>
+          <li>Storytelling and oral tradition teachings</li>
+          <li>Hoop dancing and traditional dance foundations</li>
+          <li>Cultural performances and guest artists</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -84,6 +91,13 @@ subtitle: Working together for our students
         <p>
           Greenfield Learning supports Henry Coaster Memorial School through evidence-based digital learning programs that strengthen foundational skills in reading and math. Their primary supports include Lexia Core5 Reading, which provides structured literacy instruction in phonics, vocabulary, fluency, and comprehension, and Symphony Math, a visual and concept-based math program that builds strong number sense and problem-solving skills. These tools allow learning to be personalized for each student while providing teachers with data to guide instruction and targeted support.
         </p>
+        <h4>Key Services:</h4>
+        <ul class="partner-services-list">
+          <li>Lexia Core5 Reading program for literacy development</li>
+          <li>Symphony Math for concept-based math learning</li>
+          <li>Personalized learning pathways for each student</li>
+          <li>Data-driven insights for targeted instruction</li>
+        </ul>
       </div>
 
       <div class="partner-card">
@@ -92,6 +106,13 @@ subtitle: Working together for our students
         <p>
           Connected North brings live, interactive learning experiences into the classroom through two-way video technology. This partnership connects students with Indigenous mentors, role models, and experts, giving them access to learning opportunities that may not be available locally. Sessions are engaging, culturally relevant, and designed to inspire curiosity, confidence, and a broader sense of possibility while supporting student well-being and engagement.
         </p>
+        <h4>Key Services:</h4>
+        <ul class="partner-services-list">
+          <li>Live two-way interactive video sessions</li>
+          <li>Connections with Indigenous mentors and role models</li>
+          <li>Culturally relevant learning experiences</li>
+          <li>Student well-being and engagement support</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -114,6 +135,13 @@ subtitle: Working together for our students
         <p>
           Anderson Therapy Services partners with schools to provide professional allied-health supports that promote student development and well-being. Their services may include speech and language supports, developmental and social-emotional interventions, and collaborative work with educators and families. Designed with northern and remote communities in mind, these supports help students build communication skills, confidence, and strategies for success both in and out of the classroom.
         </p>
+        <h4>Key Services:</h4>
+        <ul class="partner-services-list">
+          <li>Speech and language therapy</li>
+          <li>Developmental and social-emotional interventions</li>
+          <li>Collaborative support with educators and families</li>
+          <li>Remote-focused service delivery for northern communities</li>
+        </ul>
       </div>
 
       <div class="partner-card">
@@ -170,6 +198,13 @@ subtitle: Working together for our students
           Our school works in close partnership with the community to ensure education reflects
           local values, traditions, and priorities.
         </p>
+        <h4>Key Services:</h4>
+        <ul class="partner-services-list">
+          <li>Community governance and educational oversight</li>
+          <li>Elder involvement and cultural guidance</li>
+          <li>Land-based learning opportunities</li>
+          <li>Support for community events and traditions</li>
+        </ul>
         <a href="https://martenfalls.com/" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
           Visit MFFN Website
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
