@@ -171,13 +171,20 @@ subtitle: Working together for our students
           <img src="{{ '/assets/images/partners/barn-owl-music-logo.png' | relative_url }}" alt="Barn Owl Music Logo">
         </div>
         <h3>Barn Owl Music</h3>
-        <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
-        <h4>What to include:</h4>
-        <ul class="placeholder-list">
-          <li>Music education program</li>
-          <li>How it enriches student learning</li>
+        <p class="partner-tagline">Music Education & Performance</p>
+        <p>
+          Barn Owl Music connects students at Henry Coaster Memorial School with quality music instruction through a blend of virtual lessons and in-person visits. Music teacher Felipe Pereira brings music to life at HCMS, engaging students through daily music lessons that build creativity, confidence, and artistic expression. Students receive one-on-one instruction in piano, ukulele, drums, and guitar, developing skills at their own pace while discovering the joy of making music.
+        </p>
+        <p>
+          Felipe visits the community 4-5 times throughout the school year, providing hands-on instruction and mentorship. Each visit culminates in a school-wide music concert where students are encouraged to perform individually on piano or guitar, or participate in group class performances, celebrating their musical growth with the community.
+        </p>
+        <h4>Key Services:</h4>
+        <ul class="partner-services-list">
+          <li>Daily virtual music lessons</li>
+          <li>One-on-one piano, ukulele, drum, and guitar instruction</li>
+          <li>In-person community visits (4-5 times per year)</li>
+          <li>Student music concerts and performances</li>
         </ul>
-        <p class="partner-contact">School Contact: Felipe</p>
       </div>
     </div>
   </div>

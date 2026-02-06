@@ -8,7 +8,6 @@ color: terracotta
 order: 7
 room: Language Room
 students: All Students
-hero_image: /assets/images/carousel/slide-1.jpg
 newsletter_folder: native-language
 show_daily_schedule: true
 teacher_emails:
