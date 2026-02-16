@@ -1060,7 +1060,8 @@ a:hover {
 }
 
 .widget-activities .schedule-date {
-  min-width: 70px;
+  width: 80px;
+  min-width: 80px;
   text-align: center;
   padding-right: var(--space-sm);
   border-right: 2px solid var(--bg-300);
