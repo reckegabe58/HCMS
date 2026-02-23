@@ -1,30 +1,31 @@
 # After-School Program Schedule
 # Update this file weekly with the new schedule
 # NOTE: The week_of field is used as a fallback. JS will generate current week dynamically.
-# NOTE: No lunch program this week — kitchen is closed.
 
-week_of: "February 16, 2026"
+week_of: "February 23, 2026"
 
 schedule:
   - day: "Monday"
     events:
-      - "School Closed — Family Day"
+      - "Lunch Program"
+      - "No After School Program"
 
   - day: "Tuesday"
     events:
+      - "Lunch Program"
       - "After School Program: Grades 1-3 (3:45-5:00 PM)"
-      - "No Lunch Program"
 
   - day: "Wednesday"
     events:
+      - "Lunch Program"
       - "After School Program: Grades 4-6 (3:45-5:00 PM)"
-      - "No Lunch Program"
 
   - day: "Thursday"
     events:
+      - "Lunch Program"
       - "After School Program: Grades 7-8 (3:45-5:00 PM)"
-      - "No Lunch Program"
 
   - day: "Friday"
     events:
-      - "School Closed — PD Day"
+      - "Lunch Program"
+      - "After School Program: Grades 1-8 (3:45-5:00 PM)"
