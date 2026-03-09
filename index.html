@@ -214,6 +214,10 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
 <!-- Weekly Schedule JavaScript -->
 <script>
 (function() {
+  // March Break - set to false and restore weeklySchedule when school resumes
+  const noSchool = true;
+  const noSchoolMessage = 'No School — March Break! The first day back is Monday, March 23rd.';
+
   // Weekly schedule data - edit this to change the schedule
   const weeklySchedule = [
     {
@@ -257,6 +261,16 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
   function generateSchedule() {
     const container = document.getElementById('weekSchedule');
     if (!container) return;
+
+    // Show March Break message if no school
+    if (noSchool) {
+      container.innerHTML = `
+        <div class="schedule-day is-today" style="text-align: center; padding: 1.5rem;">
+          <p style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">${noSchoolMessage}</p>
+        </div>
+      `;
+      return;
+    }
 
     const today = new Date();
     const monday = getMondayOfWeek(today);
