@@ -3,7 +3,7 @@ layout: post
 title: "Welcome Back from March Break!"
 date: 2026-03-23
 category: Announcements
-image: /assets/images/welcome-back-winter-thumbnail.jpg
+image: /assets/images/carousel/slide-4.jpg
 ---
 
 Welcome back, everyone! We hope you had a wonderful, restful March Break spent with family and loved ones.
