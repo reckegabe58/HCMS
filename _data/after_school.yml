@@ -2,7 +2,30 @@
 # Update this file weekly with the new schedule
 # NOTE: The week_of field is used as a fallback. JS will generate current week dynamically.
 
-week_of: "March Break"
+week_of: "March 23, 2026"
 
-no_school: true
-no_school_message: "No School — March Break! The first day back is Monday, March 23rd."
+schedule:
+  - day: "Monday"
+    events:
+      - "Lunch Program"
+      - "No After School Program"
+
+  - day: "Tuesday"
+    events:
+      - "Lunch Program"
+      - "After School Program: Grades 1-3 (3:45-5:00 PM)"
+
+  - day: "Wednesday"
+    events:
+      - "Lunch Program"
+      - "After School Program: Grades 4-6 (3:45-5:00 PM)"
+
+  - day: "Thursday"
+    events:
+      - "Lunch Program"
+      - "After School Program: Grades 7-8 (3:45-5:00 PM)"
+
+  - day: "Friday"
+    events:
+      - "Lunch Program"
+      - "After School Program: Grades 1-8 (3:45-5:00 PM)"
