@@ -218,6 +218,12 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
   const noSchool = false;
   const noSchoolMessage = 'No School — March Break! The first day back is Monday, March 23rd.';
 
+  // Date-specific school closures — format: 'YYYY-MM-DD': 'message'
+  const closures = {
+    '2026-04-03': 'School Closed — Good Friday',
+    '2026-04-06': 'School Closed — Easter Monday'
+  };
+
   // Weekly schedule data - edit this to change the schedule
   const weeklySchedule = [
     {
@@ -283,6 +289,11 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
 
       const isToday = date.toDateString() === today.toDateString();
 
+      const dateKey = date.getFullYear() + '-' +
+        String(date.getMonth() + 1).padStart(2, '0') + '-' +
+        String(date.getDate()).padStart(2, '0');
+      const closureMsg = closures[dateKey];
+
       html += `
         <div class="schedule-day ${isToday ? 'is-today' : ''}">
           <div class="schedule-date">
@@ -290,7 +301,7 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
             <span class="schedule-date-num">${formatDate(date)}</span>
           </div>
           <div class="schedule-content">
-            <p>${item.programs}</p>
+            <p>${closureMsg || item.programs}</p>
           </div>
         </div>
       `;
