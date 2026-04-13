@@ -224,6 +224,15 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
     '2026-04-06': 'School Closed — Easter Monday'
   };
 
+  // Date-specific extra events to append — format: 'YYYY-MM-DD': 'message'
+  const extraEvents = {
+    '2026-04-14': 'After School Drumming with Orville & David',
+    '2026-04-15': 'After School Drumming with Orville & David',
+    '2026-04-16': 'After School Drumming with Orville & David',
+    '2026-04-17': 'After School Drumming with Orville & David',
+    '2026-04-18': 'After School Drumming with Orville & David'
+  };
+
   // Weekly schedule data - edit this to change the schedule
   const weeklySchedule = [
     {
@@ -293,6 +302,7 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
         String(date.getMonth() + 1).padStart(2, '0') + '-' +
         String(date.getDate()).padStart(2, '0');
       const closureMsg = closures[dateKey];
+      const extraEvent = extraEvents[dateKey];
 
       html += `
         <div class="schedule-day ${isToday ? 'is-today' : ''}">
@@ -302,6 +312,7 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
           </div>
           <div class="schedule-content">
             <p>${closureMsg || item.programs}</p>
+            ${extraEvent ? `<p style="color:var(--primary); font-weight:600;">&#127941; ${extraEvent}</p>` : ''}
           </div>
         </div>
       `;
