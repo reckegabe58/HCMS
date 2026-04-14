@@ -5668,11 +5668,13 @@ a:hover {
 
 .schedule-day {
   display: flex;
-  gap: var(--space-md);
-  padding: var(--space-md);
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
   background: var(--bg-200);
   border-radius: var(--radius-lg);
   transition: all 0.2s ease;
+  overflow: hidden;
 }
 
 .schedule-day:hover {
@@ -5691,10 +5693,15 @@ a:hover {
 }
 
 .schedule-date {
-  min-width: 80px;
+  min-width: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-right: var(--space-md);
+  padding: var(--space-md);
   border-right: 2px solid var(--bg-300);
+  flex-shrink: 0;
 }
 
 .schedule-day.is-today .schedule-date {
@@ -5704,29 +5711,34 @@ a:hover {
 .schedule-day-name {
   display: block;
   font-weight: 700;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  line-height: 1.2;
 }
 
 .schedule-date-num {
   display: block;
   font-size: var(--text-sm);
   color: var(--text-muted);
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .schedule-content {
   flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: var(--space-md);
 }
 
 .schedule-content p {
   margin: 0;
   color: var(--text-secondary);
   font-size: var(--text-base);
+  line-height: 1.4;
 }
 
 /* ==========================================
@@ -6016,18 +6028,18 @@ a:hover {
 
   .schedule-day {
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: 0;
   }
 
   .schedule-date {
     border-right: none;
     border-bottom: 2px solid var(--bg-300);
-    padding-right: 0;
-    padding-bottom: var(--space-sm);
-    text-align: left;
-    display: flex;
+    padding: var(--space-sm) var(--space-md);
+    flex-direction: row;
+    justify-content: flex-start;
     gap: var(--space-sm);
     align-items: baseline;
+    min-width: unset;
   }
 
   .schedule-day.is-today .schedule-date {
