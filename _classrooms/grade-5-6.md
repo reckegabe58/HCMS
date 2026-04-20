@@ -4,7 +4,7 @@ title: Grade 5/6
 grade: "5-6"
 teachers:
   - Mr. Ankush Thakur
-  - Ms. Fiona van Wissen
+  - Ms. Verna
 color: orange
 order: 5
 room: Classroom 5
@@ -22,8 +22,8 @@ photos:
 teacher_emails:
   - name: Mr. Ankush Thakur
     email: ankush.thakur@hcmschool.ca
-  - name: Ms. Fiona van Wissen
-    email: fiona.vanwissen@martenfalls.com
+  - name: Ms. Verna
+    email: vernaruthp@gmail.com
 subjects:
   - name: Language Arts
     description: Developing reading, writing, speaking, and listening skills through literacy centres, guided reading, writing activities, and class discussions.
@@ -219,7 +219,7 @@ schedule:
 
 **Boozhoo! Welcome to Grade 5/6!**
 
-Welcome to our classroom! Our teaching team includes Mr. Ankush Thakur and Ms. Fiona van Wissen, and together we work to create a safe, respectful, and supportive learning environment for all students. Our focus is on building strong routines, confidence, and foundational skills in reading, writing, and mathematics.
+Welcome to our classroom! Our teaching team includes Mr. Ankush Thakur and Ms. Verna, and together we work to create a safe, respectful, and supportive learning environment for all students. Our focus is on building strong routines, confidence, and foundational skills in reading, writing, and mathematics.
 
 We value learning that is connected to the land, community, and students' lived experiences. Through observation, discussion, and hands-on activities, students are encouraged to develop respect for the land, nature, and the environment around them.
 

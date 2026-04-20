@@ -3,7 +3,6 @@ layout: classroom
 title: Grade 1/2 Class A
 grade: "1-2"
 teachers:
-  - Ms. Verna
   - Ms. Meagan
 color: blue
 order: 2
@@ -31,8 +30,6 @@ photos:
   - src: /assets/images/classrooms/grade-1-2-a/image16.jpeg
     alt: Classroom moments
 teacher_emails:
-  - name: Ms. Verna
-    email: vernaruthp@gmail.com
   - name: Ms. Meagan
     email: meagan.washburn@martenfalls.com
 subjects:
@@ -206,17 +203,15 @@ schedule:
 
 Dear Parents/Guardians,
 
-Welcome to our Grade 1/2 classroom at Henry Coaster Memorial School! We are Ms. Verna and Ms. Meagan, and we are excited to be your child's teachers this year. We look forward to supporting your child's learning journey as they continue to grow academically, socially, and emotionally.
+Welcome to our Grade 1/2 classroom at Henry Coaster Memorial School! I am Ms. Meagan, and I am excited to be your child's teacher this year. I look forward to supporting your child's learning journey as they continue to grow academically, socially, and emotionally.
 
 Our class theme is **"Never Stop Growing."** We believe that learning is a journey, and every child grows in their own unique way. In our classroom, students are encouraged to try new things, learn from mistakes, and develop confidence in themselves as learners.
 
 *In Grade 1/2, we learn, we try, and we never stop growing.*
 
-**Ms. Verna** brings a warm and nurturing approach to our classroom. She is passionate about creating a safe and welcoming environment where every child feels valued and supported in their learning journey.
-
 **Ms. Meagan** is dedicated to making learning engaging and meaningful. She loves helping students discover their strengths and build confidence as they tackle new challenges.
 
-Together, we work as a team to create a classroom community where students feel safe to take risks, ask questions, and celebrate their progress. We look forward to partnering with you to support each child's growth this year.
+I work to create a classroom community where students feel safe to take risks, ask questions, and celebrate their progress. I look forward to partnering with you to support each child's growth this year.
 
 ## Our Classroom Philosophy
 
@@ -254,6 +249,6 @@ Families play an essential role in supporting children's learning and developmen
 
 **Staying Connected** - Reach out with questions or concerns. We are here to support you and your child, and we value open communication and collaboration.
 
-Miigwech for trusting us with your children. We look forward to a wonderful year of learning, growth, and discovery!
+Miigwech for trusting me with your children. I look forward to a wonderful year of learning, growth, and discovery!
 
-**Ms. Verna & Ms. Meagan**
+**Ms. Meagan**

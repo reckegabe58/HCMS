@@ -3,7 +3,6 @@ layout: classroom
 title: Grade 1/2 Class B
 grade: "1-2"
 teachers:
-  - Mr. Anthony
   - Ms. Liza
 color: blue
 order: 3
@@ -29,8 +28,6 @@ photos:
   - src: /assets/images/classrooms/grade-1-2-b/photo-7.jpg
     alt: Learning and discovery
 teacher_emails:
-  - name: Mr. Anthony
-    email: anthonyesho20@gmail.com
   - name: Ms. Liza
     email: liza.gay.parantac@hcmschool.ca
 subjects:
@@ -202,13 +199,11 @@ schedule:
 
 We are thrilled to welcome you to our Grade 1/2 classroom at Henry Coaster Memorial School! Our classroom is a dynamic learning community of 10 wonderful students who come together each day to explore, grow, and celebrate learning in a culturally rich and supportive environment.
 
-## Our Teaching Team
-
-**Mr. Anthony** is a new teacher from Windsor, Ontario. He enjoys teaching students and sharing stories in the classroom. He values building strong relationships with his students to better understand their strengths and needs. Mr. Anthony believes that every student is capable of success. He is excited to teach this year and hopes to create meaningful memories and learning experiences with his students.
+## Your Teacher
 
 **Ms. Liza** is a language teacher, author, and mentor who loves helping children learn, grow, and feel confident. She believes that every child has greatness inside them. Through the power of language, culture, and connection, she helps students discover their strengths and learn to believe in themselves. Ms. Liza is committed to creating a safe and caring classroom where every child feels seen, valued, and proud of who they are.
 
-Together, we create a nurturing classroom environment where every child feels valued, heard, and empowered to reach their full potential. We work collaboratively to differentiate instruction and meet the unique needs of each learner in our small, close-knit class.
+She creates a nurturing classroom environment where every child feels valued, heard, and empowered to reach their full potential, meeting the unique needs of each learner in our small, close-knit class.
 
 ## Our Classroom Philosophy
 
@@ -256,7 +251,7 @@ Families play an essential role in supporting children's learning and developmen
 
 **Staying Connected** - Reach out with questions or concerns. We are here to support you and your child!
 
-Thank you for entrusting us with your children. We look forward to partnering with you in their education!
+Thank you for entrusting me with your children. I look forward to partnering with you in their education!
 
 **Miigwech!**
-*Mr. Anthony & Ms. Liza*
+*Ms. Liza*
