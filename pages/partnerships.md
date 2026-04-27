@@ -86,6 +86,9 @@ subtitle: Working together for our students
 
     <div class="partners-grid">
       <div class="partner-card">
+        <div class="partner-card-logo partner-card-logo-img">
+          <img src="{{ '/assets/images/partners/eos-learning-logo.png' | relative_url }}" alt="Eos Learning Logo">
+        </div>
         <h3>Eos Learning</h3>
         <p class="partner-tagline">Literacy & Numeracy Partnerships</p>
         <p>
