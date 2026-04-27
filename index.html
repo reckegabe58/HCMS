@@ -138,47 +138,8 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
   <div class="container">
     <div class="homepage-grid">
 
-      <!-- Main Content Column - News -->
+      <!-- Main Content Column -->
       <div class="main-content">
-
-        <!-- Latest School News Section -->
-        <section class="news-section">
-          <div class="section-header">
-            <h2 class="section-title"><span class="title-accent">—</span> Latest School News</h2>
-            <a href="{{ '/news/' | relative_url }}" class="see-all-link">View All News →</a>
-          </div>
-
-          <div class="news-list">
-            {% for post in site.posts limit:3 %}
-            <a href="{{ post.url | relative_url }}" class="news-card-link">
-              <article class="news-card">
-                <img src="{{ post.image | default: '/assets/images/carousel/slide-1.png' | relative_url }}" alt="{{ post.title }}" class="news-card-image">
-                <div class="news-card-content">
-                  <span class="news-category">{{ post.category | default: "News" }}</span>
-                  <h3 class="news-card-title">{{ post.title }}</h3>
-                  <p class="news-card-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
-                  <div class="news-card-meta">
-                    <span class="meta-date">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                      {{ post.date | date: "%b %d, %Y" }}
-                    </span>
-                    {% if post.author %}
-                    <span class="meta-author">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                      {{ post.author }}
-                    </span>
-                    {% endif %}
-                  </div>
-                </div>
-              </article>
-            </a>
-            {% endfor %}
-          </div>
-
-          {% if site.posts.size == 0 %}
-          <p class="no-posts-message">No news posts yet. Check back soon!</p>
-          {% endif %}
-        </section>
 
         <!-- About Henry Coaster Memorial School Section -->
         <section class="school-intro-section" style="background: var(--bg-300); padding: var(--space-3xl) 0; margin-top: var(--space-2xl); border-radius: var(--radius-lg);">
