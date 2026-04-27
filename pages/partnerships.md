@@ -86,17 +86,18 @@ subtitle: Working together for our students
 
     <div class="partners-grid">
       <div class="partner-card">
-        <h3>Greenfield Learning</h3>
-        <p class="partner-tagline">Literacy & Numeracy Support</p>
+        <h3>Eos Learning</h3>
+        <p class="partner-tagline">Literacy & Numeracy Partnerships</p>
         <p>
-          Greenfield Learning supports Henry Coaster Memorial School through evidence-based digital learning programs that strengthen foundational skills in reading and math. Their primary supports include Lexia Core5 Reading, which provides structured literacy instruction in phonics, vocabulary, fluency, and comprehension, and Symphony Math, a visual and concept-based math program that builds strong number sense and problem-solving skills. These tools allow learning to be personalized for each student while providing teachers with data to guide instruction and targeted support.
+          Eos Learning works with Henry Coaster Memorial School in service to student excellence. In this work, they leverage evidence-based programs that deliver personalized learning pathways for each and every student. Alongside the digital student experience, educators are provided with discrete, actionable data to guide human-centered, neurodivergent-inclusive instructional responses, including lesson plans and multimodal activities.
         </p>
         <h4>Key Services:</h4>
         <ul class="partner-services-list">
-          <li>Lexia Core5 Reading program for literacy development</li>
-          <li>Symphony Math for concept-based math learning</li>
-          <li>Personalized learning pathways for each student</li>
-          <li>Data-driven insights for targeted instruction</li>
+          <li><strong>JK–5 English Literacy:</strong> Lexia Core5 Reading supports literacy development in phonological awareness, phonics, structural analysis, vocabulary, comprehension, and automaticity/fluency.</li>
+          <li><strong>6+ English Literacy:</strong> Lexia PowerUp Literacy for adolescent learners provides age-appropriate content for students developing proficiency in K–8 English literacy skills.</li>
+          <li><strong>K–5 Numeracy:</strong> Symphony Math for fluency and conceptual mathematics taught through multiple ways of knowing, including real-life problem solving.</li>
+          <li><strong>6–9 Numeracy:</strong> School 21 delivers grade-level numeracy courses in parallel with remediation courses, with on-demand access to instructional videos, sample problems, and instant feedback.</li>
+          <li><strong>Professional Learning & Coaching:</strong> Customized workshops, subject area learning series, and collaborative meetings to support educators through data, instructional coaching, and strategic planning.</li>
         </ul>
       </div>
 
