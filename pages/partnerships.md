@@ -86,7 +86,7 @@ subtitle: Working together for our students
 
     <div class="partners-grid">
       <div class="partner-card">
-        <div class="partner-card-logo partner-card-logo-img">
+        <div class="partner-card-logo partner-card-logo-large">
           <img src="{{ '/assets/images/partners/eos-learning-logo.png' | relative_url }}" alt="Eos Learning Logo">
         </div>
         <h3>Eos Learning</h3>
@@ -116,46 +116,6 @@ subtitle: Working together for our students
           <li>Connections with Indigenous mentors and role models</li>
           <li>Culturally relevant learning experiences</li>
           <li>Student well-being and engagement support</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Support Service Partners Section -->
-<section class="partner-section partner-section-alt">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title"><span class="title-accent">—</span> Support Service Partners</h2>
-    </div>
-
-    <div class="partners-grid">
-      <div class="partner-card">
-        <div class="partner-card-logo partner-card-logo-img">
-          <img src="{{ '/assets/images/partners/anderson-therapy-logo.png' | relative_url }}" alt="Anderson Therapy Services Logo">
-        </div>
-        <h3>Anderson Therapy Services</h3>
-        <p class="partner-tagline">Student Development & Well-Being</p>
-        <p>
-          Anderson Therapy Services partners with schools to provide professional allied-health supports that promote student development and well-being. Their services may include speech and language supports, developmental and social-emotional interventions, and collaborative work with educators and families. Designed with northern and remote communities in mind, these supports help students build communication skills, confidence, and strategies for success both in and out of the classroom.
-        </p>
-        <h4>Key Services:</h4>
-        <ul class="partner-services-list">
-          <li>Speech and language therapy</li>
-          <li>Developmental and social-emotional interventions</li>
-          <li>Collaborative support with educators and families</li>
-          <li>Remote-focused service delivery for northern communities</li>
-        </ul>
-      </div>
-
-      <div class="partner-card">
-        <h3>Creative Therapy Services</h3>
-        <p class="coming-soon-text"><em>Partnership information coming soon.</em></p>
-        <h4>What to include:</h4>
-        <ul class="placeholder-list">
-          <li>Types of therapy offered</li>
-          <li>Wellness support</li>
-          <li>Mental health services</li>
         </ul>
       </div>
     </div>
