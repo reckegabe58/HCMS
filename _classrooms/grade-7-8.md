@@ -1,5 +1,6 @@
 ---
 layout: classroom
+under_construction: true
 title: Grade 7/8
 grade: "7-8"
 teachers:

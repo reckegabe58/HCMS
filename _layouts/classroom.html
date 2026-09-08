@@ -2,6 +2,43 @@
 layout: default
 ---
 
+{% if page.under_construction %}
+<!-- Under Construction -->
+<section class="classroom-hero-professional under-construction-hero">
+  <div class="container">
+    <a href="{{ '/classrooms/' | relative_url }}" class="back-link back-link-light">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5"></path>
+        <path d="m12 19-7-7 7-7"></path>
+      </svg>
+      Back to All Classrooms
+    </a>
+
+    <div class="hero-content-professional">
+      <h1 class="classroom-hero-title-professional">{{ page.title }}</h1>
+    </div>
+  </div>
+</section>
+
+<section class="classroom-content main-area">
+  <div class="container">
+    <div class="under-construction-panel">
+      <div class="under-construction-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h9"></path>
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+        </svg>
+      </div>
+      <span class="under-construction-badge">Coming Soon</span>
+      <h2>New Year, New Classroom!</h2>
+      <p>Our amazing teachers are getting ready to welcome your child for the 2026–2027 school year. This page will be updated soon with new teacher introductions, photos, and everything you need to know.</p>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Contact the School</a>
+    </div>
+  </div>
+</section>
+
+{% else %}
+
 {% if page.hero_carousel and page.photos and page.photos.size > 0 %}
 <!-- Hero Carousel Mode -->
 <section class="classroom-hero-carousel">
@@ -223,6 +260,7 @@ layout: default
 </section>
 {% endif %}
 
+{% endif %}
 
 <!-- Other Classrooms -->
 <section class="other-classrooms-section">

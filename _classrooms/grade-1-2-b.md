@@ -1,5 +1,6 @@
 ---
 layout: classroom
+under_construction: true
 title: Grade 1/2 Class B
 grade: "1-2"
 teachers:

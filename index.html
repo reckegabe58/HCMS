@@ -90,22 +90,22 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
   </div>
 </section>
 
-<!-- Year End Report Banner -->
-<section class="year-end-report-banner">
+<!-- Welcome Back Banner -->
+<section class="welcome-back-banner">
   <div class="container">
-    <div class="report-banner-content">
-      <div class="report-banner-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+    <div class="welcome-banner-content">
+      <div class="welcome-banner-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
       </div>
-      <div class="report-banner-text">
-        <span class="report-banner-badge">2025–2026 School Year</span>
-        <h2>Year End School Report</h2>
-        <p>Our 2025–2026 Year End Report is now available. Read about our students' achievements, programs, and highlights from the school year.</p>
+      <div class="welcome-banner-text">
+        <span class="welcome-banner-badge">2026–2027 School Year</span>
+        <h2>Welcome Back to HCMS!</h2>
+        <p>The first day of the 2026–2027 school year is <strong>Thursday, September 10th</strong>. We can't wait to welcome our students back!</p>
       </div>
-      <div class="report-banner-action">
-        <a href="{{ '/assets/documents/year-end-report-2026.pdf' | relative_url }}" target="_blank" class="btn btn-primary btn-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          View Report
+      <div class="welcome-banner-action">
+        <a href="{{ '/calendar/' | relative_url }}" class="btn btn-primary btn-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          View School Calendar
         </a>
       </div>
     </div>
@@ -197,33 +197,20 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
 <!-- Weekly Schedule JavaScript -->
 <script>
 (function() {
-  // School year complete - set to false and restore weeklySchedule when school resumes
-  const noSchool = true;
-  const noSchoolMessage = 'Have a wonderful summer! 🌞 The first day of the 2026–2027 school year is Tuesday, September 8th. We look forward to seeing everyone back at HCMS!';
+  // Set to true to show a single noSchoolMessage instead of the weeklySchedule below
+  const noSchool = false;
+  const noSchoolMessage = '';
 
   // Date-specific school closures — format: 'YYYY-MM-DD': 'message'
   const closures = {
-    '2026-04-03': 'School Closed — Good Friday',
-    '2026-04-06': 'School Closed — Easter Monday',
-    '2026-05-22': 'No School — PA Day',
-    '2026-06-15': 'No Lunch Program · No After School Program',
-    '2026-06-16': 'No Lunch Program · No After School Program',
-    '2026-06-17': 'No Lunch Program · No After School Program',
-    '2026-06-18': 'No School — Morning · Graduation Ceremony at 2:00 PM · Community Feast at 5:00 PM',
-    '2026-06-19': 'End of Year Concert at 2:00 PM'
+    '2026-09-07': 'School Closed',
+    '2026-09-08': 'School Closed',
+    '2026-09-09': 'No School — Power Outage'
   };
 
   // Date-specific extra events to append — format: 'YYYY-MM-DD': 'message'
   const extraEvents = {
-    '2026-04-14': 'After School Drumming with Orville & David',
-    '2026-04-15': 'After School Drumming with Orville & David',
-    '2026-04-16': 'After School Drumming with Orville & David',
-    '2026-04-17': 'After School Drumming with Orville & David',
-    '2026-04-18': 'After School Drumming with Orville & David',
-    '2026-06-11': 'Welcome to Kindergarten Event — 5:30 PM',
-    '2026-06-15': 'After School Drumming with Orville',
-    '2026-06-16': 'After School Drumming with Orville',
-    '2026-06-17': 'After School Drumming with Orville'
+    '2026-09-10': 'First Day of School! 🎉'
   };
 
   // Weekly schedule data - edit this to change the schedule
@@ -234,19 +221,19 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
     },
     {
       day: 'Tuesday',
-      programs: 'Lunch Program · After School Program (Grades 1-3)'
+      programs: 'Lunch Program · No After School Program'
     },
     {
       day: 'Wednesday',
-      programs: 'Lunch Program · After School Program (Grades 4-6)'
+      programs: 'Lunch Program · No After School Program'
     },
     {
       day: 'Thursday',
-      programs: 'Lunch Program · After School Program (Grades 7-8)'
+      programs: 'Lunch Program · No After School Program'
     },
     {
       day: 'Friday',
-      programs: 'Lunch Program · After School Program (Grades 1-8)'
+      programs: 'Lunch Program · No After School Program'
     }
   ];
 

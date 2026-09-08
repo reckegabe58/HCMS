@@ -1,5 +1,6 @@
 ---
 layout: classroom
+under_construction: true
 title: Grade 3/4
 grade: "3-4"
 teachers:

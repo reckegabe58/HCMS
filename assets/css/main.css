@@ -6825,34 +6825,39 @@ a:hover {
 }
 
 /* ========================================
-   YEAR END REPORT BANNER
+   CLASSROOM UNDER CONSTRUCTION
    ======================================== */
 
-.year-end-report-banner {
-  background: var(--bg-200);
-  border-top: 4px solid var(--primary-200);
-  border-bottom: 1px solid var(--bg-100);
-  padding: var(--space-2xl) 0;
+.under-construction-hero {
+  min-height: 220px !important;
 }
 
-.report-banner-content {
-  display: flex;
+.under-construction-panel {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--bg-400);
+  border-top: 4px solid var(--sage-300);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-2xl) var(--space-xl);
+}
+
+.under-construction-icon {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-xl);
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--bg-200);
+  color: var(--sage-200);
+  margin-bottom: var(--space-md);
 }
 
-.report-banner-icon {
-  flex-shrink: 0;
-  color: var(--primary-200);
-}
-
-.report-banner-text {
-  flex: 1;
-}
-
-.report-banner-badge {
+.under-construction-badge {
   display: inline-block;
-  background: var(--primary-100);
+  background: var(--sage-300);
   color: #fff;
   font-size: var(--text-xs);
   font-weight: 700;
@@ -6863,25 +6868,78 @@ a:hover {
   margin-bottom: var(--space-sm);
 }
 
-.report-banner-text h2 {
+.under-construction-panel h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-md);
+}
+
+.under-construction-panel p {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  margin: 0 0 var(--space-lg);
+}
+
+/* ========================================
+   WELCOME BACK BANNER
+   ======================================== */
+
+.welcome-back-banner {
+  background: var(--bg-200);
+  border-top: 4px solid var(--sage-300);
+  border-bottom: 1px solid var(--bg-100);
+  padding: var(--space-2xl) 0;
+}
+
+.welcome-banner-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.welcome-banner-icon {
+  flex-shrink: 0;
+  color: var(--primary-200);
+}
+
+.welcome-banner-text {
+  flex: 1;
+}
+
+.welcome-banner-badge {
+  display: inline-block;
+  background: var(--sage-300);
+  color: #fff;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+
+.welcome-banner-text h2 {
   font-family: var(--font-serif);
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   color: var(--text-primary);
   margin: 0 0 var(--space-sm);
 }
 
-.report-banner-text p {
+.welcome-banner-text p {
   color: var(--text-secondary);
   font-size: var(--text-base);
   line-height: 1.6;
   margin: 0;
 }
 
-.report-banner-action {
+.welcome-banner-action {
   flex-shrink: 0;
 }
 
-.report-banner-action .btn-primary {
+.welcome-banner-action .btn-primary {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
@@ -6889,16 +6947,16 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .report-banner-content {
+  .welcome-banner-content {
     flex-direction: column;
     text-align: center;
   }
 
-  .report-banner-icon {
+  .welcome-banner-icon {
     display: none;
   }
 
-  .report-banner-action {
+  .welcome-banner-action {
     width: 100%;
     text-align: center;
   }
