@@ -60,6 +60,7 @@ When I start a new session and reference "the audit," "the classroom rebuild," o
 - **Images:** rename uploaded photos to descriptive slugs (e.g. `grade-3-4-classroom-activity-1.jpg`, not `WhatsApp Image...`), and compress before committing. Always include descriptive alt text.
 - **Newsletters:** PDF only, named consistently (e.g. `2026-09-newsletter.pdf` matching the existing pattern in `/assets/newsletters/[classroom]/`).
 - **Test locally before pushing:** run `bundle exec jekyll serve` and check the page renders correctly, especially on mobile widths, before committing.
+- **Design/visual work:** read `DESIGN-GUIDELINES.md` before styling anything new (colors, typography, spacing, component patterns, and common mistakes to avoid). It maps the site's actual CSS variable names in `assets/css/main.css` to the design system, so styles stay consistent instead of drifting.
 
 ## Who to Ask
 
@@ -70,7 +71,7 @@ When I start a new session and reference "the audit," "the classroom rebuild," o
 ## Quick Start for a New Session
 
 If you (Claude Code) are starting fresh and haven't seen this repo before:
-1. Read this file fully.
+1. Read this file fully, and `DESIGN-GUIDELINES.md` if the task involves any visual/styling work.
 2. Run `bundle exec jekyll serve` to confirm the site builds and browse it locally.
 3. Check `git log` for recent activity to see what's already been worked on.
 4. Ask me what we're tackling today rather than assuming — I'll usually reference either "the audit," a specific classroom, or a specific page.
