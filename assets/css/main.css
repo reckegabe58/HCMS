@@ -311,18 +311,20 @@ a:hover {
   align-items: center;
   gap: var(--space-xs);
   text-decoration: none;
-  flex-shrink: 0;
+  min-width: 0;
 }
 
 .logo-image {
   width: 70px;
   height: 70px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .logo-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .site-title {
@@ -414,6 +416,7 @@ a:hover {
   padding: var(--space-xs);
   position: relative;
   z-index: calc(var(--z-modal) + 1);
+  flex-shrink: 0;
 }
 
 .menu-toggle span {
@@ -1099,6 +1102,39 @@ a:hover {
   color: var(--text-secondary);
   margin: 0;
   line-height: 1.4;
+}
+
+/* Mobile: stack the date row above the content row instead of side-by-side */
+@media (max-width: 768px) {
+  .widget-activities .schedule-day {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .widget-activities .schedule-date {
+    width: auto;
+    min-width: unset;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: var(--space-sm);
+    text-align: left;
+    border-right: none;
+    border-bottom: 2px solid var(--bg-300);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .widget-activities .schedule-day.is-today .schedule-date {
+    border-right-color: transparent;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .widget-activities .schedule-content {
+    padding: var(--space-sm) var(--space-md) var(--space-md);
+  }
 }
 
 /* Activities List */
@@ -5644,6 +5680,9 @@ a:hover {
 
 /* ==========================================
    THIS WEEK AT SCHOOL SECTION
+   (scoped under .week-schedule-section so it can never collide with the
+   sidebar "Week Schedule" widget above, which reuses the same day/date/
+   content class names inside .widget-activities)
    ========================================== */
 
 .week-schedule-section {
@@ -5654,19 +5693,19 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-.week-intro {
+.week-schedule-section .week-intro {
   color: var(--text-secondary);
   margin-bottom: var(--space-lg);
   font-size: var(--text-base);
 }
 
-.week-schedule {
+.week-schedule-section .week-schedule {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
 
-.schedule-day {
+.week-schedule-section .schedule-day {
   display: flex;
   align-items: stretch;
   gap: 0;
@@ -5677,22 +5716,22 @@ a:hover {
   overflow: hidden;
 }
 
-.schedule-day:hover {
+.week-schedule-section .schedule-day:hover {
   background: var(--bg-100);
 }
 
-.schedule-day.is-today {
+.week-schedule-section .schedule-day.is-today {
   background: var(--primary-100);
   color: white;
 }
 
-.schedule-day.is-today .schedule-day-name,
-.schedule-day.is-today .schedule-date-num,
-.schedule-day.is-today p {
+.week-schedule-section .schedule-day.is-today .schedule-day-name,
+.week-schedule-section .schedule-day.is-today .schedule-date-num,
+.week-schedule-section .schedule-day.is-today p {
   color: white;
 }
 
-.schedule-date {
+.week-schedule-section .schedule-date {
   min-width: 88px;
   display: flex;
   flex-direction: column;
@@ -5704,11 +5743,11 @@ a:hover {
   flex-shrink: 0;
 }
 
-.schedule-day.is-today .schedule-date {
+.week-schedule-section .schedule-day.is-today .schedule-date {
   border-right-color: rgba(255, 255, 255, 0.3);
 }
 
-.schedule-day-name {
+.week-schedule-section .schedule-day-name {
   display: block;
   font-weight: 700;
   font-size: var(--text-base);
@@ -5718,14 +5757,14 @@ a:hover {
   line-height: 1.2;
 }
 
-.schedule-date-num {
+.week-schedule-section .schedule-date-num {
   display: block;
   font-size: var(--text-sm);
   color: var(--text-muted);
   margin-top: 3px;
 }
 
-.schedule-content {
+.week-schedule-section .schedule-content {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -5734,7 +5773,7 @@ a:hover {
   padding: var(--space-md);
 }
 
-.schedule-content p {
+.week-schedule-section .schedule-content p {
   margin: 0;
   color: var(--text-secondary);
   font-size: var(--text-base);
@@ -6026,12 +6065,12 @@ a:hover {
     padding: var(--space-lg);
   }
 
-  .schedule-day {
+  .week-schedule-section .schedule-day {
     flex-direction: column;
     gap: 0;
   }
 
-  .schedule-date {
+  .week-schedule-section .schedule-date {
     border-right: none;
     border-bottom: 2px solid var(--bg-300);
     padding: var(--space-sm) var(--space-md);
@@ -6042,7 +6081,7 @@ a:hover {
     min-width: unset;
   }
 
-  .schedule-day.is-today .schedule-date {
+  .week-schedule-section .schedule-day.is-today .schedule-date {
     border-bottom-color: rgba(255, 255, 255, 0.3);
   }
 
