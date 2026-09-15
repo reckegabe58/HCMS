@@ -4,7 +4,7 @@ under_construction: true
 title: Grade 1/2 Class B
 grade: "1-2"
 teachers:
-  - Ms. Liza
+  - Levita Morados
 color: blue
 order: 3
 room: Classroom B

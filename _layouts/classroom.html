@@ -72,6 +72,10 @@ layout: default
               {% endfor %}
             </span>
           </div>
+
+          {% if page.classroom_assistant %}
+          <div class="classroom-assistant-line">Classroom Assistant: {{ page.classroom_assistant }}</div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -104,6 +108,10 @@ layout: default
           {% endfor %}
         </span>
       </div>
+
+      {% if page.classroom_assistant %}
+      <div class="classroom-assistant-line">Classroom Assistant: {{ page.classroom_assistant }}</div>
+      {% endif %}
 
       {% if page.room %}
       <div class="classroom-meta-professional">
@@ -207,6 +215,12 @@ layout: default
               <span>{{ page.students }}</span>
             </li>
             {% endif %}
+            {% if page.classroom_assistant %}
+            <li>
+              <strong>Classroom Assistant</strong>
+              <span>{{ page.classroom_assistant }}</span>
+            </li>
+            {% endif %}
           </ul>
         </div>
 
@@ -238,6 +252,18 @@ layout: default
                 <strong>{{ teacher }}</strong>
               </div>
               {% endfor %}
+            {% endif %}
+            {% if page.classroom_assistant %}
+            <div class="teacher-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <div>
+                <strong>{{ page.classroom_assistant }}</strong>
+                <span>Classroom Assistant</span>
+              </div>
+            </div>
             {% endif %}
           </div>
         </div>

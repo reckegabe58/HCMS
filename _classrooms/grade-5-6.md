@@ -4,8 +4,8 @@ under_construction: true
 title: Grade 5/6
 grade: "5-6"
 teachers:
-  - Mr. Ankush Thakur
-  - Ms. Verna
+  - Sam Recke-Smith
+  - Avtar Singh
 color: orange
 order: 5
 room: Classroom 5
@@ -20,11 +20,6 @@ photos:
     alt: Students engaged in activities
   - src: /assets/images/classrooms/grade-5-6/IMG_2830.jpg
     alt: Classroom learning environment
-teacher_emails:
-  - name: Mr. Ankush Thakur
-    email: ankush.thakur@hcmschool.ca
-  - name: Ms. Verna
-    email: vernaruthp@gmail.com
 subjects:
   - name: Language Arts
     description: Developing reading, writing, speaking, and listening skills through literacy centres, guided reading, writing activities, and class discussions.

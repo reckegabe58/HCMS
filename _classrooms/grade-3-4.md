@@ -4,7 +4,8 @@ under_construction: true
 title: Grade 3/4
 grade: "3-4"
 teachers:
-  - Mr. Gabe
+  - Meagan Washburn
+  - Desiree Wasley
 color: green
 order: 4
 room: Classroom 4
@@ -15,9 +16,6 @@ show_daily_schedule: true
 show_photo_gallery: false
 art_pdf: /assets/images/classrooms/grade-3-4/class-art.pdf
 art_student_names: "MJ,Brody,Jenelle,,Harry,Leah,Jaze,Gabby,Conner,Leah,,Cytheria"
-teacher_emails:
-  - name: Mr. Gabe
-    email: reckegabe@gmail.com
 subjects:
   - name: Oji-Cree Language
     description: Intermediate language skills with focus on reading, writing, and traditional storytelling.

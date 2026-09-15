@@ -4,7 +4,7 @@ under_construction: true
 title: Grade 1/2 Class A
 grade: "1-2"
 teachers:
-  - Ms. Meagan
+  - Lyracel Sabado
 color: blue
 order: 2
 room: Classroom 2

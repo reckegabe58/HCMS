@@ -4,19 +4,15 @@ under_construction: true
 title: Grade 7/8
 grade: "7-8"
 teachers:
-  - Ms. Joann Soriano
-  - Ms. Fiona van Wissen
+  - Madison Leighton
+  - Ankush Thakur
+classroom_assistant: Trisha Moonias
 color: red
 order: 6
 room: Classroom 6
 students: 8
 newsletter_folder: grade-7-8
 show_photo_gallery: false
-teacher_emails:
-  - name: Ms. Joann Soriano
-    email: joann.soriano@martenfalls.com
-  - name: Ms. Fiona van Wissen
-    email: fiona.vanwissen@martenfalls.com
 subjects:
   - name: Language Arts
     description: Literature studies with Indigenous and classic texts, essay writing in diverse formats, research projects, and public speaking practice.
