@@ -201,16 +201,17 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
   const noSchool = false;
   const noSchoolMessage = '';
 
-  // Date-specific school closures — format: 'YYYY-MM-DD': 'message'
+  // Date-specific overrides for a single day's programs text — format: 'YYYY-MM-DD': 'message'
   const closures = {
-    '2026-09-07': 'School Closed',
-    '2026-09-08': 'School Closed',
-    '2026-09-09': 'No School — Power Outage'
+    '2026-09-15': 'Lunch Program · After School Drumming with Orville',
+    '2026-09-16': 'Lunch Program · After School Drumming with Orville',
+    '2026-09-17': 'Lunch Program · After School Drumming with Orville',
+    '2026-09-18': 'Half Day of School'
   };
 
   // Date-specific extra events to append — format: 'YYYY-MM-DD': 'message'
   const extraEvents = {
-    '2026-09-10': 'First Day of School! 🎉'
+    '2026-09-18': 'Welcome Back BBQ — Pow Wow Grounds, 2:00 - 5:00 PM 🎉'
   };
 
   // Weekly schedule data - edit this to change the schedule
@@ -233,7 +234,7 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
     },
     {
       day: 'Friday',
-      programs: 'Lunch Program · No After School Program'
+      programs: 'No Lunch Program'
     }
   ];
 
