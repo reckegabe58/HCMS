@@ -62,11 +62,13 @@ tags:
 
 ### Post Categories
 
-Use one of these categories for consistent filtering:
-- `Land-Based` - Outdoor learning, harvesting, traditional skills
-- `Culture` - Language, ceremonies, Elder teachings
-- `Academic` - Classroom achievements, curriculum updates
-- `Events` - School events, celebrations, gatherings
+Use one of these categories for consistent filtering and color-coding (matches `_posts/README.md`):
+- `Announcements` - General school announcements
+- `Events` - Upcoming or past events
+- `Sports` - Sports news and updates
+- `Community` - Community-related news
+
+The category name must exactly match one of these (case-insensitive) for it to get its color accent on the news card and post page — anything else renders without one.
 
 ### Adding Images to Posts
 
