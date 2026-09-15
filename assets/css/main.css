@@ -1103,7 +1103,9 @@ a:hover {
 .widget-activities .schedule-content {
   flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
 }
 
 .widget-activities .schedule-content p {
