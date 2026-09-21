@@ -1,6 +1,5 @@
 ---
 layout: classroom
-under_construction: true
 title: Grade 1/2 Class A
 grade: "1-2"
 teachers:
@@ -10,230 +9,257 @@ order: 2
 room: Classroom 1 - Ms. Lyra
 students: 14
 door_photo: /assets/images/classrooms/grade-1-2-a/door-photo.jpg
-hero_image: /assets/images/classrooms/grade-1-2-a/Hero-Banner.png
+hero_image: /assets/images/classrooms/grade-1-2-a/door-photo.jpg
 newsletter_folder: grade-1-2-a
 show_daily_schedule: true
-show_photo_gallery: true
-photos:
-  - src: /assets/images/classrooms/grade-1-2-a/image0.jpeg
-    alt: Grade 1/2 classroom learning
-  - src: /assets/images/classrooms/grade-1-2-a/image2.jpeg
-    alt: Students engaged in activities
-  - src: /assets/images/classrooms/grade-1-2-a/image3.jpeg
-    alt: Classroom learning environment
-  - src: /assets/images/classrooms/grade-1-2-a/image6.jpeg
-    alt: Hands-on learning activities
-  - src: /assets/images/classrooms/grade-1-2-a/image9.jpeg
-    alt: Student collaboration
-  - src: /assets/images/classrooms/grade-1-2-a/image13.jpeg
-    alt: Creative classroom activities
-  - src: /assets/images/classrooms/grade-1-2-a/image14.jpeg
-    alt: Learning and discovery
-  - src: /assets/images/classrooms/grade-1-2-a/image16.jpeg
-    alt: Classroom moments
+show_photo_gallery: false
+teacher_photos:
+  - name: Lyracel Sabado
+    photo: /assets/images/classrooms/grade-1-2-a/lyracel-sabado-headshot.jpg
+    bio:
+      - "Boozhoo, families! My name is Ms. Lyra, and I'm so excited to be one of the Grade 1–2 teachers at HCMS this year! Since this is my first year in the community, I'm especially looking forward to getting to know your children and families and being a learner alongside them."
+      - "I'm excited to learn more about your language, culture, land, and community from the children, Elders, families, community members, and my colleagues, and to find meaningful ways to bring this knowledge and learning into our classroom throughout the year."
 teacher_emails:
-  - name: Ms. Meagan
-    email: meagan.washburn@martenfalls.com
+  - name: Lyracel Sabado
+    email: lyracel.sabado@gmail.com
 subjects:
-  - name: Language Arts
-    description: Reading, writing, phonics, and language development through whole-group, small-group, and independent activities using Lexia, ABC Duo Linguo, and Raz-Kids.
+  - name: Literacy & Writing
+    description: Sounds, letters, phonics, vocabulary, fluency, and comprehension, alongside expressing ideas through speaking, drawing, and different kinds of writing.
     icon: book
   - name: Mathematics
-    description: Number sense, problem-solving, and math thinking through hands-on learning and guided instruction, supported by Symphony Math and IXL.
+    description: Numbers and operations, patterns, measurement, shapes, fractions, data, money, and problem-solving through lots of hands-on experiences.
     icon: calculator
-  - name: Science
-    description: Exploring the world through observation, questions, and simple experiments.
+  - name: Science & Technology
+    description: Observing, asking questions, and investigating living things, plants and animals, energy, seasons, forces and motion, matter, and Earth and space.
     icon: flask
   - name: Social Studies
-    description: Learning about community, traditions, and caring for one another and the environment.
+    description: Exploring identity, traditions, responsibilities, the land, maps, environmental stewardship, and how communities are connected.
     icon: globe
   - name: Oji-Cree Language
-    description: Taught by Ms. Brenda (in person and virtual), focusing on language development and cultural learning.
+    description: Native Language sessions with Ms. Brenda, woven into our day alongside land-based knowledge from Elders and community members.
     icon: message
-  - name: Culture
-    description: Taught by Mr. Orville, helping students connect with traditions, identity, and community.
-    icon: tree
-  - name: Physical Education
-    description: Building movement skills, healthy habits, and teamwork through games and activities.
+  - name: Health & Physical Education
+    description: Building movement skills, confidence, teamwork, and safe participation through games and cooperative activities.
     icon: heart
-  - name: Music
-    description: Taught by Mr. Felipe (in person and virtual), focusing on singing, rhythm, listening, and musical expression.
-    icon: music
-  - name: Art
-    description: Creative projects that build fine-motor skills and self-expression.
+  - name: Visual Arts
+    description: Exploring lines, shapes, colours, textures, and patterns while drawing, painting, and creating with a variety of materials and techniques.
     icon: palette
 schedule:
   monday:
     - time: "9:00 - 9:30"
-      activity: "Morning Work & Language Arts"
+      activity: "Arrival / Morning Circle / Morning Work"
     - time: "9:30 - 9:45"
       activity: "Breakfast"
     - time: "9:45 - 10:00"
       activity: "Recess"
     - time: "10:00 - 10:30"
       activity: "Native Language"
+      details: "Ms. Brenda"
     - time: "10:30 - 11:00"
-      activity: "Literacy"
-    - time: "11:00 - 11:15"
-      activity: "Gym"
-    - time: "11:15 - 11:35"
-      activity: "Math"
+      activity: "Literacy / Lexia"
+    - time: "11:00 - 11:30"
+      activity: "Social Studies / Science"
+    - time: "11:30 - 12:00"
+      activity: "Clean Up & Transition to the Bus"
     - time: "12:00 - 1:00"
       activity: "Lunch"
       highlight: true
     - time: "1:00 - 1:15"
-      activity: "Symphony Math / Lexia"
+      activity: "Printing / Writing"
     - time: "1:15 - 1:45"
-      activity: "Science"
+      activity: "Gym / Physical Education & Health"
+    - time: "1:45 - 2:00"
+      activity: "Math / Symphony Math"
     - time: "2:00 - 2:15"
       activity: "Recess"
-    - time: "2:15 - 2:45"
-      activity: "Music (Group)"
-    - time: "2:45 - 3:15"
-      activity: "Choice Time"
+    - time: "2:15 - 2:30"
+      activity: "Snack"
+    - time: "2:30 - 2:45"
+      activity: "Music"
+      details: "Mr. Felipe"
+    - time: "2:45 - 3:00"
+      activity: "Choice / Story Time / Goodbye Circle"
+    - time: "3:00 - 3:15"
+      activity: "Clean Up & Transition to the Bus"
+    - time: "3:15 - 4:30"
+      activity: "After School Program / Clubs"
   tuesday:
     - time: "9:00 - 9:30"
-      activity: "Morning Work & Language Arts"
+      activity: "Arrival / Morning Circle / Morning Work"
     - time: "9:30 - 9:45"
       activity: "Breakfast"
-    - time: "9:45 - 10:30"
-      activity: "Literacy"
+    - time: "9:45 - 10:00"
+      activity: "Recess"
+    - time: "10:00 - 10:30"
+      activity: "Literacy / Lexia"
     - time: "10:30 - 11:00"
-      activity: "Math"
-    - time: "11:00 - 11:15"
-      activity: "Gym"
-    - time: "11:15 - 11:35"
-      activity: "Math"
+      activity: "Gym / Physical Education & Health"
+    - time: "11:00 - 11:30"
+      activity: "Math / Symphony Math"
+    - time: "11:30 - 12:00"
+      activity: "Clean Up & Transition to the Bus"
     - time: "12:00 - 1:00"
       activity: "Lunch"
       highlight: true
     - time: "1:00 - 1:15"
-      activity: "Native Language"
+      activity: "Printing / Writing"
     - time: "1:15 - 1:45"
-      activity: "Social Studies"
+      activity: "Native Language"
+      details: "Ms. Brenda"
+    - time: "1:45 - 2:00"
+      activity: "Art"
     - time: "2:00 - 2:15"
       activity: "Recess"
-    - time: "2:15 - 2:45"
-      activity: "Snack & Art"
-    - time: "2:45 - 3:15"
-      activity: "Choice Time"
+    - time: "2:15 - 2:30"
+      activity: "Snack"
+    - time: "2:30 - 2:45"
+      activity: "Social Studies / Science"
+    - time: "2:45 - 3:00"
+      activity: "Choice / Story Time / Goodbye Circle"
+    - time: "3:00 - 3:15"
+      activity: "Clean Up & Transition to the Bus"
+    - time: "3:15 - 4:30"
+      activity: "After School Program / Clubs"
   wednesday:
     - time: "9:00 - 9:30"
-      activity: "Morning Work & Language Arts"
+      activity: "Arrival / Morning Circle / Morning Work"
     - time: "9:30 - 9:45"
       activity: "Breakfast"
     - time: "9:45 - 10:00"
       activity: "Recess"
     - time: "10:00 - 10:30"
       activity: "Native Language"
+      details: "Ms. Brenda"
     - time: "10:30 - 11:00"
-      activity: "Literacy"
-    - time: "11:00 - 11:15"
-      activity: "Gym"
-    - time: "11:15 - 11:35"
-      activity: "Math"
+      activity: "Literacy / Lexia"
+    - time: "11:00 - 11:30"
+      activity: "Social Studies / Science"
+    - time: "11:30 - 12:00"
+      activity: "Clean Up & Transition to the Bus"
     - time: "12:00 - 1:00"
       activity: "Lunch"
       highlight: true
     - time: "1:00 - 1:15"
-      activity: "Symphony Math / Lexia"
+      activity: "Printing / Writing"
     - time: "1:15 - 1:45"
-      activity: "Science"
+      activity: "Gym / Physical Education & Health"
+    - time: "1:45 - 2:00"
+      activity: "Math / Symphony Math"
     - time: "2:00 - 2:15"
       activity: "Recess"
-    - time: "2:15 - 2:45"
-      activity: "Therapy & Music"
-    - time: "2:45 - 3:15"
-      activity: "Choice Time"
+    - time: "2:15 - 2:30"
+      activity: "Music"
+      details: "Mr. Felipe"
+    - time: "2:30 - 2:45"
+      activity: "Snack"
+    - time: "2:45 - 3:00"
+      activity: "Choice / Story Time / Goodbye Circle"
+    - time: "3:00 - 3:15"
+      activity: "Clean Up & Transition to the Bus"
+    - time: "3:15 - 4:30"
+      activity: "After School Program / Clubs"
   thursday:
     - time: "9:00 - 9:30"
-      activity: "Morning Work & Language Arts"
+      activity: "Arrival / Morning Circle / Morning Work"
     - time: "9:30 - 9:45"
       activity: "Breakfast"
-    - time: "9:45 - 10:30"
-      activity: "Literacy"
+    - time: "9:45 - 10:00"
+      activity: "Recess"
+    - time: "10:00 - 10:30"
+      activity: "Literacy / Lexia"
     - time: "10:30 - 11:00"
-      activity: "Math"
-    - time: "11:00 - 11:15"
-      activity: "Gym"
-    - time: "11:15 - 11:35"
-      activity: "Math"
+      activity: "Gym / Physical Education & Health"
+    - time: "11:00 - 11:30"
+      activity: "Math / Symphony Math"
+    - time: "11:30 - 12:00"
+      activity: "Clean Up & Transition to the Bus"
     - time: "12:00 - 1:00"
       activity: "Lunch"
       highlight: true
     - time: "1:00 - 1:15"
-      activity: "Native Language"
+      activity: "Printing / Writing"
     - time: "1:15 - 1:45"
-      activity: "Social Studies"
+      activity: "Native Language"
+      details: "Ms. Brenda"
+    - time: "1:45 - 2:00"
+      activity: "Art"
     - time: "2:00 - 2:15"
       activity: "Recess"
-    - time: "2:15 - 2:45"
-      activity: "Snack & Art"
-    - time: "2:45 - 3:15"
-      activity: "Choice Time"
+    - time: "2:15 - 2:30"
+      activity: "Snack"
+    - time: "2:30 - 2:45"
+      activity: "Social Studies / Science"
+    - time: "2:45 - 3:00"
+      activity: "Choice / Story Time / Goodbye Circle"
+    - time: "3:00 - 3:15"
+      activity: "Clean Up & Transition to the Bus"
+    - time: "3:15 - 4:30"
+      activity: "After School Program / Clubs"
   friday:
     - time: "9:00 - 9:30"
-      activity: "Morning Work & Language Arts"
+      activity: "Arrival / Morning Circle / Morning Work"
     - time: "9:30 - 9:45"
       activity: "Breakfast"
     - time: "9:45 - 10:00"
       activity: "Recess"
     - time: "10:00 - 10:30"
       activity: "Native Language"
+      details: "Ms. Brenda"
     - time: "10:30 - 11:00"
-      activity: "Literacy"
-    - time: "11:00 - 11:15"
-      activity: "Gym"
-    - time: "11:15 - 11:35"
-      activity: "Math"
+      activity: "Literacy / Lexia"
+    - time: "11:00 - 11:30"
+      activity: "Social Studies / Science"
+    - time: "11:30 - 12:00"
+      activity: "Clean Up & Transition to the Bus"
     - time: "12:00 - 1:00"
       activity: "Lunch"
       highlight: true
     - time: "1:00 - 1:15"
-      activity: "Symphony Math / Lexia"
+      activity: "Printing / Writing"
     - time: "1:15 - 1:45"
-      activity: "Science"
+      activity: "Gym / Physical Education & Health"
+    - time: "1:45 - 2:00"
+      activity: "Math / Symphony Math"
     - time: "2:00 - 2:15"
       activity: "Recess"
-    - time: "2:15 - 2:45"
-      activity: "Snack & Art"
-    - time: "2:45 - 3:15"
-      activity: "Choice Time"
+    - time: "2:15 - 2:30"
+      activity: "Snack"
+    - time: "2:30 - 2:45"
+      activity: "Catch-Up Time"
+      details: "Lexia, IXL, Symphony Math"
+    - time: "2:45 - 3:00"
+      activity: "Choice / Story Time / Goodbye Circle"
+    - time: "3:00 - 3:15"
+      activity: "Clean Up & Transition to the Bus"
+    - time: "3:15 - 4:30"
+      activity: "After School Program / Clubs"
 ---
 
 ## Welcome to Grade 1/2!
 
-Dear Parents/Guardians,
+Boozhoo, families!
 
-Welcome to our Grade 1/2 classroom at Henry Coaster Memorial School! I am Ms. Meagan, and I am excited to be your child's teacher this year. I look forward to supporting your child's learning journey as they continue to grow academically, socially, and emotionally.
+Our classroom theme this year is **"Together, We Are a Rainbow of Possibilities."** We each bring something special to our classroom, and together, we will learn from one another, discover our strengths, develop our skills, and celebrate each other's wins. My hope is to create a safe, caring, and welcoming classroom where every child feels that they belong and are supported to reach their full potential.
 
-Our class theme is **"Never Stop Growing."** We believe that learning is a journey, and every child grows in their own unique way. In our classroom, students are encouraged to try new things, learn from mistakes, and develop confidence in themselves as learners.
+I'm also really looking forward to getting to know you and working together throughout the school year. You know your children best, and I truly value the insight you can share about their strengths, interests, needs, and the ways they learn best. I hope we can build a strong partnership through open communication, shared ideas, and mutual support as we help your children grow in confidence, discover and develop their strengths, and celebrate every step of their progress along the way.
 
-*In Grade 1/2, we learn, we try, and we never stop growing.*
+## What We'll Be Learning This School Year
 
-**Ms. Meagan** is dedicated to making learning engaging and meaningful. She loves helping students discover their strengths and build confidence as they tackle new challenges.
+Throughout the year, we'll be building strong foundations across Literacy, Writing, Mathematics, Science, Social Studies, Arts, and Health & Physical Education. Students will have opportunities to read, write, communicate, solve problems, investigate, create, move, ask questions, and make connections between what we learn at school and the world around us. Our learning will also incorporate Oji-Cree language and culture, the land, and our local community, with guidance from those who hold this knowledge.
 
-I work to create a classroom community where students feel safe to take risks, ask questions, and celebrate their progress. I look forward to partnering with you to support each child's growth this year.
+**Literacy & Writing:** We'll work on the building blocks of reading and writing, including sounds and letters, phonics, vocabulary, reading fluency and comprehension, as well as expressing our ideas through speaking, drawing and different kinds of writing. Stories, experiences and locally appropriate Oji-Cree knowledge will also be meaningful parts of our literacy learning.
 
-## Our Classroom Philosophy
+**Mathematics:** We'll explore numbers and operations, patterns, measurement, shapes, fractions, data, money and problem-solving through lots of hands-on experiences. Whenever we can, we'll take math beyond worksheets by using games, everyday situations, outdoor spaces and materials from the land to make mathematical ideas more concrete and meaningful.
 
-We believe that every child is a capable learner with unique gifts and strengths. Our classroom is built on the foundation of respect, kindness, and community. We create a safe and welcoming space where students are encouraged to be themselves, take risks in their learning, and grow at their own pace.
+**Science & Technology:** We'll become young scientists by observing, asking questions, investigating and learning from the world around us. Throughout the year, we'll explore living things, plants and animals, energy, seasons, forces and motion, matter, Earth and space, and other topics through classroom investigations and land-based experiences.
 
-Learning in Grade 1/2 is hands-on, engaging, and meaningful. We balance whole-group instruction with small-group learning and independent activities, allowing students to learn at their level while also being challenged to reach their full potential.
+**Social Studies:** We'll learn about ourselves, our families and our community while exploring identity, traditions, responsibilities, the land, maps, environmental stewardship and how communities are connected. Storytelling, reflection, community knowledge and Indigenous perspectives will help children connect their learning to who they are and where they live.
 
-We incorporate the **Seven Sacred Teachings** into our daily practice, guiding students in becoming kind, respectful, and responsible community members. These teachings help children understand the importance of respect, honesty, courage, wisdom, humility, truth, and love in their interactions with others and the world around them.
+**Health & Physical Education:** We'll learn how to keep our bodies and minds healthy while building movement skills, confidence, teamwork and safe participation. Through games, movement and cooperative activities, students will practice skills such as running, jumping, balancing, throwing, catching, kicking and working positively with others.
 
-Our multi-grade classroom creates a family-like atmosphere where older students support younger learners, and everyone learns from one another. This structure helps build leadership skills, empathy, and a strong sense of community.
+**Visual Arts:** We'll explore lines, shapes, colours, textures, patterns, and other elements of design while creating artwork using a variety of materials and techniques. Students will have opportunities to draw, paint, create, experiment, and express their own ideas, experiences, culture, and connections to the land through art. Our focus will be on exploration, creativity, and self-expression.
 
-## Cultural Integration
-
-Culture and language are woven into every aspect of our classroom. We honor Oji-Cree traditions, knowledge, and values through daily learning experiences. Students participate in cultural activities, learn traditional teachings, and develop a strong sense of identity and belonging.
-
-**Oji-Cree Language** is taught by Ms. Brenda, both in person and virtually. Students learn through songs, stories, conversation, and hands-on activities. Language learning is not limited to a specific time block—we incorporate Oji-Cree words and phrases throughout our day, helping children hear, practice, and use the language in meaningful ways.
-
-**Cultural Learning** is supported by Mr. Orville, who helps students connect with traditions, identity, and community. Through drumming, storytelling, and traditional activities, students build a deep understanding of their heritage and develop pride in their culture.
-
-We believe that a strong cultural foundation supports children in developing confidence, identity, and a deep sense of belonging. By honoring and celebrating Oji-Cree culture every day, we help students grow as proud, confident learners who are connected to their community and traditions.
+Our learning will be hands-on, meaningful, and responsive to each child's needs. Because children learn and develop at different rates, I will differentiate activities, materials, supports, and teaching strategies to meet students at their current skill levels and help them move forward. We will focus on **progress, not perfection**, recognizing each child's strengths while supporting the skills they are still developing.
 
 ## How Families Can Support Learning
 
@@ -241,16 +267,12 @@ Families play an essential role in supporting children's learning and developmen
 
 **Reading Together** - Read books sent home together regularly. Even 10-15 minutes each day makes a big difference in building literacy skills and a love of reading.
 
-**Using Online Learning Tools** - Encourage your child to use **Lexia** and **Symphony Math** at home. These programs provide personalized practice that supports classroom learning.
+**Using Online Learning Tools** - Encourage your child to use Lexia and Symphony Math at home. These programs provide personalized practice that supports classroom learning.
 
-**Talking About Learning** - Ask your child about what they learned at school. Celebrate their effort and progress, not just their results. This helps build confidence and a growth mindset.
+**Talking About Learning** - Ask your child about what they learned at school. Celebrate their effort and progress, not just their results.
 
-**Supporting Routines** - Establish consistent routines for bedtime, morning preparation, and homework. Routines help children feel secure and ready to learn.
+**Practicing Oji-Cree** - Use Oji-Cree words and phrases at home when possible. Sharing family stories, traditions, and experiences helps children feel proud of who they are.
 
-**Practicing Oji-Cree** - Use Oji-Cree words and phrases at home when possible. Sharing family stories, traditions, and experiences helps children feel proud of who they are and strengthens their cultural identity.
+**Staying Connected** - Reach out with questions or concerns. We are here to support you and your child!
 
-**Staying Connected** - Reach out with questions or concerns. We are here to support you and your child, and we value open communication and collaboration.
-
-Miigwech for trusting me with your children. I look forward to a wonderful year of learning, growth, and discovery!
-
-**Ms. Meagan**
+**Ms. Lyra**
