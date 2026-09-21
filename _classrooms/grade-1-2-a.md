@@ -7,8 +7,9 @@ teachers:
   - Lyracel Sabado
 color: blue
 order: 2
-room: Classroom 2
+room: Classroom 1 - Ms. Lyra
 students: 14
+door_photo: /assets/images/classrooms/grade-1-2-a/door-photo.jpg
 hero_image: /assets/images/classrooms/grade-1-2-a/Hero-Banner.png
 newsletter_folder: grade-1-2-a
 show_daily_schedule: true

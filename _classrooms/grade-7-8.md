@@ -9,7 +9,7 @@ teachers:
 classroom_assistant: Trisha Moonias
 color: red
 order: 6
-room: Classroom 6
+room: Classroom 5
 students: 8
 newsletter_folder: grade-7-8
 show_photo_gallery: false

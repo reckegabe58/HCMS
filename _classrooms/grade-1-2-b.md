@@ -6,8 +6,9 @@ teachers:
   - Levita Morados
 color: blue
 order: 3
-room: Classroom B
+room: Classroom 2 - Ms. Levita
 students: 10
+door_photo: /assets/images/classrooms/grade-1-2-b/door-photo.jpg
 hero_image: /assets/images/classrooms/grade-1-2-b/hero-classroom-reading-corner.jpg
 newsletter_folder: grade-1-2-b
 show_daily_schedule: true

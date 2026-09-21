@@ -8,7 +8,7 @@ teachers:
   - Avtar Singh
 color: orange
 order: 5
-room: Classroom 5
+room: Classroom 4
 students: 15
 newsletter_folder: grade-5-6
 show_daily_schedule: true

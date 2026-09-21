@@ -8,8 +8,9 @@ teachers:
   - Mr. Shun Michael Villegas
 color: sage
 order: 1
-room: Classroom 1
+room: Kindergarten
 students: 12
+door_photo: /assets/images/classrooms/kindergarten/door-photo.jpg
 hero_image: /assets/images/classrooms/kindergarten/Hero-Banner.png
 newsletter_folder: kindergarten
 show_daily_schedule: true

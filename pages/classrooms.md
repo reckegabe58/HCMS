@@ -35,6 +35,11 @@ keywords: "small class sizes, multi-grade classrooms, First Nations teachers, bi
       {% assign sorted_classrooms = site.classrooms | sort: "order" %}
       {% for classroom in sorted_classrooms %}
       <div class="classroom-card" data-color="{{ classroom.color | default: 'blue' }}">
+        {% if classroom.door_photo %}
+        <div class="classroom-card-photo">
+          <img src="{{ classroom.door_photo | relative_url }}" alt="{{ classroom.title }} classroom door" loading="lazy">
+        </div>
+        {% endif %}
         <div class="classroom-accent classroom-accent-{{ classroom.color | default: 'blue' }}"></div>
 
         <div class="classroom-content">
