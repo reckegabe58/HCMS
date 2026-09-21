@@ -54,6 +54,9 @@ teacher_emails:
   - name: Mr. Shun
     email: shun.villegas@martenfalls.com
 subjects:
+  - name: Oji-Cree Language
+    description: Learning with Miss Brenda through songs, artwork, and hands-on activities. Building language skills, cultural connections, and confidence in a warm and engaging way.
+    icon: message
   - name: Early Literacy
     description: Learning through Lexia, building phonemic awareness and phonics by exploring letter sounds. Developing oral storytelling, word study, reading comprehension, rhyming, syllables, and alphabet knowledge.
     icon: book
@@ -63,9 +66,6 @@ subjects:
   - name: Land-Based Learning
     description: Learning through outdoor exploration and nature walks while being introduced to traditional knowledge. Building curiosity, respect for the land, and meaningful connections to nature.
     icon: tree
-  - name: Oji-Cree Language
-    description: Learning with Miss Brenda through songs, artwork, and hands-on activities. Building language skills, cultural connections, and confidence in a warm and engaging way.
-    icon: message
   - name: Creative Arts
     description: Expressing creativity through drawing, painting, crafts, and traditional art forms.
     icon: palette

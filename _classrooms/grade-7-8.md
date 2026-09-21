@@ -9,11 +9,14 @@ teachers:
 classroom_assistant: Trisha Moonias
 color: red
 order: 6
-room: Classroom 5
+room: Classroom 5 - Grade 7/8
 students: 8
 newsletter_folder: grade-7-8
 show_photo_gallery: false
 subjects:
+  - name: Oji-Cree Language
+    description: Daily language lessons learning introductions, weather, clothing items, body parts, and the names of the moons for each month.
+    icon: message
   - name: Language Arts
     description: Literature studies with Indigenous and classic texts, essay writing in diverse formats, research projects, and public speaking practice.
     icon: book
@@ -26,9 +29,6 @@ subjects:
   - name: Social Studies
     description: Hands-on cultural experiences, mapping skills, watershed study, Indigenous governing, and government roles and responsibilities.
     icon: globe
-  - name: Oji-Cree Language
-    description: Daily language lessons learning introductions, weather, clothing items, body parts, and the names of the moons for each month.
-    icon: message
   - name: Music
     description: Keyboard, drums, violin, and vocal skills with Mr. Felipe. Music concerts throughout the year highlight student talent.
     icon: music

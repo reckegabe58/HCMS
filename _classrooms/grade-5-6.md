@@ -8,7 +8,7 @@ teachers:
   - Avtar Singh
 color: orange
 order: 5
-room: Classroom 4
+room: Classroom 4 - Grade 5/6
 students: 15
 newsletter_folder: grade-5-6
 show_daily_schedule: true
@@ -21,6 +21,9 @@ photos:
   - src: /assets/images/classrooms/grade-5-6/IMG_2830.jpg
     alt: Classroom learning environment
 subjects:
+  - name: Oji-Cree Language
+    description: Daily language lessons with Ms. Brenda (virtual and in-person) learning introductions, weather, clothing items, body parts, and the names of the moons for each month.
+    icon: message
   - name: Language Arts
     description: Developing reading, writing, speaking, and listening skills through literacy centres, guided reading, writing activities, and class discussions.
     icon: book
@@ -33,9 +36,6 @@ subjects:
   - name: Social Studies
     description: Hands-on activities and cultural experiences celebrating community, stories of the past, and dreams for the future. Learning mapping skills, Indigenous governing, and government roles and responsibilities.
     icon: globe
-  - name: Oji-Cree Language
-    description: Daily language lessons with Ms. Brenda (virtual and in-person) learning introductions, weather, clothing items, body parts, and the names of the moons for each month.
-    icon: message
   - name: Art
     description: Expressing ideas and creativity through drawing, building, and hands-on art activities.
     icon: palette

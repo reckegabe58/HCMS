@@ -8,7 +8,7 @@ teachers:
   - Desiree Wasley
 color: green
 order: 4
-room: Classroom 3 - Miss Meagan
+room: Classroom 3 - Grade 3/4
 students: 11
 door_photo: /assets/images/classrooms/grade-3-4/door-photo.jpg
 hero_image: /assets/images/classrooms/grade-3-4/hero-banner.jpg

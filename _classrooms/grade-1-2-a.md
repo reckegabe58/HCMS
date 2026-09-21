@@ -6,7 +6,7 @@ teachers:
   - Lyracel Sabado
 color: blue
 order: 2
-room: Classroom 1 - Ms. Lyra
+room: Classroom 1 - Grade 1/2
 students: 14
 door_photo: /assets/images/classrooms/grade-1-2-a/door-photo.jpg
 hero_image: /assets/images/classrooms/grade-1-2-a/door-photo.jpg
@@ -23,6 +23,9 @@ teacher_emails:
   - name: Lyracel Sabado
     email: lyracel.sabado@gmail.com
 subjects:
+  - name: Oji-Cree Language
+    description: Native Language sessions with Ms. Brenda, woven into our day alongside land-based knowledge from Elders and community members.
+    icon: message
   - name: Literacy & Writing
     description: Sounds, letters, phonics, vocabulary, fluency, and comprehension, alongside expressing ideas through speaking, drawing, and different kinds of writing.
     icon: book
@@ -35,9 +38,6 @@ subjects:
   - name: Social Studies
     description: Exploring identity, traditions, responsibilities, the land, maps, environmental stewardship, and how communities are connected.
     icon: globe
-  - name: Oji-Cree Language
-    description: Native Language sessions with Ms. Brenda, woven into our day alongside land-based knowledge from Elders and community members.
-    icon: message
   - name: Health & Physical Education
     description: Building movement skills, confidence, teamwork, and safe participation through games and cooperative activities.
     icon: heart

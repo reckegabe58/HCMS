@@ -6,7 +6,7 @@ teachers:
   - Levita Morados
 color: blue
 order: 3
-room: Classroom 2 - Ms. Levita
+room: Classroom 2 - Grade 1/2
 students: 10
 door_photo: /assets/images/classrooms/grade-1-2-b/door-photo.jpg
 hero_image: /assets/images/classrooms/grade-1-2-b/hero-classroom-reading-corner.jpg
@@ -23,6 +23,9 @@ teacher_emails:
   - name: Levita Morados
     email: levitamae.morados@gmail.com
 subjects:
+  - name: Oji-Cree Language
+    description: Taught by Ms. Brenda, focusing on vocabulary, greetings, traditional stories, songs, and cultural activities.
+    icon: message
   - name: Language Arts
     description: Phonics, sight words, reading comprehension, fluency, and daily writing activities including creative and informational writing.
     icon: book
@@ -35,9 +38,6 @@ subjects:
   - name: Social Studies
     description: Learning about families, communities, traditions, roles and responsibilities, and local history and geography.
     icon: globe
-  - name: Oji-Cree Language
-    description: Taught by Ms. Brenda, focusing on vocabulary, greetings, traditional stories, songs, and cultural activities.
-    icon: message
   - name: Health & Physical Education
     description: Motor skills, healthy eating, personal safety, teamwork, and mental/emotional well-being through daily activities.
     icon: heart
