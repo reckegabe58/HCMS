@@ -360,9 +360,12 @@ a:hover {
 }
 
 .nav-link {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 600;
+  line-height: var(--leading-none);
   color: rgba(255, 255, 255, 0.9);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-md);
