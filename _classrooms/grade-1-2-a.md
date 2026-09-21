@@ -237,8 +237,6 @@ schedule:
 
 ## Welcome to Grade 1/2!
 
-Boozhoo, families!
-
 Our classroom theme this year is **"Together, We Are a Rainbow of Possibilities."** We each bring something special to our classroom, and together, we will learn from one another, discover our strengths, develop our skills, and celebrate each other's wins. My hope is to create a safe, caring, and welcoming classroom where every child feels that they belong and are supported to reach their full potential.
 
 I'm also really looking forward to getting to know you and working together throughout the school year. You know your children best, and I truly value the insight you can share about their strengths, interests, needs, and the ways they learn best. I hope we can build a strong partnership through open communication, shared ideas, and mutual support as we help your children grow in confidence, discover and develop their strengths, and celebrate every step of their progress along the way.
