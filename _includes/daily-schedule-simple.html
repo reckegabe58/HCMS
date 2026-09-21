@@ -7,18 +7,26 @@
       <line x1="8" y1="2" x2="8" y2="6"></line>
       <line x1="3" y1="10" x2="21" y2="10"></line>
     </svg>
-    <div>
-      <h3>Today's Schedule</h3>
+    <div class="schedule-card-header-text">
+      <h3>Class Schedule</h3>
       <span class="schedule-day-label" id="simple-schedule-day">Monday</span>
+    </div>
+    <div class="schedule-day-nav">
+      <button type="button" class="schedule-day-nav-btn" id="schedule-prev-day" aria-label="Previous day">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button type="button" class="schedule-day-nav-btn" id="schedule-next-day" aria-label="Next day">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
   </div>
 
   <div class="schedule-card-body" id="simple-schedule-list">
     <!-- Populated by JavaScript -->
-  </div>
-
-  <div class="schedule-weekend-msg" id="simple-schedule-weekend" style="display: none;">
-    <p>Enjoy your weekend!</p>
   </div>
 </div>
 
@@ -51,7 +59,7 @@
       { time: "10:30-11:00", activity: "Literacy" },
       { time: "11:00-11:15", activity: "Gym" },
       { time: "11:15-11:35", activity: "Math" },
-      { time: "12:00-1:00", activity: "Lunch" },
+      { time: "12:00-1:00", activity: "Lunch", highlight: true },
       { time: "1:00-1:15", activity: "Symphony Math / Lexia" },
       { time: "1:15-1:45", activity: "Science" },
       { time: "2:00-2:15", activity: "Recess" },
@@ -65,7 +73,7 @@
       { time: "10:30-11:00", activity: "Math" },
       { time: "11:00-11:15", activity: "Gym" },
       { time: "11:15-11:35", activity: "Math" },
-      { time: "12:00-1:00", activity: "Lunch" },
+      { time: "12:00-1:00", activity: "Lunch", highlight: true },
       { time: "1:00-1:15", activity: "Native Language" },
       { time: "1:15-1:45", activity: "Social Studies" },
       { time: "2:00-2:15", activity: "Recess" },
@@ -80,7 +88,7 @@
       { time: "10:30-11:00", activity: "Literacy" },
       { time: "11:00-11:15", activity: "Gym" },
       { time: "11:15-11:35", activity: "Math" },
-      { time: "12:00-1:00", activity: "Lunch" },
+      { time: "12:00-1:00", activity: "Lunch", highlight: true },
       { time: "1:00-1:15", activity: "Symphony Math / Lexia" },
       { time: "1:15-1:45", activity: "Science" },
       { time: "2:00-2:15", activity: "Recess" },
@@ -94,7 +102,7 @@
       { time: "10:30-11:00", activity: "Math" },
       { time: "11:00-11:15", activity: "Gym" },
       { time: "11:15-11:35", activity: "Math" },
-      { time: "12:00-1:00", activity: "Lunch" },
+      { time: "12:00-1:00", activity: "Lunch", highlight: true },
       { time: "1:00-1:15", activity: "Native Language" },
       { time: "1:15-1:45", activity: "Social Studies" },
       { time: "2:00-2:15", activity: "Recess" },
@@ -109,7 +117,7 @@
       { time: "10:30-11:00", activity: "Literacy" },
       { time: "11:00-11:15", activity: "Gym" },
       { time: "11:15-11:35", activity: "Math" },
-      { time: "12:00-1:00", activity: "Lunch" },
+      { time: "12:00-1:00", activity: "Lunch", highlight: true },
       { time: "1:00-1:15", activity: "Symphony Math / Lexia" },
       { time: "1:15-1:45", activity: "Science" },
       { time: "2:00-2:15", activity: "Recess" },
@@ -119,31 +127,30 @@
   };
   {% endif %}
 
-  function updateSchedule() {
-    const dayIndex = new Date().getDay();
-    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dayOrder = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+  const dayNames = { monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday', thursday: 'Thursday', friday: 'Friday' };
+  const jsDayKeys = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
-    const dayLabel = document.getElementById('simple-schedule-day');
-    const scheduleList = document.getElementById('simple-schedule-list');
-    const weekendMsg = document.getElementById('simple-schedule-weekend');
+  const todayKey = jsDayKeys[new Date().getDay()];
+  let currentIndex = dayOrder.indexOf(todayKey);
+  if (currentIndex === -1) currentIndex = 0; // Weekend - default to Monday
 
+  const dayLabel = document.getElementById('simple-schedule-day');
+  const scheduleList = document.getElementById('simple-schedule-list');
+  const prevBtn = document.getElementById('schedule-prev-day');
+  const nextBtn = document.getElementById('schedule-next-day');
+
+  function render() {
     if (!scheduleList) return;
 
-    dayLabel.textContent = dayNames[dayIndex];
+    const key = dayOrder[currentIndex];
+    const isToday = key === todayKey;
+    dayLabel.textContent = dayNames[key] + (isToday ? ' · Today' : '');
 
-    if (dayIndex === 0 || dayIndex === 6) {
-      scheduleList.style.display = 'none';
-      weekendMsg.style.display = 'block';
-      return;
-    }
-
-    const todaySchedule = scheduleData[days[dayIndex]];
-    scheduleList.style.display = 'block';
-    weekendMsg.style.display = 'none';
+    const daySchedule = scheduleData[key] || [];
 
     let html = '';
-    todaySchedule.forEach(item => {
+    daySchedule.forEach(item => {
       const highlightClass = item.highlight ? ' schedule-row-highlight' : '';
       const details = item.details ? `<span class="schedule-details">${item.details}</span>` : '';
       html += `<div class="schedule-row${highlightClass}">
@@ -152,13 +159,27 @@
       </div>`;
     });
 
-    scheduleList.innerHTML = html;
+    scheduleList.innerHTML = html || '<p class="schedule-empty-msg">No schedule available.</p>';
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      currentIndex = (currentIndex - 1 + dayOrder.length) % dayOrder.length;
+      render();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      currentIndex = (currentIndex + 1) % dayOrder.length;
+      render();
+    });
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', updateSchedule);
+    document.addEventListener('DOMContentLoaded', render);
   } else {
-    updateSchedule();
+    render();
   }
 })();
 </script>

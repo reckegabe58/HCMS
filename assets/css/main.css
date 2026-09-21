@@ -2675,6 +2675,11 @@ a:hover {
   border: 3px solid var(--primary-100);
 }
 
+.leader-photo.large {
+  width: 180px;
+  height: 180px;
+}
+
 .leader-info {
   text-align: center;
 }
@@ -2855,6 +2860,11 @@ a:hover {
   .leader-photo-placeholder.large svg {
     width: 55px;
     height: 55px;
+  }
+
+  .leader-photo.large {
+    width: 140px;
+    height: 140px;
   }
 }
 
@@ -8389,11 +8399,46 @@ a:hover {
   line-height: 1.2;
 }
 
+.schedule-card-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .schedule-day-label {
   font-size: var(--text-sm);
   color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
   display: block;
+}
+
+.schedule-day-nav {
+  display: flex;
+  gap: var(--space-2xs);
+  flex-shrink: 0;
+}
+
+.schedule-day-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--white);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.schedule-day-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.schedule-day-nav-btn svg {
+  width: 16px;
+  height: 16px;
 }
 
 .schedule-card-body {
@@ -8414,6 +8459,16 @@ a:hover {
   background: var(--bg-300);
 }
 
+.schedule-row-highlight {
+  background: var(--sage-100) !important;
+}
+
+.schedule-row-highlight .schedule-time,
+.schedule-row-highlight .schedule-activity {
+  color: var(--white);
+  font-weight: 700;
+}
+
 .schedule-time {
   color: var(--text-muted);
   font-weight: 600;
@@ -8426,14 +8481,23 @@ a:hover {
   flex: 1;
 }
 
-.schedule-weekend-msg {
-  padding: var(--space-xl);
-  text-align: center;
+.schedule-details {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-top: 2px;
 }
 
-.schedule-weekend-msg p {
-  color: var(--text-secondary);
-  margin: 0;
+.schedule-row-highlight .schedule-details {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.schedule-empty-msg {
+  padding: var(--space-lg);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
 }
 
 /* ========================================
