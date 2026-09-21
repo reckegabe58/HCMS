@@ -152,22 +152,31 @@ layout: default
         {% if page.teacher_photos %}
         <div class="classroom-section">
           {% for t in page.teacher_photos %}
-          <div class="featured-leader" {% unless forloop.first %}style="margin-top: var(--space-xl);"{% endunless %}>
-            <div class="featured-leader-photo">
-              {% if t.photo %}
-              <img src="{{ t.photo | relative_url }}" alt="{{ t.name }}" class="leader-photo large">
-              {% else %}
-              <div class="leader-photo-placeholder large">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
+          <div class="meet-teacher-card" {% unless forloop.first %}style="margin-top: var(--space-lg);"{% endunless %}>
+            <div class="featured-leader">
+              <div class="featured-leader-photo">
+                {% if t.photo %}
+                <img src="{{ t.photo | relative_url }}" alt="{{ t.name }}" class="leader-photo large">
+                {% else %}
+                <div class="leader-photo-placeholder large">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                {% endif %}
               </div>
-              {% endif %}
-            </div>
-            <div class="featured-leader-content">
-              <h3 class="leader-name">{{ t.name }}</h3>
-              <p class="leader-title">{{ page.title }} Teacher</p>
+              <div class="featured-leader-content">
+                <h3 class="leader-name">{{ t.name }}</h3>
+                <p class="leader-title">{{ page.title }} Teacher</p>
+                {% if t.bio %}
+                <div class="leader-bio-full">
+                  {% for paragraph in t.bio %}
+                  <p>{{ paragraph }}</p>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
             </div>
           </div>
           {% endfor %}

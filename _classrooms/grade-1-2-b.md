@@ -15,6 +15,9 @@ show_photo_gallery: false
 teacher_photos:
   - name: Levita Morados
     photo: /assets/images/classrooms/grade-1-2-b/levita-morados-headshot.jpg
+    bio:
+      - "Ms. Levita — many students call her \"Ms. Vita\" for short — is originally from the Philippines, where she completed her education before continuing her studies to pursue higher education in teaching. Her passion for teaching grew through that journey, driven by a desire to help students hone their skills and let them learn at their own pace."
+      - "She is pleased to be part of the HCMS school community and looks forward to this new school year, creating a calm, welcoming, and organized classroom where every student feels welcomed, encouraged, and supported each day."
 teacher_emails:
   - name: Levita Morados
     email: levitamae.morados@gmail.com
@@ -240,12 +243,6 @@ schedule:
 Boozhoo! Welcome to our Grade 1/2 classroom at Henry Coaster Memorial School! This new school year, I am so excited to be your child's teacher.
 
 To our dear parents and guardians, I am honored for the opportunity to teach your children. Our classroom is a place where we will explore new things, create amazing memories in the class, have a wonderful time learning and growing together, and where they will feel safe. Let's get ready for an incredible year!
-
-## Your Teacher
-
-**Ms. Levita** — many students call her "Ms. Vita" for short — is originally from the Philippines, where she completed her education before continuing her studies to pursue higher education in teaching. Her passion for teaching grew through that journey, driven by a desire to help students hone their skills and let them learn at their own pace.
-
-She is pleased to be part of the HCMS school community and looks forward to this new school year, creating a calm, welcoming, and organized classroom where every student feels welcomed, encouraged, and supported each day.
 
 ## Our Classroom Philosophy
 

@@ -4069,6 +4069,26 @@ a:hover {
   margin-bottom: var(--space-2xl);
 }
 
+/* Meet Your Teacher card (classroom page) */
+.meet-teacher-card {
+  background: var(--bg-400);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-xl);
+}
+
+.meet-teacher-card .featured-leader {
+  max-width: none;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .meet-teacher-card .featured-leader {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
 .classroom-section-title {
   font-size: var(--text-2xl);
   margin-bottom: var(--space-lg);
