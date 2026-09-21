@@ -237,27 +237,9 @@ schedule:
 
 ## Welcome to Grade 1/2!
 
-Our classroom theme this year is **"Together, We Are a Rainbow of Possibilities."** We each bring something special to our classroom, and together, we will learn from one another, discover our strengths, develop our skills, and celebrate each other's wins. My hope is to create a safe, caring, and welcoming classroom where every child feels that they belong and are supported to reach their full potential.
+Our classroom theme this year is "Together, We Are a Rainbow of Possibilities." We each bring something special to our classroom, and together, we will learn from one another, discover our strengths, develop our skills, and celebrate each other's wins. My hope is to create a safe, caring, and welcoming classroom where every child feels that they belong and are supported to reach their full potential.
 
 I'm also really looking forward to getting to know you and working together throughout the school year. You know your children best, and I truly value the insight you can share about their strengths, interests, needs, and the ways they learn best. I hope we can build a strong partnership through open communication, shared ideas, and mutual support as we help your children grow in confidence, discover and develop their strengths, and celebrate every step of their progress along the way.
-
-## What We'll Be Learning This School Year
-
-Throughout the year, we'll be building strong foundations across Literacy, Writing, Mathematics, Science, Social Studies, Arts, and Health & Physical Education. Students will have opportunities to read, write, communicate, solve problems, investigate, create, move, ask questions, and make connections between what we learn at school and the world around us. Our learning will also incorporate Oji-Cree language and culture, the land, and our local community, with guidance from those who hold this knowledge.
-
-**Literacy & Writing:** We'll work on the building blocks of reading and writing, including sounds and letters, phonics, vocabulary, reading fluency and comprehension, as well as expressing our ideas through speaking, drawing and different kinds of writing. Stories, experiences and locally appropriate Oji-Cree knowledge will also be meaningful parts of our literacy learning.
-
-**Mathematics:** We'll explore numbers and operations, patterns, measurement, shapes, fractions, data, money and problem-solving through lots of hands-on experiences. Whenever we can, we'll take math beyond worksheets by using games, everyday situations, outdoor spaces and materials from the land to make mathematical ideas more concrete and meaningful.
-
-**Science & Technology:** We'll become young scientists by observing, asking questions, investigating and learning from the world around us. Throughout the year, we'll explore living things, plants and animals, energy, seasons, forces and motion, matter, Earth and space, and other topics through classroom investigations and land-based experiences.
-
-**Social Studies:** We'll learn about ourselves, our families and our community while exploring identity, traditions, responsibilities, the land, maps, environmental stewardship and how communities are connected. Storytelling, reflection, community knowledge and Indigenous perspectives will help children connect their learning to who they are and where they live.
-
-**Health & Physical Education:** We'll learn how to keep our bodies and minds healthy while building movement skills, confidence, teamwork and safe participation. Through games, movement and cooperative activities, students will practice skills such as running, jumping, balancing, throwing, catching, kicking and working positively with others.
-
-**Visual Arts:** We'll explore lines, shapes, colours, textures, patterns, and other elements of design while creating artwork using a variety of materials and techniques. Students will have opportunities to draw, paint, create, experiment, and express their own ideas, experiences, culture, and connections to the land through art. Our focus will be on exploration, creativity, and self-expression.
-
-Our learning will be hands-on, meaningful, and responsive to each child's needs. Because children learn and develop at different rates, I will differentiate activities, materials, supports, and teaching strategies to meet students at their current skill levels and help them move forward. We will focus on **progress, not perfection**, recognizing each child's strengths while supporting the skills they are still developing.
 
 ## How Families Can Support Learning
 
