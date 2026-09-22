@@ -239,8 +239,6 @@ schedule:
       activity: "Dismissal / After School Program"
 ---
 
-## Welcome to Grade 1/2!
-
 Boozhoo! Welcome to our Grade 1/2 classroom at Henry Coaster Memorial School! This new school year, I am so excited to be your child's teacher.
 
 To our dear parents and guardians, I am honored for the opportunity to teach your children. Our classroom is a place where we will explore new things, create amazing memories in the class, have a wonderful time learning and growing together, and where they will feel safe. Let's get ready for an incredible year!
