@@ -4083,13 +4083,6 @@ a:hover {
   line-height: 1.8;
 }
 
-/* Special styling for welcome intro */
-.classroom-welcome > p:first-of-type {
-  font-size: var(--text-xl);
-  font-weight: 400;
-  color: var(--text-primary);
-}
-
 .classroom-welcome h2,
 .classroom-welcome h3 {
   margin-top: var(--space-xl);

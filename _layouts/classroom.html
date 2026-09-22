@@ -168,7 +168,7 @@ layout: default
               </div>
               <div class="featured-leader-content">
                 <h3 class="leader-name">{{ t.name }}</h3>
-                <p class="leader-title">{{ page.title }} Teacher</p>
+                <p class="leader-title">{{ page.teacher_title | default: page.title }} Teacher</p>
                 {% if t.bio %}
                 <div class="leader-bio-full">
                   {% for paragraph in t.bio %}

@@ -1,6 +1,7 @@
 ---
 layout: classroom
 title: Grade 1/2 Class B
+teacher_title: Grade 1/2
 grade: "1-2"
 teachers:
   - Levita Morados
