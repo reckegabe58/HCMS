@@ -31,24 +31,6 @@ subtitle: Important dates and upcoming events
         <iframe src="https://calendar.google.com/calendar/embed?src=227b700438569c1d622b29457fe9d090f155975f39511456055d92199d369a4f%40group.calendar.google.com&ctz=America%2FToronto" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
       </div>
 
-      <div class="calendar-actions">
-        <a href="#" class="btn btn-primary" download>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          Download Full Calendar (PDF)
-        </a>
-        <a href="#" class="btn btn-outline">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-            <polyline points="16 6 12 2 8 6"></polyline>
-            <line x1="12" y1="2" x2="12" y2="15"></line>
-          </svg>
-          Add to Your Calendar
-        </a>
-      </div>
     </div>
 
     <!-- Upcoming Events - Auto-loaded from Google Calendar -->
