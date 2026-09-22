@@ -1,6 +1,5 @@
 ---
 layout: classroom
-under_construction: true
 title: Native Language
 grade: "K-8"
 teachers:
