@@ -25,31 +25,6 @@ teacher_emails:
     email: Madison.leighton25@gmail.com
   - name: Ankush Thakur
     email: Ankushthakurchib725@gmail.com
-subjects:
-  - name: Oji-Cree Language
-    description: Daily language lessons learning introductions, weather, clothing items, body parts, and the names of the moons for each month.
-    icon: message
-  - name: Literacy
-    description: Reading, writing, speaking, and listening skills - from sentence building and grammar to poetry, storytelling, research, and media, building toward independent projects and presentations.
-    icon: book
-  - name: Mathematics
-    description: Foundational skills in addition, subtraction, multiplication, and division, building toward money and budgeting, patterns, fractions, data, measurement, and geometry.
-    icon: calculator
-  - name: Culture & Land-Based Learning
-    description: Native Language classes, land-based learning, and guidance from our cultural teachers Orville and Dave, connecting classroom learning to the land and community.
-    icon: tree
-  - name: Science
-    description: Investigating the world around us through hands-on activities, experiments, and problem-solving challenges.
-    icon: flask
-  - name: Geography
-    description: Exploring people, places, environments, and the connections between our community and the wider world.
-    icon: globe
-  - name: Music
-    description: Keyboard, drums, violin, and vocal skills with Mr. Felipe. Music concerts throughout the year highlight student talent.
-    icon: music
-  - name: Physical Education
-    description: Building physical skills, teamwork, sportsmanship, and confidence through a variety of games and activities.
-    icon: heart
 schedule:
   monday:
     - time: "9:00 - 9:30"
@@ -208,6 +183,10 @@ Welcome families! We are your teaching team for the 2026-2027 school year. We ar
 
 Throughout the term, students will be encouraged to build independence, communicate their thinking, use different strategies, and connect their learning to their everyday lives and experiences.
 
+### Culture and Land-Based Learning
+
+As a class, we will explore cultural-based learning throughout the year through Native Language classes, land-based learning opportunities, and guidance from our cultural teachers, Orville and Dave. Students will be encouraged to incorporate cultural practices, knowledge, and ways of learning into different areas of their education. These experiences will provide opportunities for students to learn from the land, connect their classroom learning to their community, and develop a deeper understanding of the knowledge and traditions shared with them.
+
 ### Literacy
 
 This year in Literacy, students will work on building their reading, writing, speaking, and listening skills. At the beginning of the year, we will focus on sentence building, grammar, reading comprehension, making predictions, finding main ideas, and answering questions about texts. As the year continues, students will explore poetry, storytelling, research, media, and different cultural perspectives. They will create stories, poems, projects, and presentations.
@@ -215,10 +194,6 @@ This year in Literacy, students will work on building their reading, writing, sp
 ### Mathematics
 
 In Math, students will begin by practising foundational skills in addition, subtraction, multiplication, and division. They will learn how to use different strategies, explain their thinking, and solve problems connected to real life. Throughout the year, students will also learn about money and budgeting, patterns, fractions, data, measurement, geometry, and other math concepts.
-
-### Culture and Land-Based Learning
-
-As a class, we will explore cultural-based learning throughout the year through Native Language classes, land-based learning opportunities, and guidance from our cultural teachers, Orville and Dave. Students will be encouraged to incorporate cultural practices, knowledge, and ways of learning into different areas of their education. These experiences will provide opportunities for students to learn from the land, connect their classroom learning to their community, and develop a deeper understanding of the knowledge and traditions shared with them.
 
 ### Science, Geography & Physical Education
 
