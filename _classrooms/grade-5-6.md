@@ -213,26 +213,4 @@ schedule:
       details: "Lexia"
 ---
 
-**Boozhoo! Welcome to Grade 5/6!**
-
-Welcome to our classroom! Our teaching team includes Mr. Ankush Thakur and Ms. Verna, and together we work to create a safe, respectful, and supportive learning environment for all students. Our focus is on building strong routines, confidence, and foundational skills in reading, writing, and mathematics.
-
-We value learning that is connected to the land, community, and students' lived experiences. Through observation, discussion, and hands-on activities, students are encouraged to develop respect for the land, nature, and the environment around them.
-
-We value collaboration with families and look forward to working together to support each student's growth throughout the school year.
-
-## How Families Can Support Learning
-
-**Ask your child to explain one thing they learned** each day and how they learned it (for example, by reading, writing, drawing, or solving a problem).
-
-**Encourage short, regular reading at home** (10–15 minutes). Reading together or listening to your child read is just as valuable as independent reading.
-
-**Encourage independent problem-solving** - Encourage your child to try learning tasks independently first before asking for help to build confidence and problem-solving skills.
-
-**Practice math in everyday situations** such as counting items, measuring while cooking, telling time, or discussing numbers seen in daily life.
-
-**Ensure adequate sleep** each night, as rest has a strong impact on focus, behaviour, and learning during the school day.
-
-**Support consistent routines** for sleep, attendance, and arriving at school on time to help your child feel prepared and ready to learn.
-
-**Stay connected** - Please inform the school if there are changes at home or concerns that may affect your child's learning or well-being.
+Content for this classroom is being updated for the new school year.
