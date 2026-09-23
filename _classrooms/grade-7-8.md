@@ -10,6 +10,7 @@ color: red
 order: 6
 room: Classroom 5 - Grade 7/8
 students: 8
+door_photo: /assets/images/classrooms/grade-7-8/door-photo.jpg
 newsletter_folder: grade-7-8
 show_daily_schedule: true
 show_photo_gallery: false

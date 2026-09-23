@@ -10,6 +10,7 @@ color: orange
 order: 5
 room: Classroom 4 - Grade 5/6
 students: 15
+door_photo: /assets/images/classrooms/grade-5-6/door-photo.jpg
 newsletter_folder: grade-5-6
 show_daily_schedule: true
 show_photo_gallery: true
