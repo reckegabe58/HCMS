@@ -13,8 +13,6 @@ hero_image: /assets/images/classrooms/grade-3-4/hero-banner.jpg
 newsletter_folder: grade-3-4
 show_daily_schedule: true
 show_photo_gallery: false
-art_pdf: /assets/images/classrooms/grade-3-4/class-art.pdf
-art_student_names: "MJ,Brody,Jenelle,,Harry,Leah,Jaze,Gabby,Conner,Leah,,Cytheria"
 teacher_photos:
   - name: Meagan Washburn
     bio:
@@ -22,31 +20,6 @@ teacher_photos:
 teacher_emails:
   - name: Meagan Washburn
     email: meagan.washburn@martenfalls.com
-subjects:
-  - name: Oji-Cree Language
-    description: Intermediate language skills with focus on reading, writing, and traditional storytelling.
-    icon: message
-  - name: Language
-    description: Reading comprehension, writing across genres, oral communication, and media literacy.
-    icon: book
-  - name: Mathematics
-    description: Multiplication, division, fractions, measurement, geometry, and multi-step problem solving.
-    icon: calculator
-  - name: Science & Technology
-    description: STEM skills, life systems, matter and energy, structures, and Earth/space systems through hands-on inquiry.
-    icon: flask
-  - name: Social Studies
-    description: Communities in Canada, First Nations history, and People and Environments studies.
-    icon: globe
-  - name: Health & Physical Education
-    description: Physical literacy, mental health and well-being, healthy relationships, and active living.
-    icon: heart
-  - name: The Arts
-    description: Visual arts, music, drama, and dance with connections to Oji-Cree cultural expression.
-    icon: palette
-  - name: Land-Based Learning
-    description: Traditional skills including trapping basics, plant identification, and seasonal activities.
-    icon: tree
 schedule:
   monday:
     - time: "9:00 - 9:30"
@@ -216,30 +189,6 @@ schedule:
 ---
 
 Welcome to Grade 3/4! I'm Miss Meagan, and I'm excited to be your teacher this year. I love building a kind classroom where students feel confident, curious, and ready to learn.
-
-## How Families Can Support Learning at Home
-
-Every child grows at their own pace. This classroom is a safe place to build confidence, try new things, and celebrate progress—big and small.
-
-**Quick Tips for Families:**
-- **Different paces are normal** - Kids learn at their own speed, and that's expected here
-- **Short routines beat long sessions** - 10 minutes daily does more than an hour once a week
-- **Talking counts as learning** - Conversations about ideas help just as much as worksheets
-- **Reading aloud together counts** - Even for older kids!
-- **Ask your child to explain their thinking** - This builds understanding
-- **Encouragement matters more than perfection** - Progress over perfection, confidence before speed
-- **Some days are harder** - And that's completely normal
-
-**Learning Tools for Home:**
-
-Students can practice at home using these tools. Students know their logins for these programs:
-- **Lexia Core5** - Reading and language practice that adapts to your child's level ([lexiacore5.com](https://www.lexiacore5.com/))
-- **Symphony Math** - Foundational math that builds understanding step-by-step
-- **Mathletics** - Math practice to build confidence and fluency ([mathletics.com](https://sign-in.mathletics.com/))
-
-*Short, regular use is more helpful than long sessions.*
-
-I look forward to a wonderful year of learning together!
 
 **Miigwech!**
 *Miss Meagan*
