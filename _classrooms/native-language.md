@@ -8,6 +8,7 @@ teacher_first_names:
   - Ms. Brenda
 color: terracotta
 order: 7
+hide_from_homepage: true
 room: Language Room
 students: All Students
 newsletter_folder: native-language

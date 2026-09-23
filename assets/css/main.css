@@ -4898,6 +4898,48 @@ body.classroom-gate-locked {
   color: var(--text-secondary);
 }
 
+/* Homepage Classroom Quick Access */
+.homepage-classrooms-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.homepage-classrooms-grid .other-classroom-card {
+  padding: var(--space-lg) var(--space-sm);
+  border-top: 3px solid transparent;
+  text-align: center;
+}
+
+.homepage-classrooms-grid .other-classroom-sage { border-top-color: var(--sage-300); }
+.homepage-classrooms-grid .other-classroom-blue { border-top-color: var(--primary-100); }
+.homepage-classrooms-grid .other-classroom-green { border-top-color: var(--sage-100); }
+.homepage-classrooms-grid .other-classroom-orange { border-top-color: #E67E22; }
+.homepage-classrooms-grid .other-classroom-red { border-top-color: var(--accent-100); }
+.homepage-classrooms-grid .other-classroom-terracotta { border-top-color: var(--accent-200); }
+
+.homepage-classrooms-grid .other-classroom-grade {
+  font-size: var(--text-2xl);
+}
+
+.homepage-classrooms-grid .other-classroom-title {
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+}
+
+@media (max-width: 900px) {
+  .homepage-classrooms-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .homepage-classrooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* ==========================================
    NEWS ARCHIVE PAGE
    ========================================== */

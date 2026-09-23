@@ -61,15 +61,17 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
   <div class="container">
     <h2 class="section-title-center">Find Your Child's Classroom</h2>
     <p class="section-subtitle" style="text-align: center;">Jump straight to your child's classroom page for schedules, newsletters, and how to reach their teacher.</p>
-    <div class="other-classrooms-grid">
+    <div class="homepage-classrooms-grid">
       {% assign sorted_classrooms = site.classrooms | sort: "order" %}
       {% for classroom in sorted_classrooms %}
+      {% unless classroom.hide_from_homepage %}
       <a href="{{ classroom.url | relative_url }}" class="other-classroom-card other-classroom-{{ classroom.color | default: 'blue' }}">
         <span class="other-classroom-grade">{{ classroom.grade }}</span>
         <span class="other-classroom-title">
           {% for teacher in classroom.teacher_first_names %}{{ teacher }}{% unless forloop.last %} & {% endunless %}{% endfor %}
         </span>
       </a>
+      {% endunless %}
       {% endfor %}
     </div>
     <div style="text-align: center; margin-top: var(--space-xl);">
