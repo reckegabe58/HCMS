@@ -1,6 +1,5 @@
 ---
 layout: classroom
-under_construction: true
 title: Kindergarten
 grade: "K"
 teachers:
