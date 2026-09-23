@@ -196,6 +196,50 @@ layout: default
       <!-- Sidebar Column -->
       <aside class="classroom-sidebar-column">
 
+        <!-- Contact Card with Teacher Emails -->
+        <div class="sidebar-card contact-sidebar-card">
+          <h3>Contact Us</h3>
+          <p>Have questions? Reach out to our teachers directly:</p>
+          <div class="teacher-contacts">
+            {% if page.teacher_emails %}
+              {% for contact in page.teacher_emails %}
+              <a href="mailto:{{ contact.email }}" class="teacher-contact-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <div>
+                  <strong>{{ contact.name }}</strong>
+                  <span>{{ contact.email }}</span>
+                </div>
+              </a>
+              {% endfor %}
+            {% else %}
+              {% for teacher in page.teachers %}
+              <div class="teacher-contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <strong>{{ teacher }}</strong>
+              </div>
+              {% endfor %}
+            {% endif %}
+            {% if page.classroom_assistant %}
+            <div class="teacher-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <div>
+                <strong>{{ page.classroom_assistant }}</strong>
+                <span>Classroom Assistant</span>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
         <!-- Newsletter Card -->
         {% if page.newsletter_folder %}
         <div class="sidebar-card newsletter-sidebar-card">
@@ -250,50 +294,6 @@ layout: default
             </li>
             {% endif %}
           </ul>
-        </div>
-
-        <!-- Contact Card with Teacher Emails -->
-        <div class="sidebar-card contact-sidebar-card">
-          <h3>Contact Us</h3>
-          <p>Have questions? Reach out to our teachers directly:</p>
-          <div class="teacher-contacts">
-            {% if page.teacher_emails %}
-              {% for contact in page.teacher_emails %}
-              <a href="mailto:{{ contact.email }}" class="teacher-contact-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <div>
-                  <strong>{{ contact.name }}</strong>
-                  <span>{{ contact.email }}</span>
-                </div>
-              </a>
-              {% endfor %}
-            {% else %}
-              {% for teacher in page.teachers %}
-              <div class="teacher-contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <strong>{{ teacher }}</strong>
-              </div>
-              {% endfor %}
-            {% endif %}
-            {% if page.classroom_assistant %}
-            <div class="teacher-contact-item">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <div>
-                <strong>{{ page.classroom_assistant }}</strong>
-                <span>Classroom Assistant</span>
-              </div>
-            </div>
-            {% endif %}
-          </div>
         </div>
 
       </aside>
