@@ -56,6 +56,26 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
   </div>
 </section>
 
+<!-- Quick Classroom Access -->
+<section class="other-classrooms-section homepage-classrooms-section">
+  <div class="container">
+    <h2 class="section-title-center">Find Your Child's Classroom</h2>
+    <p class="section-subtitle" style="text-align: center;">Jump straight to your child's classroom page for schedules, newsletters, and how to reach their teacher.</p>
+    <div class="other-classrooms-grid">
+      {% assign sorted_classrooms = site.classrooms | sort: "order" %}
+      {% for classroom in sorted_classrooms %}
+      <a href="{{ classroom.url | relative_url }}" class="other-classroom-card other-classroom-{{ classroom.color | default: 'blue' }}">
+        <span class="other-classroom-grade">{{ classroom.grade }}</span>
+        <span class="other-classroom-title">{{ classroom.title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: var(--space-xl);">
+      <a href="{{ '/classrooms/' | relative_url }}" class="btn btn-primary">View All Classrooms</a>
+    </div>
+  </div>
+</section>
+
 <!-- Our Heritage Feature Banner -->
 <section class="heritage-banner">
   <div class="container">
