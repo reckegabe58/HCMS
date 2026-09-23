@@ -2610,6 +2610,15 @@ a:hover {
   height: 180px;
 }
 
+.leader-photo.team {
+  width: 380px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  border-radius: var(--radius-lg);
+  border: none;
+}
+
 .leader-info {
   text-align: center;
 }
