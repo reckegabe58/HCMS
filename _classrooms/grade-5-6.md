@@ -6,6 +6,9 @@ grade: "5-6"
 teachers:
   - Sam Recke-Smith
   - Avtar Singh
+teacher_first_names:
+  - Mr. Sam
+  - Mr. Avtar
 color: orange
 order: 5
 room: Classroom 4 - Grade 5/6

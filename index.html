@@ -67,7 +67,7 @@ keywords: "Marten Falls school, First Nations education, K-8 school Ontario, Oji
       <a href="{{ classroom.url | relative_url }}" class="other-classroom-card other-classroom-{{ classroom.color | default: 'blue' }}">
         <span class="other-classroom-grade">{{ classroom.grade }}</span>
         <span class="other-classroom-title">
-          {% for teacher in classroom.teachers %}{{ teacher }}{% unless forloop.last %} & {% endunless %}{% endfor %}
+          {% for teacher in classroom.teacher_first_names %}{{ teacher }}{% unless forloop.last %} & {% endunless %}{% endfor %}
         </span>
       </a>
       {% endfor %}

@@ -5,6 +5,8 @@ teacher_title: Grade 1/2
 grade: "1-2"
 teachers:
   - Lyracel Sabado
+teacher_first_names:
+  - Ms. Lyra
 color: blue
 order: 2
 room: Classroom 1 - Grade 1/2

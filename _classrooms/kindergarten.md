@@ -5,6 +5,9 @@ grade: "K"
 teachers:
   - Ms. Lauren Moreau
   - Mr. Shun Michael Villegas
+teacher_first_names:
+  - Ms. Lauren
+  - Mr. Shun
 color: sage
 order: 1
 room: Kindergarten

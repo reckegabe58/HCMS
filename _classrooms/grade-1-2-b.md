@@ -5,6 +5,8 @@ teacher_title: Grade 1/2
 grade: "1-2"
 teachers:
   - Levita Morados
+teacher_first_names:
+  - Ms. Levita
 color: blue
 order: 3
 room: Classroom 2 - Grade 1/2

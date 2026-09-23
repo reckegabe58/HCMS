@@ -5,6 +5,9 @@ grade: "7-8"
 teachers:
   - Madison Leighton
   - Ankush Thakur
+teacher_first_names:
+  - Ms. Madison
+  - Mr. Ankush
 classroom_assistant: Trisha Moonias
 color: red
 order: 6

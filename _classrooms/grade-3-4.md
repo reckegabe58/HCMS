@@ -4,6 +4,8 @@ title: Grade 3/4
 grade: "3-4"
 teachers:
   - Meagan Washburn
+teacher_first_names:
+  - Miss Meagan
 color: green
 order: 4
 room: Classroom 3 - Grade 3/4

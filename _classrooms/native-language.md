@@ -4,6 +4,8 @@ title: Native Language
 grade: "K-8"
 teachers:
   - Ms. Brenda Daniels
+teacher_first_names:
+  - Ms. Brenda
 color: terracotta
 order: 7
 room: Language Room
