@@ -135,9 +135,9 @@ subtitle: Language, culture, and connection to the land
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
         </div>
-        <h3>Oji-Cree Language</h3>
+        <h3><a href="{{ '/classrooms/native-language/' | relative_url }}" style="color: inherit; text-decoration: none;">Oji-Cree Language</a></h3>
         <p>Daily classes led by <strong>Ms. Brenda</strong> with guidance from community Elders. Students learn conversational and traditional vocabulary through storytelling and hands-on learning.</p>
-        <span class="pillar-teacher">Language Teacher: Ms. Brenda</span>
+        <span class="pillar-teacher">Language Teacher: <a href="{{ '/classrooms/native-language/' | relative_url }}">Ms. Brenda</a></span>
       </div>
 
       <div class="pillar-card featured">
