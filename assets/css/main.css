@@ -285,6 +285,74 @@ a:hover {
 }
 
 /* ==========================================
+   CLASSROOM PASSWORD GATE
+   ========================================== */
+
+body.classroom-gate-locked {
+  overflow: hidden;
+}
+
+.classroom-gate {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-modal) + 50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
+}
+
+.classroom-gate-box {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2xl);
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+}
+
+.classroom-gate-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin: 0 auto var(--space-lg);
+}
+
+.classroom-gate-box h2 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.classroom-gate-box p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.classroom-gate-form {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.classroom-gate-input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--bg-300);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+}
+
+.classroom-gate-error {
+  color: var(--accent-200);
+  font-size: var(--text-sm);
+  margin-top: var(--space-md);
+  margin-bottom: 0;
+}
+
+/* ==========================================
    HEADER & NAVIGATION
    Sticky header with primary blue background
    Two-layer shadow, search bar, portal button

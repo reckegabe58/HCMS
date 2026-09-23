@@ -72,6 +72,10 @@
 </head>
 <body>
 
+  {% if page.url contains '/classrooms' %}
+  {% include classroom-gate.html %}
+  {% endif %}
+
   <div class="site-container">
 
     <!-- Header -->

@@ -1,0 +1,58 @@
+<!-- Classroom Password Gate -->
+<div id="classroom-gate" class="classroom-gate">
+  <div class="classroom-gate-box">
+    <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }} Logo" class="classroom-gate-logo">
+    <h2>Classroom Pages</h2>
+    <p>Please enter the password to view classroom pages.</p>
+    <form id="classroom-gate-form" class="classroom-gate-form">
+      <input type="password" id="classroom-gate-input" class="classroom-gate-input" placeholder="Password" autocomplete="off" required>
+      <button type="submit" class="btn btn-primary">Enter</button>
+    </form>
+    <p id="classroom-gate-error" class="classroom-gate-error" style="display: none;">Incorrect password. Please try again.</p>
+  </div>
+</div>
+
+<script>
+(function() {
+  var CORRECT_PASSWORD = "HCMS1234";
+  var STORAGE_KEY = "hcms_classroom_access";
+
+  var gate = document.getElementById('classroom-gate');
+  if (!gate) return;
+
+  function unlock() {
+    gate.style.display = 'none';
+    document.body.classList.remove('classroom-gate-locked');
+  }
+
+  var alreadyGranted = false;
+  try {
+    alreadyGranted = localStorage.getItem(STORAGE_KEY) === 'granted';
+  } catch (e) {}
+
+  if (alreadyGranted) {
+    unlock();
+    return;
+  }
+
+  document.body.classList.add('classroom-gate-locked');
+
+  var form = document.getElementById('classroom-gate-form');
+  var input = document.getElementById('classroom-gate-input');
+  var error = document.getElementById('classroom-gate-error');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (input.value === CORRECT_PASSWORD) {
+      try { localStorage.setItem(STORAGE_KEY, 'granted'); } catch (e) {}
+      unlock();
+    } else {
+      error.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  });
+
+  input.focus();
+})();
+</script>
