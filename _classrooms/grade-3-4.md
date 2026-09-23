@@ -5,7 +5,6 @@ title: Grade 3/4
 grade: "3-4"
 teachers:
   - Meagan Washburn
-  - Desiree Wasley
 color: green
 order: 4
 room: Classroom 3 - Grade 3/4
