@@ -4011,6 +4011,10 @@ a:hover {
   margin: 0;
 }
 
+.meet-teacher-card .featured-leader.no-photo {
+  grid-template-columns: 1fr;
+}
+
 @media (max-width: 600px) {
   .meet-teacher-card .featured-leader {
     grid-template-columns: 1fr;
