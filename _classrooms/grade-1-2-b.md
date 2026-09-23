@@ -18,8 +18,8 @@ teacher_photos:
   - name: Levita Morados
     photo: /assets/images/classrooms/grade-1-2-b/levita-morados-headshot.jpg
     bio:
-      - "Ms. Levita — many students call her \"Ms. Vita\" for short — is originally from the Philippines, where she completed her education before continuing her studies to pursue higher education in teaching. Her passion for teaching grew through that journey, driven by a desire to help students hone their skills and let them learn at their own pace."
-      - "She is pleased to be part of the HCMS school community and looks forward to this new school year, creating a calm, welcoming, and organized classroom where every student feels welcomed, encouraged, and supported each day."
+      - "Boozhoo! I am Levita, but to some students I'm known as \"Ms. Vita\" for short. I am originally from the Philippines, where I completed my education, and I love teaching — my passion for it grew as I continued to study for higher education, so I could help students hone their skills and learn at their own pace."
+      - "I am pleased to be part of this school community, and I look forward to creating a calm, welcoming, and organized classroom where every student feels welcomed, encouraged, and supported each day."
 teacher_emails:
   - name: Levita Morados
     email: levitamae.morados@gmail.com
