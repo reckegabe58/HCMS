@@ -13,40 +13,7 @@ door_photo: /assets/images/classrooms/kindergarten/door-photo.jpg
 hero_image: /assets/images/classrooms/kindergarten/hero-banner.jpg
 newsletter_folder: kindergarten
 show_daily_schedule: true
-show_photo_gallery: true
-photos:
-  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.39 PM (1).jpeg
-    alt: Kindergarten classroom activity
-  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.39 PM.jpeg
-    alt: Kindergarten students learning
-  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.40 PM (1).jpeg
-    alt: Kindergarten play-based learning
-  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.40 PM (3).jpeg
-    alt: Kindergarten classroom environment
-  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.40 PM (4).jpeg
-    alt: Kindergarten learning activities
-  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.41 PM (1).jpeg
-    alt: Kindergarten students engaged
-  - src: /assets/images/classrooms/kindergarten/WhatsApp Image 2026-01-29 at 4.38.41 PM.jpeg
-    alt: Kindergarten classroom moments
-  - src: /assets/images/classrooms/kindergarten/0a3527b2-f806-4b27-ae89-27a1789ae908.jpg
-    alt: Kindergarten learning space
-  - src: /assets/images/classrooms/kindergarten/2a8ea5b1-a9b3-4e36-8385-dc883c756771.jpg
-    alt: Kindergarten activities
-  - src: /assets/images/classrooms/kindergarten/7281cef1-0f95-47d0-9be3-f33ee061d68c.jpg
-    alt: Kindergarten classroom
-  - src: /assets/images/classrooms/kindergarten/768ffbf3-b47d-419d-8579-30bc4ade8a96.jpg
-    alt: Kindergarten learning environment
-  - src: /assets/images/classrooms/kindergarten/86e5a591-104f-4e1c-974a-319f2df1960d.jpg
-    alt: Kindergarten students at work
-  - src: /assets/images/classrooms/kindergarten/bbefbe4b-3ca1-4d51-b517-51fdef8b7b79.jpg
-    alt: Kindergarten play time
-  - src: /assets/images/classrooms/kindergarten/c07c64d9-e3dd-408d-a178-912899df24c8.jpg
-    alt: Kindergarten classroom setting
-  - src: /assets/images/classrooms/kindergarten/e013bb00-fe51-437d-965c-d5d54e5c4cb4.jpg
-    alt: Kindergarten learning moments
-  - src: /assets/images/classrooms/kindergarten/f0d14455-c26f-4afd-99d4-82402f626561.jpg
-    alt: Kindergarten classroom life
+show_photo_gallery: false
 teacher_photos:
   - name: Your Kindergarten Team
     photo: /assets/images/classrooms/kindergarten/kindergarten-team-headshot.jpg
@@ -59,6 +26,25 @@ teacher_emails:
     email: lauren.moreau@martenfalls.com
   - name: Mr. Shun
     email: shun.villegas@martenfalls.com
+subjects:
+  - name: Oji-Cree Language
+    description: Learning with Miss Brenda through songs, artwork, and hands-on activities. Building language skills, cultural connections, and confidence in a warm and engaging way.
+    icon: message
+  - name: Early Literacy
+    description: Building phonemic awareness and the alphabet, and reading and writing simple words and sentences, along with oral and non-verbal communication.
+    icon: book
+  - name: Numeracy
+    description: Counting to 20, 2D and 3D shapes, measurement, patterning, coding, data collection, addition and subtraction, estimation, probability, and money.
+    icon: calculator
+  - name: Land-Based Learning
+    description: Learning through outdoor exploration and nature walks while being introduced to traditional knowledge. Building curiosity, respect for the land, and meaningful connections to nature.
+    icon: tree
+  - name: Creative Arts
+    description: Expressing creativity through drawing, painting, crafts, and traditional art forms.
+    icon: palette
+  - name: Social Skills
+    description: Learning to share, cooperate, and show empathy. Building trust and friendships while practicing respect and kindness, incorporating the Seven Grandfather Teachings.
+    icon: users
 schedule:
   monday:
     - time: "9:00 - 9:30"
@@ -266,42 +252,6 @@ Our hope is to create a warm and inclusive classroom where every child feels see
 In our classroom, we will inspire a love of learning through play, exploration, creativity, and meaningful experiences while honouring and incorporating Indigenous language and culture.
 
 Together, we will encourage your child to try new things, build confidence, and celebrate every achievement big or small. We look forward to a wonderful year of learning, growth, and joyful moments together!
-
-## What Your Students Will Be Learning This Year
-
-### Math / Numeracy
-
-- Learning to count 1-20
-- Identifying and sorting 2D and 3D shapes
-- Measurement
-- Patterning
-- Coding (e.g., giving directions to go to a specific location)
-- Data collection (asking questions, like whether you prefer skating or swimming, and graphing the data in different ways, such as bar graphs or picture graphs)
-- Addition and subtraction
-- Estimation and probability
-- Money (coins and bills)
-
-### Literacy
-
-- Sharing ideas through oral and non-verbal communication
-- Alphabet
-- Phonemic awareness
-- Reading and writing simple words
-- Reading sentences and writing a sentence
-- Thinking about texts (understanding and student thoughts)
-
-### Belonging & Contributing, Self-Regulation and Well-Being, and Problem-Solving and Innovating
-
-- Our Class is a Family - building empathy and taking turns with other classmates
-- Understanding Ourselves - identity and self-image
-- Exploring Environments through Living & Non-Living Things
-- Let's Be Scientists and Engineers! - exploring science experiments
-- Healthy Minds, Healthy Bodies - healthy and active living
-- Becoming Confident Learners - building responsibility, confidence, taking initiative
-- Learning Through Movement - focusing on gross and fine motor skills
-- Becoming Caretakers of the Land - respect and care for nature
-- Places and Roles in Our Community - for example, a teacher works at a school and their role is to teach children
-- Kind Hearts, Fair Choices - thinking about fair and unfair, and biased behaviour
 
 ## Our Classroom Philosophy
 

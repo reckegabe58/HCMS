@@ -2611,7 +2611,7 @@ a:hover {
 }
 
 .leader-photo.team {
-  width: 380px;
+  width: 560px;
   max-width: 100%;
   height: auto;
   aspect-ratio: 2 / 1;
@@ -4022,6 +4022,16 @@ a:hover {
 
 .meet-teacher-card .featured-leader.no-photo {
   grid-template-columns: 1fr;
+}
+
+.meet-teacher-card .featured-leader.stacked {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+
+.meet-teacher-card .featured-leader.stacked .leader-bio-full {
+  text-align: left;
 }
 
 @media (max-width: 600px) {

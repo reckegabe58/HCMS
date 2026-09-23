@@ -153,7 +153,7 @@ layout: default
         <div class="classroom-section">
           {% for t in page.teacher_photos %}
           <div class="meet-teacher-card" {% unless forloop.first %}style="margin-top: var(--space-lg);"{% endunless %}>
-            <div class="featured-leader {% unless t.photo %}no-photo{% endunless %}">
+            <div class="featured-leader {% unless t.photo %}no-photo{% endunless %} {% if t.wide_photo %}stacked{% endif %}">
               {% if t.photo %}
               <div class="featured-leader-photo">
                 <img src="{{ t.photo | relative_url }}" alt="{{ t.name }}" class="leader-photo {% if t.wide_photo %}team{% else %}large{% endif %}">
