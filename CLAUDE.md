@@ -33,7 +33,7 @@ When I start a new session and reference "the audit," "the classroom rebuild," o
 1. Calendar page: "Download Full Calendar (PDF)" and "Add to Your Calendar" buttons link to `#` (dead)
 2. Calendar page: "Upcoming Events" section is stuck on "Loading upcoming events..." — likely a broken/incomplete script
 3. Kindergarten page: "Today's Schedule" widget shows contradictory info ("Monday" + "Enjoy your weekend!") — logic bug
-4. Homepage says school established "1985," About page says "over 20 years ago" — inconsistent, needs one source of truth
+4. ~~Homepage says school established "1985," About page says "over 20 years ago" — inconsistent~~ — Fixed 2026-09: school is 30 years old, established year set to 1996 consistently across `_config.yml`, homepage, About page, and School Information page.
 5. Classroom pages are inconsistent in structure — some have a schedule widget, photo gallery, and multiple newsletters; others (e.g. Grade 7/8) have none of these
 6. Newsletter files are a mix of PDF and PNG — should standardize on PDF for accessibility and print quality
 7. Leadership page has no staff photos

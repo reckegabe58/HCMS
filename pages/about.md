@@ -35,7 +35,7 @@ keywords: "First Nations school Ontario, Indigenous education curriculum, Oji-Cr
         </p>
 
         <p>
-          Founded with a commitment to education, rooted in community and cultural identity, HCMS has been a hub of the community since it opened over twenty years ago. The school is focused on empowering its students through greater community engagement, increased literacy and math achievement, special education and tutoring supports, and land based learning and sharing traditional knowledge.
+          Founded with a commitment to education, rooted in community and cultural identity, HCMS has been a hub of the community since it opened 30 years ago. The school is focused on empowering its students through greater community engagement, increased literacy and math achievement, special education and tutoring supports, and land based learning and sharing traditional knowledge.
         </p>
 
         <h3>Our Curriculum</h3>
@@ -155,7 +155,7 @@ keywords: "First Nations school Ontario, Indigenous education curriculum, Oji-Cr
               </span>
               <div>
                 <strong>Established</strong>
-                <span>Over 20 years ago</span>
+                <span>1996</span>
               </div>
             </li>
             <li>

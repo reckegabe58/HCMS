@@ -41,7 +41,7 @@ keywords: "Henry Coaster Memorial School, Marten Falls First Nation school, Ogok
         </div>
         <div style="background: var(--bg-400); padding: var(--space-lg); border-radius: var(--radius-lg);">
           <h3 style="margin-top: 0;">Established</h3>
-          <p>1985</p>
+          <p>1996</p>
         </div>
       </div>
 
