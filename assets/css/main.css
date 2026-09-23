@@ -2611,8 +2611,8 @@ a:hover {
 }
 
 .leader-photo.team {
-  width: 560px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 560px;
   height: auto;
   aspect-ratio: 2 / 1;
   border-radius: var(--radius-lg);
@@ -2655,6 +2655,7 @@ a:hover {
 
 .featured-leader-photo {
   text-align: center;
+  min-width: 0;
 }
 
 .featured-leader-content {
