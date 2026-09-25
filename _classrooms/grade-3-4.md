@@ -23,6 +23,28 @@ teacher_photos:
 teacher_emails:
   - name: Meagan Washburn
     email: meagan.washburn@martenfalls.com
+subjects:
+  - name: Oji-Cree Language
+    description: Taught by Ms. Brenda, building on vocabulary, storytelling, and cultural traditions with more advanced language skills.
+    icon: message
+  - name: Language
+    description: Writing personal narratives, reading fiction and poetry, and exploring persuasive writing and media.
+    icon: book
+  - name: Mathematics
+    description: Number sense, patterns, data and graphing, money and financial literacy, geometry, measurement, and multiplication, division, and fractions.
+    icon: calculator
+  - name: Science
+    description: Exploring parts of a plant, forces and motion, and building and testing our own structures.
+    icon: flask
+  - name: Social Studies
+    description: Looking at history and communities, and thinking about how people connect with the land and the world around them.
+    icon: globe
+  - name: Health & Physical Education
+    description: Movement and games alongside healthy eating, staying safe, mental health, and setting fitness goals.
+    icon: heart
+  - name: The Arts
+    description: Painting, drawing, and dance.
+    icon: palette
 schedule:
   monday:
     - time: "9:00 - 9:30"
@@ -191,7 +213,13 @@ schedule:
       activity: "Art / Clean Up"
 ---
 
-Welcome to Grade 3/4! I'm Miss Meagan, and I'm excited to be your teacher this year. I love building a kind classroom where students feel confident, curious, and ready to learn.
+Dear Families,
 
-**Miigwech!**
-*Miss Meagan*
+Welcome to a new school year! I'm very excited to be your child's teacher and to spend the year learning, growing, and having some fun together.
+
+Honestly, a few things I can't wait for this year: watching the kids problem-solve during our structures and mechanisms build challenge, seeing everyone's creativity shine at the spring arts showcase, and hearing what they come up with for their own research projects. There's a lot of good stuff coming.
+
+I can't wait for all the discovery, creativity, and growth ahead this year. Please feel free to reach out anytime with questions.
+
+Warmly,
+*Meagan*
