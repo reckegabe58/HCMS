@@ -184,6 +184,21 @@ layout: default
           </div>
         </div>
 
+        <!-- What We're Learning -->
+        {% if page.subjects %}
+        <div class="classroom-section">
+          <h2 class="classroom-section-title">What We're Learning</h2>
+          <div class="subjects-grid">
+            {% for subject in page.subjects %}
+            <div class="subject-card">
+              <h3 class="subject-name">{{ subject.name }}</h3>
+              <p class="subject-description">{{ subject.description }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
         <!-- Student Art Gallery - In Main Column -->
         {% if page.art_pdf %}
         <div class="classroom-section">
@@ -250,21 +265,6 @@ layout: default
         <!-- Daily Schedule Card -->
         {% if page.show_daily_schedule %}
         {% include daily-schedule-simple.html %}
-        {% endif %}
-
-        <!-- What We're Learning - Stacked Vertically -->
-        {% if page.subjects %}
-        <div class="sidebar-card subjects-sidebar-card">
-          <h3>What We're Learning</h3>
-          <div class="subjects-list-vertical">
-            {% for subject in page.subjects %}
-            <div class="subject-item-compact">
-              <strong class="subject-compact-name">{{ subject.name }}</strong>
-              <p class="subject-compact-desc">{{ subject.description }}</p>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
         {% endif %}
 
         <!-- Classroom Info Card -->
