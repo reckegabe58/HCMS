@@ -118,6 +118,15 @@
     0 15px 30px rgba(0, 0, 0, 0.12),
     0 30px 50px rgba(0, 0, 0, 0.18);
 
+  /* Colored hover shadows for primary/accent buttons (deeper, matching hue, not grey) */
+  --shadow-primary-hover:
+    0 6px 14px rgba(7, 83, 175, 0.25),
+    0 12px 28px rgba(7, 83, 175, 0.3);
+
+  --shadow-accent-hover:
+    0 6px 14px rgba(154, 51, 45, 0.25),
+    0 12px 28px rgba(154, 51, 45, 0.3);
+
   /* ===================
      SPACING SYSTEM
      =================== */
@@ -457,23 +466,23 @@ body.classroom-gate-locked {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  background: var(--accent-100);
+  background: linear-gradient(135deg, var(--accent-100) 0%, var(--accent-200) 100%);
   color: var(--white);
   font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: 600;
   padding: var(--space-xs) var(--space-lg);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-accent), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   transition: all var(--transition-fast);
   text-decoration: none;
 }
 
 .btn-portal:hover {
-  background: var(--accent-200);
+  background: linear-gradient(135deg, var(--accent-200) 0%, var(--accent-100) 100%);
   color: var(--white);
   transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-accent-hover), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 /* Mobile Menu Toggle */
@@ -622,16 +631,16 @@ body.classroom-gate-locked {
 }
 
 .btn-primary {
-  background: var(--primary-100);
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
   color: var(--white);
-  box-shadow: var(--shadow-primary);
+  box-shadow: var(--shadow-primary), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .btn-primary:hover {
-  background: var(--primary-200);
+  background: linear-gradient(135deg, var(--primary-200) 0%, var(--primary-100) 100%);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md-hover);
+  box-shadow: var(--shadow-primary-hover), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .btn-ghost {
@@ -685,6 +694,12 @@ body.classroom-gate-locked {
   background-size: 24px 24px;
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* Lift actual content above the dot pattern so it doesn't paint over photos/buttons */
+.main-area .container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Two-column grid: 8-col main + 4-col sidebar */
@@ -2334,16 +2349,6 @@ body.classroom-gate-locked {
   margin-top: -1px;
 }
 
-.mission-card {
-  background: var(--bg-400);
-  padding: var(--space-2xl);
-  border-radius: var(--radius-2xl);
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: var(--shadow-xl);
-}
-
 .mission-icon {
   width: 64px;
   height: 64px;
@@ -2628,14 +2633,6 @@ body.classroom-gate-locked {
 }
 
 /* Leader Cards */
-.leader-card {
-  background: var(--bg-400);
-  border-radius: var(--radius-xl);
-  padding: var(--space-xl);
-  text-align: center;
-  border: 1px solid var(--border-light);
-}
-
 .leader-photo-placeholder {
   width: 120px;
   height: 120px;
@@ -3030,14 +3027,15 @@ body.classroom-gate-locked {
 }
 
 .btn-accent {
-  background: var(--accent-100);
+  background: linear-gradient(135deg, var(--accent-100) 0%, var(--accent-200) 100%);
   color: var(--white);
-  box-shadow: var(--shadow-accent);
+  box-shadow: var(--shadow-accent), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .btn-accent:hover {
-  background: var(--accent-200);
+  background: linear-gradient(135deg, var(--accent-200) 0%, var(--accent-100) 100%);
   color: var(--white);
+  box-shadow: var(--shadow-accent-hover), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .btn-submit {
@@ -3464,51 +3462,6 @@ body.classroom-gate-locked {
   text-align: center;
 }
 
-/* Key Dates */
-.key-dates-section {
-  background: var(--bg-200);
-  padding: var(--space-3xl) 0;
-}
-
-.key-dates-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-lg);
-  margin-top: var(--space-2xl);
-}
-
-.key-date-card {
-  background: var(--bg-400);
-  padding: var(--space-xl);
-  border-radius: var(--radius-xl);
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-}
-
-.key-date-icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto var(--space-md);
-  color: var(--primary-100);
-}
-
-.key-date-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.key-date-card h3 {
-  font-size: var(--text-base);
-  margin-bottom: var(--space-sm);
-}
-
-.key-date {
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--primary-100);
-  margin: 0;
-}
-
 /* Weekly Schedule */
 .weekly-section {
   padding: var(--space-3xl) 0;
@@ -3590,39 +3543,8 @@ body.classroom-gate-locked {
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
-}
-
-.classroom-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* Color-coded hover effects for classroom cards */
-.classroom-card[data-color="sage"]:hover {
-  box-shadow: 0 8px 24px rgba(139, 168, 136, 0.25), var(--shadow-lg);
-}
-
-.classroom-card[data-color="blue"]:hover {
-  box-shadow: 0 8px 24px rgba(7, 83, 175, 0.25), var(--shadow-lg);
-}
-
-.classroom-card[data-color="green"]:hover {
-  box-shadow: 0 8px 24px rgba(107, 139, 104, 0.25), var(--shadow-lg);
-}
-
-.classroom-card[data-color="orange"]:hover {
-  box-shadow: 0 8px 24px rgba(230, 126, 34, 0.25), var(--shadow-lg);
-}
-
-.classroom-card[data-color="red"]:hover {
-  box-shadow: 0 8px 24px rgba(154, 51, 45, 0.25), var(--shadow-lg);
-}
-
-.classroom-card[data-color="terracotta"]:hover {
-  box-shadow: 0 8px 24px rgba(168, 71, 61, 0.25), var(--shadow-lg);
 }
 
 .classroom-card-photo {
@@ -3763,8 +3685,10 @@ body.classroom-gate-locked {
 }
 
 .btn-classroom:hover {
-  background: var(--primary-100);
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
   color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-hover);
 }
 
 .btn-classroom svg {
@@ -4420,28 +4344,6 @@ body.classroom-gate-locked {
   color: var(--text-muted);
 }
 
-.newsletter-download-btn {
-  width: 36px;
-  height: 36px;
-  background: var(--primary-100);
-  color: var(--white);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-fast);
-}
-
-.newsletter-download-btn:hover {
-  background: var(--primary-200);
-  transform: translateY(-2px);
-}
-
-.newsletter-download-btn svg {
-  width: 18px;
-  height: 18px;
-}
-
 /* Empty State */
 .newsletter-empty {
   background: var(--bg-200);
@@ -4654,7 +4556,7 @@ body.classroom-gate-locked {
   border-radius: var(--radius-lg);
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(45, 90, 61, 0.3);
+  box-shadow: var(--shadow-primary);
   margin-top: var(--space-md);
   width: 100%;
 }
@@ -4662,7 +4564,7 @@ body.classroom-gate-locked {
 .newsletter-download-btn:hover {
   background: linear-gradient(135deg, var(--primary-200) 0%, var(--primary-100) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(45, 90, 61, 0.4);
+  box-shadow: var(--shadow-primary-hover);
 }
 
 .newsletter-download-btn svg {
@@ -6028,19 +5930,6 @@ body.classroom-gate-locked {
   margin-bottom: var(--space-2xl);
 }
 
-.program-card {
-  background: var(--bg-400);
-  border-radius: var(--radius-xl);
-  padding: var(--space-xl);
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
-}
-
-.program-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
 .program-icon {
   width: 60px;
   height: 60px;
@@ -6403,49 +6292,6 @@ body.classroom-gate-locked {
   display: inline-block;
 }
 
-.interventions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--space-xl);
-}
-
-.intervention-card {
-  background: var(--bg-400);
-  padding: var(--space-xl);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-light);
-}
-
-.intervention-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--bg-200);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-100);
-  margin-bottom: var(--space-lg);
-}
-
-.intervention-card h3 {
-  color: var(--text-dark);
-  margin-bottom: var(--space-xs);
-}
-
-.intervention-subtitle {
-  color: var(--primary-100);
-  font-weight: 600;
-  margin-bottom: var(--space-md);
-}
-
-.intervention-card h4 {
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-sm);
-  color: var(--text-dark);
-  font-size: var(--text-sm);
-}
-
 /* ==========================================
    PARTNERSHIPS PAGE STYLES
    ========================================== */
@@ -6554,12 +6400,6 @@ body.classroom-gate-locked {
 
 .partner-content .btn-primary {
   margin-top: var(--space-lg);
-  background: var(--primary-100);
-  color: var(--white);
-}
-
-.partner-content .btn-primary:hover {
-  background: var(--primary-200);
 }
 
 .partners-grid {
@@ -6674,10 +6514,6 @@ body.classroom-gate-locked {
 
   .placeholder-list {
     text-align: left;
-  }
-
-  .interventions-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -7218,59 +7054,6 @@ body.classroom-gate-locked {
   font-size: var(--text-sm);
 }
 
-/* Seasons Grid */
-.seasons-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-}
-
-.season-card {
-  background: var(--white);
-  padding: var(--space-xl);
-  border-radius: var(--radius-xl);
-  border-top: 4px solid var(--primary-100);
-}
-
-.season-card.fall {
-  border-top-color: #D97706;
-}
-
-.season-card.winter {
-  border-top-color: #3B82F6;
-}
-
-.season-card.spring {
-  border-top-color: #10B981;
-}
-
-.season-card.summer {
-  border-top-color: #F59E0B;
-}
-
-.season-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
-}
-
-.season-icon {
-  font-size: 1.5rem;
-}
-
-.season-card h3 {
-  color: var(--text-dark);
-  font-size: var(--text-lg);
-  margin: 0;
-}
-
-.season-card p {
-  color: var(--text-muted);
-  font-size: var(--text-sm);
-  line-height: 1.6;
-}
-
 /* Oji-Cree Words */
 .language-words {
   margin-top: var(--space-2xl);
@@ -7374,51 +7157,9 @@ body.classroom-gate-locked {
   margin: 0;
 }
 
-/* Community Highlights */
-.community-highlights {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-}
-
-.community-card {
-  background: var(--white);
-  padding: var(--space-xl);
-  border-radius: var(--radius-xl);
-  text-align: center;
-}
-
-.community-icon {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-md);
-}
-
-.community-card h4 {
-  color: var(--text-dark);
-  margin-bottom: var(--space-sm);
-}
-
-.community-card p {
-  color: var(--text-muted);
-  font-size: var(--text-sm);
-  line-height: 1.6;
-}
-
 /* Heritage New Sections Responsive */
-@media (max-width: 1024px) {
-  .seasons-grid,
-  .community-highlights {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
   .land-features {
-    grid-template-columns: 1fr;
-  }
-
-  .seasons-grid,
-  .community-highlights {
     grid-template-columns: 1fr;
   }
 
@@ -7707,11 +7448,6 @@ body.classroom-gate-locked {
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: transform var(--transition-base);
-}
-
-.season-visual-card:hover {
-  transform: translateY(-4px);
 }
 
 .season-visual-card::before {
@@ -8087,12 +7823,6 @@ body.classroom-gate-locked {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   text-align: center;
-  transition: all var(--transition-base);
-}
-
-.benefit-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
 }
 
 .benefit-icon {
@@ -8323,11 +8053,18 @@ body.classroom-gate-locked {
   border-radius: var(--radius-xl);
   padding: var(--space-lg);
   box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--bg-300);
 }
 
-.sidebar-card:hover {
+/* Hover-lift reserved for cards that actually contain links (contact, newsletter) —
+   info-sidebar-card is static text and shouldn't signal clickability */
+.contact-sidebar-card,
+.newsletter-sidebar-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-sidebar-card:hover,
+.newsletter-sidebar-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
@@ -8677,13 +8414,13 @@ body.classroom-gate-locked {
   border-radius: var(--radius-lg);
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(45, 90, 61, 0.2);
+  box-shadow: var(--shadow-primary);
 }
 
 .teacher-contact-link:hover {
   background: linear-gradient(135deg, var(--primary-200) 0%, var(--primary-100) 100%);
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(45, 90, 61, 0.35);
+  box-shadow: var(--shadow-primary-hover);
 }
 
 .teacher-contact-link svg {
