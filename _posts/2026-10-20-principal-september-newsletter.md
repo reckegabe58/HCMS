@@ -13,9 +13,11 @@ September has given us many reasons to feel proud of Henry Coaster Memorial Scho
 
 These newsletter highlights share that learning and the care behind it. As we look ahead, our focus remains on Oji-Cree Language, Cultural Identity and Belonging, and Academic Achievement.
 
-**[Download the full September newsletter (PDF)](/assets/newsletters/school/2026-09-principal-newsletter.pdf)** to see all the photos from the month.
-
 *— Tom Recke, Principal, Marten Falls First Nation*
+
+{% include pdf-flipbook.html pdf_path="/assets/newsletters/school/2026-09-principal-newsletter.pdf" %}
+
+*Browse the full newsletter above to see all the photos from the month — click the preview or use the arrows to flip through the pages.*
 
 ## Every classroom tells a story
 
