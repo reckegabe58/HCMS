@@ -3,6 +3,7 @@ layout: post
 title: "Walking in Balance: A Message from Our Principal"
 date: 2026-10-20
 category: Community
+image: /assets/images/posts/2026-09-principal-newsletter-cover.png
 ---
 
 *Mino De'e Mino Maanjii'o*
