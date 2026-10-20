@@ -4644,6 +4644,117 @@ body.classroom-gate-locked {
   display: none;
 }
 
+/* PDF Flipbook - large page-by-page viewer */
+.pdf-flipbook {
+  max-width: 640px;
+  margin: var(--space-2xl) auto;
+  padding: var(--space-lg);
+  background: var(--bg-400);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.pdf-flipbook-stage {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pdf-flipbook-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pdf-flipbook-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.pdf-flipbook.loaded .pdf-flipbook-loading {
+  display: none;
+}
+
+.pdf-flipbook-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--bg-300);
+  border-top: 3px solid var(--primary-100);
+  border-radius: 50%;
+  animation: pdf-flipbook-spin 1s linear infinite;
+}
+
+@keyframes pdf-flipbook-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pdf-flipbook-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.pdf-flipbook-prev,
+.pdf-flipbook-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-200);
+  color: var(--primary-100);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.pdf-flipbook-prev svg,
+.pdf-flipbook-next svg {
+  width: 20px;
+  height: 20px;
+}
+
+.pdf-flipbook-prev:hover:not(:disabled),
+.pdf-flipbook-next:hover:not(:disabled) {
+  background: var(--primary-100);
+  color: var(--white);
+}
+
+.pdf-flipbook-prev:disabled,
+.pdf-flipbook-next:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pdf-flipbook-page-indicator {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 110px;
+  text-align: center;
+}
+
+.pdf-flipbook-download {
+  margin-top: var(--space-lg);
+}
+
 /* Newsletter download button styling */
 .classroom-newsletter-card .btn-full {
   margin-bottom: var(--space-sm);

@@ -341,3 +341,98 @@ if (document.readyState === 'loading') {
 } else {
   renderPdfThumbnails();
 }
+
+
+// ==========================================
+// PDF FLIPBOOK (page-by-page viewer)
+// ==========================================
+
+function initPdfFlipbooks() {
+  if (typeof pdfjsLib === 'undefined') {
+    setTimeout(initPdfFlipbooks, 100);
+    return;
+  }
+
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  document.querySelectorAll('.pdf-flipbook').forEach(viewer => {
+    const pdfUrl = viewer.dataset.pdfUrl;
+    const canvas = viewer.querySelector('.pdf-flipbook-canvas');
+    const loading = viewer.querySelector('.pdf-flipbook-loading');
+    const prevBtn = viewer.querySelector('.pdf-flipbook-prev');
+    const nextBtn = viewer.querySelector('.pdf-flipbook-next');
+    const currentEl = viewer.querySelector('.pdf-flipbook-current');
+    const totalEl = viewer.querySelector('.pdf-flipbook-total');
+
+    if (!pdfUrl || !canvas) return;
+
+    let pdfDoc = null;
+    let currentPage = 1;
+    let rendering = false;
+
+    function renderPage(num) {
+      if (rendering) return;
+      rendering = true;
+
+      pdfDoc.getPage(num).then(page => {
+        const ctx = canvas.getContext('2d');
+        const containerWidth = viewer.querySelector('.pdf-flipbook-stage').clientWidth;
+        const baseViewport = page.getViewport({ scale: 1 });
+        const scale = (containerWidth / baseViewport.width) * (window.devicePixelRatio || 1);
+        const viewport = page.getViewport({ scale: scale });
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        canvas.style.width = '100%';
+        canvas.style.height = 'auto';
+
+        return page.render({ canvasContext: ctx, viewport: viewport }).promise;
+      }).then(() => {
+        rendering = false;
+        viewer.classList.add('loaded');
+        currentEl.textContent = num;
+        prevBtn.disabled = num <= 1;
+        nextBtn.disabled = num >= pdfDoc.numPages;
+      }).catch(err => {
+        rendering = false;
+        console.warn('Could not render PDF page:', err);
+      });
+    }
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+      pdfDoc = pdf;
+      totalEl.textContent = pdf.numPages;
+      renderPage(currentPage);
+    }).catch(err => {
+      console.warn('Could not load PDF:', err);
+      loading.querySelector('span').textContent = 'Preview unavailable — use the download link below.';
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage -= 1;
+        renderPage(currentPage);
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (pdfDoc && currentPage < pdfDoc.numPages) {
+        currentPage += 1;
+        renderPage(currentPage);
+      }
+    });
+
+    canvas.addEventListener('click', () => {
+      if (pdfDoc && currentPage < pdfDoc.numPages) {
+        currentPage += 1;
+        renderPage(currentPage);
+      }
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPdfFlipbooks);
+} else {
+  initPdfFlipbooks();
+}
