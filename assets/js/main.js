@@ -249,30 +249,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ==========================================
-// UTILITY FUNCTIONS
-// ==========================================
-
-// Format date helper
-function formatDate(dateString) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  return new Date(dateString).toLocaleDateString('en-CA', options);
-}
-
-// Debounce helper for performance
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-
-// ==========================================
 // PDF THUMBNAIL RENDERING
 // ==========================================
 
